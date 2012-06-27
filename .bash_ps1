@@ -1,0 +1,80 @@
+# Set up the bash PS1 line.
+# vi: ft=sh
+
+# TODO use symbols for different VCS?
+# git) printf '∓';;
+# hg)  printf '☿';;
+# svn) printf '⚡';;
+# bzr) printf '⚘';;
+# *) printf '∵';;
+
+# Import colors.
+. $HOME/bin/bash_colors.sh
+
+# Reset default values.
+PS1=''
+
+# Set CWD in tmux, if it's running, so that it later can be used in bindings.
+#PS1=$PS1'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P") $PWD)'
+# TODO does this solve the strange prompt problems?
+PROMPT_COMMAND='$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P") "$PWD")'
+
+#PS1='${debian_chroot:+($debian_chroot)}'
+
+# Show user, host and CWD.
+PS1="${PS1}\u@\h:\w"
+
+# Show number of backround jobs.
+nbr_bg_jobs() {
+	njobs=`jobs | wc -l`
+	if [ "$njobs" -gt 0 ]; then
+		echo " (${njobs})"
+	fi
+}
+PS1="${PS1}"'$(nbr_bg_jobs)'
+
+# Show git banch.
+parse_git_branch() {
+	#git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
+
+	# Quit if this is not a Git repo.
+	branches=$(git branch -a 2>/dev/null)
+	if [ "$?" -ne 0 ]; then
+		return
+	fi
+
+	local branch=$(echo "$branches" | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+
+	echo "$branches" | grep "remotes/git-svn" &>/dev/null
+	is_gitsvn=$([ "$?" -eq 0 ] && echo 1 || echo 0)
+
+	echo -ne " ${C_FG_MAGENTA}["
+	[ "$is_gitsvn" -eq 1 ] && echo -ne "${C_FG_YELLOW}"	# Set yellow colors if using git-svn.
+	echo -n "${branch}"
+	[ "$is_gitsvn" -eq 1 ] && echo -ne "${C_FG_MAGENTA}"	# Reset colors if git-svn was used.
+	echo -ne "]${C_RESET}"
+}
+PS1="$PS1"'$(parse_git_branch)'
+
+# Show SVN branch.
+parse_svn_branch() {
+	if [ ! -d ".svn/" ]; then
+		return
+	fi
+	local svn_root=$(svn info 2>/dev/null | sed -ne 's#^Repository Root: ##p')
+	local svn_url=$(svn info 2>/dev/null | sed -ne 's#^URL: ##p')
+
+	# Show branch + URL.
+	#echo $svn_url | sed -e 's#^'"${svn_root}"'##g' | awk '{print " [svn::"$1"]" }'
+
+	# Show only branch.
+	local branch=$(echo $svn_url | sed -e 's#^'"${svn_root}"'##g' | egrep -o '(tags|branches)/[^/]+|trunk' | egrep -o '[^/]+$' | awk '{print " [⚡"$1"]" }')
+	echo -e "${C_FG_YELLOW}${branch}${C_RESET}"
+}
+PS1="$PS1"'$(parse_svn_branch)'
+
+# End marker.
+PS1="${PS1}> "
+
+# Export to subshells.
+export PS1
