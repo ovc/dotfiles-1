@@ -126,6 +126,7 @@
 
 # Misc {
 	alias psg='ps aux | grep -i '			# List matching processes.
+	alias dusch='du -sch'				# The best file size calculator.
 	alias rehash='hash -r'				# Reload caches?
 	alias beep='echo -en "\007"'			# Whoop whoop'
 	alias bygg='make -f Byggfil'			# New standard?
