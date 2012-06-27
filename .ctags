@@ -1,0 +1,11 @@
+--recurse
+--sort=foldcase
+--tag-relative=yes
+--totals=yes
+
+--fields=+iaSnm
+--extra=+qf
+--if0=yes
+
+--c-kinds=+x
+--c++-kinds=+p
