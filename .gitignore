@@ -1,7 +1,8 @@
 *.sw?
 .bazaar/lock/
 .cgdb/
+.config/Trolltech.conf
 .config/gmpc/gmpc.log
 .config/gpodder/database.sqlite
 .config/gpodder/mygpo.queue.sqlite
-.config/Trolltech.conf
+.config/libimobiledevice/
