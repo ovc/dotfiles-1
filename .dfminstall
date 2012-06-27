@@ -1,9 +1,6 @@
 README.md skip
 CHANGELOG.md skip
 .gitignore skip
-.config/.gitignore skip
 
 t skip
 bin recurse
-.bazaar recurse
-.cgdb recurse
