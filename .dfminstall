@@ -1,6 +1,9 @@
 README.md skip
 CHANGELOG.md skip
+
 t skip
 bin recurse
 .bazaar recurse
 .cgdb recurse
+.config recurse
+.config/gmpc recurse
