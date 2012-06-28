@@ -1,21 +1,19 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="retain_days" mtime="1337279060" type="float" value="64"/>
-	<entry name="autosave_interval_minutes" mtime="1337279042" type="float" value="1"/>
-	<entry name="autosave_show_explanation" mtime="1325249222" type="bool" value="false"/>
-	<entry name="tab_close_buttons" mtime="1324251024" type="bool" value="true"/>
-	<entry name="toolbar_style" mtime="1324251322" type="string">
+	<entry name="tab_close_buttons" mtime="1340912003" type="bool" value="true"/>
+	<entry name="toolbar_style" mtime="1340911999" type="string">
 		<stringvalue>text</stringvalue>
 	</entry>
-	<entry name="show_splash_screen" mtime="1324250931" type="bool" value="false"/>
-	<entry name="date_format" mtime="1324250927" type="string">
+	<entry name="retain_days" mtime="1340911960" type="float" value="60"/>
+	<entry name="show_splash_screen" mtime="1340911947" type="bool" value="false"/>
+	<entry name="date_format" mtime="1340911944" type="string">
 		<stringvalue>iso</stringvalue>
 	</entry>
-	<entry name="24hour_clock" mtime="1324250923" type="bool" value="true"/>
-	<entry name="currency_other" mtime="1324250912" type="string">
+	<entry name="24hour_clock" mtime="1340911941" type="bool" value="true"/>
+	<entry name="currency_other" mtime="1340911935" type="string">
 		<stringvalue>SEK</stringvalue>
 	</entry>
-	<entry name="currency_choice" mtime="1324250903" type="string">
+	<entry name="currency_choice" mtime="1340911925" type="string">
 		<stringvalue>other</stringvalue>
 	</entry>
 </gconf>

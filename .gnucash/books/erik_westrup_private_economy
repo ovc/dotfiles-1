@@ -1,0 +1,33 @@
+
+[Top]
+BookGuid=c0d6d0c2fe4f9ed1efe2e6941eba3806
+WindowCount=1
+
+[Window 1]
+PageCount=1
+FirstPage=1
+PageOrder=1;
+WindowPosition=0;515;
+WindowGeometry=893;624;
+WindowMaximized=false
+ToolbarVisible=true
+SummarybarVisible=true
+StatusbarVisible=true
+
+[Page 1]
+PageType=GncPluginPageAccountTree
+PageName=Accounts
+AccountTypes=-1
+ShowHidden=false
+ShowZeroTotal=true
+SelectedAccount=Assets:Checking Account
+OpenAccount1=Assets
+OpenAccount2=Equity
+OpenAccount3=Expenses
+OpenAccount4=Expenses:Body & Conduct
+OpenAccount5=Expenses:Education
+OpenAccount6=Expenses:Food
+OpenAccount7=Expenses:Tech & Gadgets
+OpenAccount8=Income
+OpenAccount9=Liabilities
+NumberOfOpenAccounts=9

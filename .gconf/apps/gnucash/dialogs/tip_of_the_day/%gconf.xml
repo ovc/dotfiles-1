@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="window_position" mtime="1324250746" type="list" ltype="int">
-		<li type="int" value="756"/>
-		<li type="int" value="423"/>
+	<entry name="window_position" mtime="1340911833" type="list" ltype="int">
+		<li type="int" value="905"/>
+		<li type="int" value="0"/>
 	</entry>
-	<entry name="window_geometry" mtime="1324250746" type="list" ltype="int">
+	<entry name="window_geometry" mtime="1340911833" type="list" ltype="int">
 		<li type="int" value="400"/>
-		<li type="int" value="300"/>
+		<li type="int" value="1104"/>
 	</entry>
-	<entry name="show_at_startup" mtime="1340843495" type="bool" value="false"/>
-	<entry name="current_tip" mtime="1340843477" type="int" value="0"/>
+	<entry name="show_at_startup" mtime="1340911831" type="bool" value="false"/>
+	<entry name="current_tip" mtime="1340911822" type="int" value="0"/>
 </gconf>
