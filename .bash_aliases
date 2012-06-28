@@ -55,9 +55,15 @@
 		#alias dir='ls --color=auto --format=vertical'
 		#alias vdir='ls --color=auto --format=long'
 
+		# Highligt matches when output is on the terminal.
 		alias grep='grep --color=auto'
 		alias fgrep='fgrep --color=auto'
 		alias egrep='egrep --color=auto'
+
+		# Force color e.g. to use when piping to less.
+		alias grepc='grep --color=always'
+		alias fgrepc='fgrep --color=always'
+		alias egrepc='egrep --color=always'
 
 		# Use colored diff if it can be found.
 		hash colordiff 2>/dev/null
