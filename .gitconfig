@@ -1,0 +1,43 @@
+[user]
+	name = Erik Westrup
+	email = erik.westrup@gmail.com
+	signingkey = AD610036
+	editor = vim
+[github]
+	user = erikw
+	token = f1a3c1cd4a619b3b7682ca78357606cb
+[core]
+	excludesfile = ~/.gitignore_global
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+	page = true
+[core]
+[help]
+	;browser = firefox -new-tab
+	browser = lynx
+[svn]
+	rmdir = true
+[alias]
+	br = branch
+	ci = commit
+	cl = clone
+	co = checkout
+	di = diff
+	diffc = diff --cached
+	dic = diff --cached
+	h = help
+	ft = fetch
+	pu = pull
+	log1 = log --pretty=oneline
+	logs = log --stat
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ls = ls-files
+	st = status
+	stat = status
+	svn-status = diff --name-status remotes/git-svn
+[credential]
+	helper = cache
