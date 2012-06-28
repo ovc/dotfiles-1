@@ -13,3 +13,6 @@
 .gconf/apps/pdfmod/
 .gconf/desktop/
 .googlecl/access_tok_*
+.irssi/away.log
+.irssi/dcc/
+.irssi/nicklistfifo

@@ -4,3 +4,4 @@ CHANGELOG.md skip
 
 t skip
 bin recurse
+.gnupg recurse
