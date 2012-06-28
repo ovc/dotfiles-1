@@ -1,7 +1,7 @@
 [gcalcli]
 # Google account name.
 user: erik.westrup@gmail.com
-# Google password.
+# Google password token.
 pw: GIT-CENSORED
 # Calendars to show.
 cal: erikw,school,"Week Numbers"
