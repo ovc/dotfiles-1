@@ -29,6 +29,7 @@
 	diffc = diff --cached
 	dic = diff --cached
 	h = help
+	cp = cherry-pick
 	ft = fetch
 	pu = pull
 	log1 = log --pretty=oneline

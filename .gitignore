@@ -6,6 +6,7 @@
 .config/gmpc/gmpc.log
 .config/gpodder/database.sqlite
 .config/gpodder/mygpo.queue.sqlite
+.config/htop/
 .config/libimobiledevice/
 .config/vlc/
 .etwolf/*
