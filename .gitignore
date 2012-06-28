@@ -12,3 +12,4 @@
 .gconf/apps/gitg/
 .gconf/apps/pdfmod/
 .gconf/desktop/
+.googlecl/access_tok_*
