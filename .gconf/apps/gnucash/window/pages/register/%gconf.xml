@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="debit-formula_width" mtime="1335109215" type="int" value="117"/>
+	<entry name="credit-formula_width" mtime="1335109215" type="int" value="117"/>
+	<entry name="reg-run-balance_width" mtime="1339946934" type="int" value="79"/>
+	<entry name="credit_width" mtime="1340786475" type="int" value="81"/>
+	<entry name="debit_width" mtime="1340786475" type="int" value="81"/>
+	<entry name="transfer_width" mtime="1340786475" type="int" value="209"/>
+	<entry name="balance_width" mtime="1340786475" type="int" value="81"/>
+	<entry name="reconcile_width" mtime="1340786475" type="int" value="19"/>
+	<entry name="num_width" mtime="1340786475" type="int" value="45"/>
+	<entry name="date_width" mtime="1340786475" type="int" value="91"/>
+</gconf>

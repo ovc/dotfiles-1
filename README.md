@@ -5,7 +5,7 @@ Most of my personal dotfiles can be found in this branch. I use dfm (dot file ma
 Passwords and other secretes are censored. To find these and substitue them for the realthing, do
 
 ```bash
-$ grep -nri GIT-CENSORED .
+$ grep -nr GIT-CENSORED .
 ```
 
 # Highlights

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="window_position" mtime="1334252387" type="list" ltype="int">
+		<li type="int" value="619"/>
+		<li type="int" value="409"/>
+	</entry>
+	<entry name="window_geometry" mtime="1334252387" type="list" ltype="int">
+		<li type="int" value="673"/>
+		<li type="int" value="327"/>
+	</entry>
+</gconf>

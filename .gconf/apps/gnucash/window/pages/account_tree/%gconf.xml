@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="lastnum_width" mtime="1324251173" type="int" value="74"/>
+	<entry name="placeholder_width" mtime="1324251164" type="int" value="33"/>
+	<entry name="reconciled_width" mtime="1324251140" type="int" value="115"/>
+	<entry name="present_width" mtime="1324251114" type="int" value="99"/>
+	<entry name="type_width" mtime="1324251106" type="int" value="83"/>
+	<entry name="total_width" mtime="1324251226" type="int" value="197"/>
+	<entry name="description_width" mtime="1324251099" type="int" value="94"/>
+	<entry name="name_width" mtime="1324251566" type="int" value="251"/>
+	<entry name="placeholder_visible" mtime="1324251168" type="bool" value="false"/>
+	<entry name="tax-info_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="notes_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="total-period_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="total_report_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="total_visible" mtime="1324250758" type="bool" value="true"/>
+	<entry name="future_min_report_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="future_min_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="last-recon-date_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="reconciled_report_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="reconciled_visible" mtime="1324251155" type="bool" value="false"/>
+	<entry name="cleared_report_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="cleared_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="balance-period_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="balance_report_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="balance_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="present_report_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="present_visible" mtime="1324251114" type="bool" value="true"/>
+	<entry name="lastnum_visible" mtime="1324251176" type="bool" value="false"/>
+	<entry name="description_visible" mtime="1324251122" type="bool" value="false"/>
+	<entry name="account-code_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="commodity_visible" mtime="1324250758" type="bool" value="false"/>
+	<entry name="type_visible" mtime="1324251109" type="bool" value="false"/>
+	<entry name="name_visible" mtime="1324250758" type="bool" value="true"/>
+</gconf>

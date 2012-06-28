@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="last_path" mtime="1340843484" type="string">
+		<stringvalue>/home/erikw/doc/economy/gnucash</stringvalue>
+	</entry>
+</gconf>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="currency_other" mtime="1324251289" type="string">
+		<stringvalue>SEK</stringvalue>
+	</entry>
+	<entry name="currency_choice" mtime="1324251276" type="string">
+		<stringvalue>other</stringvalue>
+	</entry>
+</gconf>

@@ -9,3 +9,6 @@
 .etwolf/*
 !.etwolf/etmain/profiles/ErikwSwe/etconfig.cfg
 !.etwolf/etmain/profiles/ErikwSwe/profile.dat
+.gconf/apps/gitg/
+.gconf/apps/pdfmod/
+.gconf/desktop/
