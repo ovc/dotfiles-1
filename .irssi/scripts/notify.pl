@@ -44,7 +44,7 @@ sub notify {
 	#" string:'" . $summary . "'" .
 	#" string:'" . $message . "'";
 
-    # Above command stoped working suddenly. Use notify-send instead,
+    # Above command stoped working since ~/bin/notify-listener.py is b0rken. Use legacy notify-send instead,
     my $cmd = "EXEC - notify-send 'irssi: $summary' '$message'";
 
     $server->command($cmd);
@@ -59,7 +59,7 @@ sub notify {
     }
 
 }
- 
+
 sub print_text_notify {
     my ($dest, $text, $stripped) = @_;
     my $server = $dest->{server};

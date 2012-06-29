@@ -51,7 +51,10 @@
 # Color support {
 	if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
 		eval "`dircolors -b`"
+		# Colors when output is terminal.
 		alias ls='ls --color=auto --time-style=long-iso'
+		# Force colors to all stdouts.
+		alias lsc='ls --color=always --time-style=long-iso'
 		#alias dir='ls --color=auto --format=vertical'
 		#alias vdir='ls --color=auto --format=long'
 
@@ -69,6 +72,7 @@
 		hash colordiff 2>/dev/null
 		if [ "$?" -eq 0 ]; then
 			alias cdiff='colordiff'
+			alias diffc='colordiff'
 			alias diff='colordiff'
 		fi
 	else
@@ -134,7 +138,7 @@
 # Misc {
 	alias psg='ps aux | grep -i '			# List matching processes.
 	alias dusch='du -sch'				# The best file size calculator.
-	alias rehash='hash -r'				# Reload caches?
+	alias rehash='hash -r'				# Reload PATH caches or something similar. It works!
 	alias beep='echo -en "\007"'			# Whoop whoop'
 	alias bygg='make -f Byggfil'			# New standard?
 	alias webshare='python -m SimpleHTTPServer'	# Start webshare on port 8000 in CWD.
