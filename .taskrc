@@ -1,0 +1,86 @@
+# Erik Westrup's taskwarrior configuration.
+
+# Files
+data.location=/home/erikw/.task		# Where all data is to be saved.
+locking=on				# Use file-level locking
+
+# Terminal
+curses=on				# Use ncurses library to determine terminal width
+defaultwidth=180			# Without ncurses, assumed width
+editor=vi				# Preferred text editor
+
+# Miscellaneous
+search.case.sensitive=no		# Setting to no allows case insensitive searches
+default.command=list			# When no arguments are specified
+journal.time=on
+
+# Dates
+dateformat=Y-m-d			# Preferred input and display date format
+dateformat.holiday=Y-m-d		# Preferred input date format for holidays
+dateformat.report=Y-m-d			# Preferred display date format for repors
+dateformat.annotation=Y-m-d		# Date format for annotations.
+weekstart=monday			# Sunday or Monday only
+displayweeknumber=yes			# Show week numbers on calendar
+due=7					# Task is considered due in 7 days
+
+# Calendar controls
+calendar.legend=yes			# Display the legend on calendar
+calendar.details=sparse			# Calendar shows information for tasks w/due dates: full, sparse or none
+calendar.details.report=list		# Report to use when showing task information in cal
+calendar.holidays=none			# Show public holidays on calendar:full, sparse or none
+#monthsperline=3			# Number of calendar months on a line
+##include /usr/share/doc/packages/task/rc/holidays-SE.rc
+include /usr/local/share/doc/task/scripts/
+
+# Color controls.
+color=on					# Enable color
+
+# Themes.
+include /usr/local/share/doc/task/rc/solarized-dark-256.theme
+
+# The following rules are presented in their order of precedence.
+# The higher the color rule is up this list, the higher precedence
+# it has in determining the color for the task.  Precedence is shown
+# in brackets [1]
+#color.recurring=on red			# [1]  Color of recur.any: tasks
+color.overdue=bold red			# [2]  Color of overdue tasks
+color.due.today=bold magenta		# [3]  Color of tasks due today
+color.due=bold yellow			# [4]  Color of due tasks
+#color.keyword.car=on blue		# [5]  Color of description.contains:car tasks
+#color.project.garden=on green		# [6]  Color of project:garden tasks
+#color.tag.bug=yellow			# [7]  Color of +bug tasks
+color.active=bold cyan			# [8]  Color of active tasks
+#color.pri.none=white on blue		# [9]  Color of priority:  tasks
+color.pri.H=bold			# [9]  Color of priority:H tasks
+#color.pri.M=on yellow			# [9]  Color of priority:M tasks
+#color.pri.L=on green			# [9]  Color of priority:L tasks
+color.tagged=yellow			# [10]  Color of tagged tasks
+#color.alternate=on rgb253		# [11] Alternate color for line coloring
+
+
+_forcecolor=no				# Forces color to be on, even for non TTY output
+blanklines=true				# Use more whitespace in output
+complete.all.projects=no		# Include old project names in 'projects' command
+complete.all.tags=no			# Include old tag names in 'tags' command
+debug=no				# Display diagnostics
+hooks=off				# Hook system master switch
+fontunderline=yes			# Uses underlines rather than -------
+shell.prompt=task>			# Prompt used by the shell command
+
+
+# Aliases 
+alias.rm=delete                        # Alias for the delete command
+
+## Reports
+
+# Next
+#report.next.filter=status:pending limit:page
+report.next.filter=status:pending limit:10
+#report.next.columns=id,project,priority,due,start.active,entry.age,urgency,description
+report.next.columns=id,project,priority,due,start.active,entry.age,urgency,description.desc
+
+# Custom report
+report.sequential.description=Erikws custom report.
+report.sequential.columns=id,project,tags,priority,due,description
+report.sequential.filter=status:pending
+report.sequential.sort=id+
