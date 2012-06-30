@@ -29,3 +29,8 @@ keysym Super_L = Multi_key
 !remove Lock = Caps_Lock
 !keysym Caps_Lock = Control_L
 !add Control = Control_L
+
+! Mute & volume.
+keycode 121 = F21
+keycode 122 = F22
+keycode 123 = F23
