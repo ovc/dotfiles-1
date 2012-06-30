@@ -4,7 +4,7 @@
 function! MailFormat()
 	":+/^>.*$
 	":normal gqip
-	
+
 	":g/^>.*$/normal gqq
 	":silent g/^>.*$/,/^$/- normal! gqq
 	silent execute "g/.\\{" . &textwidth . ",\\}/normal\! gqq"
@@ -29,8 +29,9 @@ endfunction
 
 " Wrap long lines.
 set textwidth=80
-" Color the 80th column.
-execute "set colorcolumn=" . &textwidth
+" Color the 81th column.
+let s:twcc = &textwidth +  1
+execute "set colorcolumn=" . s:twcc
 " Auto format text.
 set formatoptions+=a
 " Use par for gq (gw-> vim internal).
