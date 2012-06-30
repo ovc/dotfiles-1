@@ -23,7 +23,6 @@
 .gconf/apps/gnucash/general/warnings/%gconf.xml
 .gconf/apps/pdfmod/
 .gconf/desktop/
-.gnucash/translog/
 .googlecl/access_tok_*
 .irssi/away.log
 .irssi/dcc/
