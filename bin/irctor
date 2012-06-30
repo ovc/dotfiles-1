@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+# Control irctor tmux session.
+session_name=irctor
+
+tmux start-server
+
+# Start session if it does not exists and set up my windows and panes.
+start() {
+	tmux has-session -t "$session_name" 2>/dev/null
+	if [ "$?" -ne "0" ]; then
+		# Should not bee needed if stop() is correctly implemented.
+		#clean_files
+		# TODO width and height solves irssi nicklist problem?
+		tmux new-session -d -x 287 -y 41 -s "$session_name" -n "mutt/newsb" mutt
+		#tmux send-keys -t "$session_name":0 mutt C-m
+		tmux split-window -t "$session_name":0 -h newsbeuter
+		tmux set-window-option -t "$session_name":0 -q monitor-activity off
+
+		tmux new-window -t "$session_name":1 -n "irssi" irssi
+		tmux set-window-option -t "$session_name":1 -q monitor-activity off
+		#tmux split-window -t "$session_name":1 -h -l 24 "cat ~/.irssi/nicklistfifo"
+		tmux split-window -t "$session_name":1 -h -l 4 "cat ~/.irssi/nicklistfifo"
+		tmux select-pane -t "$session_name":1.0
+
+		tmux new-window -t "$session_name":2 ncmpcpp
+		tmux set-window-option -t "$session_name":2 -q monitor-activity off
+
+		tmux new-window -t "$session_name":3 -n "rtorrent/oct" rtorrent
+		tmux split-window -t "$session_name":3 -h octave
+		tmux set-window-option -t "$session_name":3 -q monitor-activity off
+
+		tmux new-window -t "$session_name":4
+
+		# Let this be the last window so I can quicky toggle.
+		tmux select-window -t "$session_name":1
+
+		tmux select-window -t "$session_name":0
+		tmux select-pane -t "$session_name":0.0
+		echo "Session ${session_name} started."
+	else
+		echo "Session ${session_name} already exists."
+
+	fi
+}
+
+stop() {
+	echo "Stopping ${session_name}...  "
+
+	killall -w -s 2 rtorrent
+
+	tmux select-window -t "$session_name":3
+	tmux send-keys -t "$session_name"  "quit" C-m
+	sleep 0.5s
+	tmux kill-session -t "$session_name"
+}
+
+attach() {
+	echo "Attaching ${session_name}...  "
+	tmux -2 attach-session -t "$session_name"
+}
+
+# Delete files left by programs.
+clean_files() {
+	# Delete rtorrent.lock .
+	if [ -f ~/dl/.sessions/rtorrent.lock ]; then
+		rm -f ~/dl/.sessions/rtorrent.lock
+	fi
+
+	# Delete octave-core.
+	if [ -f ~/octave-core ]; then
+		rm -f ~/octave-core
+	fi
+}
+
+case $1 in
+	attach | "")
+		attach
+		;;
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	restart)
+		stop
+		start
+esac

@@ -10,13 +10,13 @@
 
 # Paths {
 	# Fins system binaries.
-	PATH=$PATH:/sbin:/usr/sbin
+	PATH="$PATH:/sbin:/usr/sbin"
 	# Include binaries in home directory.
-	PATH=$PATH:$HOME/bin/
+	PATH="$HOME/bin/:$PATH"
 
 	# Set common bin paths.
 	#PATH=${PATH}:$(find ~/bin -maxdepth 2 -type d | tr '\n' ':' | sed 's/:$//')
-	common_bin_dirs=(android-sdk-linux/tools android-sdk-linux/platform-tools arm-2010q1/bin mutt)
+	common_bin_dirs=(android-sdk-linux/tools android-sdk-linux/platform-tools arm-2010q1/bin mutt mkdirs)
 	for common_dir in "${common_bin_dirs[@]}"; do
 		if [ -d "$HOME/bin/$common_dir" ]; then
 			PATH="$PATH:$HOME/bin/$common_dir"
