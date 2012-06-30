@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="draw_vertical_lines" mtime="1324251394" type="bool" value="true"/>
-	<entry name="draw_horizontal_lines" mtime="1324251390" type="bool" value="true"/>
-	<entry name="alternate_color_by_transaction" mtime="1324251372" type="bool" value="false"/>
-	<entry name="use_theme_colors" mtime="1324251408" type="bool" value="false"/>
-</gconf>
