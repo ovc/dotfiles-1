@@ -153,6 +153,17 @@
 		PATH="$PATH:$HOME/src/Phone-Pipe/"
 	fi
 
+	# lastfm-mpd-cli
+	if [ -d "$HOME/src/lastfm-mpd-cli/" ]; then
+		PATH="$PATH:$HOME/src/lastfm-mpd-cli/"
+	fi
+
+	# svtget
+	if [ -d "$HOME/src/svtget/" ]; then
+		PATH="$PATH:$HOME/src/svtget/"
+	fi
+
+
 	# less {
 		# Syntax highlighting for less with src-highlight.
 		if [ -f "/usr/bin/src-hilite-lesspipe.sh" ]; then
