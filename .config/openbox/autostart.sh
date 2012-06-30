@@ -60,7 +60,7 @@ fi
 
 ## Bad Nautilus, minimises the impact of running Nautilus under
 ## an Openbox session by applying some gconf settings. Safe to delete.
-cb-bad-nautilus &
+#cb-bad-nautilus &
 
 ## The following command will set-up a keyboard map selection tool when
 ## running in a live session.
