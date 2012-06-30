@@ -1,0 +1,7 @@
+[info]
+name = Load folder artwork
+[Func0]
+fields = just nothing to do with this,
+func_name = load_images
+module = puddlestuff.functions
+arguments = folder.png;folder.jpg, "", False

@@ -1,0 +1,7 @@
+[info]
+name = Case Conversion
+[Func0]
+fields = just nothing to do with this,
+func_name = tag_dir
+module = puddlestuff.functions
+arguments = %artist%/%album%,

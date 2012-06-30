@@ -42,3 +42,9 @@
 !.mutt/colors/
 .ncmpcpp/artists/
 .ncmpcpp/error.log
+.newsbeuter/
+!.newsbeuter/colors/
+!.newsbeuter/config
+.pentadactyl/info/
+.skyped/
+!.skyped/skyped.conf

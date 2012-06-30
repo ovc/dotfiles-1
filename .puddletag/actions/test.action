@@ -1,0 +1,22 @@
+[info]
+name = test
+[Func0]
+fields = title,
+func_name = titleCase
+module = puddlestuff.functions
+arguments = Mixed Case, ""
+[Func1]
+fields = artist,
+func_name = titleCase
+module = puddlestuff.functions
+arguments = Mixed Case, ""
+[Func2]
+fields = title,
+func_name = replace
+module = puddlestuff.functions
+arguments = _, " ", False, False
+[Func3]
+fields = artist,
+func_name = replace
+module = puddlestuff.functions
+arguments = _, " ", False, False

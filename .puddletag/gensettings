@@ -1,0 +1,16 @@
+[&Load last folder at startup]
+value = True
+[Program to &play files with:]
+value = vlc
+[Show &gridlines]
+value = True
+[Su&bfolders]
+value = True
+[Show tooltips in file-view:]
+value = True
+[Automatically resize columns to contents]
+value = True
+[Show &row numbers]
+value = True
+[&Preserve file modification times]
+value = True

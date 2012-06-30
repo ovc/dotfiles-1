@@ -1,0 +1,24 @@
+["For &Mixed Case, after any of:"]
+values = "", "., !", ""
+[&Regular Expression]
+values = "", feat
+[Replace &matches with:]
+values = "", ""
+[&Replace]
+values = Å, Ö, ä, %20, " ", Dj, ö, å, feat, " å", _, _
+[w&ith:]
+values = _, Feat., o, a, DJ, Feat, ae, " ", " "
+[&Format string]
+values = "", ""
+["&Filenames to check (;-separated, shell wildcards [eg. *] allowed)"]
+values = "", folder.png, folder.png;folder.jpg, folder.png;folder.jpg
+[&Default description (can be pattern):]
+values = "", ""
+[&Pattern]
+values = "", %artist% - %titel%.mp3, %artist% - %album% - %titel%, %artist%_-_%titel%.mp3
+[filter_text]
+values = "", ""
+[&Pattern (can be relative path)]
+values = %artist%/%album%, "", %artist%/%album%
+[&Pattern (extension not required)]
+values = folder, folder%image_counter%, folder

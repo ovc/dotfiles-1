@@ -1,0 +1,10 @@
+[info]
+name = Masstagging Profile
+desc = ""
+file_pattern = %artist% - %album%/%track% - %title%
+fields = artist, title
+jfdi = False
+leave_existing = False
+album_bound = 70
+track_bound = 80
+numsources = 0

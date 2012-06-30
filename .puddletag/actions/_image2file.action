@@ -1,0 +1,7 @@
+[info]
+name = _image2file
+[Func0]
+fields = just nothing to do with this,
+func_name = save_artwork
+module = puddlestuff.functions
+arguments = folder,
