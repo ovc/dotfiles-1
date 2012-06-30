@@ -14,8 +14,10 @@
 .config/Trolltech.conf
 .config/akonadi/
 .config/gmpc/gmpc.log
+.config/keepassx/
 .config/gpodder/database.sqlite
 .config/gpodder/mygpo.queue.sqlite
+.config/oxygen-gtk/
 .config/htop/
 .config/libimobiledevice/
 .config/vlc/
