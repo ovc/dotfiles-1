@@ -148,6 +148,11 @@
 		source $HOME/.bashrc.load
 	fi
 
+	# Phon-pipe.
+	if [ -d "$HOME/src/Phone-Pipe/" ]; then
+		PATH="$PATH:$HOME/src/Phone-Pipe/"
+	fi
+
 	# less {
 		# Syntax highlighting for less with src-highlight.
 		if [ -f "/usr/bin/src-hilite-lesspipe.sh" ]; then
