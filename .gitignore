@@ -6,6 +6,7 @@
 !.kde4/share/config/khotkeysrc
 !.kde4/share/config/kxkbrc
 !.kde4/share/config/mpdknotifierrc
+!.kde4/share/config/kglobalshortcutsrc
 !.kde4/share/config/yakuakerc
 !.kde4/share/kde4/services/spotify.protocol
 *.sw?
