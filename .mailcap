@@ -1,0 +1,47 @@
+# Erik Westrup's mailcap describing how MIME types should be viewed.
+# test=test -n "$DISPLAY" is used to test if there is an X environment avaiable.
+
+# HTML
+text/html; lynx -dump -force_html -assume-charset=%{charset} %s; copiousoutput; nametemplate=%s.html
+#text/html; w3m -I %{charset} -T text/html -dump %s; copiousoutput
+text/enriched; lynx -dump -stdin %s; copiousoutput
+
+# Media
+image/*; mutt_bgrun display %s; ;  test=test -n "$DISPLAY"
+image/*; anytopnm %s | pamscale -xsize=80  | ppmtopgm | \
+	 pgmtopbm | pbmtoascii; copiousoutput
+audio/*; mutt_bgrun vlc %s; ; test=test -n "$DISPLAY"
+video/*; mutt_bgrun mplayer %s
+
+# Compressed
+application/x-gunzip; gunzip -c %s; copiousoutput
+application/x-gzip; gunzip -c %s; copiousoutput
+application/x-bunzip2; bunzip2 -c %s; copiousoutput
+application/x-bzip2; bunzip2 -c %s; copiousoutput
+application/x-tar-gz; gunzip -c %s | tar -tf -; copiousoutput
+
+
+# Documents
+application/x-dvi; mutt_bgrun xdvi %s ;  test=test -n "$DISPLAY"
+application/postscript; ps2ascii %s ; copiousoutput
+application/pdf; mutt_bgrun apvlv %s; test=test -n "$DISPLAY";
+#application/pdf; pdftohtml%s; copiousoutput
+
+# OpenDocument
+#application/ vnd.oasis.*; libreoffice %s; ; test=test -n "$DISPLAY"
+#application/vnd.openxmlformats-officedocument.*; \
+#		libreoffice %s; ; test=test -n "$DISPLAY"
+application/vnd.oasis.opendocument.*; odt2txt --width=80 --subst=all %s; copiousoutput
+#application/vnd.oasis.opendocument.text; odt2txt --width=80 --subst=all %s; copiousoutput
+#application/vnd.oasis.opendocument.spreadsheet; ods2txt --width=80 --subst=all %s; copiousoutput
+#application/vnd.oasis.opendocument.presentation; odp2txt --width=80 --subst=all %s; copiousoutput
+
+#  MS
+# application/msword; libreoffice %s; ; test=test -n "$DISPLAY"
+application/vnd.ms-*; mutt_bgrun libreoffice %s; ; test=test -n "$DISPLAY"
+application/msword; antiword -ftw 80 -i 1 %s; copiousoutput
+
+# Misc
+application/octet-stream; od -t x %s ; copiousoutput; description="Hex dump of data"
+application/x-uudecode; uudecode -o- %s; copiousoutput
+application/x-java-jnlp-file;/usr/bin/javaws "%s"

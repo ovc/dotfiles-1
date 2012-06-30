@@ -31,3 +31,14 @@
 .irssi/dcc/
 .irssi/nicklistfifo
 .kde4/
+.mpdscribble/lastfm.journal
+.mpdscribble/librefm.journal
+.mpdscribble/mpdscribble.log
+.mpdscribble/mpdscribble.pid
+.mplayer/
+!.mplayer/config
+!.mplayer/input.conf
+.mutt/
+!.mutt/colors/
+.ncmpcpp/artists/
+.ncmpcpp/error.log
