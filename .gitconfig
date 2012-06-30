@@ -40,5 +40,6 @@
 	st = status
 	stat = status
 	svn-status = diff --name-status remotes/git-svn
+	sub = submodule
 [credential]
 	helper = cache
