@@ -1,0 +1,31 @@
+[global_config]
+  title_transmit_bg_color = "#d30102"
+  focus = system
+[keybindings]
+[profiles]
+  [[default]]
+    use_system_font = False
+    background_darkness = 0.87
+    background_type = transparent
+    show_titlebar = False
+    font = Terminus Medium 10
+    scrollback_infinite = True
+  [[solarized-dark]]
+    use_system_font = False
+    font = Terminus Medium 11
+    background_type = transparent
+    show_titlebar = False
+  [[solarized-light]]
+    use_system_font = False
+    font = Terminus Medium 11
+    show_titlebar = False
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
