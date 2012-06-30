@@ -1,5 +1,5 @@
 #/usr/bin/env sh
-# Programs that should be started with each KDE session.
+# Programs that should be started with each Inglewood KDE session.
 
 # Start fetching mails.
 /usr/bin/env offlineimap &
