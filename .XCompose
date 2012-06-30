@@ -1,3 +1,5 @@
+# Custom XCompose mappings. These mappings will allow me to easily type Swedish letters while using ANSI US keyboard layout. See .Xmodmap for mapping the multi_key to the more reachable left windows key.
+
 #include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 #include "%S/en_US.UTF-8/Compose"
 # What file is included depends on current locale settings
