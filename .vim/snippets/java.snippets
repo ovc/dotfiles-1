@@ -1,0 +1,25 @@
+snippet class
+	public class ${1:`Filename('$1', 'name')`} {
+
+		public $1() {
+			${2}
+
+		}
+
+	}
+snippet mainc
+	public class ${1:`Filename('$1', 'name')`} {
+	
+		public static void main(String args[]) {
+			${2:new $1().run();}
+		}
+
+		public $1() {
+
+		}
+
+		public void run() {
+			${3}
+		}
+
+	}

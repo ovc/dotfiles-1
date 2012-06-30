@@ -48,3 +48,13 @@
 .pentadactyl/info/
 .skyped/
 !.skyped/skyped.conf
+.vifm/Trash/
+.vim/bundle/
+.vim/viminfo
+.vim/.netrwhist
+.vim/yankring_v2.txt
+.vim/undo/
+.vim/view/*
+.vim/fuf-data/*
+.vim/eclim/
+!.vim/bundle/vundle/
