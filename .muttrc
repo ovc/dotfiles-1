@@ -61,7 +61,7 @@
 # }}
 
 # Crypt {{
-	source ~/.muttrc.gpg						# Use GnuPG commands.
+	source ~/.muttrc.gpg						# Use GnuPG commands. Original is in /usr/share/doc/packages/mutt/samples/gpg.rc
 	set pgp_sign_as=AD610036					# Default ID to sign with.
 	set crypt_autosmime						# Use S/MIME format.
 	unset crypt_autosign						# Don't sign all outgoing messages.
@@ -222,4 +222,9 @@
 	subscribe @lists.debian.org
 	subscribe vim_announce@googlegroups.com
 	subscribe linux-kernel@vger.kernel.org
+# }}
+
+# Aliases {{
+	alias erikw $my_addr_default (Erik Westrup)
+	alias katarina westrup@telia.com (Katarina Westrup)
 # }}
