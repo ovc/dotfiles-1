@@ -44,8 +44,10 @@
 	unbind-key C					# Unbind to avoid confusion.
 	#bind-key ^O open-in-browser			# Open URL in browser. The 'O' is actually lowercase some how.
 	bind-key ^O open-in-browser-and-mark-read	# Open URL in browser. The 'O' is actually lowercase some how.
-	bind-key o open-in-browser-and-mark-read	# Open URL in browser and mark as read.
-	bind-key O open-in-browser			# Open URL in browser.
+	#bind-key o open-in-browser-and-mark-read	# Open URL in browser and mark as read.
+	bind-key O open-in-browser-and-mark-read	# Open URL in browser and mark as read.
+	bind-key o open-in-browser			# Open URL in browser.
+	#bind-key O open-in-browser			# Open URL in browser.
 	bind-key m mark-feed-read 			# Mark current feed as read.
 	bind-key M mark-all-feeds-read 			# Mark all feeds as read.
 	#bind-key A bookmark				# Bookmark current item.
