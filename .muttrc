@@ -152,7 +152,7 @@
 # }}
 
 # Macros {{
-	#Remember: GMail is special; d will delete message localy but GMail keeps a copy in All mail unitl you move it to Trash explicity.
+	# Remember: GMail is special; d will delete message localy but GMail keeps a copy in All mail unitl you move it to Trash explicity.
 	macro index,pager	a 	"<pipe-message>goobook add<return>"		"add the sender address to Google contacts"
 	macro index,pager	<f5>	"<shell-escape>~/bin/offlineimap.sh<enter>"	"run OfflineIMAP"
 	macro index,pager	D	"<save-message>+trash<enter>"			"move message to the trash (auto-delete after 30 days in Gmail)"
