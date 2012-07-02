@@ -10,7 +10,7 @@
 # Desktop Environment Specific {
 	# Defaults.
 	alias open='xdg-open'				# Open files.
-	alias afk='xscreensaver-command -activate'	# Start screensaver.
+	alias afk='xscreensaver-command -lock'		# Start screensaver.
 	#alias afk='xscreensaver-command -lock'
 
 	DESKTYPE='kde'		# Current DE in use.
