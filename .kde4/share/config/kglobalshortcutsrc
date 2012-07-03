@@ -7,6 +7,10 @@ Switch keyboard layout to Swedish=none,none,Switch keyboard layout to Swedish
 Switch to Next Keyboard Layout=none,Ctrl+Alt+K,Switch to Next Keyboard Layout
 _k_friendly_name=KDE Keyboard Layout Switcher
 
+[kactivitymanagerd]
+_k_friendly_name=KDE Activity Manager
+switch-to-activity-ad22b73f-3b16-4e0f-9602-a5a779df05a7=none,none,Switch to activity "Desktop"
+
 [kded]
 Decrease Screen Brightness=Monitor Brightness Down,Monitor Brightness Down,Decrease Screen Brightness
 Hibernate=Hibernate,Hibernate,Hibernate
@@ -273,6 +277,8 @@ Previous Activity=Meta+Shift+Tab,Meta+Shift+Tab,Previous Activity
 Show Dashboard=,Ctrl+F12,Show Dashboard
 Systemtray-Klipper-6=Ctrl+Alt+V,Ctrl+Alt+V,
 _k_friendly_name=Plasma Desktop Shell
+activate widget 10=none,none,Activate Notifications Widget
+activate widget 11=none,none,Activate Device Notifier Widget
 activate widget 2=Alt+F1,Alt+F1,Activate Application Launcher Widget
 manage activities=Meta+Q,Meta+Q,Activities...
 

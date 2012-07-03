@@ -1,6 +1,6 @@
 #!/bin/bash
 # Kill any existing (possibly stalled) instances of offlineimap and then run it again.
-max_wait_times=4
+max_wait_times=1
 pid=$(pgrep '^offlineimap$')
 wait_file=/tmp/offlineimap_wait.txt
 run_now=1
