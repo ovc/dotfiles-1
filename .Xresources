@@ -33,5 +33,3 @@ disallowedWindowOps: 20,21,SetXprop
 
 ! Source some solarized colors. The path starts from where this script is loaded from (which hopefully is $HOME).
 #include ".Xresources.solarized"
-
-XTerm*backarrowKeyIsErase: true
