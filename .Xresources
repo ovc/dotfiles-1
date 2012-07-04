@@ -12,7 +12,7 @@ XTerm*termName: xterm-256color
 XTerm*rightScrollBar: true
 ! Default window size.
 ! TODO The mouse menues does not work when changing the geometry :S
-!XTerm*geometry: 80x25
+!XTerm*geometry: 80x24
 ! Bell style
 XTerm*visualBell: off
 ! Color of the cursor.

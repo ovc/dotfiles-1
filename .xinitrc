@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# Initialization of xinit which is called by startx.
+# Initialization of xinit which is called by startx (and KDM apparently).
 
 # Skip specific settings when starting with startx and run the same commands as when starting with a displaymanager.
-[ -f "$HOME/.Xsession" ] && exec "$HOME.Xsession"
+[ -x "$HOME/.Xsession" ] && exec "$HOME/.Xsession"
