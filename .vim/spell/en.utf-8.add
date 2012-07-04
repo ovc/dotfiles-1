@@ -79,3 +79,5 @@ Maildir
 IMAP
 dotfiles
 powerline
+startx
+symlink

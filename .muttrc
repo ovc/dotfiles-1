@@ -134,6 +134,9 @@
 	alternative_order text/plain text/html *	# Prefered order of child MIME parts.
 	auto_view text/html application/msword		# Use mailcap to view these MIME-types.
 
+	# Use ISO 8601 in index.
+	set index_format="%4C %Z %{%Y-%m-%d} %-15.15L (%?l?%4l&%4c?) %s"
+
 	#color header brightblue black from:		# Color from row.
 	#color header brightred black subject:		# Color subject row.
 	#color hdrdefault brightwhite black

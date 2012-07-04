@@ -906,7 +906,7 @@ Type=SHORTCUT
 Uuid={add2d10a-871f-463d-b686-ab4c17166487}
 
 [Data_6]
-Comment=Send backspace character.
+Comment=Send backspace character. Seems to work everywhere except in xterm.
 Enabled=true
 Name=^H
 Type=SIMPLE_ACTION_DATA
