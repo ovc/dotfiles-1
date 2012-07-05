@@ -33,10 +33,11 @@
 # UI {
 	#include "~/.newsbeuter/colors/cyanism"		# Colorscheme to use.
 	include "~/.newsbeuter/colors/solarized-dark"	# Colorscheme to use.
-	#text-width 80					# Text with to use when rendering HTML.
+	text-width 80					# Text with to use when rendering HTML.
 	#html-renderer "w3m -dump -T text/html" 	# External HTML renderer.
 	#show-read-feeds no 				# Don't show empty feeds.
-	show-read-articles no 				# Only show unread articles.
+	datetime-format "%Y-%m-%d"			# Use ISO 8601.
+	show-read-articles yes 				# Only show unread articles.
 # }
 
 # Bindings {
