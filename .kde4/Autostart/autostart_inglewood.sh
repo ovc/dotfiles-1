@@ -39,4 +39,7 @@ $HOME/bin/mailleds_start.sh
 # Notify MPD song changes.
 /usr/bin/env mpdknotifier &
 
+# Start X keyboard shortcut daemon.
+/usr/bin/env xbindkeys
+
 exit 0

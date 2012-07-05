@@ -1,0 +1,148 @@
+# Erik Westrup's xbindkeys configuration.
+# Keysymbols are defined in /usr/include/X11/keysymdef.h (exclude the XL_ prefix).
+# List of modifier: Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock), Mod3 (CapsLock), Mod4 (Windows key), Mod5 (Scroll).
+
+
+# Modeline {
+#	 vi: foldmarker={,} foldmethod=marker foldlevel=0: tabstop=8: ft=rc
+# }
+
+# Programs {
+	# Start my default terminal
+	#"gnome-terminal"
+	"konsole"
+		Mod4 + t
+
+	# Start the always-working XTerm!
+	"xterm"
+		Mod4 + x
+
+	# Read some mails.
+	"xterm -e mutt"
+		Mod4 + m
+
+	# Control MPD.
+	"xterm -e ncmpcpp"
+		Mod4 + n
+
+	# Lock screen. Uses my alias afk.
+	#"xscreensaver-command -lock"
+	"afk"
+	Control + Mod1 + l
+
+# }
+
+# Volume {
+	# Amixer {
+		## Decrease volume.
+		#"amixer set Master playback 3.2dB-"
+		#	Control + F10
+
+		## Increase volume.
+		#"amixer set Master playback 3.2dB+"
+		#	Control + F11
+
+		## Toggle mute.
+		#"amixer set Master toggle"
+		#	Control + F12
+	# }
+
+	# Kmix {
+		# Decrease volume.
+		#"qdbus org.kde.kmix  /Mixers/0/Master_0 org.kde.KMix.Control.decreaseVolume"
+		"qdbus org.kde.kmix /kmix/KMixWindow/actions/decrease_volume org.qtproject.Qt.QAction.trigger"
+			Control + F10
+
+		# Increase volume.
+		#"qdbus org.kde.kmix  /Mixers/0/Master_0 org.kde.KMix.Control.increaseVolume"
+		"qdbus org.kde.kmix /kmix/KMixWindow/actions/increase_volume org.qtproject.Qt.QAction.trigger"
+			Control + F11
+
+		# Toggle mute.
+		#"qdbus org.kde.kmix  /Mixers/0/Master_0 org.kde.KMix.Control.toggleMute"
+		"qdbus org.kde.kmix /kmix/KMixWindow/actions/mute org.qtproject.Qt.QAction.trigger"
+			Control + F12
+	# }
+# }
+
+# MPD {
+
+# Control {
+		# Play previous track.
+		"mpc prev"
+			Control + F6
+
+		# Toggle play/pause.
+		"mpc toggle"
+			Control + F7
+
+		# Play next track.
+		"mpc next"
+			Control + F8
+
+		# Seek backwards.
+		"mpc seek -1"
+			Control + Shift + F6
+
+		# Stop playing.
+		"mpc stop"
+			Control + Shift + F7
+
+		# Seek forwards
+		"mpc seek +1"
+			Control + Shift + F8
+
+		# Lower the volume.
+		"mpc volume -1"
+			Control + Shift + F10
+
+		# Raise the volume.
+		"mpc volume +1"
+			Control + Shift + F11
+# }
+
+# Rating {
+		# Put the current song in playlist "rated-x"
+
+		"mpdrate 1"
+			Shift + F1
+
+		"mpdrate 2"
+			Shift + F2
+
+		"mpdrate 3"
+			Shift + F3
+
+		"mpdrate 4"
+			Shift + F4
+
+		"mpdrate 5"
+			Shift + F5
+
+		# Love current track in Last.fm.
+		"$HOME/bin/lastfm-mpd-cli/lastfm-mpd-cli.py  love"
+			Shift + F6
+# }
+
+# Show now playing in KDE.
+"$HOME/bin/mpd_kde_notify.sh"
+	Shift + F12
+# }
+
+# Spotify (native) {
+	# Play previous track.
+	"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+		Control + Alt + Shift + F6
+
+	# Toggle play/pause.
+	"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+		Control + Alt + Shift + F7
+
+	# Play next track.
+	"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+		Control + Alt + Shift + F8
+
+	# Stop playing.
+	"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+		Control + Alt + Shift + F9
+# }
