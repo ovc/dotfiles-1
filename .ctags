@@ -1,7 +1,6 @@
 --recurse
 --sort=foldcase
 --tag-relative=yes
---totals=yes
 
 --fields=+iaSnm
 --extra=+qf
