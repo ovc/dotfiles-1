@@ -22,22 +22,8 @@ display=Display,Display,Switch Display
 
 [khotkeys]
 _k_friendly_name=khotkeys
-{0c1a09b1-e6e0-41f0-be90-398570a37de1}=Shift+F12,none,Notify Song
-{16043d83-4ec0-4d73-bc43-4d19bf37c1af}=Shift+F3,none,Rate 3
-{35f4700e-6d63-4d72-b4f3-0701dd5542b7}=Ctrl+F7,none,Play/Paus
-{4390eada-2a9e-4c78-950f-993bb934cf33}=Shift+F1,none,Rate 1
-{43cd5c37-939b-46b0-a636-cceff7e10d3f}=Shift+F2,none,Rate 2
-{46af7bb7-6140-4211-a0ca-e3095a2e9e52}=Shift+F6,none,Love Last.fm
 {4fb681eb-9ba5-4000-80c2-6db4a9b405eb}=Print,none,PrintScreen
-{57edace7-8c74-4b79-b0f0-a7c63212f672}=Ctrl+F6,none,Previous
 {618295e8-08b5-4d33-a84a-eaa71d4f493a}=Ctrl+H,none,^H
-{7af71c38-0e81-4233-b00d-5f5be3c7a080}=Ctrl+Shift+F8,none,Seek forwards
-{93acc5b1-919f-49cb-aaee-1cedb6393770}=Ctrl+F8,none,Next
-{add2d10a-871f-463d-b686-ab4c17166487}=Shift+F5,none,Rate 5
-{c2fcb68a-8e35-4b5c-aaf5-e2869767ef4f}=Shift+F4,none,Rate 4
-{ca8d50fa-ce1b-4124-88a7-c916652ca5bf}=Ctrl+Shift+F11,none,Volume up
-{d1ffe257-91ec-496f-a0c6-7d201625ffdd}=Ctrl+Shift+F6,none,Seek backwards
-{d76f244c-1abf-412e-8786-69ae9bceab5c}=Ctrl+Shift+F10,none,Volume down
 
 [klipper]
 _k_friendly_name=Klipper
@@ -275,7 +261,7 @@ _k_friendly_name=KWin
 Next Activity=none,Meta+Tab,Next Activity
 Previous Activity=none,Meta+Shift+Tab,Previous Activity
 Show Dashboard=,Ctrl+F12,Show Dashboard
-Systemtray-Klipper-6=none,Ctrl+Alt+V,
+Systemtray-Klipper-6=Ctrl+Alt+V,Ctrl+Alt+V,
 _k_friendly_name=Plasma Desktop Shell
 activate widget 10=none,none,Activate Notifications Widget
 activate widget 11=none,none,Activate Device Notifier Widget
