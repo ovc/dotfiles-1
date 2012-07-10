@@ -120,6 +120,7 @@
 	set shortmess=filmnrxtToOI    			" Abbreviate messages.
 	set nrformats=alpha,octal,hex			" What to increment/decrement with ^A and ^X.
 	set hidden					" Work with hidden buffers more easily.
+	set sessionoptions-=options			" Don't store global and local variables when saving sessions.
 	set undofile					" Save undo to file in undodir.
 	set undolevels=2048				" Levels of undo to keep in memory.history.
 	"set nomodeline					" Turn off possibly malicious Ex command execution.

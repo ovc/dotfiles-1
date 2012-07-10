@@ -27,6 +27,9 @@ XTerm*cursorOnTime: 1200
 ! Use a fancier font.
 XTerm*faceName: terminus:normal:pixelsize=12
 
+! Alternative resouce. Load with $ xterm -name XTermBig.
+XTermBig*geometry: 80x24
+
 !! Misc
 ! For set-clipboard in tmux.
 disallowedWindowOps: 20,21,SetXprop

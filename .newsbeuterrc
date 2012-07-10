@@ -37,7 +37,7 @@
 	#html-renderer "w3m -dump -T text/html" 	# External HTML renderer.
 	#show-read-feeds no 				# Don't show empty feeds.
 	datetime-format "%Y-%m-%d"			# Use ISO 8601.
-	show-read-articles yes 				# Only show unread articles.
+	show-read-articles no 				# Only show unread articles.
 # }
 
 # Bindings {
