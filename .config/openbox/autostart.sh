@@ -60,3 +60,6 @@ syndaemon -d -i 1
 
 # Run offlineimap forever.
 offlineimap &
+
+# Keyboard shortcuts
+xbindkeys

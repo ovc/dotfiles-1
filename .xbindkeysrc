@@ -11,6 +11,7 @@
 # Programs {
 	# Start my default terminal
 	#"gnome-terminal"
+	#"terminator"
 	"konsole"
 		Mod4 + t
 

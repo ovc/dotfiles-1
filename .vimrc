@@ -145,6 +145,8 @@
 		set background=dark
 	endif
 	if s:use_plugins
+		"let g:solarized_termtrans=1			" Fix bacground problem in gnome-terminal.
+		"let g:solarized_termcolors=16 			" Colors to use in solarized.
 		colorscheme solarized				" Use the solarized colorscheme.
 	else
 		colorscheme default				" Use default color scheme.
@@ -272,8 +274,8 @@
 		nnoremap <silent> <C-k> gk						" Up one visual line (wrapped).
 		"nmap <silent> <Left> gT						" Change tab to the left.
 		"nmap <silent> <Right> gt						" Change tab to the right.
-		nmap <silent> <C-p> gT							" Change tab to the left.
-		nmap <silent> <C-n> gt							" Change tab to the right.
+		"nmap <silent> <C-p> gT							" Change tab to the left.
+		"nmap <silent> <C-n> gt							" Change tab to the right.
 	" }
 
 	" Toggles {
@@ -364,6 +366,8 @@
 		cnoremap WM u \| silent !make >/dev/null
 		" Prevent saving buffer to a file '\'.
 		cmap w\ echoerr "Using a Swedish keyboard?"<CR>
+		" See buffer and file diff.
+		cmap Wdiff w !diff % -<CR>
 	" }
 " }
 
