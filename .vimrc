@@ -203,11 +203,11 @@
 		"endif
 		"set statusline+=%=     					" Left/right-aligned separator.
 		""set statusline+=[\%b\ 0x%B]\  				" Value of byte under cursor.
-		""set statusline+=[0x%O]\ 				" Byte offset from start.
+		""set statusline+=[0x%O]\ 					" Byte offset from start.
 		"set statusline+=%l/%L, 					" Cursor line/total lines.
-		"set statusline+=%c    					" Cursor column.
+		"set statusline+=%c    						" Cursor column.
 		"set statusline+=\ %P   					" Percent through file.
-		"set statusline+=\ 0x%B					" Character valur under cursor.
+		"set statusline+=\ 0x%B						" Character valur under cursor.
 	" }
 " }
 

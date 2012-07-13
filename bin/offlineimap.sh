@@ -27,7 +27,7 @@ else
 fi
 
 if (($run_now)); then
-	offlineimap -o -u quiet &>> ~/.log/offlineimap &
+	offlineimap -u quiet &>> ~/.log/offlineimap &
 	pid=$(pgrep '^offlineimap$')
 	echo "Started offlineimap ($pid)."
 fi
