@@ -467,7 +467,7 @@ if s:use_plugins
 		" Remove all trailing spaces and return to pos.
 		nmap <silent> <Leader>S :call StripTrailingWhitespaces()<CR>
 		" Remove all trailing spaces and return to pos and write.
-		cnoremap wS call StripTrailingWhitespaces() \| w
+		cnoremap Ws call StripTrailingWhitespaces() \| w
 	" }
 
 	" Syntastic {

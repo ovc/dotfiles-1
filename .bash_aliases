@@ -122,7 +122,7 @@
 
 # Short hands {
 	alias cls='clear'					# Old DOS habit...
-	#alias vi='vim'						# Be IMproved.
+	alias vi='vim'						# Be IMproved.
 	alias vidiff='vimdiff'
 	#alias t='task'
 	#alias c='gcalcli'
