@@ -58,9 +58,7 @@
 		#alias vdir='ls --color=auto --format=long'
 
 		# Highligt matches when output is on the terminal.
-		alias grep='grep --color=auto'
-		alias fgrep='fgrep --color=auto'
-		alias egrep='egrep --color=auto'
+		#export GREP_OPTIONS='--color=always'
 
 		# Force color e.g. to use when piping to less.
 		alias grepc='grep --color=always'
