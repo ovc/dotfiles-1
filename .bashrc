@@ -73,8 +73,8 @@
 	fi
 
 	# Solarized ls colors.
-	if [ -f "$HOME/.dircolors" ]; then
-		eval `dircolors ~/.dircolors`
+	if [ -f "$HOME/.dircolorsrc" ]; then
+		eval `dircolors $HOME/.dircolorsrc`
 	fi
 
 	# Check the window size after each command and, if necessary, update the values of LINES and COLUMNS.

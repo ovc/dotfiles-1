@@ -106,6 +106,8 @@
 	cmap -builtin <C-N> <Down>
 	" Unhighlight search results.
 	map -builtin <C-_h> :nohlfind<CR>
+	" I need no help.
+	map <F1> <NOP>
 
 	" Mappings like Vimperator {{
 		imap <C-v> <Pass>
