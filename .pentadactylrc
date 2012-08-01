@@ -108,6 +108,8 @@
 	map -builtin <C-_h> :nohlfind<CR>
 	" I need no help.
 	map <F1> <NOP>
+	" Open Tab Groups.
+	map E <C-S-e>
 
 	" Mappings like Vimperator {{
 		imap <C-v> <Pass>

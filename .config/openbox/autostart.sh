@@ -56,7 +56,7 @@ fi
 #(sleep 8 && blueproximity) & # not needed
 
 # Disable touchpad when typing.
-syndaemon -d -i 1
+syndaemon -K -d -i 1
 
 # Run offlineimap forever.
 offlineimap &

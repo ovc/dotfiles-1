@@ -51,6 +51,7 @@
 	if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
 		eval "`dircolors -b`"
 		# Colors when output is terminal.
+		# -F = extra character describing the entity.
 		alias ls='ls --color=auto --time-style=long-iso'
 		# Force colors to all stdouts.
 		alias lsc='ls --color=always --time-style=long-iso'
