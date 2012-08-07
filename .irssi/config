@@ -411,7 +411,7 @@ settings = {
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
     bell_beeps = "yes";
     hilight_act_color = "%G";
-    activity_hide_targets = "= ##linux #vim #arch &bitlbee -psyBNC";
+    activity_hide_targets = "= ##linux #vim #archlinux &bitlbee -psyBNC";
     #theme = "colors/default";
     #hilight_color = "%B";
     theme = "colors/solarized-universal";
@@ -475,7 +475,7 @@ ignores = (
   },
   {
     level = "NOTICES SNOTES";
-    channels = ( "##linux", "vim", "#arch" );
+    channels = ( "##linux", "vim", "#archlinux" );
     network = "freenode";
   }
 );

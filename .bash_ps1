@@ -80,9 +80,25 @@ parse_svn_branch() {
 
 	# Show only branch.
 	local branch=$(echo $svn_url | sed -e 's#^'"${svn_root}"'##g' | egrep -o '(tags|branches)/[^/]+|trunk' | egrep -o '[^/]+$')
-	echo -e " [${C_FG_YELLOW}${branch}${C_RESET}]"
+	echo -e " ${C_FG_YELLOW}[${branch}]${C_RESET}"
 }
 PS1="$PS1"'$(parse_svn_branch)'
+
+parse_hg_branch() {
+	type hg 2>&1 > /dev/null
+	if [ "$?" -ne 0 ]; then
+		return
+	fi
+
+	summary=$(hg summary 2>/dev/null)
+	if [ "$?" -ne 0 ]; then
+		return
+	fi
+
+	local branch=$(echo "$summary" | grep 'branch:' | cut -d ' ' -f2)
+	echo -e " ${C_FG_BLUE}[${branch}]${C_RESET}"
+}
+PS1="$PS1"'$(parse_hg_branch)'
 
 # End marker.
 PS1="${PS1}> "

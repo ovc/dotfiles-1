@@ -73,6 +73,7 @@
 	set crypt_verify_sig						# Try to verify signatures.
 	#set pgp_mime_signature_filename="signature.asc"		# Name signature file. Requires Vineet Kumar's patch.
 	#set pgp_mime_signature_description="Digital signature"		# Signature description. Requires Vineet Kumar's patch.
+	set pgp_timeout=600						# Number of seconds the an enetered passphrase will be remembered.
 # }}
 
 # General {{
@@ -225,6 +226,7 @@
 	subscribe @lists.debian.org
 	subscribe vim_announce@googlegroups.com
 	subscribe linux-kernel@vger.kernel.org
+	subscribe arch-announce@archlinux.org
 # }}
 
 # Aliases {{
