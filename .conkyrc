@@ -56,10 +56,10 @@ $font${top_mem name 3}${alignr}${top mem 3} %
 $font${top_mem name 4}${alignr}${top mem 4} %
 $font${top_mem name 5}${alignr}${top mem 5} %
 $font${top_mem name 5}${alignr}${top mem 6} %
-$font${top_mem name 5}${alignr}${top mem 7} %
-$font${top_mem name 5}${alignr}${top mem 8} %
-$font${top_mem name 5}${alignr}${top mem 9} %
-$font${top_mem name 5}${alignr}${top mem 10} %
+#$font${top_mem name 5}${alignr}${top mem 7} %
+#$font${top_mem name 5}${alignr}${top mem 8} %
+#$font${top_mem name 5}${alignr}${top mem 9} %
+#$font${top_mem name 5}${alignr}${top mem 10} %
 
 ${font sans-serif:bold:size=8}NETWORK ${hr 2}
 ${font sans-serif:normal:size=8}wlan0 IP address: $alignr ${addr wlan0}
