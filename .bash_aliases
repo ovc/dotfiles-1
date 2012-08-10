@@ -109,7 +109,7 @@
 # }
 
 # Program enhancements {
-	alias emacs='emacs -nw'					# Emacs belongs to the terminal.
+	alias emacs='emacs --no-window-system'			# Emacs belongs to the terminal.
 	alias mvim='mvim -v'					# MacVim.
 	alias gdb='gdb -q'					# Suppress legal info.
 	alias cgdb='cgdb -q'					# Suppress legal info.

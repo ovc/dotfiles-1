@@ -1,4 +1,4 @@
-;; Erik Westrup's Emacs configuration.
+;; Erik Westrup's GNU Emacs configuration.
 
 ;;; Environment
 (add-to-list 'load-path "~/.emacs.d")		 		;; Add folder to load path.
@@ -16,6 +16,7 @@
 (setq inhibit-startup-message t)		;; Hide welcome screen.
 (setq scroll-step 1)				;; Scroll one line at a time, not half a page.
 (setq flyspell-issue-welcome-flag nil)		;; Don't show welcome flyspell message.
+(setq vc-follow-symlinks 't)			;; Don't ask about following symlinks, just do it!
 (put 'downcase-region 'disabled nil)		;; Enable lower case conversion of words.
 (put 'upcase-region 'disabled nil)		;; Enable upper case conversion of words.
 (fset 'yes-or-no-p 'y-or-n-p)			;; Changes all yes/no questions to y/n type.
@@ -72,7 +73,7 @@
 (add-hook 'c-mode-common-hook
                (lambda ()
                 (font-lock-add-keywords nil
-                 '(("\\<\\(FIXME\\|TODO\\|BUG\\):?" 1 font-lock-warning-face t)))))
+                 '(("\\<\\(TODO\\|FIXME\\|NOTE\\|BUG\\|XXX\\):?" 1 font-lock-warning-face t)))))
 
 ;;; Solarized.
 ;; Theme path. Emacs 24 install assumed.
