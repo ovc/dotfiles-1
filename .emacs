@@ -10,12 +10,17 @@
 ;;; Settings
 (menu-bar-mode -1) 				;; Disable the menu bar.
 (global-hl-line-mode 1) 			;; Highlight cursor line.
+(global-font-lock-mode 1)			;; Syntax highlighting by default.
 (auto-compression-mode 1)			;; Allow editing of compressed files.
+(display-time)					;; Displays the time in the status bar.
+;(setq make-backup-files nil)			;; Don't make ~-backup files.
 (setq mumamo-background-colors nil) 		;; Disable chunk coloring.
 (setq tramp-default-method "ssh")		;; Use ssh by default for editing remote files.
 (setq inhibit-startup-message t)		;; Hide welcome screen.
+(setq scroll-step 1)				;; Scroll one line at a time, not half a page.
 (put 'downcase-region 'disabled nil)		;; Enable lower case conversion of words.
 (put 'upcase-region 'disabled nil)		;; Enable upper case conversion of words.
+(fset 'yes-or-no-p 'y-or-n-p)			;; Changes all yes/no questions to y/n type.
 
 ;; Show line numbers.
 (require 'linum)
