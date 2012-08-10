@@ -76,7 +76,7 @@
 
 " Environment {
 	if v:version < 703
-		echoerr 'rc written for Vim v.703, this is' v:version
+		echoerr 'WARNING: This vimrc is written for Vim >= v.703; this is' v:version
 	endif
 	let s:use_plugins=1				" Enable plugin references in this rc.
 	set nocompatible				" Be IMproved. Should be first.

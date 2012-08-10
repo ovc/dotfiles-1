@@ -5,8 +5,10 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")	;; Theme path.
 
 ;;; Keyboard shortcuts
-(global-set-key [f7] 'global-hl-line-mode)	;; Toggle line highlight.
-(global-set-key "\C-h" 'backward-delete-char)	;; ^H as expected.
+(global-set-key [f7] 'global-hl-line-)			;; Toggle line highlight.
+(global-set-key "\C-h" 'backward-delete-char)		;; ^H as expected.
+(global-set-key (kbd "RET") 'newline-and-indent)	;; Indent to next line on return. Same as C-j.
+
 
 ;;; Settings
 (global-font-lock-mode 1)			;; Syntax highlighting by default.
@@ -20,8 +22,6 @@
 (put 'downcase-region 'disabled nil)		;; Enable lower case conversion of words.
 (put 'upcase-region 'disabled nil)		;; Enable upper case conversion of words.
 (fset 'yes-or-no-p 'y-or-n-p)			;; Changes all yes/no questions to y/n type.
-;; Indent to next line on return. Same as C-j.
-(global-set-key (kbd "RET") 'newline-and-indent)
 
 ;; Tabs.
 (setq tab-width 4)					;; Tab width.

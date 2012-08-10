@@ -32,6 +32,9 @@
 	"afk"
 	Control + Mod1 + l
 
+	# Close/open CD/DVD-reader.
+	"eject"
+		Mod4 + e
 # }
 
 # Volume {
