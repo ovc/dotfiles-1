@@ -5,7 +5,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")	;; Theme path.
 
 ;;; Keyboard shortcuts
-(global-set-key [f7] 'global-hl-line-mode)	;; Toggle line higlight.
+(global-set-key [f7] 'global-hl-line-mode)	;; Toggle line highlight.
 (global-set-key "\C-h" 'backward-delete-char)	;; ^H as expected.
 
 ;;; Settings
@@ -19,13 +19,19 @@
 (put 'downcase-region 'disabled nil)		;; Enable lower case conversion of words.
 (put 'upcase-region 'disabled nil)		;; Enable upper case conversion of words.
 (fset 'yes-or-no-p 'y-or-n-p)			;; Changes all yes/no questions to y/n type.
+;; Indent to next line on return. Same as C-j.
+(global-set-key (kbd "RET") 'newline-and-indent)
+
+;; Tabs.
+(setq tab-width 4)					;; Tab width.
+(setq c-backspace-function 'backward-delete-char)	;; Delete tabs -- don't convert them to spaces!
 
 ;; Linux kernel coding style.
 (defun linux-c-mode ()
   "C mode with adjusted defaults for use with the Linux kernel."
   (interactive)
   (c-mode)
-  (c-set-style "K&R")
+  (b-set-style "K&R")
   (setq c-basic-offset 8))
 
 ;; Set up UTF-8.
@@ -54,7 +60,7 @@
 (menu-bar-mode -1) 				;; Disable the menu bar.
 (global-hl-line-mode 1) 			;; Highlight cursor line.
 (display-time)					;; Displays the time in the status bar.
-;; Font to use.
+;; GUI font to use.
 (setq default-frame-alist '((font . "terminus")))
 
 ;; Line numbers.
@@ -79,5 +85,3 @@
 ;; Column marker.
 (require 'column-marker)
 (add-hook 'c-mode-hook (lambda () (interactive) (column-marker-1 81))) ;; Mark the 81st column in c-mode.
-
-
