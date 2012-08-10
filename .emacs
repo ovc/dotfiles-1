@@ -54,6 +54,8 @@
 (menu-bar-mode -1) 				;; Disable the menu bar.
 (global-hl-line-mode 1) 			;; Highlight cursor line.
 (display-time)					;; Displays the time in the status bar.
+;; Font to use.
+(setq default-frame-alist '((font . "terminus")))
 
 ;; Line numbers.
 (require 'linum)
@@ -77,3 +79,5 @@
 ;; Column marker.
 (require 'column-marker)
 (add-hook 'c-mode-hook (lambda () (interactive) (column-marker-1 81))) ;; Mark the 81st column in c-mode.
+
+
