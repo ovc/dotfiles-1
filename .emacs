@@ -1,32 +1,24 @@
 ;; Erik Westrup's Emacs configuration.
 
 ;;; Environment
-(add-to-list 'load-path "~/.emacs.d/")		 ;; Add folder to load path.
+(add-to-list 'load-path "~/.emacs.d")		 		;; Add folder to load path.
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")	;; Theme path.
 
-;;; Keyboard shortcuts.
+;;; Keyboard shortcuts
 (global-set-key [f7] 'global-hl-line-mode)	;; Toggle line higlight.
 (global-set-key "\C-h" 'backward-delete-char)	;; ^H as expected.
 
 ;;; Settings
-(menu-bar-mode -1) 				;; Disable the menu bar.
-(global-hl-line-mode 1) 			;; Highlight cursor line.
 (global-font-lock-mode 1)			;; Syntax highlighting by default.
 (auto-compression-mode 1)			;; Allow editing of compressed files.
-(display-time)					;; Displays the time in the status bar.
 ;(setq make-backup-files nil)			;; Don't make ~-backup files.
-(setq mumamo-background-colors nil) 		;; Disable chunk coloring.
 (setq tramp-default-method "ssh")		;; Use ssh by default for editing remote files.
 (setq inhibit-startup-message t)		;; Hide welcome screen.
 (setq scroll-step 1)				;; Scroll one line at a time, not half a page.
+(setq flyspell-issue-welcome-flag nil)		;; Don't show welcome flyspell message.
 (put 'downcase-region 'disabled nil)		;; Enable lower case conversion of words.
 (put 'upcase-region 'disabled nil)		;; Enable upper case conversion of words.
 (fset 'yes-or-no-p 'y-or-n-p)			;; Changes all yes/no questions to y/n type.
-
-;; Show line numbers.
-(require 'linum)
-(global-linum-mode 1)
-(setq linum-format "%4d ")
-(setq flyspell-issue-welcome-flag nil)
 
 ;; Linux kernel coding style.
 (defun linux-c-mode ()
@@ -58,13 +50,30 @@
   )
 
 
+;;; UI
+(menu-bar-mode -1) 				;; Disable the menu bar.
+(global-hl-line-mode 1) 			;; Highlight cursor line.
+(display-time)					;; Displays the time in the status bar.
+
+;; Line numbers.
+(require 'linum)
+(global-linum-mode 1)				;; Always show line numbers.
+(setq linum-format "%4d ")			;; Display format for line numbers.
+
 ;; Highligt programming comment tags.
 (add-hook 'c-mode-common-hook
                (lambda ()
                 (font-lock-add-keywords nil
                  '(("\\<\\(FIXME\\|TODO\\|BUG\\):?" 1 font-lock-warning-face t)))))
 
-;;; Plugins.
+;;; Solarized.
+;; Theme path. Emacs 24 install assumed.
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarize/")
+(load-theme 'solarized-dark t)			;; Load dark theme.
+;(load-theme 'solarized-light t)		;; Load light theme.
+;(setq solarized-termcolors 256)		;; Use degraded version using colors close to solarized.
+
+;;; Plugins
 ;; Column marker.
 (require 'column-marker)
 (add-hook 'c-mode-hook (lambda () (interactive) (column-marker-1 81))) ;; Mark the 81st column in c-mode.

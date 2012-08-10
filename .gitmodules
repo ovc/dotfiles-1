@@ -5,3 +5,6 @@
 [submodule ".mutt/colors/mutt-colors-solarized"]
 	path = .mutt/colors/mutt-colors-solarized
 	url = git@github.com:erikw/mutt-colors-solarized.git
+[submodule ".emacs.d/themes/emacs-color-theme-solarize"]
+	path = .emacs.d/themes/emacs-color-theme-solarize
+	url = git://github.com/sellout/emacs-color-theme-solarized.git
