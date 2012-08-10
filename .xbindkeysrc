@@ -33,7 +33,7 @@
 	Control + Mod1 + l
 
 	# Close/open CD/DVD-reader.
-	"eject"
+	"eject -T"
 		Mod4 + e
 # }
 
