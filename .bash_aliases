@@ -48,13 +48,13 @@
 # }
 
 # Color support {
+	ls_options="--time-style=long-iso -F"
 	if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
 		eval "`dircolors -b`"
 		# Colors when output is terminal.
-		# -F = extra character describing the entity.
-		alias ls='ls --color=auto --time-style=long-iso'
+		alias ls="ls ${ls_options} --color=auto"
 		# Force colors to all stdouts.
-		alias lsc='ls --color=always --time-style=long-iso'
+		alias ls="ls ${ls_options} --color=always"
 		#alias dir='ls --color=auto --format=vertical'
 		#alias vdir='ls --color=auto --format=long'
 
@@ -74,7 +74,7 @@
 			alias diff='colordiff'
 		fi
 	else
-		alias ls='ls --time-style=long-iso'	# Use the one and only date and time format standard.
+		alias ls="ls ${ls_options}"
 	fi
 # }
 

@@ -56,6 +56,12 @@
      (format "%s -f %s/TAGS -e -R %s" path-to-ctags dir-name (directory-file-name dir-name)))
   )
 
+;; Put autosave files (i.e. #foo#) and backup files (i.e. foo~) in ~/.emacs.d/.
+(custom-set-variables
+   '(auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
+     '(backup-directory-alist '((".*" . "~/.emacs.d/backups/"))))
+;; create the autosave dir if necessary, since emacs won't.
+(make-directory "~/.emacs.d/autosaves/" t)
 
 ;;; UI
 (menu-bar-mode -1) 				;; Disable the menu bar.
@@ -86,3 +92,5 @@
 ;; Column marker.
 (require 'column-marker)
 (add-hook 'c-mode-hook (lambda () (interactive) (column-marker-1 81))) ;; Mark the 81st column in c-mode.
+
+(require 'minimap)	;; Graphical minimap over the buffer.
