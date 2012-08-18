@@ -43,6 +43,7 @@
 		Bundle 'salsifis/vim-transpose'
 		Bundle 'scrooloose/nerdcommenter'
 		Bundle 'scrooloose/nerdtree'
+		Bundle 'scrooloose/syntastic'
 		Bundle 'sjl/gundo.vim'
 		Bundle 'suan/vim-instant-markdown'
 		Bundle 'tomtom/tlib_vim'
@@ -231,6 +232,15 @@
 " }
 
 " Commands {
+	" Sort words on the current line.
+	command! Sortline call setline(line('.'),join(sort(split(getline('.'))), ' '))
+	" Write with extended privileges.
+	command! Wsudo silent w !sudo tee % > /dev/null
+	" Update and run make.
+	command! Wmake update | silent !make >/dev/null
+	" See buffer and file diff.
+	command! Wdiff w !diff % -<CR>
+
 	command! -nargs=* Wrap set wrap linebreak nolist	" Set softwrap correctly.
 	autocmd BufWinLeave * silent! mkview			" Save fold views.
 	autocmd BufWinEnter * silent! loadview			" Load fold views on start.
@@ -360,14 +370,8 @@
 	" }
 
 	" Cmaps {
-		" Write with extended privileges.
-		cmap W! silent w !sudo tee % > /dev/null
-		" Update and run make.
-		cnoremap WM u \| silent !make >/dev/null
 		" Prevent saving buffer to a file '\'.
 		cmap w\ echoerr "Using a Swedish keyboard?"<CR>
-		" See buffer and file diff.
-		cmap Wdiff w !diff % -<CR>
 	" }
 " }
 
@@ -467,7 +471,7 @@ if s:use_plugins
 		" Remove all trailing spaces and return to pos.
 		nmap <silent> <Leader>S :call StripTrailingWhitespaces()<CR>
 		" Remove all trailing spaces and return to pos and write.
-		cnoremap Ws call StripTrailingWhitespaces() \| w
+		command Ws call StripTrailingWhitespaces() | update
 	" }
 
 	" Syntastic {
