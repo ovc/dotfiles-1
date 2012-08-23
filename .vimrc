@@ -27,6 +27,7 @@
 		Bundle 'Rip-Rip/clang_complete'
 		Bundle 'Rykka/lastbuf.vim'
 		Bundle 'altercation/vim-colors-solarized'
+		Bundle 'bkad/CamelCaseMotion'
 		Bundle 'flazz/vim-colorschemes'
 		Bundle 'garbas/vim-snipmate'
 		Bundle 'godlygeek/tabular'

@@ -95,7 +95,8 @@
 	alias keylist='ssh-add -l'
 # }
 
-# Power management {
+# Sudo {
+	alias loadkeys='sudo loadkeys'
 	alias halt='sudo halt'
 	alias poweroff='sudo poweroff'
 	alias shutdown='sudo shutdown'

@@ -9,7 +9,7 @@ set continuos = no	" Continious documents.
 set autoscrolldoc = no	" Dont wrap end of document to beginning.
 set wrapscan = no	" Wrap text searches.
 
-" Mappings. (comments own a line its own due to parser bug)
+" Mappings. (comments own a line of its own due to parser bug)
 " Move one line down.
 map <C-e> j
 " Move one line up.

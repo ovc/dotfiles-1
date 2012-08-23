@@ -93,4 +93,4 @@
 (require 'column-marker)
 (add-hook 'c-mode-hook (lambda () (interactive) (column-marker-1 81))) ;; Mark the 81st column in c-mode.
 
-(require 'minimap)	;; Graphical minimap over the buffer.
+(require 'minimap)				;; Graphical minimap over the buffer.

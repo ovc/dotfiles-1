@@ -12,9 +12,11 @@ if [ -x /usr/bin/fortune ] ; then
     echo
 fi
 
-# Load custom keymao.
-# TODO fix this so it works w/o sudo.
-#loadkeys -q ~/.keymap
+# Load custom keymap
+# NOTE allow me or %wheeler to issue loadkeys with no password.
+if [ -f "$HOME/.keymap" ]; then
+	sudo loadkeys -q $HOME/.keymap
+fi
 
 
 # Source bashrc. Most of the settings there are relevant also for login shells.
