@@ -1,38 +1,46 @@
 ! Xresouces for X program. This file deprecates .Xdefaults.
 ! Reload with `xrdb -load .Xresouces` or -merge to not overwrite all settings.
 
-!! xterm.
+! Modeline {
+!	 vi: foldmarker={,} foldmethod=marker foldlevel=0: tabstop=8:
+! }
+
+!! XTerm. {
 ! Use UTF-8.
-XTerm*utf8: 1
+XTerm.utf8: 1
 ! Show scrollbars.
-XTerm*scrollBar: true
+XTerm.scrollBar: true
 ! Enable more colors.
-XTerm*termName: xterm-256color
+XTerm.termName: xterm-256color
 ! Put the scrollbar to the right as customary.
-XTerm*rightScrollBar: true
+XTerm.rightScrollBar: true
 ! Default window size.
 ! TODO The mouse menues does not work when changing the geometry :S
-!XTerm*geometry: 80x24
+!XTerm.geometry: 80x24
 ! Bell style
-XTerm*visualBell: off
+XTerm.visualBell: off
 ! Color of the cursor.
-!XTerm*cursorColor: white
+!XTerm.cursorColor: white
 ! Use solarized foreground color.
-XTerm*cursorColor: 657b8
+XTerm.cursorColor: 657b8
 ! Blink the cursor.
-XTerm*cursorBlink: true
+XTerm.cursorBlink: true
 ! Blink time in ms.
-XTerm*cursorOffTime: 900
-XTerm*cursorOnTime: 1200
+XTerm.cursorOffTime: 900
+XTerm.cursorOnTime: 1200
 ! Use a fancier font.
-XTerm*faceName: terminus:normal:pixelsize=12
+XTerm.faceName: terminus:normal:pixelsize=12
 
 ! Alternative resouce. Load with $ xterm -name XTermBig.
-XTermBig*geometry: 80x24
+XTermBig.geometry: 120x40
 
-!! Misc
+! }
+
+!! Misc {
 ! For set-clipboard in tmux.
 disallowedWindowOps: 20,21,SetXprop
 
 ! Source some solarized colors. The path starts from where this script is loaded from (which hopefully is $HOME).
 #include "/home/erikw/.Xresources.solarized"
+
+! }
