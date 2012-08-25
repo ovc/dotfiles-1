@@ -8,3 +8,6 @@
 [submodule ".emacs.d/themes/emacs-color-theme-solarize"]
 	path = .emacs.d/themes/emacs-color-theme-solarize
 	url = git://github.com/sellout/emacs-color-theme-solarized.git
+[submodule ".irssi/scripts/irssi-bitlbee-facebook-rename"]
+	path = .irssi/scripts/irssi-bitlbee-facebook-rename
+	url = git@github.com:erikw/irssi-bitlbee-facebook-rename.git
