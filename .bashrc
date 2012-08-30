@@ -165,11 +165,6 @@
 		PATH="$PATH:$HOME/.dotfiles/bin"
 	fi
 
-	# Phon-pipe.
-	if [ -d "$HOME/src/Phone-Pipe/" ]; then
-		PATH="$PATH:$HOME/src/Phone-Pipe/"
-	fi
-
 	# lastfm-mpd-cli
 	if [ -d "$HOME/src/lastfm-mpd-cli/" ]; then
 		PATH="$PATH:$HOME/src/lastfm-mpd-cli/"
