@@ -69,6 +69,7 @@ Host ${alias}
 	User ${user}
 	IdentityFile ~/.ssh/identityfiles/${key_stem}
 	IdentitiesOnly yes
+	ServerAliveInterval 15
 EOF
 
 cmd_copy="ssh-copy-id -i \$HOME/.ssh/identityfiles/${key_stem}.pub ${user}@${hostname} -p ${port}"

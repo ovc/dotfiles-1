@@ -1,0 +1,10 @@
+# Mercurial configuration file.
+
+[ui]
+editor = vim
+username = erik.westrup@gmail.com
+verbose = true
+
+[extensions]
+# Enable queue extenstion.
+hgext.mq =

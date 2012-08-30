@@ -1,7 +1,8 @@
 # Erik Westrup's mplayer configuration.
 
 # General
-ao = "alsa"			# Audio out.
+#ao = "alsa"			# Audio out, ALSA.
+ao = "pulse"			# Audio out, pulseaudio.
 alang = en
 mixer-channel = "Master"
 srate = 48000
@@ -39,3 +40,6 @@ subalign="2"
 #ontop="1"
 
 stop-xscreensaver = "yes"	# Turn of xscreensacer.
+
+# Prevent xscreensaver from locking.
+#heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"

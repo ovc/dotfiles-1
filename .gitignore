@@ -1,7 +1,9 @@
+!.config/dunst/
 !.config/googlecl
 !.config/openbox/
 !.config/parcellite/parcelliterc
 !.config/terminator/
+!.config/udiskie/
 !.config/user-dirs.dirs
 !.config/user-dirs.locale
 !.etwolf/etmain/profiles/ErikwSwe/etconfig.cfg

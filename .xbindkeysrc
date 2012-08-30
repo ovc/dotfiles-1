@@ -11,8 +11,9 @@
 	# Start my default terminal
 	#"gnome-terminal"
 	#"terminator"
-	"konsole"
-		Mod4 + t
+	#"konsole"
+	"urxvtc"
+		Mod4 + Mod1 + t
 
 	# Start the always-working XTerm!
 	"xterm"
@@ -31,9 +32,26 @@
 	"afk"
 	Control + Mod1 + l
 
+	# Lock the screen.
+	"xscreensaver-command -lock"
+		XF86ScreenSaver
+
 	# Close/open CD/DVD-reader.
 	"eject -T"
 		Mod4 + e
+
+	# Hijack ThinkVantage button to show system stats.
+	"urxvtc -e htop"
+		XF86Launch1
+
+	# Control the music with the media icon (that gives the wrong event).
+	"urxvtc -e ncmpcpp"
+		XF86WebCam
+
+	# Toogle touchpad with the unknown function key at fn+F7.
+	"touchpad-toggle.sh"
+		XF86Display
+
 # }
 
 # Volume {
@@ -49,6 +67,31 @@
 		## Toggle mute.
 		#"amixer set Master toggle"
 		#	Control + F12
+	# }
+
+	# voltune.sh {
+		# Lower volume.
+		#"amixer -q set Master 5%- unmute"
+		#"vol_down"
+		"voltune.sh down"
+			XF86AudioLowerVolume
+
+		# Raise volume.
+		#"amixer -q set Master 5%+ unmute"
+		#"vol_up"
+		"voltune.sh up"
+			XF86AudioRaiseVolume
+
+		# Mute sound.
+		#"amixer -q set Master toggle"
+		#"mute_toggle"
+		"voltune.sh mute"
+			XF86AudioMute
+
+		# TODO when the MIC_MUTE button with keycode 248 works and X can handle the new XF86MIC_MUTE (or what the will call it).
+		#"amixer set Capture toggle"
+		# TODO some code keys here
+
 	# }
 
 	# Kmix {
@@ -103,6 +146,20 @@
 		# Raise the volume.
 		"mpc volume +1"
 			Control + Shift + F11
+		
+		# XF86 {
+			# Play previous track.
+			"mpc prev"
+				XF86AudioPrev
+
+			# Toggle play/pause.
+			"mpc toggle"
+				XF86AudioPlay
+
+			# Play next track.
+			"mpc next"
+				XF86AudioNext
+		}
 # }
 
 # Rating {

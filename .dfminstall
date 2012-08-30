@@ -6,7 +6,6 @@ t skip
 
 bin recurse
 .gnupg recurse
-.ssh recurse
 
 .gcalclirc chmod 0600
 .gist-vim chmod 0600
@@ -20,7 +19,6 @@ bin recurse
 .offlineimaprc chmod 0600
 .phonepipe chmod 0600
 .skyped/skyped.cnf chmod 0600
-.ssh/config chmod 0600
 .xinitrc chmod 0744
 .Xsession chmod 0744
 bin/loopiadns.sh chmod 0700

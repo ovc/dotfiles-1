@@ -86,10 +86,13 @@
 
 # Sudo {
 	alias loadkeys='sudo loadkeys'
-	alias halt='sudo halt'
 	alias poweroff='sudo poweroff'
+	alias halt='sudo halt'
 	alias shutdown='sudo shutdown'
 	alias reboot='sudo reboot'
+	alias pm-suspend='sudo pm-suspend'
+	alias pm-hibernate='sudo pm-hibernate'
+	alias sudo='sudo '			# Bring my aliases with me.
 # }
 
 # Navigation {
@@ -107,6 +110,9 @@
 	alias matlab='matlab -nodesktop -nosplash'		# Run in terminal with no splash screen.
 	alias xmatlab='\matlab'					# Default X version.
 	alias gimp='gimp --no-splash'				# Splash screens are just annoying.
+	alias dmenu="dmenu -i"					# Ignore case.
+	alias pacman='pacman-color'				# Use colorfoull pacman.
+	alias cower='cower --color=auto'			# Use colors.
 # }
 
 # Short hands {
@@ -123,6 +129,8 @@
 	alias lsc='ls --color=always --time-style=long-iso'		# Force color.
 	alias agdbtui='arm-none-eabi-gdbtui'				# So tired of typing that...
 	alias shredzr='shred --zero --remove'				# Zero out and delete file.
+	alias sysc='systemctl'						# The length of a name should correspond to how much you use it.
+	alias journal='journalctl'
 # }
 
 # Misc {
