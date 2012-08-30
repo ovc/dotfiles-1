@@ -48,6 +48,17 @@ if !([ -z "$ok" ] || [[ "$ok" = [yY] ]]); then
 	exit
 fi
 
+
+if ! [ -d $HOME/.ssh ]; then
+	mkidr $HOME/.ssh
+	chmod 700 $HOME/.ssh
+fi
+
+if ! [ -d $HOME/.ssh/identityfiles ]; then
+	mkidr $HOME/.ssh/identityfiles
+	chmod 700 $HOME/.ssh/identityfiles
+fi
+
 eval "$cmd_keygen"
 
 cat << EOF >> $HOME/.ssh/config
