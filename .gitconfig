@@ -3,6 +3,8 @@
 	email = erik.westrup@gmail.com
 	signingkey = AD610036
 	editor = vim
+[github]
+	user = erikw
 [core]
 	excludesfile = ~/.gitignore_global
 [color]
