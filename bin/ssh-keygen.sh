@@ -40,7 +40,7 @@ if [ -n "$comments" ]; then
 fi
 
 key_stem="${alias}_id_${algo}"
-cmd_keygen="ssh-keygen -t ${algo} -f \$HOME/.ssh/hostkeys/${key_stem} -C \"${USER}@${HOSTNAME} for ${alias}${comments}\""
+cmd_keygen="ssh-keygen -t ${algo} -f \$HOME/.ssh/identityfiles/${key_stem} -C \"${USER}@${HOSTNAME} for ${alias}${comments}\""
 echo "$cmd_keygen"
 echo -n "OK [Y/n]: "
 read ok
@@ -56,11 +56,11 @@ Host ${alias}
 	Hostname ${hostname}
 	Port ${port}
 	User ${user}
-	IdentityFile ~/.ssh/hostkeys/${key_stem}
+	IdentityFile ~/.ssh/identityfiles/${key_stem}
 	IdentitiesOnly yes
 EOF
 
-cmd_copy="ssh-copy-id -i \$HOME/.ssh/hostkeys/${key_stem}.pub ${user}@${hostname} -p ${port}"
+cmd_copy="ssh-copy-id -i \$HOME/.ssh/identityfiles/${key_stem}.pub ${user}@${hostname} -p ${port}"
 echo "$cmd_copy"
 echo -n "[Y/n]: "
 read ok
