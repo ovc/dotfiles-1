@@ -132,16 +132,17 @@ dropboxd &
 # Battery monitor.
 batterymon & 
 
-# TODO fix so paramter from SLiM can be used.
-echo "$@" >> $HOME/.log/slim_dump.log
-
 # Start the window manager with all paramters. This script ends at `exec` below.
 unset WINDOW_MANAGER
-#WINDOWMANAGER='/usr/bin/startkde'
-#WINDOWMANAGER='dwm'
-WINDOWMANAGER="$HOME/bin/startdwm.sh"
+if [ "$#" -gt 0 ]; then
+	WINDOWMANAGER="$@"
+else
+	#WINDOWMANAGER='startkde'
+	#WINDOWMANAGER='dwm'
+	WINDOWMANAGER="$HOME/bin/startdwm.sh"
+fi
 
-exec $WINDOWMANAGER ${1+"$@"}
+exec $WINDOWMANAGER
 
 # Call failsafe.
 exit 0

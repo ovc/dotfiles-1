@@ -19,7 +19,6 @@ localrepository = Gmail-Local
 # The remote repository.
 remoterepository = Gmail-Remote
 # Continue to run and refresh automatically.
-# TODO try this.
 autorefresh = 1
 # Backend to use for saving states.
 status_backend = sqlite
@@ -74,9 +73,6 @@ keepalive = 29
 #createfolders = false
 # Rename folders to saner names. Use `offlineimap --info` for details about folders.
 # Reference: # http://docs.offlineimap.org/en/latest/nametrans.html
-# TODO delete regular exps where not needed.
-# TODO use lamda to convert all to lowercase? http://pbrisbin.com/posts/mutt_gmail_offlineimap
-# TODO use define a variabl GMAIL_PREVIX and use it like in offlineimap.conf
 nametrans = lambda folder: \
 	re.sub('.*All Mail$', 'archive',
 	re.sub('.*Drafts$', 'drafts',
