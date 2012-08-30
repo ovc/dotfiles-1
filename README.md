@@ -7,7 +7,7 @@ Most of my personal dotfiles can be found in this branch. I use dfm (dot file ma
 ```bash
 $ git clone git://github.com/erikw/dotfiles.git ~/.dotfiles
 $ cd !$
-$ git submodule 
+$ git submodule init
 $ git submodule update
 $ dfm install
 $ vim -c BundleInstall
