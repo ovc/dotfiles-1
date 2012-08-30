@@ -18,7 +18,7 @@ XTerm.rightScrollBar: true
 ! TODO The mouse menues does not work when changing the geometry :S
 !XTerm.geometry: 80x24
 ! Bell style
-XTerm.visualBell: off
+XTerm.visualBell: on
 ! Color of the cursor.
 !XTerm.cursorColor: white
 ! Use solarized foreground color.

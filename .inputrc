@@ -5,8 +5,9 @@
 # }
 
 # Settings {
-	# I want the bells to ring!
-	set bell-style audible
+	# Ring the bells?
+	#set bell-style audible
+	set bell-style none
 
 	# Ignore case in completion
 	set completion-ignore-case On

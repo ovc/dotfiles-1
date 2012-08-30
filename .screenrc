@@ -29,7 +29,7 @@
 
 # UI {
 	time '[%c:%s] %Y-%m-%d %D'			# Format for displaying time and date in the caption.
-	vbell off					# Turn off annoying vbell 'wuff! wuff!'.
+	#vbell off					# Turn off annoying vbell 'wuff! wuff!'.
 	caption always					# Always show caption.
 	caption string "%{kw}%-w[%{r}%n %t%{-}]%+w"	# Format of the caption bar.
 	

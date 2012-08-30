@@ -78,17 +78,6 @@
 	fi
 # }
 
-# SSH-hosts {
-	alias ssh_lth='ssh dt09ew6@login.student.lth.se'
-	alias ssh_snejk='ssh snejk.dsek.lth.se'
-	alias ssh_mushroom='ssh mushroom.dsek.lth.se'
-	alias ssh_trevor='ssh trevor.dsek.lth.se'
-	alias ssh_ohno='ssh ohno.dsek.lth.se'
-	alias ssh_itsa='ssh itsa.dsek.lth.se'
-	alias ssh_cpt='ssh -p 443 ljunghusen.2r.se'
-	alias ssh_elitter='ssh elitter.net'
-# }
-
 # SSH agent {
 	alias keyon="ssh-add -t 14400"
 	alias keyoff='ssh-add -D'
@@ -123,6 +112,7 @@
 # Short hands {
 	alias cls='clear'					# Old DOS habit...
 	alias vi='vim'						# Be IMproved.
+	alias view='vim -R'					# Not all distributions of vim provide the readonly version.
 	alias vidiff='vimdiff'
 	#alias t='task'
 	#alias c='gcalcli'
@@ -132,6 +122,7 @@
 	unalias l &>/dev/null						# I use bashmarks.
 	alias lsc='ls --color=always --time-style=long-iso'		# Force color.
 	alias agdbtui='arm-none-eabi-gdbtui'				# So tired of typing that...
+	alias shredzr='shred --zero --remove'				# Zero out and delete file.
 # }
 
 # Misc {
