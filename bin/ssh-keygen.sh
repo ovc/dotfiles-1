@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Interactivly create SSH keypairs with my preferences.
+# # NOTE don't use alias for github.com since lot's of applications will break like git submodule and vundle. Just use 'Host "*github.com"'.
 
 alias=""
 while [ -z "$alias" ]; do

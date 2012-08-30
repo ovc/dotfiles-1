@@ -46,7 +46,6 @@ fi
 # Set the right keyboard map.
 #setxkbmap -layout us -model pc105
 #setxkbmap -layout us -model pc87
-# TODO what keyboard model does my thinkpad have? `setxkbmap -query`
 setxkbmap -layout us
 
 
@@ -78,7 +77,7 @@ feh --bg-scale $HOME/.wallpaper
 
 # Start GNOME keyring. From https://wiki.archlinux.org/index.php/Gnome-keyring
 # Start a D-Bus session
-source /etc/X11/xinit/xinitrc.d/30-dbus
+#source /etc/X11/xinit/xinitrc.d/30-dbus
 # Start GNOME Keyring
 eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
 # You probably need to do this too:
@@ -108,7 +107,7 @@ syndaemon -K -d -i 0.5
 urxvtd -q -o -f
 
 # Start PulseAudio.
-# TODO /etc/X11/xinit/xinitrc.d/pulseaudio fixes this?
+# NOTE not needed since /etc/X11/xinit/xinitrc.d/pulseaudio will do it.
 #if ! pulseaudio --check; then
 #	pulseaudio --start
 #fi

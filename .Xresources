@@ -51,8 +51,8 @@ URxvt.jumpScroll: true
 ! Fake transparency.
 !URxvt.transparent: true
 ! Real transparency (requires *.dpth: 32 and a composite window manager like xcompmgr)
-URxvt.background: rgba:0000/0000/0200/c800
 !URxvt.background: rgba:1111/1111/1111/dddd
+!URxvt.background: rgba:0000/0000/0200/c800
 ! I want the bells to ring!
 URxvt.visualBell: false
 ! Type of scrollbar.
@@ -92,52 +92,7 @@ disallowedWindowOps: 20,21,SetXprop
 
 ! Source some solarized colors. The path starts from where this script is loaded from (which hopefully is $HOME).
 #include "/home/erikw/.Xresources.solarized"
+#include "/home/erikw/.Xresources.solarized_urxvt"
 
 ! }
 
-# TODO delete if above include works?
-!!---- Default URxvt (Solarized Dark, 12px)
-!URxvt*fading:                         30
-!URxvt*background:                     #002b36
-!URxvt*foreground:                     #657b83
-!URxvt*fadeColor:                      #002b36
-!URxvt*cursorColor:                    #93a1a1
-!URxvt*pointerColorBackground:         #586e75
-!URxvt*pointerColorForeground:         #93a1a1
-!URxvt*colorUL:                        #859900
-!URxvt*colorBD:                        #268bd2
-!URxvt*color0:                         #073642
-!URxvt*color8:                         #002b36
-!URxvt*color1:                         #dc322f
-!URxvt*color9:                         #cb4b16
-!URxvt*color2:                         #859900
-!URxvt*color10:                        #586e75
-!URxvt*color3:                         #b58900
-!URxvt*color11:                        #657b83
-!URxvt*color4:                         #268bd2
-!URxvt*color12:                        #839496
-!URxvt*color5:                         #d33682
-!URxvt*color13:                        #6c71c4
-!URxvt*color6:                         #2aa198
-!URxvt*color14:                        #93a1a1
-!URxvt*color7:                         #eee8d5
-!URxvt*color15:                        #fdf6e3
-!
-!!---- Light URxvt (Solarized Light, 11pt)
-!! Start with $ urxvt -name LURxvt
-!LURxvt*font:                   xft:Anonymous Pro-10
-!LURxvt*fading:                 0
-!LURxvt*background:             #fdf6e3
-!LURxvt*foreground:             #839496
-!LURxvt*fadeColor:              #fdf6e3
-!LURxvt*cursorColor:            #586e75
-!LURxvt*pointerColorBackground: #93a1a1
-!LURxvt*pointerColorForeground: #586e75
-!LURxvt*color0:                 #073642
-!LURxvt*color8:                 #fdf6e3
-!LURxvt*color10:                #93a1a1
-!LURxvt*color11:                #839496
-!LURxvt*color12:                #657b83
-!LURxvt*color14:                #586e75
-!LURxvt*color7:                 #839496
-!LURxvt*color15:                #002b36

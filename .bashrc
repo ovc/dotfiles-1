@@ -163,7 +163,6 @@
 	# Dot files manager.
 	if [ -d "$HOME/.dotfiles/bin" ]; then
 		PATH="$PATH:$HOME/.dotfiles/bin"
-		source $HOME/.bashrc.load
 	fi
 
 	# Phon-pipe.
