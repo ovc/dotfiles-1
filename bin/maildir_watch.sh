@@ -19,11 +19,11 @@ while read line; do
 	# Get from field.
 	from=$(grep "From:" ${inbox_path}/${mail})
 	# Get the body. First scroll down to body then strip signature, empty lines, join lines, substitute spaces to get more text and limit length.
-	body=$(sed '1,/^$/d'  "${inbox_path}/${mail}" | sed -n '/-- /q;p' | sed '/^ *$/d' | tr "\\n" ' ' | sed 's/\s\s*/ /g' | cut -c1-80)
+	body=$(sed '1,/^$/d' "${inbox_path}/${mail}" | sed -n '/-- /q;p' | sed '/^ *$/d' | tr "\\n" ' ' | sed 's/\s\s*/ /g' | cut -c1-80)
 	# Notify summary string.
 	out_summary=$(printf "[%s] %s, %s\\n" "$inbox" "$from" "$subject")
 	# Notify body string.
-	out_body=$(printf ", Body: %s [...]\n" "$body")
+	out_body=$(printf ", Body: %s [...]\\n" "$body")
 	# Send the message with the name this scrip was invoked with.
 	notify-send --app-name "${0##*/}" "$out_summary" "$out_body"
 done < <(inotifywait --monitor --event create --event moved_to ${watchdirs} 2>/dev/null)
