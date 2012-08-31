@@ -139,6 +139,9 @@ batterymon &
 # Fetch my mails.
 offlineimap &
 
+# Start Maildir watcher.
+$HOME/bin/maildir_watch.sh &
+
 # Start the window manager with all paramters. This script ends at `exec` below.
 unset WINDOW_MANAGER
 if [ "$#" -gt 0 ]; then
