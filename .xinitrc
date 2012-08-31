@@ -126,6 +126,10 @@ fi
 # Start skype.
 skype &
 
+# Start skyped hopefully after Skype is loaded.
+# TODO is this sleep still needed?
+(sleep 10s && skyped) &
+
 # Start Dropbox.
 dropboxd &
 

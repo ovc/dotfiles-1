@@ -153,3 +153,4 @@
 	background = "#859900"
 
 # TODO MPD NP config
+# TODO filter out "summary = irssi: &bitlbee: root*"
