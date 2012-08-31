@@ -156,5 +156,10 @@
 	urgency = normal
 	background = "#859900"
 	format = "%s %b"
-
+[maildir]
+	appname = maildir_watch.sh
+	urgency = normal
+	timeout = 4
+	background = "#cb4b16"
+	format = "%s %b"
 # TODO MPD NP config
