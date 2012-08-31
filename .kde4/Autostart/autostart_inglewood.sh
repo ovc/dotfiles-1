@@ -1,9 +1,6 @@
 #/usr/bin/env sh
 # Programs that should be started with each Inglewood KDE session.
 
-# Start fetching mails.
-/usr/bin/env offlineimap &
-
 # Start Yakuake and load my tmux session.
 /usr/bin/env yakuake
 yakuake_sessionID=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId)
