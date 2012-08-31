@@ -115,6 +115,8 @@
 # and you can override the 'timeout', 'urgency', 'foreground', 'background'
 # and 'format'.
 # Shell-like globbing will get expanded.
+#
+# NOTE: if you don't want a notification to be displayed, set the format to ""
 
 #[signed_on]
 #    appname = Pidgin
@@ -137,25 +139,25 @@
 #    urgency = normal
 [udiskie]
 	appname = udiskie.mount
-	body = */media/key*
+	body = "*/media/key*"
 	urgency = low
 	timeout = 1
 [voltune.sh]
 	appname = notify-send
-	summary = volume:*
+	summary = "volume:*"
 	urgency = low
 	timeout = 1
 	background = "#073642"
-[irssi_notify.pl-filter]
-	appname = notify-send
-	summary = "*bitlbee*"
-	format = ""
 [irssi_notify.pl]
 	appname = notify-send
-	summary = irssi:*
+	summary = "irssi:*"
 	urgency = normal
 	background = "#859900"
 	format = "%s %b"
+[irssi_notify.pl-filter]
+	appname = notify-send
+	summary = "irssi: *bitlbee*"
+	format = ""
 [maildir]
 	appname = maildir_watch.sh
 	urgency = normal
