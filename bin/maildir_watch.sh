@@ -25,5 +25,5 @@ while read line; do
 	# Notify body string.
 	out_body=$(printf ", Body: %s [...]\n" "$body")
 	# Send the message with the name this scrip was invoked with.
-	notify-send -a "${0##*/}" "$out_summary" "$out_body"
+	notify-send --app-name "${0##*/}" "$out_summary" "$out_body"
 done < <(inotifywait --monitor --event create --event moved_to ${watchdirs} 2>/dev/null)

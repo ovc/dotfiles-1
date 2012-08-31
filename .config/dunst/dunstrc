@@ -149,13 +149,12 @@
 	timeout = 1
 	background = "#073642"
 [irssi_notify.pl]
-	appname = notify-send
-	summary = "irssi:*"
+	appname = irssi_notify.pl
 	urgency = normal
 	background = "#859900"
 	format = "%s %b"
 [irssi_notify.pl-filter]
-	appname = notify-send
+	appname = irssi_notify.pl
 	summary = "irssi: *bitlbee*"
 	format = ""
 [maildir]

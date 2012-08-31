@@ -45,7 +45,7 @@ sub notify {
 	#" string:'" . $message . "'";
 
     # Above command stoped working since ~/bin/notify-listener.py is b0rken. Use legacy notify-send instead,
-    my $cmd = "EXEC - notify-send 'irssi: $summary' '$message'";
+    my $cmd = "EXEC - notify-send --app-name 'irssi_notify.pl' 'irssi: $summary' '$message'";
 
     $server->command($cmd);
 
