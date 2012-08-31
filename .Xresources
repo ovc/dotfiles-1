@@ -44,6 +44,9 @@ URxvt.depth: 32
  URxvt.buffered: true	
 ! Font to use.
 URxvt.font: xft:Terminus:normal:pixelsize=12
+! Toggle between small and large font.
+URxvt.keysym.C-M-minus:	command:\033]710;xft:Terminus:normal:pixelsize=12\007
+URxvt.keysym.C-M-plus:	command:\033]710;xft:Terminus:normal:pixelsize=14\007
 ! Default geometry.
 urxvt.geometry: 80x24
 ! Scroll one page in case of exploding stdout.
@@ -95,4 +98,3 @@ disallowedWindowOps: 20,21,SetXprop
 #include "/home/erikw/.Xresources.solarized_urxvt"
 
 ! }
-

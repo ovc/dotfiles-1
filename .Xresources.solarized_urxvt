@@ -28,7 +28,7 @@ URxvt*color7:                         #eee8d5
 URxvt*color15:                        #fdf6e3
 
 !! Solarized Light, 11ptl start with `urxvt -name LURxv`
-LURxvt*font:                   xft:Anonymous Pro-10
+!LURxvt*font:                   xft:Anonymous Pro-10
 LURxvt*fading:                 0
 LURxvt*background:             #fdf6e3
 LURxvt*foreground:             #839496

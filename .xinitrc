@@ -136,6 +136,9 @@ dropboxd &
 # Battery monitor.
 batterymon & 
 
+# Fetch my mails.
+offlineimap &
+
 # Start the window manager with all paramters. This script ends at `exec` below.
 unset WINDOW_MANAGER
 if [ "$#" -gt 0 ]; then
