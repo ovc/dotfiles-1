@@ -157,10 +157,10 @@
 	appname = irssi_notify.pl
 	summary = "irssi: *bitlbee*"
 	format = ""
-[maildir]
+[maildir_watch]
 	appname = maildir_watch.sh
 	urgency = normal
-	timeout = 4
+	timeout = 6
 	background = "#cb4b16"
 	format = "%s %b"
 # TODO MPD NP config

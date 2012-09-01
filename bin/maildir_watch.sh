@@ -16,8 +16,20 @@ while read line; do
 
 	# Get subject and trim length.
 	subject=$(grep "Subject:" ${inbox_path}/${mail} | cut -c1-20)
-	# Get from field.
-	from=$(grep "From:" ${inbox_path}/${mail})
+
+	# Get from field and display name or email.
+	from_row=$(grep "^From:" ${inbox_path}/${mail} | sed 's/From:\s*//')
+	from_name=$(echo "$from_row" | grep -Po "[^<>]+(?=(?:<|$))")
+	from_email=$(echo "$from_row" | grep -Po "(?<=<).+(?=>)")
+	from="From: "
+	if [ -n "$from_name" ]; then
+		from="${from}${from_name}"
+	elif [ -n "$from_email" ]; then
+		from="${from}${from_email}"
+	else
+		from="${from}<unknown>"
+	fi
+
 	# Get the body. First scroll down to body then strip signature, empty lines, join lines, substitute spaces to get more text and limit length.
 	body=$(sed '1,/^$/d' "${inbox_path}/${mail}" | sed -n '/-- /q;p' | sed '/^ *$/d' | tr "\\n" ' ' | sed 's/\s\s*/ /g' | cut -c1-80)
 	# Notify summary string.
