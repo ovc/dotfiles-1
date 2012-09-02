@@ -50,8 +50,8 @@ ICONTOPBM=icontopbm	# from pbmplus/netpbm package
 # Image viewer (should be able to read from stdin!):
 if [ -n "$DISPLAY" ]
 then
-    VIEWER="xli stdin"		# Use xli as X11 image viewer
-    # VIEWER="xv -quit -"	# Use xv as X11 image viewer
+    #VIEWER="xli stdin"		# Use xli as X11 image viewer
+    VIEWER="xv -quit -"		# Use xv as X11 image viewer
 else
     VIEWER=image2ascii		# Use image2ascii as ASCII image viewer
 fi

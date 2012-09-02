@@ -178,8 +178,9 @@
 
 	# less {
 		# Syntax highlighting for less with src-highlight.
-		if [ -f "/usr/bin/src-hilite-lesspipe.sh" ]; then
-			export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
+		type src-hilite-lesspipe.sh  &> /dev/null
+		if [ "$?" -eq 0 ]; then
+			export LESSOPEN="| src-hilite-lesspipe.sh %s"
 		fi
 		#LESS="$LESS --no-lessopen"		# Disable usage of LESSOPEN.
 		LESS="$LESS --RAW-CONTROL-CHARS"	# Display colors.
@@ -188,20 +189,6 @@
 		#LESS="$LESS --LINE-NUMBERS"		# Show line numbers.
 		#LESS="$LESS --mouse-support"		# TODO Some lessess seems to have this option. What does it do?
 		export LESS
-	# }
-
-	# Colored man pages. Referecene https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages	 {
-	#man() {
-		#env \
-			#LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-			#LESS_TERMCAP_md=$(printf "\e[1;31m") \
-			#LESS_TERMCAP_me=$(printf "\e[0m") \
-			#LESS_TERMCAP_se=$(printf "\e[0m") \
-			#LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-			#LESS_TERMCAP_ue=$(printf "\e[0m") \
-			#LESS_TERMCAP_us=$(printf "\e[1;32m") \
-				#man "$@"
-	#}
 	# }
 
 	# Sage {

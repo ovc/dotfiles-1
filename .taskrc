@@ -29,14 +29,13 @@ calendar.details=sparse			# Calendar shows information for tasks w/due dates: fu
 calendar.details.report=list		# Report to use when showing task information in cal
 calendar.holidays=none			# Show public holidays on calendar:full, sparse or none
 #monthsperline=3			# Number of calendar months on a line
-##include /usr/share/doc/packages/task/rc/holidays-SE.rc
-include /usr/local/share/doc/task/scripts/
+include /usr/share/doc//task/rc/holidays.sv-SE.rc
 
 # Color controls.
 color=on					# Enable color
 
 # Themes.
-include /usr/local/share/doc/task/rc/solarized-dark-256.theme
+include /usr/share/doc/task/rc/solarized-dark-256.theme
 
 # The following rules are presented in their order of precedence.
 # The higher the color rule is up this list, the higher precedence
