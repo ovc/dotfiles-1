@@ -172,9 +172,9 @@
 	macro index,pager	\Cw	"<pipe-message>~/bin/mutt/mutt2task.sh<enter> <save-message>+postponed<enter>"	"add mail to taskwarrior"
 	macro index,pager,attach,compose \co "\
 <enter-command> set my_pipe_decode=\$pipe_decode pipe_decode<Enter>\
-<pipe-message> DISPLAY="\:0" urlview<Enter>\
+<pipe-message> urlscan<Enter>\
 <enter-command> set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<Enter>" \
-"call urlview to extract URLs out of a message"
+"call urlview|urlscan to extract URLs out of a message"
 
 	# Change folders {{
 		macro index,pager	goa	"c+archive<enter>"				"change to folder +archive"

@@ -34,8 +34,6 @@
 	export VISUAL="vim"
 	export CSHEDIT="vim"
 
-	# What terminal emulator I use.
-	export VTERMINAL=konsole
 
 	# Source aliases.
 	if [ -f "$HOME/.bash_aliases" ]; then
@@ -54,6 +52,9 @@
 	# Enable bash tab completion. Not needed with package 'bash-completion' installed.
 	#complete -cf sudo
 	#complete -cf man
+
+	# Web browser to use. urlscan (and others?) uses this variable.
+	export BROWSER=firefox
 # }
 
 # History {
