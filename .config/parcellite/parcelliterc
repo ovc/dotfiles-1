@@ -1,4 +1,3 @@
-
 [rc]
 use_copy=true
 use_primary=true
@@ -14,3 +13,12 @@ ellipsize=2
 history_key=<Shift><Control>Insert
 actions_key=
 menu_key=
+history_pos=false
+history_x=1
+history_y=1
+case_search=false
+type_search=false
+data_size=0
+ignore_whiteonly=false
+trim_wspace_begend=false
+trim_newline=false

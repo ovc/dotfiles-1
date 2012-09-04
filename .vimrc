@@ -22,6 +22,7 @@
 
 	" Github {
 		"Bundle 'scrooloose/syntastic'
+		"Bundle 'mbbill/undotree'
 		Bundle 'Lokaltog/vim-powerline'
 		Bundle 'MarcWeber/vim-addon-mw-utils'
 		Bundle 'Rip-Rip/clang_complete'

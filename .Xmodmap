@@ -11,7 +11,7 @@ keysym Caps_Lock = Escape
 keysym Pause = Caps_Lock
 
 ! Translate the Escape key to the Help keycode.
-keysym Escape = Help
+!keysym Escape = Help
 
 ! Map compose key. Find key sequences in /usr/share/X11/locale/en_US.UTF-8/Compose. 
 !keysym Menu = Multi_key

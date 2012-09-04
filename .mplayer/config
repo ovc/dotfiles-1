@@ -39,7 +39,5 @@ subalign="2"
 # Always keep mplayer on top
 #ontop="1"
 
-stop-xscreensaver = "yes"	# Turn of xscreensacer.
-
 # Prevent xscreensaver from locking.
-#heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
+heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
