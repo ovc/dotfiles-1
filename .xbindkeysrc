@@ -1,8 +1,6 @@
 # Erik Westrup's xbindkeys configuration.
 # Keysymbols are defined in /usr/include/X11/keysymdef.h (exclude the XL_ prefix).
 # List of modifier: Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock), Mod3 (CapsLock), Mod4 (Windows key), Mod5 (Scroll).
-
-# TODO don't use winkey since that is mapped to multikey.
 # Modeline {
 #	 vi: foldmarker={,} foldmethod=marker foldlevel=0: tabstop=8: ft=rc
 # }
@@ -10,27 +8,26 @@
 # Programs {
 	# Start my default terminal
 	#"gnome-terminal"
-	#"terminator"
 	#"konsole"
+	#"terminator"
 	"urxvtc"
 		Mod4 + Mod1 + t
 
 	# Start the always-working XTerm!
 	"xterm"
-		Mod4 + x
+		Mod4 + Mod1 + x
 
 	# Read some mails.
 	"xterm -e mutt"
-		Mod4 + m
+		Mod4 + Mod1 + m
 
 	# Control MPD.
 	"xterm -e ncmpcpp"
-		Mod4 + n
+		Mod4 + Mod1 + n
 
 	# Lock screen. Uses my alias afk.
-	#"xscreensaver-command -lock"
-	"afk"
-	Control + Mod1 + l
+	"xscreensaver-command -lock"
+		Mod4 + Mod1 + l
 
 	# Lock the screen.
 	"xscreensaver-command -lock"
@@ -38,7 +35,7 @@
 
 	# Close/open CD/DVD-reader.
 	"eject -T"
-		Mod4 + e
+		Mod4 + Mod1 + e
 
 	# Hijack ThinkVantage button to show system stats.
 	"urxvtc -e htop"
@@ -98,26 +95,26 @@
 			Control + F12
 
 		# TODO when the MIC_MUTE button with keycode 248 works and X can handle the new XF86MIC_MUTE (or what the will call it).
-		#"amixer set Capture toggle"
-		# TODO some code keys here
+		"amixer set Capture toggle"
+			Control + F9
 
 	# }
 
 	# Kmix {
 		# Decrease volume.
 		#"qdbus org.kde.kmix  /Mixers/0/Master_0 org.kde.KMix.Control.decreaseVolume"
-		"qdbus org.kde.kmix /kmix/KMixWindow/actions/decrease_volume org.qtproject.Qt.QAction.trigger"
-			Control + F10
+		#"qdbus org.kde.kmix /kmix/KMixWindow/actions/decrease_volume org.qtproject.Qt.QAction.trigger"
+			#Control + F10
 
 		# Increase volume.
 		#"qdbus org.kde.kmix  /Mixers/0/Master_0 org.kde.KMix.Control.increaseVolume"
-		"qdbus org.kde.kmix /kmix/KMixWindow/actions/increase_volume org.qtproject.Qt.QAction.trigger"
-			Control + F11
+		#"qdbus org.kde.kmix /kmix/KMixWindow/actions/increase_volume org.qtproject.Qt.QAction.trigger"
+			#Control + F11
 
 		# Toggle mute.
 		#"qdbus org.kde.kmix  /Mixers/0/Master_0 org.kde.KMix.Control.toggleMute"
-		"qdbus org.kde.kmix /kmix/KMixWindow/actions/mute org.qtproject.Qt.QAction.trigger"
-			Control + F12
+		#"qdbus org.kde.kmix /kmix/KMixWindow/actions/mute org.qtproject.Qt.QAction.trigger"
+			#Control + F12
 	# }
 # }
 
@@ -195,8 +192,9 @@
 # }
 
 # Show now playing in KDE.
-"$HOME/bin/mpd_kde_notify.sh"
-	Shift + F12
+# TODO fin notify-send alternative.
+#"$HOME/bin/mpd_kde_notify.sh"
+#	Shift + F12
 # }
 
 # Spotify (native) {

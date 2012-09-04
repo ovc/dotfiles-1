@@ -12,7 +12,7 @@
 	alias open='xdg-open'				# Open files.
 	alias afk='xscreensaver-command -lock'		# Start screensaver.
 
-	DESKTYPE='kde'		# Current DE in use.
+	DESKTYPE='dwm'					# Current DE in use.
 	case $DESKTYPE in
 	kde)
 		alias open='kde-open'			# Open files like in Dolphin.
@@ -31,6 +31,9 @@
 	openbox)
 		alias open='thunar'			# Open files.
 		alias xlogout='openbox-logout'		# Log out.
+		;;
+	dwm)
+		xlogout='pkill -f startdwm.sh'
 		;;
 	osx)
 		# Enable or disable the Dashboard.
