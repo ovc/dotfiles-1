@@ -159,7 +159,7 @@ chatnets = {
     max_msgs = "3";
     max_whois = "30";
   };
-  EFNet = {
+  EFNet = { 
     type = "IRC";
     max_kicks = "4";
     max_msgs = "3";

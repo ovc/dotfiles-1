@@ -21,12 +21,13 @@
 	"}
 
 	" Github {
-		"Bundle 'scrooloose/syntastic'
 		"Bundle 'mbbill/undotree'
+		"Bundle 'scrooloose/syntastic'
 		Bundle 'Lokaltog/vim-powerline'
 		Bundle 'MarcWeber/vim-addon-mw-utils'
 		Bundle 'Rip-Rip/clang_complete'
 		Bundle 'Rykka/lastbuf.vim'
+		Bundle 'Townk/vim-autoclose'
 		Bundle 'altercation/vim-colors-solarized'
 		Bundle 'bkad/CamelCaseMotion'
 		Bundle 'flazz/vim-colorschemes'
@@ -49,7 +50,6 @@
 		Bundle 'sjl/gundo.vim'
 		Bundle 'suan/vim-instant-markdown'
 		Bundle 'tomtom/tlib_vim'
-		Bundle 'townk/vim-autoclose'
 		Bundle 'tpope/vim-fugitive'
 		Bundle 'tpope/vim-markdown.git'
 		Bundle 'tpope/vim-repeat'

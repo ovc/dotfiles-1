@@ -33,7 +33,7 @@
 		alias xlogout='openbox-logout'		# Log out.
 		;;
 	dwm)
-		xlogout='pkill -f startdwm.sh'
+		alias xlogout='pkill -f startdwm.sh'
 		;;
 	osx)
 		# Enable or disable the Dashboard.
