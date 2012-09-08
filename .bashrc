@@ -30,9 +30,9 @@
 	#set -o vi
 
 	# Use THE text editor.
-	export EDITOR="vim"
-	export VISUAL="vim"
-	export CSHEDIT="vim"
+	export EDITOR='vim'
+	export VISUAL='vim'
+	export CSHEDIT='vim'
 
 
 	# Source aliases.
@@ -40,8 +40,11 @@
 		. $HOME/.bash_aliases
 	fi
 
+	# Let others know what underlying terminal emulator is used. This is needed since $TERM does not always represent the real terminal e.g. in tmux when you want colors.
+	export TERMEMU="urxvt"
+
 	# Complete @hostnames in a file with /ets/hosts format.
-	HOSTFILE="/etc/hosts"
+	HOSTFILE='/etc/hosts'
 
 	# Convenient cdpaths.
 	#CDPATH=$HOME

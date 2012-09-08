@@ -120,6 +120,7 @@
 " }}
 
 " Quickmarks {{
+	silent qmark b https://www.bankofamerica.com/
 	silent qmark c https://www.google.com/contacts
 	silent qmark d http://www.dsek.lth.se/
 	silent qmark f http://www.facebook.com/

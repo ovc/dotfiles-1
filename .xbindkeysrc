@@ -48,6 +48,9 @@
 	# Toogle touchpad with the unknown function key at fn+F7.
 	"touchpad-toggle.sh"
 		XF86Display
+	# Take a screenshot.
+	"scrot --quality 80 ~/media/images/screenshots/screenshot_%Y-%m-%d-%H%M%S.png"
+		Print
 
 # }
 

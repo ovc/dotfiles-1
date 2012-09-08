@@ -134,6 +134,8 @@
 	alias shredzr='shred --zero --remove'				# Zero out and delete file.
 	alias sysc='systemctl'						# The length of a name should correspond to how much you use it.
 	alias journal='journalctl'
+	# Take a screenshot of selected window.
+	alias scrot-win="scrot --quality 80 --count --delay --border --delay 3 --select $HOME/media/images/screenshots/screenshot_%Y-%m-%d-%H%M%S.png"
 # }
 
 # Misc {
