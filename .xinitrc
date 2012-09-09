@@ -111,10 +111,10 @@
 	#$HOME/bin/notify-listener.py
 
 	# Disable touchpad when typing.
-	syndaemon -K -d -i 0.5
+	syndaemon -K -d -i 0.5 &
 
 	# Start URxvt daemon.
-	urxvtd -q -o -f
+	urxvtd -q -o -f &
 
 	# Start PulseAudio.
 	# NOTE not needed since /etc/X11/xinit/xinitrc.d/pulseaudio will do it.
@@ -160,13 +160,13 @@
 	parcellite &
 
 	# Start mailleds that will blink LEDs when there are unread emails.
-	$HOME/bin/mailleds_start.sh
+	$HOME/bin/mailleds_start.sh &
 
 	# Start irexec used for executing arbitary commands from ~/.lircrc.
 	#/usr/bin/env irexec --daemon
 
 	# Scrobble songs in MPD.
-	mpdscribble
+	mpdscribble &
 
 	# Bluetooth applet.
 	blueman-applet &

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Control irctor tmux session.
+# TODO enalbe "-q":s again when package tmux is updated or tmux-git works again.
 session_name=irctor
 
 tmux start-server
@@ -14,20 +15,23 @@ do_start() {
 		tmux new-session -d -x 287 -y 41 -s "$session_name" -n "mutt/newsb" mutt
 		#tmux send-keys -t "$session_name":0 mutt C-m
 		tmux split-window -t "$session_name":0 -h newsbeuter
-		tmux set-window-option -t "$session_name":0 -q monitor-activity off
+		#tmux set-window-option -t "$session_name":0 -q monitor-activity off
+		tmux set-window-option -t "$session_name":0 monitor-activity off
 
 		tmux new-window -t "$session_name":1 -n "irssi" irssi
-		tmux set-window-option -t "$session_name":1 -q monitor-activity off
-		#tmux split-window -t "$session_name":1 -h -l 24 "cat $HOME/.irssi/nicklistfifo"
-		tmux split-window -t "$session_name":1 -h -p 10 "cat $HOME/.irssi/nicklistfifo"
+		#tmux set-window-option -t "$session_name":1 -q monitor-activity off
+		tmux set-window-option -t "$session_name":1 monitor-activity off
+		tmux split-window -t "$session_name":1 -h -p 15 "cat $HOME/.irssi/nicklistfifo"
 		tmux select-pane -t "$session_name":1.0
 
 		tmux new-window -t "$session_name":2 ncmpcpp
-		tmux set-window-option -t "$session_name":2 -q monitor-activity off
+		#tmux set-window-option -t "$session_name":2 -q monitor-activity off
+		tmux set-window-option -t "$session_name":2 monitor-activity off
 
 		tmux new-window -t "$session_name":3 -n "rtorrent/oct" rtorrent
 		tmux split-window -t "$session_name":3 -h octave
-		tmux set-window-option -t "$session_name":3 -q monitor-activity off
+		#tmux set-window-option -t "$session_name":3 -q monitor-activity off
+		tmux set-window-option -t "$session_name":3 monitor-activity off
 
 		tmux new-window -t "$session_name":4
 

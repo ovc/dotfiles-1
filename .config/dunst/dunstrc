@@ -153,9 +153,13 @@
 	urgency = normal
 	background = "#859900"
 	format = "%s %b"
-[irssi_notify.pl-filter]
+[irssi_notify.pl-filter_bitlbee]
 	appname = irssi_notify.pl
 	summary = "irssi: *bitlbee*"
+	format = ""
+[irssi_notify.pl-filter_psybnc]
+	appname = irssi_notify.pl
+	summary = "irssi: PM from -psyBNC*"
 	format = ""
 [maildir_watch]
 	appname = maildir_watch.sh
