@@ -74,7 +74,8 @@
 	export QT_IM_MODULE=xim
 
 	# Set wallpaper.
-	feh --bg-scale $HOME/.wallpaper
+	#feh --bg-scale $HOME/.wallpaper
+	feh --bg-fill $HOME/.wallpaper
 # }
 
 # Start applications {
@@ -169,6 +170,12 @@
 
 	# Bluetooth applet.
 	blueman-applet &
+
+	# MPD notifier.
+	mpd-notification &
+
+	# Lock screen when my phone is too far away.
+	start_proximity.sh &
 # }
 
 # Window manager {

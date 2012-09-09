@@ -17,6 +17,9 @@ PS1=''
 # SSH.
 PS1="${PS1}$([ -n "$SSH_CLIENT" ] && echo "${C_INVERSE}[SSH]${C_RESET} ")"
 
+# Time.
+PS1="${PS1}\A "
+
 # Set CWD in tmux, if it's running, so that it later can be used in bindings.
 #PS1=$PS1'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P") $PWD)'
 # Prompt command is issued before any other primary prompt commands.
@@ -25,7 +28,27 @@ PROMPT_COMMAND='$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I_#P
 #PS1='${debian_chroot:+($debian_chroot)}'
 
 # Show user, host and CWD.
-PS1="${PS1}\u@\h:\w"
+#PS1="${PS1}\u@\h:\w"
+PS1="${PS1}\u@\h"
+
+# Get a trimmed PWD.
+pwd_trimmed() {
+    # How many characters of the $PWD should be kept
+    local pwdmaxlen=25
+    # Indicate that there has been dir truncation
+    local trunc_symbol=".."
+    local dir=${PWD##*/}
+    pwdmaxlen=$(( ( pwdmaxlen < ${#dir} ) ? ${#dir} : pwdmaxlen ))
+    local NEW_PWD=${PWD/#$HOME/\~}
+    local pwdoffset=$(( ${#NEW_PWD} - pwdmaxlen ))
+    if [ ${pwdoffset} -gt "0" ]
+    then
+        NEW_PWD=${NEW_PWD:$pwdoffset:$pwdmaxlen}
+        NEW_PWD=${trunc_symbol}/${NEW_PWD#*/}
+    fi
+    echo "$NEW_PWD"
+}
+PS1="${PS1}"':$(pwd_trimmed)'
 
 # Show number of backround jobs.
 nbr_bg_jobs() {

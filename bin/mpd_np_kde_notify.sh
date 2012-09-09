@@ -7,5 +7,5 @@
 #kdialog --icon "$icon" --title "Currently playing song" --passivepopup "$np" 3
 
 #np=`mpc --format "%title%[\n%album%]\n%artist%" | head -n3`
-np=`mpc --format "%title%[\n%album%]\n%artist%" | grep -Pzo '^(.|\n)*?(?=\[)'`
+np=$(mpc --format "%title%[\n%album%]\n%artist%" | grep -Pzo '^(.|\n)*?(?=\[)')
 kdialog --title "Currently playing song" --passivepopup "$np" 3

@@ -195,9 +195,12 @@
 # }
 
 # Show now playing in KDE.
-# TODO fin notify-send alternative.
 #"$HOME/bin/mpd_kde_notify.sh"
 #	Shift + F12
+#
+# Show now playing in with notify-send
+"$HOME/bin/mpd_np_notify.sh"
+	Shift + F12
 # }
 
 # Spotify (native) {

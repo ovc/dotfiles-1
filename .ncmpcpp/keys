@@ -58,7 +58,8 @@ key_next_column = 261 'l'
 #
 #key_screen_switcher = 9
 #
-key_help = 265
+#key_help = 265
+key_help = 'H'
 #
 key_playlist = '1'
 #
