@@ -58,5 +58,6 @@
 .vim/undo/
 .vim/view/*
 .vim/viminfo
+.vim/viminfo.tmp
 .vim/yankring_v2.txt
 .vimperator/info/

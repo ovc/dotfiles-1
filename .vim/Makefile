@@ -14,6 +14,7 @@ help :
 	egrep "#\starget:" [Mm]akefile  | sed 's/\s-\s/\t\t\t/' | cut -d " " -f3- | sort -d
 
 clean : 
+	$(RM) ./viminfo.tmp
 	$(RM) ./viminfo
 	$(RM) ./.netrwhist
 	$(RM) ./yankring_v2.txt
