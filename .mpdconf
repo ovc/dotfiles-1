@@ -13,9 +13,9 @@
 	#bind_to_address                 "::1"
 	#bind_to_address                 "127.0.0.1"
 	# Run daemon as user.
-	user				"erikw"
+	user				"mpd"
 	# Run as group.
-	group				"users"
+	group				"audio"
 	# Enable Zeroconf publishing.
 	zeroconf_enabled		"no"
 	# Unique networkname.
@@ -61,12 +61,13 @@
 
 # Audio output {{
 	# PulseAudio {{
-		audio_output {
-        		type    "pulse"
-        		name    "MPD PulseAudio Output"
-        		#server  "localhost"   # optional
-        		#sink    "alsa_output" # optional
-		}
+		# Troublesome!
+		#audio_output {
+                        #type    "pulse"
+                        #name    "MPD PulseAudio Output"
+                        ##server  "localhost"   # optional
+                        ##sink    "alsa_output" # optional
+		#}
         # }}
 
 	# Alsa {{
