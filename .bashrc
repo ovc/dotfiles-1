@@ -74,11 +74,17 @@
 	shopt -s cmdhist
 # }
 
+# Source file if it exists.
+sourceif() {
+	local prog="$1"
+	if [ -f "$prog" ]; then
+		source "$prog"
+	fi
+}
+
 # UI {
 	# Source PS1 configuration.
-	if [ -f "$HOME/.bash_ps1" ]; then
-		. "$HOME/.bash_ps1"
-	fi
+	sourceif "$HOME/.bash_ps1"
 
 	# Solarized ls colors.
 	if [ -f "$HOME/.dircolorsrc" ]; then
@@ -122,14 +128,10 @@
 	export GPODDER_HOME="$HOME/media/music/gPodder"
 
 	# Source MPD environment variables.
-	if [ -f "$HOME/.mpd_env" ]; then
-		source $HOME/.mpd_env
-	fi
+	sourceif "$HOME/.mpd_env"
 
 	# Sorce bashmarks.
-	if [ -f "$HOME/.local/bin/bashmarks.sh" ]; then
-		source $HOME/.local/bin/bashmarks.sh
-	fi
+	sourceif "$HOME/.local/bin/bashmarks.sh"
 
 	# SSH agent. Source bash file if not connected from a remote SSH.
 	if [ -z "$SSH_CLIENT" ] && [ -f "$HOME/.ssh-agent" ]; then
@@ -137,22 +139,16 @@
 	fi
 
 	# Set up ros environment.
-	if [ -f "$HOME/bin/ros/setup.bash" ]; then
-		source $HOME/bin/ros/setup.bash
-	fi
+	sourceif "$HOME/bin/ros/setup.bash"
 
 	# Tmuxifier path and initialization.
 	export TMUXIFIER="$HOME/src/tmuxifier"
-	if [ -s "$TMUXIFIER/init.sh" ]; then
-		source "$TMUXIFIER/init.sh"
-	fi
+	sourceif "$TMUXIFIER/init.sh"
 	# Custom path for layouts.
 	export TMUXIFIER_LAYOUT_PATH="$HOME/.tmuxifier-layouts"
 
 	# Tmuxifier initialization.
-	if [ -s "$HOME/.tmuxinator/scripts/tmuxinator" ]; then
-		source "$HOME/.tmuxinator/scripts/tmuxinator"
-	fi
+	sourceif "$HOME/.tmuxinator/scripts/tmuxinator"
 	if [ -d "$HOME/src/tmuxinator/bin/" ]; then
 		export PATH="$PATH:$HOME/src/tmuxinator/bin/"
 		source "$HOME/src/tmuxinator/bin/tmuxinator_completion"
@@ -178,7 +174,6 @@
 	if [ -d "$HOME/src/svtget/" ]; then
 		PATH="$PATH:$HOME/src/svtget/"
 	fi
-
 
 	# less {
 		# Syntax highlighting for less with src-highlight.

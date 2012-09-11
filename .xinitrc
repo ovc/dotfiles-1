@@ -176,6 +176,9 @@
 
 	# Lock screen when my phone is too far away.
 	start_proximity.sh &
+
+	# Start my general tmux session
+	irctor start &
 # }
 
 # Window manager {
