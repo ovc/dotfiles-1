@@ -175,7 +175,8 @@
 	mpd-notification &
 
 	# Lock screen when my phone is too far away.
-	start_proximity.sh &
+	# TODO is it proximity who causes kernel oops?
+	#start_proximity.sh &
 
 	# Start my general tmux session
 	irctor start &

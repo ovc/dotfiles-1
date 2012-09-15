@@ -7,12 +7,24 @@ email="erik.westrup@gmail.com"
 [[ -n "$1" ]] && role=", ${1}"
 [[ -n "$2" ]] && email=$2
 
+# Swedish address
+#read -d '' out  << EOF
+#-- 
+#Erik Westrup${role}
+#<${email}>
+#(+46) 0738-286060 | 2r.se
+#Lagerbrings väg 8E, SE-22460 Lund, Sweden
+#-----------------------------------------
+#This email is encrypted with 2ROT-13.
+#EOF
+
+# CA address
 read -d '' out  << EOF
 -- 
 Erik Westrup${role}
 <${email}>
-(+46) 0738-286060 | 2r.se
-Lagerbrings väg 8E, SE-22460 Lund, Sweden
+(+1) 949-5454522 | 2r.se
+4816 Seashore Drive, Newport Beach, CA 92663
 -----------------------------------------
 This email is encrypted with 2ROT-13.
 EOF
