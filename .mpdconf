@@ -13,9 +13,9 @@
 	#bind_to_address                 "::1"
 	#bind_to_address                 "127.0.0.1"
 	# Run daemon as user.
-	user				"mpd"
+	user				"erikw"
 	# Run as group.
-	group				"audio"
+	group				"users"
 	# Enable Zeroconf publishing.
 	zeroconf_enabled		"no"
 	# Unique networkname.
