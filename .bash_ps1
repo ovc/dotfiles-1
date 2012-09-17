@@ -117,7 +117,7 @@ parse_hg_branch() {
 	fi
 
 	local branch=$(echo "$summary" | grep 'branch:' | cut -d ' ' -f2)
-	echo -e " ${C_FG_BLUE}[${branch}]${C_RESET}"
+	echo -e " [${branch}]"
 }
 PS1="${PS1}${C_FG_BLUE}\$(parse_hg_branch)${C_RESET}"
 
