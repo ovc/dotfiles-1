@@ -47,18 +47,18 @@ pwd_trimmed() {
     fi
     echo "$NEW_PWD"
 }
-PS1="${PS1}"':$(pwd_trimmed)'
+PS1="${PS1}:\$(pwd_trimmed)"
 
-# Show number of backround jobs.
+# Get number of backround jobs.
 nbr_bg_jobs() {
 	njobs=`jobs | wc -l`
 	if [ "$njobs" -gt 0 ]; then
 		echo " (${njobs})"
 	fi
 }
-PS1="${PS1}"'$(nbr_bg_jobs)'
+PS1="${PS1}\$(nbr_bg_jobs)"
 
-# Show git banch.
+# Get git banch.
 parse_git_branch() {
 	#git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
 
@@ -68,25 +68,20 @@ parse_git_branch() {
 	fi
 
 	# Quit if this is not a Git repo.
-	branches=$(git branch --no-color 2>/dev/null)
+	#branches=$(git branch --no-color 2>/dev/null)
+	branch=$(git symbolic-ref HEAD 2>/dev/null)
 	if [ "$?" -ne 0 ]; then
 		return
 	fi
 
-	local branch=$(echo "$branches" | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-
-	echo "$branches" | grep "remotes/git-svn" &>/dev/null
-	is_gitsvn=$([ "$?" -eq 0 ] && echo 1 || echo 0)
-
-	echo -ne " ${C_FG_MAGENTA}["
-	[ "$is_gitsvn" -eq 1 ] && echo -ne "${C_FG_YELLOW}"	# Set yellow colors if using git-svn.
-	echo -n "${branch}"
-	[ "$is_gitsvn" -eq 1 ] && echo -ne "${C_FG_MAGENTA}"	# Reset colors if git-svn was used.
-	echo -ne "]${C_RESET}"
+	#branch=$(echo "$branch" | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+	branch=${branch#refs/heads/}
+	echo -n " [${branch}]"
+	unset branch
 }
-PS1="$PS1"'$(parse_git_branch)'
+PS1="${PS1}${C_FG_MAGENTA}\$(parse_git_branch)${C_RESET}"
 
-# Show SVN branch.
+# Get SVN branch.
 parse_svn_branch() {
 	if [ ! -d ".svn/" ]; then
 		return
@@ -105,10 +100,11 @@ parse_svn_branch() {
 
 	# Show only branch.
 	local branch=$(echo $svn_url | sed -e 's#^'"${svn_root}"'##g' | egrep -o '(tags|branches)/[^/]+|trunk' | egrep -o '[^/]+$')
-	echo -e " ${C_FG_YELLOW}[${branch}]${C_RESET}"
+	echo -e " [${branch}]"
 }
-PS1="$PS1"'$(parse_svn_branch)'
+PS1="${PS1}${C_FG_YELLOW}\$(parse_svn_branch)${C_RESET}"
 
+# Get mercurial branch.
 parse_hg_branch() {
 	type hg >/dev/null 2>&1
 	if [ "$?" -ne 0 ]; then
@@ -123,7 +119,7 @@ parse_hg_branch() {
 	local branch=$(echo "$summary" | grep 'branch:' | cut -d ' ' -f2)
 	echo -e " ${C_FG_BLUE}[${branch}]${C_RESET}"
 }
-PS1="$PS1"'$(parse_hg_branch)'
+PS1="${PS1}${C_FG_BLUE}\$(parse_hg_branch)${C_RESET}"
 
 # End marker.
 PS1="${PS1}> "
