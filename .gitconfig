@@ -36,6 +36,7 @@
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	ls = ls-files
+	rb = rebase
 	st = status
 	stat = status
 	svn-status = diff --name-status remotes/git-svn

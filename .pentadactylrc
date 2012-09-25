@@ -110,6 +110,8 @@
 	map <F1> <NOP>
 	" Open Tab Groups.
 	map E <C-S-e>
+	" Open downloads.
+	nmap -builtin <A-d> :downloads<CR>
 
 	" Mappings like Vimperator {{
 		imap <C-v> <Pass>

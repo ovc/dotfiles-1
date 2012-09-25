@@ -1,9 +1,0 @@
-[Shortcut0]
-name = Case Conversion
-filenames = /home/erikw/.puddletag/actions/standard.action, /home/erikw/.puddletag/actions/caseconversion.action
-[Shortcut1]
-name = Standard
-filenames = /home/erikw/.puddletag/actions/caseconversion.action, /home/erikw/.puddletag/actions/standard.action
-[Shortcut2]
-name = Path_lowername
-filenames = /home/erikw/.puddletag/actions/caseconversion.action, /home/erikw/.puddletag/actions/standard.action, /home/erikw/.puddletag/actions/Path_lowername.action

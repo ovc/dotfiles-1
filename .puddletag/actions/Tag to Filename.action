@@ -1,7 +1,0 @@
-[info]
-name = Tag to Filename
-[Func0]
-fields = just nothing to do with this,
-func_name = move
-module = puddlestuff.functions
-arguments = %artist% - %album% - %titel%,
