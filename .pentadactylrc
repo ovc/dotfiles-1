@@ -105,7 +105,7 @@
 	" Move down i command history.
 	cmap -builtin <C-N> <Down>
 	" Unhighlight search results.
-	map -builtin <C-_h> :nohlfind<CR>
+	map -builtin <C-/> :nohlfind<CR>
 	" I need no help.
 	map <F1> <NOP>
 	" Open Tab Groups.

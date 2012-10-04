@@ -376,7 +376,7 @@
 				endif
 			endfunction
 		" }
-		nmap <silent> <Leader>j :call HighlightNearCursor()<CR>			" Toggle highlight on cursor-word.
+		nmap <silent> <Leader>J :call HighlightNearCursor()<CR>			" Toggle highlight on cursor-word.
 
 		" Toggle mouse {
 			function! ToggleMouse()
@@ -487,13 +487,14 @@ if s:use_plugins
 
 	" Solarized {
 		"call togglebg#map("<Leader>%")		" Toggle background with solarized. Not nice because it maps in insert mode too.
+		call togglebg#map("<F5>")		" Toggle background with solarized.
 	" }
 
 	" Strip Trailing Spaces {
 		" Remove all trailing spaces and return to pos.
 		nmap <silent> <Leader>S :call StripTrailingWhitespaces()<CR>
 		" Remove all trailing spaces and return to pos and write.
-		command Ws call StripTrailingWhitespaces() | update
+		command! Ws call StripTrailingWhitespaces() | update
 	" }
 
 	" Syntastic {

@@ -175,6 +175,13 @@ sourceif() {
 		PATH="$PATH:$HOME/src/svtget/"
 	fi
 
+	# Add ANSI color output to ant.
+	type ant >/dev/null 2>&1
+	if [ "$?" -eq 0 ]; then
+		export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
+	fi
+
+
 	# less {
 		# Syntax highlighting for less with src-highlight.
 		type src-hilite-lesspipe.sh  &> /dev/null

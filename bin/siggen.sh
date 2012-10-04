@@ -23,9 +23,9 @@ read -d '' out  << EOF
 -- 
 Erik Westrup${role}
 <${email}>
-(+1) 949-5454522 | 2r.se
-4816 Seashore Drive, Newport Beach, CA 92663
------------------------------------------
+(+1) (949) 545-4522 | 2r.se
+4816 Seashore Drive, Newport Beach 92663, CA, USA
+-------------------------------------------------
 This email is encrypted with 2ROT-13.
 EOF
 

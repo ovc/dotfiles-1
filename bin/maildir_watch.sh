@@ -15,7 +15,7 @@ while read line; do
 	mail="${parts[1]}"
 
 	# Get subject and trim length.
-	subject=$(grep "Subject:" ${inbox_path}/${mail} | cut -c1-20)
+	subject=$(grep "Subject:" ${inbox_path}/${mail} | cut -c1-30)
 
 	# Get from field and display name or email.
 	from_row=$(grep "^From:" ${inbox_path}/${mail} | sed 's/From:\s*//')

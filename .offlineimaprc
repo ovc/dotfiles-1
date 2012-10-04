@@ -56,9 +56,10 @@ remoteuser = erik.westrup@gmail.com
 # Gmail password token.
 remotepass = GIT-CENSORED
 # Use SSL. Implicit for type = Gmail.
-# ssl=yes
+#ssl=yes
 # Gmail's cert fingerprint. Using sslcacert option failes to verify even though `openssl` can use it for verification. http://docs.offlineimap.org/en/latest/FAQ.html#how-do-i-generate-an-sslcacertfile-file
-cert_fingerprint=f3043dd689a2e7dddfbef82703a6c65ea9b634c1
+#cert_fingerprint=f3043dd689a2e7dddfbef82703a6c65ea9b634c1
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 # Use more connections to speed up.
 maxconnections = 3
 # Mark as deleted on the server but don't actually delete them. This is required to retain the Gmail Archive feature. To delete a mail; move it to the Trash folder and Gmail will delete it after 30 days. Reference: https://support.google.com/mail/bin/answer.py?hl=en&ctx=mail&answer=7401

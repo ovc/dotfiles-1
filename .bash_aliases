@@ -136,6 +136,8 @@
 	alias journal='journalctl'
 	# Take a screenshot of selected window.
 	alias scrot-win="scrot --quality 80 --count --delay --border --delay 3 --select $HOME/media/images/screenshots/screenshot_%Y-%m-%d-%H%M%S.png"
+	# Run JUnit on a test class.
+	alias junitx="java -cp /usr/share/java/junit.jar:bin org.junit.runner.JUnitCore"
 # }
 
 # Misc {
@@ -152,4 +154,5 @@
 	alias uk='umount /media/key/ 2>/dev/null && echo "Key umounted." || echo "Umount failed." 1>&2'
 	# ZO RELAXEN
 	alias blinkenlichten='while true; do xset led 3; sleep 0.2s; xset -led 3; sleep 0.3s; done'
+	alias cursh="ps -p \$\$ | tail -1 | awk '{print \$NF}'"		# Current shell.
 # }
