@@ -31,6 +31,7 @@
 	cp = cherry-pick
 	ft = fetch
 	pu = pull
+	l = log
 	log1 = log --pretty=oneline
 	logs = log --stat
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit

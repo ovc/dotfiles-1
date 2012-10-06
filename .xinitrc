@@ -76,6 +76,11 @@
 	# Set wallpaper.
 	#feh --bg-scale $HOME/.wallpaper
 	feh --bg-fill $HOME/.wallpaper
+
+	# Set terminal cursor speed. First argument (in ms) is the delay before auto repeat starts.
+	# The second paramter is the repeat rate in number repeats per second.
+	# Get current values with $(xset q | grep rate)
+	xset r rate 400 44
 # }
 
 # Start applications {

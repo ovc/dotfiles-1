@@ -15,10 +15,10 @@ while read line; do
 	mail="${parts[1]}"
 
 	# Get subject and trim length.
-	subject=$(grep "Subject:" ${inbox_path}/${mail} | cut -c1-30)
+	subject=$(grep -i "Subject:" ${inbox_path}/${mail} | cut -c1-30)
 
 	# Get from field and display name or email.
-	from_row=$(grep "^From:" ${inbox_path}/${mail} | sed 's/From:\s*//')
+	from_row=$(grep -i "^From:" ${inbox_path}/${mail} | sed 's/From:\s*//I')
 	from_name=$(echo "$from_row" | grep -Po "[^<>]+(?=(?:<|$))")
 	from_email=$(echo "$from_row" | grep -Po "(?<=<).+(?=>)")
 	from="From: "
@@ -29,9 +29,10 @@ while read line; do
 	else
 		from="${from}<unknown>"
 	fi
+	from=$(echo ${from} | cut -c1-30)
 
 	# Get the body. First scroll down to body then strip signature, empty lines, join lines, substitute spaces to get more text and limit length.
-	body=$(sed '1,/^$/d' "${inbox_path}/${mail}" | sed -n '/-- /q;p' | sed '/^ *$/d' | tr "\\n" ' ' | sed 's/\s\s*/ /g' | cut -c1-80)
+	body=$(sed '1,/^$/d' "${inbox_path}/${mail}" | | grep -V "^Content-.*:" | sed -n '/-- /q;p' | sed '/^ *$/d' | tr "\\n" ' ' | sed 's/\s\s*/ /g' | cut -c1-80)
 	# Notify summary string.
 	out_summary=$(printf "[%s] %s, %s\\n" "$inbox" "$from" "$subject")
 	# Notify body string.
