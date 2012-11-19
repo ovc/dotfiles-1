@@ -62,7 +62,7 @@
 	xset +fp /usr/share/fonts/local
 	xset fp rehash
 
-	# Updated X resouced database.
+	# Updated X resouce database.
 	if [ -f "$HOME/.Xresources" ]; then
 		# Apparently merge will not always work for xterm settings.
 		#xrdb -merge $HOME/.Xresources
@@ -80,7 +80,7 @@
 	# Set terminal cursor speed. First argument (in ms) is the delay before auto repeat starts.
 	# The second paramter is the repeat rate in number repeats per second.
 	# Get current values with $(xset q | grep rate)
-	xset r rate 400 44
+	xset r rate 450 40
 # }
 
 # Start applications {
@@ -130,7 +130,7 @@
 	# Start screensaver
 	xscreensaver -no-splash &
 
-	# Turn of screen after inactivity (in seconds). For mysterious reasons the sleep is needed.
+	# Turn off screen after inactivity (in seconds). For mysterious reasons the sleep is needed.
 	xset +dpms
 	sleep 1; xset s 1200
 
