@@ -37,6 +37,10 @@
 	"eject -T"
 		Mod4 + Mod1 + e
 
+	# Umount key.
+	"umount /dev/key1"
+		Mod4 + Mod1 + u
+
 	# Hijack ThinkVantage button to show system stats.
 	"urxvtc -e htop"
 		XF86Launch1

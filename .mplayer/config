@@ -29,7 +29,7 @@ subfont-blur="1" 		# Slight blur.
 unicode            = 1
 
 # This sets the postprocessing into overdrive using all possible spare cpu cycles to make the movie look better.
-autoq = 100
+autoq=100
 vf=pp=de,hqdn3d
 
 
@@ -41,3 +41,6 @@ subalign="2"
 
 # Prevent xscreensaver from locking.
 heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
+
+# I don't have IR on this computer.
+nolirc=yes

@@ -132,7 +132,7 @@
 
 	# Turn off screen after inactivity (in seconds). For mysterious reasons the sleep is needed.
 	xset +dpms
-	sleep 1; xset s 1200
+	sleep 1; xset s 900
 
 	# Start X keyboard shortcut daemon.
 	xbindkeys
