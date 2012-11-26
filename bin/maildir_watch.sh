@@ -32,6 +32,7 @@ while read line; do
 	from=$(echo ${from} | cut -c1-30)
 
 	# Get the body. First scroll down to body then strip signature, Content lines, random ID line, empty lines, join lines, substitute spaces to get more text and limit length.
+	# TODO simplyfy by passing to HTML stripper or something.
 	body=$(sed '1,/^$/d' "${inbox_path}/${mail}" | grep -v "^Content-.*:" | grep -v "^--[[:xdigit:]]\+" | sed -n '/-- /q;p' | sed '/^ *$/d' | tr "\\n" ' ' | sed 's/\s\s*/ /g' | cut -c1-80)
 	# Notify summary string.
 	out_summary=$(printf "[%s] %s, %s\\n" "$inbox" "$from" "$subject")

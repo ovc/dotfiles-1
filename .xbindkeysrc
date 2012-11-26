@@ -38,7 +38,7 @@
 		Mod4 + Mod1 + e
 
 	# Umount key.
-	"umount /dev/key1"
+	"umount /dev/key1 && notify-send --app-name 'xbindkeys'  'Umounted key.'"
 		Mod4 + Mod1 + u
 
 	# Hijack ThinkVantage button to show system stats.
