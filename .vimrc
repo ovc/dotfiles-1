@@ -154,6 +154,7 @@
 			set <F10>=[21~
 			set <F11>=[23~
 			set <F12>=[24~
+			set termencoding=latin1 	" This will make Meta key work if meta8 is enabled.
 		end
 	" }
 " }
@@ -274,8 +275,8 @@
 	nmap <silent> <Leader>V :tabe $MYVIMRC<CR>					" Edit vimrc.
 	nmap Y y$									" Consistency with C and D. Does not work with YankRing.
 	"nmap <silent> <Leader>d "=strftime("%Y-%m-%d")<CR>P 				" Insert the current date.
-	map <silent> <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>		" Open tags definition in a new tab.
-        map <silent> <A-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>      		" Open tags definition in a vertical split.
+	noremap <silent> <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>		" Open tags definition in a new tab.
+        noremap <silent> <M-\> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>      		" Open tags definition in a vertical split.
 	"nmap <silent> <Leader>S :%s/\s\+$//ge<CR>					" Remove all trailing spaces.
 	nnoremap <silent> gfs :wincmd f<CR>						" Open path under cursor in a split.
 	nnoremap <silent> gfv :vertical wincmd f<CR>					" Open path under cursor in a vertical split.
