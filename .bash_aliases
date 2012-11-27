@@ -126,18 +126,19 @@
 	#alias t='task'
 	#alias c='gcalcli'
 	alias gcal='gcalcli'
-	alias vboxmanage='VBoxManage'					# Who likes caps? I don't.
-	alias ll='ls -l'						# I don't use it but aliens on my systems presumes its existance.
-	unalias l &>/dev/null						# I use bashmarks.
+	alias vboxmanage='VBoxManage'							# Who likes caps?- I don't.
+	alias ll='ls -l'										# I don't use it but aliens on my systems presumes its existance.
+	unalias l &>/dev/null									# I use bashmarks.
 	alias lsc='ls --color=always --time-style=long-iso'		# Force color.
-	alias agdbtui='arm-none-eabi-gdbtui'				# So tired of typing that...
-	alias shredzr='shred --zero --remove'				# Zero out and delete file.
-	alias sysc='systemctl'						# The length of a name should correspond to how much you use it.
+	alias agdbtui='arm-none-eabi-gdbtui'					# So tired of typing that...
+	alias shredzr='shred --zero --remove'					# Zero out and delete file.
+	alias sysc='systemctl'									# The length of a name should correspond to its importance, see vi.
 	alias journal='journalctl'
 	# Take a screenshot of selected window.
 	alias scrot-win="scrot --quality 80 --count --delay --border --delay 3 --select $HOME/media/images/screenshots/screenshot_%Y-%m-%d-%H%M%S.png"
 	# Run JUnit on a test class.
 	alias junitx="java -cp /usr/share/java/junit.jar:bin org.junit.runner.JUnitCore"
+	alias pkillf="pkill -f -9"								# Force kill full name matched process.
 # }
 
 # Misc {

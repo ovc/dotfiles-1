@@ -186,7 +186,6 @@
 		macro index,pager	goS	"c+spam<enter>"					"change to folder +spam"
 		macro index,pager	got	"c+trash<enter>"				"change to folder +trash"
 		macro index,pager	gow	"c+work<enter>"					"change to folder +work"
-		macro index,pager	gou	"c+uci<enter>"					"change to folder +uci"
 		macro index,pager	gom	"c$my_local_mbox<enter>"			"change to local mbox."
 	# }}
 

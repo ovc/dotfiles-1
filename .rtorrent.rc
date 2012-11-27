@@ -41,10 +41,10 @@
 
 # Downloads {
 	# Default download directory.
-	directory = ~/dl/.leeching/
+	directory = ~/dl/torrent/leeching/
 
 	# Save settings and more with sessions.
-	session = ~/dl/.sessions/
+	session = ~/dl/torrent/.sessions/
 
 	# Check hash on finished downloads.
 	check_hash = yes
@@ -52,14 +52,14 @@
 
 # Schedules {
 	# Watch for .torrents, start in a directory & set a new for later mv of the files.
-	schedule = watch_directory_seeding,5,30,"load_start=~/dl/.watch/*.torrent,d.set_custom1=~/dl/seeding/"
-	schedule = watch_directory_ebooks,5,30,"load_start=~/dl/.watch/ebooks/*.torrent,d.set_directory=~/dl/.leeching/ebooks/,d.set_custom1=~/dl/seeding/ebooks/"
-	schedule = watch_directory_games,5,30,"load_start=~/dl/.watch/games/*.torrent,d.set_directory=~/dl/.leeching/games/,d.set_custom1=~/dl/seeding/games/"
-	schedule = watch_directory_misc,5,30,"load_start=~/dl/.watch/misc/*.torrent,d.set_directory=~/dl/.leeching/misc/,d.set_custom1=~/dl/seeding/misc/"
-	schedule = watch_directory_movies,5,30,"load_start=~/dl/.watch/movies/*.torrent,d.set_directory=~/dl/.leeching/movies/,d.set_custom1=~/dl/seeding/movies/"
-	schedule = watch_directory_music,5,30,"load_start=~/dl/.watch/music/*.torrent,d.set_directory=~/dl/.leeching/music/,d.set_custom1=~/dl/seeding/music/"
-	schedule = watch_directory_software,5,30,"load_start=~/dl/.watch/software/*.torrent,d.set_directory=~/dl/.leeching/software/,d.set_custom1=~/dl/seeding/software/"
-	schedule = watch_directory_tv,5,30,"load_start=~/dl/.watch/tv/*.torrent,d.set_directory=~/dl/.leeching/tv/,d.set_custom1=~/dl/seeding/tv/"
+	schedule = watch_directory_seeding,5,30,"load_start=~/dl/torrent/watch/*.torrent,d.set_custom1=~/dl/torrent/seeding/"
+	schedule = watch_directory_ebooks,5,30,"load_start=~/dl/torrent/watch/ebooks/*.torrent,d.set_directory=~/dl/torrent/leeching/ebooks/,d.set_custom1=~/dl/torrent/seeding/ebooks/"
+	schedule = watch_directory_games,5,30,"load_start=~/dl/torrent/watch/games/*.torrent,d.set_directory=~/dl/torrent/leeching/games/,d.set_custom1=~/dl/torrent/seeding/games/"
+	schedule = watch_directory_misc,5,30,"load_start=~/dl/torrent/watch/misc/*.torrent,d.set_directory=~/dl/torrent/leeching/misc/,d.set_custom1=~/dl/torrent/seeding/misc/"
+	schedule = watch_directory_movies,5,30,"load_start=~/dl/torrent/watch/movies/*.torrent,d.set_directory=~/dl/torrent/leeching/movies/,d.set_custom1=~/dl/torrent/seeding/movies/"
+	schedule = watch_directory_music,5,30,"load_start=~/dl/torrent/watch/music/*.torrent,d.set_directory=~/dl/torrent/leeching/music/,d.set_custom1=~/dl/torrent/seeding/music/"
+	schedule = watch_directory_software,5,30,"load_start=~/dl/torrent/watch/software/*.torrent,d.set_directory=~/dl/torrent/leeching/software/,d.set_custom1=~/dl/torrent/seeding/software/"
+	schedule = watch_directory_tv,5,30,"load_start=~/dl/torrent/watch/tv/*.torrent,d.set_directory=~/dl/torrent/leeching/tv/,d.set_custom1=~/dl/torrent/seeding/tv/"
 
 	# Execute the mv command when download is finished.
 	#on_finished = move_unrar_complete,"execute=~/bin/rtorrent_move_unrar.sh,$d.get_base_path=,$d.get_custom1= ;d.set_directory=$d.get_custom1="
