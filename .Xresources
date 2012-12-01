@@ -41,7 +41,7 @@ XTermBig.geometry: 120x40
 ! Set the color bitdepth.
 URxvt.depth: 32
 ! Use 8 bit mode i.e. set the 8th bit when using Meta key.
-URxvt.meta8: true
+!URxvt.meta8: true
 ! Double buffering for performance.
 URxvt.buffered: true
 ! Font to use.

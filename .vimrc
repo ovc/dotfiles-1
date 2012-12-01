@@ -21,6 +21,7 @@
 	"}
 
 	" Github {
+		"Bundle 'maxbrunsfeld/vim-yankstack'
 		"Bundle 'mbbill/undotree'
 		"Bundle 'scrooloose/syntastic'
 		Bundle 'Lokaltog/vim-powerline'
@@ -40,7 +41,6 @@
 		Bundle 'majutsushi/tagbar'
 		Bundle 'mattn/gist-vim'
 		Bundle 'mattn/webapi-vim'
-		Bundle 'maxbrunsfeld/vim-yankstack'
 		Bundle 'michaeljsmith/vim-indent-object'
 		Bundle 'rbonvall/snipmate-snippets-bib'
 		Bundle 'salsifis/vim-transpose'
@@ -154,7 +154,7 @@
 			set <F10>=[21~
 			set <F11>=[23~
 			set <F12>=[24~
-			set termencoding=latin1 	" This will make Meta key work if meta8 is enabled.
+			"set termencoding=latin1 	" This will make Meta key work if meta8 is enabled.
 		end
 	" }
 " }
@@ -276,7 +276,8 @@
 	nmap Y y$									" Consistency with C and D. Does not work with YankRing.
 	"nmap <silent> <Leader>d "=strftime("%Y-%m-%d")<CR>P 				" Insert the current date.
 	noremap <silent> <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>		" Open tags definition in a new tab.
-        noremap <silent> <M-\> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>      		" Open tags definition in a vertical split.
+        "noremap <silent> <M-\> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>      		" Open tags definition in a vertical split.
+        noremap <silent> <Leader>] :vsp<CR>:exec("tag ".expand("<cword>"))<CR>      		" Open tags definition in a vertical split.
 	"nmap <silent> <Leader>S :%s/\s\+$//ge<CR>					" Remove all trailing spaces.
 	nnoremap <silent> gfs :wincmd f<CR>						" Open path under cursor in a split.
 	nnoremap <silent> gfv :vertical wincmd f<CR>					" Open path under cursor in a vertical split.
@@ -310,13 +311,14 @@
 	" }
 
 	" Toggles {
-		nmap <silent> <Leader>w :set wrap!<CR>:set wrap?<CR>			" Toggle line wrapping.
-		nmap <silent> <Leader>` :set list!<CR>					" Toggle listing of characters.
-		nmap <silent> <ESC>p :set paste! paste?<CR>				" Toggle 'paste' for sane pasting.
-		nmap <silent> <leader>p :set paste<CR>:normal "*p<CR>:set nopaste<CR>	" Paste after cursor in paste-mode from register "*.
-		nmap <silent> <leader>P :set paste<CR>:normal "*P<CR>:set nopaste<CR>	" Paste after cursor in paste-mode from register "*.
+		noremap <silent> <Leader>w :set wrap!<CR>:set wrap?<CR>			" Toggle line wrapping.
+		noremap <silent> <Leader>` :set list!<CR>					" Toggle listing of characters.
+		noremap <silent> <ESC>p :set paste! paste?<CR>				" Toggle 'paste' for sane pasting.
+		noremap <silent> <leader>p :set paste<CR>:normal "*p<CR>:set nopaste<CR>	" Paste after cursor in paste-mode from register "*.
+		noremap <silent> <leader>P :set paste<CR>:normal "*P<CR>:set nopaste<CR>	" Paste after cursor in paste-mode from register "*.
+		noremap <silent> <F11> :SyntasticToggleMode<CR>					" Toggle syntastic checking.
 
-		nmap <silent> <Leader>ac :AutoCloseToggle<CR>				" Toggle AutoClose mode.
+		noremap <silent> <Leader>ac :AutoCloseToggle<CR>				" Toggle AutoClose mode.
 
 		" Toggle spell with a language. {
 		function! ToggleSpell(lang)

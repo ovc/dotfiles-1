@@ -5,6 +5,6 @@
 " }
 
 " Surround {
-	xunmap s
+	"xunmap s
 	" Let s do substitution in visual mode as usual.
 " }

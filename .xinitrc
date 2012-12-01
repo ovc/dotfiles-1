@@ -11,6 +11,7 @@
 # Setup {
 	# In case everything goes wrong, we at least fall back to a plain xterm.
 	failsafe="xterm -ls -T Failsafe -geometry 80x24-0-0"
+	# Damn son, where'd you find this?
 	trap "exec $failsafe" EXIT SIGHUP SIGINT SIGPIPE SIGTERM SIGIO
 
 	# Some bash (1 and 2) settings to avoid trouble on a failed program call.
@@ -165,7 +166,7 @@
 	parcellite &
 
 	# Start mailleds that will blink LEDs when there are unread emails.
-	$HOME/bin/mailleds_start.sh &
+	#$HOME/bin/mailleds_start.sh &
 
 	# Start irexec used for executing arbitary commands from ~/.lircrc.
 	#/usr/bin/env irexec --daemon
@@ -183,7 +184,7 @@
 	# TODO is it proximity who causes kernel oops?
 	#start_proximity.sh &
 
-	# Start my general tmux session
+	# Start my general tmux session.
 	irctor start &
 # }
 

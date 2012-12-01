@@ -7,7 +7,7 @@ locking=on				# Use file-level locking
 # Terminal
 curses=on				# Use ncurses library to determine terminal width
 defaultwidth=180			# Without ncurses, assumed width
-editor=vi				# Preferred text editor
+editor=vim				# Preferred text editor
 
 # Miscellaneous
 search.case.sensitive=no		# Setting to no allows case insensitive searches

@@ -224,3 +224,10 @@
 	"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
 		Control + Alt + Shift + F9
 # }
+
+# Misc {
+	# Toggle English and Swedish keboard layout.
+    	"~/dev/vimomap/vimomap.sh --layout && xmodmap ~/.Xmodmap"
+	    Mod4 + Mod1 + k
+# }
+
