@@ -180,7 +180,11 @@ sourceif() {
 	if [ "$?" -eq 0 ]; then
 		export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 	fi
-
+	
+	# Use perl GCC color wrapper if it exists.
+	if [ -d "/usr/lib/colorgcc/" ]; then
+	    export PATH="/usr/lib/colorgcc/bin:$PATH"
+	fi
 
 	# less {
 		# Syntax highlighting for less with src-highlight.

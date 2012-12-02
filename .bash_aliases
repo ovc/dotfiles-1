@@ -76,6 +76,24 @@
 			alias diffc='colordiff'
 			alias diff='colordiff'
 		fi
+
+		# Use colored du if exists.
+		hash cdu 2>/dev/null
+		if [ "$?" -eq 0 ]; then
+			alias du='cdu -idh'
+		fi
+
+		# Colorize SVN.
+		type colorsvn >/dev/null 2>&1
+		if [ "$?" -eq 0 ]; then
+	    	alias svn='colorsvn'
+		fi
+
+		# Make colors.
+		type colormake >/dev/null 2>&1
+		if [ "$?" -eq 0 ]; then
+	    	alias make='colormake'
+		fi
 	else
 		alias ls="ls ${ls_options}"
 	fi

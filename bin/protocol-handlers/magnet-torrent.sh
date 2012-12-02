@@ -8,7 +8,7 @@ if [ "$1" != "RUNNING_XTERM" ]; then
 fi
 
 # Base directory that rTorrent polls.
-watch_dir="$HOME/dl/.watch"
+watch_dir="$HOME/dl/torrent/watch"
 
 if [[ "$2" =~ xt=urn:btih:([^&/]+) ]]; then	# Magnet URL.
 	magnet_url="$2"
