@@ -70,6 +70,7 @@
 		Bundle 'argtextobj.vim'
 		Bundle 'buffergrep'
 		Bundle 'capslock.vim'
+		Bundle 'last_edit_marker.vim'
 		Bundle 'lbdbq'
 		Bundle 'rename.vim'
 	"}
@@ -316,7 +317,6 @@
 		noremap <silent> <ESC>p :set paste! paste?<CR>				" Toggle 'paste' for sane pasting.
 		noremap <silent> <leader>p :set paste<CR>:normal "*p<CR>:set nopaste<CR>	" Paste after cursor in paste-mode from register "*.
 		noremap <silent> <leader>P :set paste<CR>:normal "*P<CR>:set nopaste<CR>	" Paste after cursor in paste-mode from register "*.
-		noremap <silent> <F11> :SyntasticToggleMode<CR>					" Toggle syntastic checking.
 
 		noremap <silent> <Leader>ac :AutoCloseToggle<CR>				" Toggle AutoClose mode.
 
@@ -500,6 +500,11 @@ if s:use_plugins
 
 	" Syntastic {
 		"let g:syntastic_check_on_open=0		" Don't automatically do syntax check on open buffers.
+		noremap <silent> <F11> :SyntasticToggleMode<CR>					" Toggle syntastic checking.
+		" Do syntax check on files with exceptions.
+		let g:syntastic_mode_map = { 'mode': 'active',
+		                           \ 'active_filetypes': [],
+		                           \ 'passive_filetypes': ['java'] }
 	" }
 
 	" Tagbar {
