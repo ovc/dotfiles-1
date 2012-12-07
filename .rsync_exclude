@@ -1,5 +1,7 @@
-.log/*
-.mozilla/firefox/*.default/Cache/
-.vim/undo/
-.vim/view/
-.wine/drive_c/users/erikw/Local\ Settings/Application\ Data/Spotify/Storage/
+/home/erikw/.local/share/parcellite/history
+/home/erikw/.log/*
+/home/erikw/.mozilla/firefox/*.default/Cache/
+/home/erikw/.pulse/
+/home/erikw/.vim/undo/
+/home/erikw/.vim/view/
+/home/erikw/.wine/drive_c/users/erikw/Local\ Settings/Application\ Data/Spotify/Storage/

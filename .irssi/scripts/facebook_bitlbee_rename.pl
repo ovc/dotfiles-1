@@ -1,6 +1,7 @@
 # See this script's repository at
 # http://github.com/avar/irssi-bitlbee-facebook-rename for further
 # information.
+# NOTE not needed with bitlbee >=~ 3 with nick_source and nick_format.
 
 use strict;
 use warnings;

@@ -175,7 +175,7 @@
 	mpdscribble &
 
 	# Bluetooth applet.
-	blueman-applet &
+	#blueman-applet &
 
 	# MPD notifier.
 	mpd-notification &

@@ -124,16 +124,17 @@
 
 # Program enhancements {
 	alias emacs='emacs --no-window-system'			# Emacs belongs to the terminal.
-	alias mvim='mvim -v'					# MacVim.
-	alias gdb='gdb -q'					# Suppress legal info.
-	alias cgdb='cgdb -q'					# Suppress legal info.
-	#alias df='df -h'					# Always show in human readable.
+	alias mvim='mvim -v'							# MacVim.
+	alias gdb='gdb -q'								# Suppress legal info.
+	alias cgdb='cgdb -q'							# Suppress legal info.
+	#alias df='df -h'								# Always show in human readable.
+	alias dfc='dfc -d' 								# Show used column.
 	alias matlab='matlab -nodesktop -nosplash'		# Run in terminal with no splash screen.
-	alias xmatlab='\matlab'					# Default X version.
-	alias gimp='gimp --no-splash'				# Splash screens are just annoying.
-	alias dmenu="dmenu -i"					# Ignore case.
-	alias pacman='pacman-color'				# Use colorfoull pacman.
-	alias cower='cower --color=auto'			# Use colors.
+	alias xmatlab='\matlab'							# Default X version.
+	alias gimp='gimp --no-splash'					# Splash screens are just annoying.
+	alias dmenu="dmenu -i"							# Ignore case.
+	alias pacman='pacman-color'						# Use colorfoull pacman.
+	alias cower='cower --color=auto'				# Use colors.
 # }
 
 # Short hands {
@@ -160,12 +161,12 @@
 # }
 
 # Misc {
-	alias psg='ps aux | grep -i '			# List matching processes.
-	alias dusch='du -sch'				# The best file size calculator.
-	alias rehash='hash -r'				# Reload PATH caches or something similar. It works!
-	alias beep='echo -en "\007"'			# Whoop whoop'
-	alias bygg='make -f Byggfil'			# New standard?
-	alias webshare='python -m SimpleHTTPServer'	# Start webshare on port 8000 in CWD.
+	alias psg='ps aux | grep -i '					# List matching processes.
+	alias dusch='du -sch'							# The best file size calculator.
+	alias rehash='hash -r'							# Reload PATH caches or something similar. It works!
+	alias beep='echo -en "\007"'					# Whoop whoop'
+	alias bygg='make -f Byggfil'					# New standard?
+	alias webshare='python -m SimpleHTTPServer'		# Start webshare on port 8000 in CWD.
 	alias image_dim="identify -format '%w %h\n'"	# Get dimmensions of an image.
 	# Simple network speed test.
 	alias speed_check='wget -O/dev/null ftp://ftp.port80.se/100M'

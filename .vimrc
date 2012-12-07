@@ -262,6 +262,8 @@
 	command! Wmake update | silent !make >/dev/null
 	" See buffer and file diff.
 	command! Wdiff w !diff % -<CR>
+	" Close tabs.
+	command! Qt tabc
 
 	command! -nargs=* Wrap set wrap linebreak nolist	" Set softwrap correctly.
 	autocmd BufWinLeave * silent! mkview			" Save fold views.
@@ -285,6 +287,8 @@
 	nnoremap <silent> gft :tab wincmd f<CR>						" Open path under cursor in a tab.
 	nnoremap <silent> gV `[v`]							" Visually select the text that was last edited/pasted.
 	nnoremap <Leader>ct :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>	" Generate tags file (for OmniCppComplete).
+	nnoremap g^t :tabfirst<CR>							" Go to first tab.
+	nnoremap g$t :tablast<CR>							" Go to last tab.
 
 	" Insert one chracter.
 	nmap <Space>i i_<Esc>r
