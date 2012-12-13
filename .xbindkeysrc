@@ -61,6 +61,10 @@
 	"$HOME/bin/scrot_printscreen.sh"
 		Print
 
+	# Start shutter.
+	"shutter"
+		Mod4 + Mod1 + p
+
 # }
 
 # Volume {

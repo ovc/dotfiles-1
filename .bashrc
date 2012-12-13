@@ -183,7 +183,7 @@ sourceif() {
 	
 	# Use perl GCC color wrapper if it exists.
 	if [ -d "/usr/lib/colorgcc/" ]; then
-	    export PATH="/usr/lib/colorgcc/bin:$PATH"
+	    export PATH="$PATH:/usr/lib/colorgcc/bin"
 	fi
 
 	# less {
@@ -204,11 +204,11 @@ sourceif() {
 	# Sage {
 		if [ -d "$HOME/bin/sage3.0" ]; then
 			export SAGE_DIRECTORY="$HOME/bin/sage3.0"
-			export PATH=${SAGE_DIRECTORY}/bin:${PATH}
+			export PATH="$PATH:${SAGE_DIRECTORY}/bin"
 			if [ -z ${LD_LIBRARY_PATH} ]; then
-				export LD_LIBRARY_PATH=${SAGE_DIRECTORY}/lib
+				export LD_LIBRARY_PATH="${SAGE_DIRECTORY}/lib"
 			else
-				export LD_LIBRARY_PATH=${SAGE_DIRECTORY}/lib:${LD_LIBRARY_PATH}
+				export LD_LIBRARY_PATH="${SAGE_DIRECTORY}/lib:${LD_LIBRARY_PATH}"
 			fi
 		fi
 	# }

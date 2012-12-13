@@ -261,7 +261,7 @@
 	" Update and run make.
 	command! Wmake update | silent !make >/dev/null
 	" See buffer and file diff.
-	command! Wdiff w !diff % -<CR>
+	command! Wdiff w !diff % -
 	" Close tabs.
 	command! Qt tabc
 

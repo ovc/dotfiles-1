@@ -476,7 +476,7 @@ ignores = (
   },
   {
     level = "NOTICES SNOTES";
-    channels = ( "##linux", "#vim", '#tmux', "#archlinux" );
+    channels = ( "##linux", "#vim", "#tmux", "#archlinux" );
     network = "freenode";
   }
 );

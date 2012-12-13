@@ -72,7 +72,7 @@
 # Macros {
 	macro a	clear-tag ENTER				# Clear tags. Show all feeds.
 	macro e	select-tag "entertainment" ENTER	# Open misc-tagged feeds.
-	macro m	select-tag "misc" ENTER			# Open misc-tagged feeds.
 	macro n	select-tag "news" ENTER			# Open news-tagged feeds.
+	macro m	select-tag "music" ENTER		# Open music-tagged feeds.
 	macro t	select-tag "tech" ENTER			# Open tech-tagged feeds.
 # }

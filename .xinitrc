@@ -20,8 +20,6 @@
 	set +o posix  > /dev/null 2>&1
 	if type shopt > /dev/null 2>&1 ; then
     	    shopt -s execfail
-	else
-    	    no_exit_on_failed_exec=1
 	fi
 
 	# Run user xinit scripts.
@@ -120,13 +118,16 @@
 	syndaemon -K -d -i 0.5 &
 
 	# Start URxvt daemon.
-	urxvtd -q -o -f &
+	urxvtd --quiet --opendisplay --fork
 
 	# Start PulseAudio.
 	# NOTE not needed since /etc/X11/xinit/xinitrc.d/pulseaudio will do it.
 	#if ! pulseaudio --check; then
 	#	pulseaudio --start
 	#fi
+
+	# System tray volume control.
+	pnmixer &
 
 	# Start screensaver
 	xscreensaver -no-splash &
