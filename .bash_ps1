@@ -75,32 +75,29 @@ parse_git_branch() {
 	fi
 
 	#branch=$(echo "$branch" | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-	branch=${branch#refs/heads/}
+	local branch=${branch#refs/heads/}
 	echo -n " [${branch}]"
-	unset branch
 }
 PS1="${PS1}${C_FG_MAGENTA}\$(parse_git_branch)${C_RESET}"
 
 # Get SVN branch.
 parse_svn_branch() {
-	if [ ! -d ".svn/" ]; then
-		return
-	fi
-
 	type svn >/dev/null 2>&1
 	if [ "$?" -ne 0 ]; then
 		return
 	fi
 
-	local svn_root=$(svn info 2>/dev/null | sed -ne 's#^Repository Root: ##p')
-	local svn_url=$(svn info 2>/dev/null | sed -ne 's#^URL: ##p')
+	local svn_info=$(svn info 2>/dev/null)
+	if [ -z "${svn_info}" ]; then
+		return
+	fi
 
-	# Show branch + URL.
-	#echo $svn_url | sed -e 's#^'"${svn_root}"'##g' | awk '{print " [svn::"$1"]" }'
 
-	# Show only branch.
-	local branch=$(echo $svn_url | sed -e 's#^'"${svn_root}"'##g' | egrep -o '(tags|branches)/[^/]+|trunk' | egrep -o '[^/]+$')
-	echo -e " [${branch}]"
+	local svn_root=$(echo "${svn_info}" | sed -ne 's#^Repository Root: ##p')
+	local svn_url=$(echo "${svn_info}" | sed -ne 's#^URL: ##p')
+
+	local branch=$(echo "${svn_url}" | egrep -o '[^/]+$')
+	echo -n " [${branch}]"
 }
 PS1="${PS1}${C_FG_YELLOW}\$(parse_svn_branch)${C_RESET}"
 

@@ -178,7 +178,7 @@
 	set t_Co=256						" Set number of colors.
 	set title						" Show title in console title bar.
 	set number						" Show line numbers.
-	set tabpagemax=32					" Upper limit on number of tabs.
+	set tabpagemax=64					" Upper limit on number of tabs.
 	set showmode						" Show current mode in the last line.
 	set backspace=indent,eol,start				" Make backspace work like expected.
 	set linespace=0						" No line spacing.

@@ -1,4 +1,5 @@
 " Erikw Westrup's apvlv configuration.
+
 " Settings
 set fullscreen = no 	" Start with fullscreen.
 set defaultdir = ~/	" Default dir in open file dialog.
