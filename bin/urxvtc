@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# Wrapper for urxvtc that starts urxvtd if needed.
+# Overlay for urxvtc that starts urxvtd if needed.
 
 /usr/bin/urxvtc "$@"
 if [ "$?" -eq 2 ]; then

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Watch Maildir inboxes for new mails and send a summary notification with notify-send. Tested and "works perfectly" with dunst.
 # Dependencies: inotifywait from inotify-tools package.
+# TODO strip mail body better https://github.com/sosedoff/mail_extract
 
 maildir_path="$HOME/.mail"		# Path to Maildir root.
 mailboxes=(inbox lists)			# Mailboxes to watch.

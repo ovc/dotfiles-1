@@ -24,6 +24,7 @@
 		"Bundle 'maxbrunsfeld/vim-yankstack'
 		"Bundle 'mbbill/undotree'
 		"Bundle 'scrooloose/syntastic'
+		"Bundle 'tpope/vim-unimpaired'
 		Bundle 'Lokaltog/vim-powerline'
 		Bundle 'MarcWeber/vim-addon-mw-utils'
 		Bundle 'Rip-Rip/clang_complete'
@@ -31,6 +32,7 @@
 		Bundle 'Townk/vim-autoclose'
 		Bundle 'altercation/vim-colors-solarized'
 		Bundle 'bkad/CamelCaseMotion'
+		Bundle 'erikw/vim-unimpaired'
 		Bundle 'flazz/vim-colorschemes'
 		Bundle 'garbas/vim-snipmate'
 		Bundle 'godlygeek/tabular'
@@ -55,7 +57,6 @@
 		Bundle 'tpope/vim-repeat'
 		Bundle 'tpope/vim-speeddating'
 		Bundle 'tpope/vim-surround'
-		Bundle 'tpope/vim-unimpaired'
 		Bundle 'tsaleh/vim-matchit.git'
 	"}
 
