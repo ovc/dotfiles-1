@@ -25,7 +25,7 @@
 		"Bundle 'mbbill/undotree'
 		"Bundle 'scrooloose/syntastic'
 		"Bundle 'tpope/vim-unimpaired'
-		Bundle 'Lokaltog/vim-powerline'
+		"Bundle 'Lokaltog/vim-powerline'
 		Bundle 'MarcWeber/vim-addon-mw-utils'
 		Bundle 'Rip-Rip/clang_complete'
 		Bundle 'Rykka/lastbuf.vim'
@@ -78,6 +78,8 @@
 
 	filetype plugin indent on     " Required!
 " }
+
+python from powerline.ext.vim import source_plugin; source_plugin()
 
 " Environment {
 	if v:version < 703
@@ -265,6 +267,10 @@
 	command! Wdiff w !diff % -
 	" Close tabs.
 	command! Qt tabc
+
+	" Change to directory of current file.
+	command! Cdpwd cd %:p:h
+	command! Lcdpwd lcd %:p:h
 
 	command! -nargs=* Wrap set wrap linebreak nolist	" Set softwrap correctly.
 	autocmd BufWinLeave * silent! mkview			" Save fold views.
@@ -485,10 +491,10 @@ if s:use_plugins
 	" }
 
 	" Powerline {
-		let g:Powerline_symbols='fancy'					" Use icons and arrows from the patched fonts.
-		let g:Powerline_theme="default"					" Theme to use (vim-powerline/autoload/Powerline/Themes).
-		let g:Powerline_colorscheme="skwp"				" Colorscheme to use. skwp is Solarized.
-		call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')	" Indicate traling spaces in current buffer.
+		"let g:Powerline_symbols='fancy'					" Use icons and arrows from the patched fonts.
+		"let g:Powerline_theme="default"					" Theme to use (vim-powerline/autoload/Powerline/Themes).
+		"let g:Powerline_colorscheme="skwp"				" Colorscheme to use. skwp is Solarized.
+		"call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')	" Indicate traling spaces in current buffer.
 	" }
 
 	" Solarized {

@@ -19,7 +19,7 @@ localrepository = Gmail-Local
 # The remote repository.
 remoterepository = Gmail-Remote
 # Continue to run and refresh automatically.
-autorefresh = 1
+#autorefresh = 1
 # Backend to use for saving states.
 status_backend = sqlite
 # Maxsize in Bytes.
