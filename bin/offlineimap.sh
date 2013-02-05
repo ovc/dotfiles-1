@@ -13,7 +13,7 @@ start_offlineimap() {
 increment_wait_file() {
 	wait_count=$(read_wait_file)
 	wait_count=$((${wait_count} + 1))
-	echo "Incremented wait count to ${wait_count}." 1>2
+	echo "Incremented wait count to ${wait_count}." 1>&2
 	echo "${wait_count}" > "$wait_file"
 }
 
@@ -28,7 +28,7 @@ read_wait_file() {
 	else
 		count="0"
 	fi
-	echo "Wait count = ${count}" 1>2
+	echo "Wait count = ${count}" 1>&2
 	echo "$count"
 }
 
