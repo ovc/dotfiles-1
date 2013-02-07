@@ -79,7 +79,7 @@
 	filetype plugin indent on     " Required!
 " }
 
-python from powerline.ext.vim import source_plugin; source_plugin()
+python from powerline.bindings.vim import source_plugin; source_plugin()
 
 " Environment {
 	if v:version < 703

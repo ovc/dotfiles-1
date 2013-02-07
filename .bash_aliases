@@ -7,15 +7,15 @@
 # Suppress alias expansion:: $ \aliasname || 'aliasname'
 # Print alias definition: alias <aliasname>
 
-# Desktop Environment Specific {
+# Desktop Environment specific {
 	# Defaults.
-	alias open='xdg-open'				# Open files.
+	alias open='xdg-open'						# Open files.
 	alias afk='xscreensaver-command -lock'		# Start screensaver.
 
-	DESKTYPE='dwm'					# Current DE in use.
+	DESKTYPE='dwm'								# Current DE in use.
 	case $DESKTYPE in
 	kde)
-		alias open='kde-open'			# Open files like in Dolphin.
+		alias open='kde-open'					# Open files like in Dolphin.
 		# Log out
 		alias xlogout='qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout 0 0 2'
 		#alias xlogout='kdeinit4_shutdown'
@@ -133,20 +133,20 @@
 	alias xmatlab='\matlab'							# Default X version.
 	alias gimp='gimp --no-splash'					# Splash screens are just annoying.
 	alias dmenu="dmenu -i"							# Ignore case.
-	alias pacman='pacman-color'						# Use colorfoull pacman.
-	alias cower='cower --color=auto'				# Use colors.
+	alias pacman='pacman-color'						# Even the original pacman was in color.
+	alias cower='cower --color=auto'				# Colored cow.
 # }
 
 # Short hands {
 	alias cls='clear'					# Old DOS habit...
 	alias vi='vim'						# Be IMproved.
-	alias view='vim -R'					# Not all distributions of vim provide the readonly version.
+	alias view='vim -R'					# Not all distributions of vim provide the readonly bin.
 	alias vidiff='vimdiff'
 	#alias t='task'
 	#alias c='gcalcli'
 	alias gcal='gcalcli'
 	alias vboxmanage='VBoxManage'							# Who likes caps?- I don't.
-	alias ll='ls -l'										# I don't use it but aliens on my systems presumes its existance.
+	alias ll='ls -l'										# I don't use it but aliens on my systems presumes its existence.
 	unalias l &>/dev/null									# I use bashmarks.
 	alias lsc='ls --color=always --time-style=long-iso'		# Force color.
 	alias agdbtui='arm-none-eabi-gdbtui'					# So tired of typing that...
