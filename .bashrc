@@ -58,6 +58,14 @@
 
 	# Web browser to use. urlscan (and others?) uses this variable.
 	export BROWSER=firefox
+
+    	# Current DE in use.
+	export DESKTYPE='dwm'
+
+	if [ "$DESKTYPE" == "dwm" ]; then
+	    # Java does not know about dwm so GUI apps will not be displayed correctly (if at all). Reference: https://wiki.archlinux.org/index.php/Dwm#Fixing_misbehaving_Java_applications
+	    export _JAVA_AWT_WM_NONREPARENTING=1
+	fi
 # }
 
 # History {
@@ -180,7 +188,7 @@ sourceif() {
 	if [ "$?" -eq 0 ]; then
 		export ANT_ARGS='-logger org.apache.tools.ant.listener.AnsiColorLogger'
 	fi
-	
+
 	# Use perl GCC color wrapper if it exists.
 	if [ -d "/usr/lib/colorgcc/" ]; then
 	    export PATH="$PATH:/usr/lib/colorgcc/bin"

@@ -28,6 +28,23 @@
 	export TMUX_POWERLINE_SEG_DATE_FORMAT="%m/%d/%Y"
 # }
 
+# earthquake.sh {
+	# The data provider to use. Currently only "goo" is supported.
+	export TMUX_POWERLINE_SEG_EARTHQUAKE_DATA_PROVIDER="goo"
+	# How often to update the earthquake data in seconds.
+	# Note: This is not an early warning detector, use this
+	# to be informed about recent earthquake magnitudes in your
+	# area. If this is too often, goo may decide to ban you form
+	# their server
+	export TMUX_POWERLINE_SEG_EARTHQUAKE_UPDATE_PERIOD="600"
+	# Only display information when earthquakes are within this many minutes
+	export TMUX_POWERLINE_SEG_EARTHQUAKE_ALERT_TIME_WINDOW="60"
+	# Display time with this format
+	export TMUX_POWERLINE_SEG_EARTHQUAKE_TIME_FORMAT='(%H:%M)'
+	# Display only if magnitude is greater or equal to this number
+	export TMUX_POWERLINE_SEG_EARTHQUAKE_MIN_MAGNITUDE="3"
+# }
+
 # hostname.sh {
 	# Use short or long format for the hostname. Can be {"short", "long"}
 	export TMUX_POWERLINE_SEG_HOSTNAME_FORMAT="long"
@@ -63,7 +80,7 @@
 
 # now_playing.sh {
 	# Music player to use. Can be any of {audacious, banshee, cmus, itunes, lastfm, mocp, mpd, mpd_simple, rdio, rhythmbox, spotify, spotify_wine}.
-	export TMUX_POWERLINE_SEG_NOW_PLAYING_MUSIC_PLAYER="mpd"
+	export TMUX_POWERLINE_SEG_NOW_PLAYING_MUSIC_PLAYER="spotify"
 	# Maximum output length.
 	export TMUX_POWERLINE_SEG_NOW_PLAYING_MAX_LEN="40"
 	# How to handle too long strings. Can be {trim, roll}.
@@ -75,6 +92,8 @@
 	export TMUX_POWERLINE_SEG_NOW_PLAYING_MPD_HOST="GIT-CENSORED@localhost"
 	# Port the MPD server is running on.
 	export TMUX_POWERLINE_SEG_NOW_PLAYING_MPD_PORT="6600"
+	# Song display format for mpd_simple. See mpc(1) for delimiters.
+	export TMUX_POWERLINE_SEG_NOW_PLAYING_MPD_SIMPLE_FORMAT="%artist% - %title%"
 	
 	# Username for Last.fm if that music player is used.
 	export TMUX_POWERLINE_SEG_NOW_PLAYING_LASTFM_USERNAME="ErikWestrup"

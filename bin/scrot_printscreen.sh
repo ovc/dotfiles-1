@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # Take screenshot. A good mapping for printscreen key.
+
 datestamp="%Y-%m-%d-%H%M%S"
-image="$HOME/media/images/screenshots/screenshot_$(date +${datestamp}).png"
+#image="$HOME/media/images/screenshots/screenshot_$(date +${datestamp}).png"
+image="/tmp/screenshot_${USER}_$(date +${datestamp}).png"
 
 scrot --quality 90 "$image"
 notify-send --app-name "scrot" "Screenshot saved to ${image}"

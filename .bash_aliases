@@ -12,7 +12,6 @@
 	alias open='xdg-open'						# Open files.
 	alias afk='xscreensaver-command -lock'		# Start screensaver.
 
-	DESKTYPE='dwm'								# Current DE in use.
 	case $DESKTYPE in
 	kde)
 		alias open='kde-open'					# Open files like in Dolphin.
