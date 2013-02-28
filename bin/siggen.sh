@@ -24,7 +24,7 @@ read -d '' out  << EOF
 Erik Westrup${role}
 <${email}>
 (+1) (949) 545-4522 | 2r.se
-4816 Seashore Drive, Newport Beach 92663, CA, USA
+30706-2 33000 Arroyo Dr, Irvine, CA 92617, USA
 -------------------------------------------------
 This email is encrypted with 2ROT-13.
 EOF

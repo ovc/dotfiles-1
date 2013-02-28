@@ -176,3 +176,8 @@
 	timeout = 4
 	background = "#b58900"
 	format = "%s %b"
+[spotify-ob-wrapper]
+	appname = spotify-ob-wrapper
+	timeout = 4
+	background = "#b58900"
+	format = "%s %b"

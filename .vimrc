@@ -21,11 +21,11 @@
 	"}
 
 	" Github {
+		"Bundle 'Lokaltog/vim-powerline'
 		"Bundle 'maxbrunsfeld/vim-yankstack'
 		"Bundle 'mbbill/undotree'
 		"Bundle 'scrooloose/syntastic'
 		"Bundle 'tpope/vim-unimpaired'
-		"Bundle 'Lokaltog/vim-powerline'
 		Bundle 'MarcWeber/vim-addon-mw-utils'
 		Bundle 'Rip-Rip/clang_complete'
 		Bundle 'Rykka/lastbuf.vim'
@@ -44,6 +44,7 @@
 		Bundle 'mattn/gist-vim'
 		Bundle 'mattn/webapi-vim'
 		Bundle 'michaeljsmith/vim-indent-object'
+		Bundle 'oinksoft/tcd.vim'
 		Bundle 'rbonvall/snipmate-snippets-bib'
 		Bundle 'salsifis/vim-transpose'
 		Bundle 'scrooloose/nerdcommenter'
@@ -248,7 +249,7 @@ python from powerline.bindings.vim import source_plugin; source_plugin()
 	set copyindent					" Copy indentstructure from existing lines.
 	set tabstop=8					" Let a tab be 8 spaces wide.
 	set shiftwidth=8				" Tab width for auto indent and >> shifting.
-	"set softtabstop=8				" Number of spaces to count a tab for, like when ^H.
+	"set softtabstop=8				" Number of spaces to count a tab for on ops like BS and tab.
 	set noexpandtab					" Do not expand tabs to spaces!
 	set matchpairs+=<:>				" Also match <> with %.
 	set formatoptions=tcroqwnl			" Formatting options.
