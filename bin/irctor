@@ -27,7 +27,7 @@ do_start() {
 		#tmux set-window-option -t "$session_name":2 -q monitor-activity off
 		tmux set-window-option -t "$session_name":2 monitor-activity off
 
-		tmux new-window -t "$session_name":3 -n "rtorrent/oct" rtorrent
+		tmux new-window -t "$session_name":3 -n "torr/oct" rtorrent
 		tmux split-window -t "$session_name":3 -h octave
 		#tmux set-window-option -t "$session_name":3 -q monitor-activity off
 		tmux set-window-option -t "$session_name":3 monitor-activity off

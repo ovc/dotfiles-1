@@ -44,3 +44,5 @@
 	sub = submodule
 [credential]
 	helper = cache
+[push]
+	default = matching

@@ -75,7 +75,7 @@
 	export HISTFILESIZE=600000
 	export HISTSIZE=100000
 	# Commands to ignore.
-	export HISTIGNORE="&:[ ]*:exit:halt:poweroff:shutdown:reboot:xlogout"
+	export HISTIGNORE="&:[ ]*:exit:halt:poweroff:shutdown:reboot:xlogout:pm-hibernate:pm-suspend"
 	# Append instead of overwrite history on exit.
 	shopt -s histappend
 	# Allow multiline commands as one command.

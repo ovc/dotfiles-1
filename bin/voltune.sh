@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 usage="usage: $0 -c {up|down|mute} [-i increment] [-m mixer]"
 command=
@@ -22,6 +22,9 @@ if [ "$command" = "" ]; then
     echo "usage: $0 {up|down|mute} [increment]"
     exit 0;
 fi
+is_muted() {
+	amixer get Master | grep "\[on\]" >/dev/null
+}
 
 display_volume=0
 
@@ -30,13 +33,13 @@ if [ "$command" = "up" ]; then
 fi
 
 if [ "$command" = "down" ]; then
-    display_volume=$(amixer set $mixer $increment- unmute | grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
+    display_volume=$(amixer set $mixer $increment- | grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
 fi
 
 icon_name=""
 
 if [ "$command" = "mute" ]; then
-    if amixer get Master | grep "\[on\]" >/dev/null; then
+    if is_muted; then
         display_volume=0
         icon_name="notification-audio-volume-muted"
         amixer set $mixer mute
