@@ -39,7 +39,7 @@ parse_send() {
 
 	# Get the body. First scroll down to body, Content lines, random ID line, strip signature, convert HTML, remove empty lines, join lines, substitute spaces to get more text.
 	local body=$(sed '1,/^$/d' "$mailfile" | grep -v "^Content-.*:" | grep -v "^--[[:xdigit:]]\+" | sed -n '/-- /q;p' | html2text | sed '/^ *$/d' | tr "\\n" ' ' | sed 's/\s\s*/ /g')
-	body=${body:0:110}
+	body=${body:0:100}
 	body=$(trim "$body")
 
 	# Notify summary string.

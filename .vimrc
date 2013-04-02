@@ -376,7 +376,7 @@ python from powerline.bindings.vim import source_plugin; source_plugin()
 			endif
 		endfunction
 		" }
-		nmap <silent> <Leader>L :call ToggleLine()<CR>				" Toggle static/relative line numbering.
+		nmap <silent> <Leader>l :call ToggleLine()<CR>				" Toggle static/relative line numbering.
 
 		" Toggle Cursor {
 			function! HighlightNearCursor()

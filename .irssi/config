@@ -488,5 +488,6 @@ keyboard = (
   { key = "meta-d"; id = "command"; data = "nicklist scroll +10"; },
   { key = "meta-u"; id = "command"; data = "nicklist scroll -10"; },
   { key = "meta-m"; id = "command"; data = "mark"; },
+  { },
   { key = "meta-[M"; id = "command"; data = "mouse_xterm "; }
 );

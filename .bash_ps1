@@ -32,7 +32,7 @@ PROMPT_COMMAND='$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" |
 PS1="${PS1}\u@\h"
 
 # Get a trimmed PWD.
-pwd_trimmed() {
+ps1_pwd_trimmed() {
     # How many characters of the $PWD should be kept
     local pwdmaxlen=25
     # Indicate that there has been dir truncation
@@ -47,19 +47,19 @@ pwd_trimmed() {
     fi
     echo "$NEW_PWD"
 }
-PS1="${PS1}:\$(pwd_trimmed)"
+PS1="${PS1}:\$(ps1_pwd_trimmed)"
 
 # Get number of backround jobs.
-nbr_bg_jobs() {
+ps1_nbr_bg_jobs() {
 	njobs=`jobs | wc -l`
 	if [ "$njobs" -gt 0 ]; then
 		echo " (${njobs})"
 	fi
 }
-PS1="${PS1}\$(nbr_bg_jobs)"
+PS1="${PS1}\$(ps1_nbr_bg_jobs)"
 
 # Get git banch.
-parse_git_branch() {
+ps1_parse_git_branch() {
 	#git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
 
 	type git >/dev/null 2>&1
@@ -78,10 +78,10 @@ parse_git_branch() {
 	local branch=${branch#refs/heads/}
 	echo -n " [${branch}]"
 }
-PS1="${PS1}${C_FG_MAGENTA}\$(parse_git_branch)${C_RESET}"
+PS1="${PS1}${C_FG_MAGENTA}\$(ps1_parse_git_branch)${C_RESET}"
 
 # Get SVN branch.
-parse_svn_branch() {
+ps1_parse_svn_branch() {
 	type svn >/dev/null 2>&1
 	if [ "$?" -ne 0 ]; then
 		return
@@ -99,10 +99,10 @@ parse_svn_branch() {
 	local branch=$(echo "${svn_url}" | egrep -o '[^/]+$')
 	echo -n " [${branch}]"
 }
-PS1="${PS1}${C_FG_YELLOW}\$(parse_svn_branch)${C_RESET}"
+PS1="${PS1}${C_FG_YELLOW}\$(ps1_parse_svn_branch)${C_RESET}"
 
 # Get mercurial branch.
-parse_hg_branch() {
+ps1_parse_hg_branch() {
 	type hg >/dev/null 2>&1
 	if [ "$?" -ne 0 ]; then
 		return
@@ -116,9 +116,10 @@ parse_hg_branch() {
 	local branch=$(echo "$summary" | grep 'branch:' | cut -d ' ' -f2)
 	echo -e " [${branch}]"
 }
-PS1="${PS1}${C_FG_BLUE}\$(parse_hg_branch)${C_RESET}"
+PS1="${PS1}${C_FG_BLUE}\$(ps1_parse_hg_branch)${C_RESET}"
 
 # End marker.
+#PS1="${PS1}$ "
 PS1="${PS1}> "
 
 # Export to subshells.
