@@ -110,8 +110,8 @@
 	alias halt='sudo halt'
 	alias shutdown='sudo shutdown'
 	alias reboot='sudo reboot'
-	alias pm-suspend='sudo pm-suspend'
-	alias pm-hibernate='sudo pm-hibernate'
+	#alias pm-suspend='sudo pm-suspend'
+	#alias pm-hibernate='sudo pm-hibernate'
 	alias sudo='sudo '			# Bring my aliases with me.
 # }
 
@@ -132,7 +132,6 @@
 	alias xmatlab='\matlab'							# Default X version.
 	alias gimp='gimp --no-splash'					# Splash screens are just annoying.
 	alias dmenu="dmenu -i"							# Ignore case.
-	alias pacman='pacman-color'						# Even the original pacman was in color.
 	alias cower='cower --color=auto'				# Colored cow.
 # }
 
@@ -170,7 +169,7 @@
 	# Simple network speed test.
 	alias speed_check='wget -O/dev/null ftp://ftp.port80.se/100M'
 	# Unmount my key.
-	alias uk='umount /media/key/ 2>/dev/null && echo "Key umounted." || echo "Umount failed." 1>&2'
+	alias uk='umount /dev/key1 2>/dev/null && echo "Key umounted." || echo "Umount failed." 1>&2'
 	# ZO RELAXEN
 	alias blinkenlichten='while true; do xset led 3; sleep 0.2s; xset -led 3; sleep 0.3s; done'
 	alias cursh="ps -p \$\$ | tail -1 | awk '{print \$NF}'"		# Current shell.

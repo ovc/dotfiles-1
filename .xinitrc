@@ -130,7 +130,8 @@
 	pnmixer &
 
 	# Start screensaver
-	xscreensaver -no-splash &
+	#xscreensaver -no-splash &
+	xautolock -time 10 -detectsleep -secure -locker slimlock &
 
 	# Turn off screen after inactivity (in seconds). For mysterious reasons the sleep is needed.
 	xset +dpms

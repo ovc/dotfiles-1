@@ -23,6 +23,9 @@
 
 	# Expand tilde with tab.
 	set expand-tilde off
+
+	# Path complete symlinks to directories with '/' as it would be a normal directory.
+	set mark-symlinked-directories on
 # }
 
 # Bindings {

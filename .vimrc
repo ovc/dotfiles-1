@@ -80,8 +80,6 @@
 	filetype plugin indent on     " Required!
 " }
 
-python from powerline.bindings.vim import source_plugin; source_plugin()
-
 " Environment {
 	if v:version < 703
 		echoerr 'WARNING: This vimrc is written for Vim >= v.703; this is' v:version
@@ -492,100 +490,114 @@ if s:use_plugins
 	" }
 
 	" Powerline {
-		"let g:Powerline_symbols='fancy'					" Use icons and arrows from the patched fonts.
-		"let g:Powerline_theme="default"					" Theme to use (vim-powerline/autoload/Powerline/Themes).
+		" Old vim-powerline.
+		"let g:Powerline_symbols='fancy'				" Use icons and arrows from the patched fonts.
+		"let g:Powerline_theme="default"				" Theme to use (vim-powerline/autoload/Powerline/Themes).
 		"let g:Powerline_colorscheme="skwp"				" Colorscheme to use. skwp is Solarized.
 		"call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')	" Indicate traling spaces in current buffer.
+
+		" New powerline.
+		"set rtp+=/usr/lib/python3.3/site-packages/powerline/bindings/vim
+
+		" Fast mode switch. Reference: " https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
+		if ! has('gui_running')
+    			set ttimeoutlen=10
+    			augroup FastEscape
+        			autocmd!
+        			au InsertEnter * set timeoutlen=0
+        			au InsertLeave * set timeoutlen=1000
+    			augroup END
+		endif
 	" }
 
-	" Solarized {
-		"call togglebg#map("<Leader>%")		" Toggle background with solarized. Not nice because it maps in insert mode too.
-		call togglebg#map("<F5>")		" Toggle background with solarized.
-	" }
+		" Solarized {
+			"call togglebg#map("<Leader>%")		" Toggle background with solarized. Not nice because it maps in insert mode too.
+			call togglebg#map("<F5>")		" Toggle background with solarized.
+		" }
 
-	" Strip Trailing Spaces {
-		" Remove all trailing spaces and return to pos.
-		nmap <silent> <Leader>S :call StripTrailingWhitespaces()<CR>
-		" Remove all trailing spaces and return to pos and write.
-		command! Ws call StripTrailingWhitespaces() | update
-	" }
+		" Strip Trailing Spaces {
+			" Remove all trailing spaces and return to pos.
+			nmap <silent> <Leader>S :call StripTrailingWhitespaces()<CR>
+			" Remove all trailing spaces and return to pos and write.
+			command! Ws call StripTrailingWhitespaces() | update
+		" }
 
-	" Syntastic {
-		"let g:syntastic_check_on_open=0		" Don't automatically do syntax check on open buffers.
-		noremap <silent> <F11> :SyntasticToggleMode<CR>					" Toggle syntastic checking.
-		" Do syntax check on files with exceptions.
-		let g:syntastic_mode_map = { 'mode': 'active',
-		                           \ 'active_filetypes': [],
-		                           \ 'passive_filetypes': ['java'] }
-	" }
+		" Syntastic {
+			"let g:syntastic_check_on_open=0		" Don't automatically do syntax check on open buffers.
+			noremap <silent> <F11> :SyntasticToggleMode<CR>					" Toggle syntastic checking.
+			" Do syntax check on files with exceptions.
+			let g:syntastic_mode_map = { 'mode': 'active',
+		                        	\ 'active_filetypes': [],
+		                        	\ 'passive_filetypes': ['java'] }
+		" }
 
-	" Tagbar {
-		nmap <silent> <F3> :TagbarToggle<CR>		" Toggle the Tagbar window.
-		let g:tagbar_left		= 0		" Keep the window on the right side.
-		let g:tagbar_width		= 30		" Width of window.
-		let g:tagbar_autoclose		= 1		" Close tagbar when jumping to a tag.
-		let g:tagbar_autofocus		= 1		" Give tagbar focus when it's opened.
-		let g:tagbar_sort		= 1		" Sort tags alphabetically.
-		let g:tagbar_compact		= 1		" Omit the help text.
-		let g:tagbar_singleclick	= 1 		" Jump to tag with a single click.
-		let g:tagbar_autoshowtag	= 1		" Open folds if tag is not visible.
-	" }
+		" Tagbar {
+			nmap <silent> <F3> :TagbarToggle<CR>		" Toggle the Tagbar window.
+			let g:tagbar_left		= 0		" Keep the window on the right side.
+			let g:tagbar_width		= 30		" Width of window.
+			let g:tagbar_autoclose		= 1		" Close tagbar when jumping to a tag.
+			let g:tagbar_autofocus		= 1		" Give tagbar focus when it's opened.
+			let g:tagbar_sort		= 1		" Sort tags alphabetically.
+			let g:tagbar_compact		= 1		" Omit the help text.
+			let g:tagbar_singleclick	= 1 		" Jump to tag with a single click.
+			let g:tagbar_autoshowtag	= 1		" Open folds if tag is not visible.
+		" }
 
-	" Taglist {
-		"nmap <silent> <F3> :Tlist<CR>				 	" Toggle the Tlist browser.
-		""let g:Tlist_Close_On_Select        = 1			" Close list on tag selection.
-		"let g:Tlist_Auto_Update             = 1			" Update newly opend files.
-		"let g:Tlist_Compact_Format          = 1			" Trim spaces in GUI.
-		"let g:Tlist_Auto_Highlight_Tag      = 1			" Highlight tags.
-		"let g:Tlist_GainFocus_On_ToggleOpen = 1			" Move cursor to list on open.
-		"let g:Tlist_Sort_Type               = "name"		" Sort by name instead of definition order.
-		"let g:Tlist_Use_SingleClick         = 1			" Jump to definition with a single click.
-		"let g:Tlist_Show_One_File           = 1			" Only show current buffers tags.
-		"let g:Tlist_Use_Right_Window        = 1			" Display on the right.
-		""let g:Tlist_Display_Prototype      = 1			" Show prototypes instead of tags.
-		"let g:Tlist_Exit_OnlyWindow         = 1			" Close Vim if only Tlist open.
-	" }
+		" Taglist {
+			"nmap <silent> <F3> :Tlist<CR>				 	" Toggle the Tlist browser.
+			""let g:Tlist_Close_On_Select        = 1			" Close list on tag selection.
+			"let g:Tlist_Auto_Update             = 1			" Update newly opend files.
+			"let g:Tlist_Compact_Format          = 1			" Trim spaces in GUI.
+			"let g:Tlist_Auto_Highlight_Tag      = 1			" Highlight tags.
+			"let g:Tlist_GainFocus_On_ToggleOpen = 1			" Move cursor to list on open.
+			"let g:Tlist_Sort_Type               = "name"		" Sort by name instead of definition order.
+			"let g:Tlist_Use_SingleClick         = 1			" Jump to definition with a single click.
+			"let g:Tlist_Show_One_File           = 1			" Only show current buffers tags.
+			"let g:Tlist_Use_Right_Window        = 1			" Display on the right.
+			""let g:Tlist_Display_Prototype      = 1			" Show prototypes instead of tags.
+			"let g:Tlist_Exit_OnlyWindow         = 1			" Close Vim if only Tlist open.
+		" }
 
-	" Tasklist {
-		nmap <Leader>T <Plug>TaskList		" Open TaskList. Default mapping interferes with Command-T.
-	" }
+		" Tasklist {
+			nmap <Leader>T <Plug>TaskList		" Open TaskList. Default mapping interferes with Command-T.
+		" }
 
-	" YankRing {
-		nmap <silent> <Leader>y :YRShow<CR>		" Toggle YankRing.
-		let g:yankring_enabled = 1 			" Enable the yankring.
-		let g:yankring_max_history = 128		" Number of items to save.
-		let g:yankring_share_between_instances = 1	" Reuse the ring.
-		let g:yankring_window_auto_close = 1		" Close YR after action.
-		let g:yankring_window_use_horiz = 1		" Use horizontal split
-		let g:yankring_window_height = 10		" The window heigth.
-		let g:yankring_window_use_bottom = 1		" Split to bottom.
-		let g:yankring_manage_numbered_reg = 1		" Still update the default registers.
-		let g:yankring_history_dir = '~/.vim/'		" Where to put the yankfile.
-		let g:yankring_history_file = 'yankring'	" Filename of the yankfile.
-		let g:yankring_default_menu_mode = 3		" Let alt+y activate the menu.
+		" YankRing {
+			nmap <silent> <Leader>y :YRShow<CR>		" Toggle YankRing.
+			let g:yankring_enabled = 1 			" Enable the yankring.
+			let g:yankring_max_history = 128		" Number of items to save.
+			let g:yankring_share_between_instances = 1	" Reuse the ring.
+			let g:yankring_window_auto_close = 1		" Close YR after action.
+			let g:yankring_window_use_horiz = 1		" Use horizontal split
+			let g:yankring_window_height = 10		" The window heigth.
+			let g:yankring_window_use_bottom = 1		" Split to bottom.
+			let g:yankring_manage_numbered_reg = 1		" Still update the default registers.
+			let g:yankring_history_dir = '~/.vim/'		" Where to put the yankfile.
+			let g:yankring_history_file = 'yankring'	" Filename of the yankfile.
+			let g:yankring_default_menu_mode = 3		" Let alt+y activate the menu.
 
-		let g:yankring_paste_using_g = 0		" Don't remap gp and gP.
-		let g:yankring_replace_n_pkey = "[p"		" Cycle backwards in yankring on paste.
-		let g:yankring_replace_n_nkey = "]p"		" Cycle forwards in yankring on paste.
+			let g:yankring_paste_using_g = 0		" Don't remap gp and gP.
+			let g:yankring_replace_n_pkey = "[p"		" Cycle backwards in yankring on paste.
+			let g:yankring_replace_n_nkey = "]p"		" Cycle forwards in yankring on paste.
 
-		" Not anymore
-		"let g:yankring_clipboard_monitor = 1		" YR and Vim X-connection does not work. Start with -X
-		"set clipboard=exclude:.*			" X is incompatible with YankRing at the moment.
-	" }
+			" Not anymore
+			"let g:yankring_clipboard_monitor = 1		" YR and Vim X-connection does not work. Start with -X
+			"set clipboard=exclude:.*			" X is incompatible with YankRing at the moment.
+		" }
 
-	" YankStack {
-		  "let g:yankstack_map_keys = 0		" Don't make mappings for me.
-		  "nmap [p    <Plug>yankstack_substitute_older_paste
-		  "nmap ]p    <Plug>yankstack_substitute_newer_paste
-		  "imap <M-y> <Plug>yankstack_substitute_older_paste
-		  "imap <M-Y> <Plug>yankstack_substitute_newer_paste
-		  ""imap <C-y> <Plug>yankstack_insert_mode_paste
-	"}
-endif
-" }
-
-" Source local {
-	if filereadable(expand("~/.vimrc.local"))
-		source ~/.vimrc.local
+		" YankStack {
+			"let g:yankstack_map_keys = 0		" Don't make mappings for me.
+			"nmap [p    <Plug>yankstack_substitute_older_paste
+			"nmap ]p    <Plug>yankstack_substitute_newer_paste
+			"imap <M-y> <Plug>yankstack_substitute_older_paste
+			"imap <M-Y> <Plug>yankstack_substitute_newer_paste
+			""imap <C-y> <Plug>yankstack_insert_mode_paste
+		"}
 	endif
-" }
+	" }
+
+	" Source local {
+		if filereadable(expand("~/.vimrc.local"))
+			source ~/.vimrc.local
+		endif
+	" }

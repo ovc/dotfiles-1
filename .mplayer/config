@@ -40,7 +40,8 @@ subalign="2"
 #ontop="1"
 
 # Prevent xscreensaver from locking.
-heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
+#heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
+heartbeat-cmd="xautolock -disable;xautolock -enable"
 
 # I don't have IR on this computer.
 nolirc=yes

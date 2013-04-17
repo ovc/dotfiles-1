@@ -4,5 +4,6 @@
 
 #run-mailcap "$1" || mimeo "$1" &
 for file in "$@"; do
-	run-mailcap "$file" || mimeo "$file" &
+	#echo "opening \"${file}\""
+	run-mailcap "$file" 2>/dev/null || mimeo "$file" &
 done

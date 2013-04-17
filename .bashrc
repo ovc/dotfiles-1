@@ -5,8 +5,19 @@
 #	 vi: foldmarker={,} foldmethod=marker foldlevel=0: tabstop=8:
 # }
 
+# Source file if it exists.
+sourceifexists() {
+	local prog="$1"
+	if [ -f "$prog" ]; then
+		source "$prog"
+	fi
+}
+
 # If not running interactively, don't do anything.
 #[ -z "$PS1" ] && return
+
+# Source global profile.
+sourceifexists "/etc/profile"
 
 # Paths {
 	# Fins system binaries.
@@ -82,17 +93,10 @@
 	shopt -s cmdhist
 # }
 
-# Source file if it exists.
-sourceif() {
-	local prog="$1"
-	if [ -f "$prog" ]; then
-		source "$prog"
-	fi
-}
-
 # UI {
 	# Source PS1 configuration.
-	sourceif "$HOME/.bash_ps1"
+	sourceifexists "$HOME/.bash_ps1"
+	#source /usr/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
 	# Solarized ls colors.
 	if [ -f "$HOME/.dircolorsrc" ]; then
@@ -136,10 +140,10 @@ sourceif() {
 	export GPODDER_HOME="$HOME/media/music/gPodder"
 
 	# Source MPD environment variables.
-	sourceif "$HOME/.mpd_env"
+	sourceifexists "$HOME/.mpd_env"
 
 	# Sorce bashmarks.
-	sourceif "$HOME/.local/bin/bashmarks.sh"
+	sourceifexists "$HOME/.local/bin/bashmarks.sh"
 
 	# SSH agent. Source bash file if not connected from a remote SSH.
 	if [ -z "$SSH_CLIENT" ] && [ -f "$HOME/.ssh-agent" ]; then
@@ -147,16 +151,16 @@ sourceif() {
 	fi
 
 	# Set up ros environment.
-	sourceif "$HOME/bin/ros/setup.bash"
+	sourceifexists "$HOME/bin/ros/setup.bash"
 
 	# Tmuxifier path and initialization.
 	export TMUXIFIER="$HOME/src/tmuxifier"
-	sourceif "$TMUXIFIER/init.sh"
+	sourceifexists "$TMUXIFIER/init.sh"
 	# Custom path for layouts.
 	export TMUXIFIER_LAYOUT_PATH="$HOME/.tmuxifier-layouts"
 
 	# Tmuxifier initialization.
-	sourceif "$HOME/.tmuxinator/scripts/tmuxinator"
+	sourceifexists "$HOME/.tmuxinator/scripts/tmuxinator"
 	if [ -d "$HOME/src/tmuxinator/bin/" ]; then
 		export PATH="$PATH:$HOME/src/tmuxinator/bin/"
 		source "$HOME/src/tmuxinator/bin/tmuxinator_completion"

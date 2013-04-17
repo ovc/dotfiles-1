@@ -26,11 +26,13 @@
 		Mod4 + Mod1 + n
 
 	# Lock screen. Uses my alias afk.
-	"xscreensaver-command -lock"
+	#"xscreensaver-command -lock"
+	"slimlock"
 		Mod4 + Mod1 + l
 
 	# Lock the screen.
-	"xscreensaver-command -lock"
+	#"xscreensaver-command -lock"
+	"slimlock"
 		XF86ScreenSaver
 
 	# Blank the screen.
