@@ -26,6 +26,9 @@
 
 	# Path complete symlinks to directories with '/' as it would be a normal directory.
 	set mark-symlinked-directories on
+
+	# Show completion alternativies on first <tab>.
+	set show-all-if-ambiguous
 # }
 
 # Bindings {
@@ -34,6 +37,9 @@
 
 	# The vi mode key bindings after this will apply to.
 	set keymap vi-insert
+
+	# Cycle through completions.
+	#bind '"\t":menu-complete'
 
 	# Expand !-shorthands with space.
 	$if Bash
