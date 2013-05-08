@@ -97,7 +97,8 @@ URxvt.keysym.M-Delete: perl:matcher:list
 disallowedWindowOps: 20,21,SetXprop
 
 ! Source some solarized colors. The path starts from where this script is loaded from (which hopefully is $HOME).
-#include "/home/erikw/.Xresources.solarized"
+!#include "/home/erikw/.Xresources.solarized"
+!#include "/home/erikw/.Xresources.solarized_light"
 #include "/home/erikw/.Xresources.solarized_urxvt"
 
 ! }

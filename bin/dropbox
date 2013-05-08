@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Overlay for dropbox-cli that has a restart command.
+
+dropboxbin="/usr/bin/dropbox"
+if [ "$1" = "restart" ]; then
+	if ! ( /usr/bin/dropbox running >/dev/null); then
+		"$dropboxbin" stop
+	fi
+	"$dropboxbin" start
+else 
+	"$dropboxbin" "$@"
+fi

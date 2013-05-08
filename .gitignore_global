@@ -4,3 +4,8 @@ Session.vim
 
 # OS X
 .DS_Store
+
+# Editor files
+#tags
+#TAGS
+#cscope.out

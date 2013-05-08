@@ -35,8 +35,13 @@
 	"slimlock"
 		XF86ScreenSaver
 
+	# Toggle xautolocking.
+	"xautolock_toggle.sh"
+		Mod4 + Mod1 + a
+
+
 	# Blank the screen.
-	"xset dpms force off"
+	"sleep 1; xset dpms force off"
 		Mod4 + Mod1 + b
 
 	# Close/open CD/DVD-rebder.

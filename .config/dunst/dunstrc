@@ -43,7 +43,8 @@
     show_age_threshold = 60
 
     # split notifications into multiple lines if they don't fit into geometry
-    word_wrap = yes
+    #word_wrap = yes
+    word_wrap = no
 
     # ignore newlines '\n' in notifications
     ignore_newline = no
@@ -156,20 +157,24 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#222222"
-    foreground = "#888888"
+    #background = "#222222"
+    #foreground = "#888888"
+    background = "#aaaaff"
+    foreground = "#000000"
     #timeout = 10
     timeout = 2
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
+    #background = "#285577"
+    #foreground = "#ffffff"
+    background = "#1793D1"
+    foreground = "#DDDDDD"
     #timeout = 10
     timeout = 2
 
 [urgency_critical]
-    background = "#900000"
-    foreground = "#ffffff"
+    background = "#ffaaaa"
+    foreground = "#000000"
     timeout = 0
 
 
@@ -239,6 +244,7 @@
 	appname = irssi_notify.pl
 	urgency = normal
 	background = "#859900"
+	summary = "*"
 	format = "%s %b"
 [irssi_notify.pl-filter_bitlbee]
 	appname = irssi_notify.pl
@@ -246,7 +252,7 @@
 	format = ""
 [irssi_notify.pl-filter_psybnc]
 	appname = irssi_notify.pl
-	summary = "irssi: PM from*"
+	summary = "irssi: PM from -psyBNC*"
 	format = ""
 [maildir_watch]
 	appname = maildir_watch.sh

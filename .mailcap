@@ -22,12 +22,12 @@ application/x-bzip2; bunzip2 -c %s; copiousoutput
 application/x-tar-gz; gunzip -c %s | tar -tf -; copiousoutput
 
 # Documents
-text/plain; gvim "%s"; test=test -n "$DISPLAY";
-application/x-dvi; xdvi "%s" ;  test=test -n "$DISPLAY"
+text/plain; gvim %s; test=test -n "$DISPLAY";
+application/x-dvi; xdvi %s ;  test=test -n "$DISPLAY"
 application/postscript; ps2ascii %s ; copiousoutput
 #application/postscript; gs "%s";
 #application/pdf; mutt_bgrun apvlv "%s"; test=test -n "$DISPLAY";
-application/pdf; apvlv "%s"; test=test -n "$DISPLAY";
+application/pdf; apvlv %s; test=test -n "$DISPLAY";
 #application/pdf; pdftohtml"%s"; copiousoutput
 
 # OpenDocument

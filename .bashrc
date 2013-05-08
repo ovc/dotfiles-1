@@ -198,6 +198,12 @@ sourceifexists "/etc/profile"
 	    export PATH="$PATH:/usr/lib/colorgcc/bin"
 	fi
 
+	# Add tab completion to daemonize.
+	type ant >/dev/null 2>&1
+	if [ "$?" -eq 0 ]; then
+	    complete -cf daemonize
+	fi
+
 	# less {
 		# Syntax highlighting for less with src-highlight.
 		type src-hilite-lesspipe.sh  &> /dev/null
