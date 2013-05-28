@@ -1,6 +1,6 @@
 " Show tabnumbers in the tabbar. This is a merge of two scripts.
 
-if has('gui')
+if has("gui_running")
 	set showtabline=2 " always show tabs in gvim, but not vim
 	" set up tab labels with tab number, buffer name, number of windows
 	function! GuiTabLabel()

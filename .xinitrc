@@ -131,7 +131,8 @@
 
 	# Start screensaver
 	#xscreensaver -no-splash &
-	xautolock -time 10 -detectsleep -secure -locker slimlock -corners +000 -cornerdelay 2 -cornerredelay 30 -notify 10 -notifier "notify-send -u critical -a xautolock 'Locking screen in 10 seconds.'" &
+	#xautolock -time 10 -detectsleep -secure -locker slimlock -corners +000 -cornerdelay 2 -cornerredelay 30 -notify 10 -notifier "notify-send -u normal -a xautolock 'Locking screen in 10 seconds.'" &
+	xautolock -time 10 -detectsleep -secure -locker slimlock -notify 10 -notifier "notify-send -u normal -a xautolock 'Locking screen in 10 seconds.'" &
 
 	# Turn off screen after inactivity (in seconds). For mysterious reasons the sleep is needed.
 	xset +dpms
@@ -188,6 +189,9 @@
 
 	# Start my general tmux session.
 	irctor start &
+
+	# SpiderOak Hive sync.
+	#SpiderOak &
 # }
 
 # Window manager {

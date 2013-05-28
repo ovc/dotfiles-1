@@ -33,6 +33,7 @@
 		;;
 	dwm)
 		alias xlogout='pkill -f startdwm.sh'
+		alias afk='slimlock'
 		;;
 	osx)
 		# Enable or disable the Dashboard.

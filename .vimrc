@@ -65,13 +65,14 @@
 	" Github, vim-scripts.org {
 		"Bundle 'OmniCppComplete' " Incompaitble with clang_complete.
 		"Bundle 'taglist.vim'
-		Bundle 'autoload_cscope.vim'
 		Bundle 'AutoTag'
 		Bundle 'Color-Sampler-Pack'
 		Bundle 'FuzzyFinder'
 		Bundle 'L9'
+		Bundle 'Rename'
 		Bundle 'TaskList.vim'
 		Bundle 'argtextobj.vim'
+		Bundle 'autoload_cscope.vim'
 		Bundle 'buffergrep'
 		Bundle 'capslock.vim'
 		Bundle 'last_edit_marker.vim'
@@ -297,6 +298,8 @@
 	nnoremap <Leader>ct :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>	" Generate tags file (for OmniCppComplete).
 	nnoremap g^t :tabfirst<CR>							" Go to first tab.
 	nnoremap g$t :tablast<CR>							" Go to last tab.
+	noremap Yf :let @" = expand("%")<CR>						" Yank current (fully expanded) file name.
+	noremap YF :let @" = expand("%:p")<CR>						" Yank current (fully expanded) file name.
 
 	" Insert one chracter.
 	nmap <Space>i i_<Esc>r
@@ -501,15 +504,16 @@ if s:use_plugins
 		" New powerline.
 		"set rtp+=/usr/lib/python3.3/site-packages/powerline/bindings/vim
 
-		" Fast mode switch. Reference: " https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
-		if ! has('gui_running')
-    			set ttimeoutlen=10
-    			augroup FastEscape
-        			autocmd!
-        			au InsertEnter * set timeoutlen=0
-        			au InsertLeave * set timeoutlen=1000
-    			augroup END
-		endif
+		" Fast mode switch for faster powerline updates. Reference: " https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
+		"  NOTE this breaks my ~/.vim/ftplugin/autobrace.vim.
+		"if ! has('gui_running')
+                            "set ttimeoutlen=10
+                            "augroup FastEscape
+                                "autocmd!
+                                "au InsertEnter * set timeoutlen=0
+                                "au InsertLeave * set timeoutlen=1000
+                            "augroup END
+		"endif
 	" }
 
 		" Solarized {

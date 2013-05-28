@@ -223,7 +223,7 @@
 
 # Mailing lists {{
 	subscribe @lists.debian.org
-	subscribe vim_announce@googlegroups.com
+	subscribe vim-announce@vim.org
 	subscribe linux-kernel@vger.kernel.org
 	subscribe arch-announce@archlinux.org
 # }}

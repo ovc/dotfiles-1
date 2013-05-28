@@ -8,11 +8,11 @@ text/enriched; lynx -dump -stdin %s; copiousoutput
 
 # Media
 #image/*; display "%s"; ;  test=test -n "$DISPLAY"
-image/*; feh -d. "%s"; ;  test=test -n "$DISPLAY"
-image/*; anytopnm "%s" | pamscale -xsize=80  | ppmtopgm | \
+image/*; feh -d. %s; ;  test=test -n "$DISPLAY"
+image/*; anytopnm %s | pamscale -xsize=80  | ppmtopgm | \
 	 pgmtopbm | pbmtoascii; copiousoutput
-audio/*; vlc "%s"; ; test=test -n "$DISPLAY"
-video/*; mplayer "%s"
+audio/*; vlc %s; ; test=test -n "$DISPLAY"
+video/*; mplayer %s
 
 # Compressed
 application/x-gunzip; gunzip -c %s; copiousoutput

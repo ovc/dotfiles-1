@@ -240,12 +240,6 @@
 	urgency = low
 	timeout = 1
 	background = "#073642"
-[irssi_notify.pl]
-	appname = irssi_notify.pl
-	urgency = normal
-	background = "#859900"
-	summary = "*"
-	format = "%s %b"
 [irssi_notify.pl-filter_bitlbee]
 	appname = irssi_notify.pl
 	summary = "irssi: *bitlbee*"
@@ -254,6 +248,11 @@
 	appname = irssi_notify.pl
 	summary = "irssi: PM from -psyBNC*"
 	format = ""
+[irssi_notify.pl]
+	appname = irssi_notify.pl
+	urgency = normal
+	background = "#859900"
+	format = "%s %b"
 [maildir_watch]
 	appname = maildir_watch.sh
 	timeout = 6

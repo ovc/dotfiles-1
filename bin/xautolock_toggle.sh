@@ -23,6 +23,8 @@ if [ "$state" = "enabled" ]; then
 else
 	state="enabled"
 fi
+
+# Save state.
 echo "$state" > "$state_file"
 
 notify-send -a "${0##*/}" "xautolock is ${state}."
