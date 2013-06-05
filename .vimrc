@@ -144,6 +144,7 @@
 			set ttymouse=xterm2		" Needed for mouse support inside GNU Screen.
 		endif
 	endif
+
 	" Function keys {
 		" Urxvt does not emit what Vim expects for the function keys.
 		" This must be after "set term".

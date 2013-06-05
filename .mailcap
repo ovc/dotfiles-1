@@ -13,6 +13,7 @@ image/*; anytopnm %s | pamscale -xsize=80  | ppmtopgm | \
 	 pgmtopbm | pbmtoascii; copiousoutput
 audio/*; vlc %s; ; test=test -n "$DISPLAY"
 video/*; mplayer %s
+image/vnd.adobe.photoshop; gimp %s; test=test -n "$DISPLAY"
 
 # Compressed
 application/x-gunzip; gunzip -c %s; copiousoutput

@@ -235,27 +235,27 @@
 
 # Plugins/patches {{
 	# Sidebar-patch {{
-		set sidebar_width=16		# Width of the sidebar.
-		set nosidebar_visible		# Default visibility.
-		set sidebar_sort=yes		# Sort the folders alphabetically.
-		set sidebar_shortpath		# Trunace path names like /var/spool/mail/$USER.
-		#set sidebar_delim='|'		# Window delimiter.
-		# Mailboxes to show.
-		mailboxes =inbox =sent =archive =postponed =work =lists =drafts
+		#set sidebar_width=16		# Width of the sidebar.
+		#set nosidebar_visible		# Default visibility.
+		#set sidebar_sort=yes		# Sort the folders alphabetically.
+		#set sidebar_shortpath		# Trunace path names like /var/spool/mail/$USER.
+		##set sidebar_delim='|'		# Window delimiter.
+		## Mailboxes to show.
+		#mailboxes =inbox =sent =archive =postponed =work =lists =drafts
 
-		#color sidebar_new yellow default# Color new mails in #fg #bg.
-		color sidebar_new red color234	# Color new mails in solarized #fg #bg.
+		##color sidebar_new yellow default# Color new mails in #fg #bg.
+		#color sidebar_new red color234	# Color new mails in solarized #fg #bg.
 
-		# Toggle visibility.
-		macro index,pager B '<enter-command>toggle sidebar_visible<enter>'
+		## Toggle visibility.
+		#macro index,pager B '<enter-command>toggle sidebar_visible<enter>'
 
-		# Navigation.
-		bind index,pager \CN sidebar-next
-		bind index,pager \CP sidebar-prev
-		bind index,pager \e<Return> sidebar-open
-		#bind pager CP sidebar-prev
-		#bind pager CN sidebar-next
-		#bind pager CO sidebar-open
+		## Navigation.
+		#bind index,pager \CN sidebar-next
+		#bind index,pager \CP sidebar-prev
+		#bind index,pager \e<Return> sidebar-open
+		##bind pager CP sidebar-prev
+		##bind pager CN sidebar-next
+		##bind pager CO sidebar-open
 	# }}
 
 	# notmuch-mutt {{

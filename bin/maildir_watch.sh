@@ -5,6 +5,9 @@
 maildir_path="$HOME/.mail"		# Path to Maildir root.
 mailboxes=(inbox lists)			# Mailboxes to watch.
 watchdirs=$(for box in ${mailboxes[*]}; do echo ${maildir_path}/$box/new; done)
+scriptname=${0##*/}
+multicut_file="/tmp/${scriptname}_${USER}_multipart_cut.txt"
+trimmed_file="/tmp/${scriptname}_${USER}_trimmed.txt"
 
 trim() {
     local var="$1"
@@ -37,17 +40,40 @@ parse_send() {
 	from=${from:0:30}
 	from=$(trim "$from")
 
-	# Get the body. First scroll down to body, Content lines, random ID line, strip signature, convert HTML, remove empty lines, join lines, substitute spaces to get more text.
-	local body=$(sed '1,/^$/d' "$mailfile" | grep -v "^Content-.*:" | grep -v "^--[[:xdigit:]]\+" | sed -n '/-- /q;p' | html2text | sed '/^ *$/d' | tr "\\n" ' ' | sed 's/\s\s*/ /g')
-	body=${body:0:100}
+	# Parse out body.
+	# Scroll down to body.
+	local body=$(sed '1,/^$/d' "$mailfile")
+	# Remove content lines.
+	body=$(echo "$body" | grep -v "^Content-.*:")
+	# Remove random ID line.
+	body=$(echo "$body" |  grep -v "^--[[:xdigit:]]\+")
+
+	# Get rid of multipart crap.
+	echo "$body" | sed  -n '/------=_Part_/,/^$/p'  > "$multicut_file"
+	echo "$body" > "$trimmed_file"
+	body=$(comm -23 "$trimmed_file" "$multicut_file")
+
+	# Strip signature.
+	body=$(echo "$body" | sed -n '/-- /q;p')
+	# Convert HTML to ASCII.
+	boyd=$(echo "$body" | html2text)
+	# Remove empty lines.
+	body=$(echo "$body" | sed '/^ *$/d')
+	# Join lines.
+	body=$(echo "$body" | tr "\\n" ' ')
+	# Substitute repedetive spaces to get more text.
+	body=$(echo "$body" | sed 's/\s\s*/ /g')
+	# Strim leading and trailing spaces.
 	body=$(trim "$body")
+	# Limit length.
+	body=${body:0:100}
 
 	# Notify summary string.
-	local out_summary=$(printf "[%s] %s, %s,\\n" "$inbox" "$from" "$subject")
+	local out_summary=$(printf "[%s] %s | %s |\\n" "$inbox" "$from" "$subject")
 	# Notify body string.
 	local out_body=$(printf "Body: %s [...]\\n" "$body")
 	# Send the message with the name this scrip was invoked with.
-	notify-send --app-name "${0##*/}" "$out_summary" "$out_body"
+	notify-send --app-name "$scriptname" "$out_summary" "$out_body"
 }
 
 # Debug with static file.
