@@ -66,4 +66,4 @@ fi
 #notify-send " " -i $icon_name -h int:value:$display_volume -h string:synchronous:volume
 #notify-send "volume: $display_volume"
 #osd_cat -p bottom -A center -c white -u black -O 6 -d 1 -f -*-terminus-*-*-*-*-20-*-*-*-*-*-*-* -b percentage -P $display_volume -T $label
-osd_cat -p bottom -A center -c white -u black -O 3 -d 1 -f -*-terminus-*-*-*-*-10-*-*-*-*-*-*-* -b percentage -P $display_volume
+osd_cat --pos bottom --align center --color white --outlinecolour black --outline 3 --delay 1 --font -*-terminus-*-*-*-*-10-*-*-*-*-*-*-* --barmode percentage --percentage $display_volume

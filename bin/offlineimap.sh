@@ -2,7 +2,7 @@
 # Kill any existing (possibly stalled) instances of offlineimap and then run it again.
 
 max_wait_count=3
-wait_file="/tmp/offlineimap_wait.txt"
+wait_file="/tmp/offlineimap_wait_${USER}.txt"
 
 start_offlineimap() {
 	offlineimap -u quiet &>> ~/.log/offlineimap &

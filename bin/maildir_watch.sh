@@ -49,6 +49,7 @@ parse_send() {
 	body=$(echo "$body" |  grep -v "^--[[:xdigit:]]\+")
 
 	# Get rid of multipart crap.
+	# TODO comm needs sorted input... re-do and do it right.
 	echo "$body" | sed  -n '/------=_Part_/,/^$/p'  > "$multicut_file"
 	echo "$body" > "$trimmed_file"
 	body=$(comm -23 "$trimmed_file" "$multicut_file")

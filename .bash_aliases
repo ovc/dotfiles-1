@@ -159,6 +159,11 @@
 	alias pkillf="pkill -f -9"								# Force kill full name matched process.
 # }
 
+# Mounts {
+	alias mount-newport='jmtpfs /media/newport/'
+	alias umount-newport='fusermount -u /media/newport/'
+# }
+
 # Misc {
 	alias psg='ps aux | grep -i '					# List matching processes.
 	alias dusch='du -sch'							# The best file size calculator.

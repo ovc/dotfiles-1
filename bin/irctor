@@ -13,7 +13,7 @@ do_start() {
 		do_clean_files
 		tmux new-session -d -x 287 -y 41 -s "$session_name" -n "mutt/news" mutt
 		#tmux send-keys -t "$session_name":0 mutt C-m
-		tmux split-window -t "$session_name":0 -h newsbeuter
+		#tmux split-window -t "$session_name":0 -h newsbeuter # Disalbed since Greader is closed, find alternative.
 		#tmux set-window-option -t "$session_name":0 -q monitor-activity off
 		tmux set-window-option -t "$session_name":0 monitor-activity off
 
@@ -50,7 +50,7 @@ do_start() {
 do_stop() {
 	echo "Stopping ${session_name}...  "
 
-	killall -w -s 2 rtorrent
+	#killall -w -s 2 rtorrent
 
 	tmux select-window -t "$session_name":3
 	tmux send-keys -t "$session_name"  "quit" C-m

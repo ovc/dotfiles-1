@@ -8,26 +8,16 @@ email="erik.westrup@gmail.com"
 [[ -n "$2" ]] && email=$2
 
 # Swedish address
-#read -d '' out  << EOF
-#-- 
-#Erik Westrup${role}
-#<${email}>
-#(+46) 0738-286060 | 2r.se
-#Lagerbrings väg 8E, SE-22460 Lund, Sweden
-#-----------------------------------------
-#This email is encrypted with 2ROT-13.
-#EOF
-
-# CA address
 read -d '' out  << EOF
 -- 
 Erik Westrup${role}
 <${email}>
-(+1) (949) 545-4522 | 2r.se
-30706 Arroyo Dr., Irvine, CA 92617, USA
----------------------------------------
+(+46) 0738-286060 | 2r.se
+Lagerbrings väg 8E, SE-22460 Lund, Sweden
+-----------------------------------------
 This email is encrypted with 2ROT-13.
 EOF
+
 
 echo -e "\n"
 echo -e "$out"

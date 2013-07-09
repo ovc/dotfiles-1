@@ -302,6 +302,10 @@
 	noremap Yf :let @" = expand("%")<CR>						" Yank current (fully expanded) file name.
 	noremap YF :let @" = expand("%:p")<CR>						" Yank current (fully expanded) file name.
 
+	" Redraw window so search terms are centered.
+	nnoremap n nzz
+	nnoremap N Nzz
+
 	" Insert one chracter.
 	nmap <Space>i i_<Esc>r
 	" Insert one chracter after the cursor.

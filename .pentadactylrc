@@ -126,15 +126,13 @@
 " }}
 
 " Quickmarks {{
-	silent qmark b https://www.bankofamerica.com/
 	silent qmark c https://www.google.com/contacts
 	silent qmark d http://www.dsek.lth.se/
-	silent qmark e https://eee.uci.edu/myeee/
 	silent qmark f http://www.facebook.com/
 	silent qmark g http://github.com/
 	silent qmark l http://www.last.fm/user/ErikWestrup
 	silent qmark p http://playrapport.se/
-	silent qmark r https://www.google.com/reader/
+	silent qmark r http://cloud.feedly.com/
 	silent qmark s https://internetbank.swedbank.se/bviPrivat/privat?ns=1
 	silent qmark t http://kolla.tv/
 " }}
