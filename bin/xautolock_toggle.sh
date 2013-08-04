@@ -3,6 +3,15 @@
 
 state_file="/tmp/${USER}_xautolock_status.txt"
 
+enable_screen_blanking() {
+	xset +dpms
+	sleep 1; xset s 900
+}
+
+disable_screen_blanking() {
+	xset -dpms
+}
+
 # Read state.
 if [ -f "$state_file" ]; then
 	state=$(cat "$state_file")
@@ -13,8 +22,10 @@ fi
 # Do action.
 if [ "$state" = "enabled" ]; then
 	xautolock -disable
+	disable_screen_blanking
 else
 	xautolock -enable
+	enable_screen_blanking
 fi
 
 # Change state.
