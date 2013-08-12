@@ -275,6 +275,11 @@
 	command! Cdpwd cd %:p:h
 	command! Lcdpwd lcd %:p:h
 
+	" Write to temporary yank ring -- a low tech copy-paste.
+	command Wr w! /tmp/vim_erikw_yankring.txt
+	" Read from temporary yank ring.
+	command Rr r /tmp/vim_erikw_yankring.txt
+
 	command! -nargs=* Wrap set wrap linebreak nolist	" Set softwrap correctly.
 	autocmd BufWinLeave * silent! mkview			" Save fold views.
 	autocmd BufWinEnter * silent! loadview			" Load fold views on start.

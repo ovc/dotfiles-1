@@ -46,6 +46,10 @@
 # }
 
 # Environment {
+
+	# Set up display with default modes. NOTE set wallpaper after this.
+    	xrandr --auto --output LVDS1 --mode 1600x900 --output HDMI2 --mode 1920x1200 --right-of LVDS1
+
 	# Set the right keyboard map.
 	#setxkbmap -layout us -model pc105
 	#setxkbmap -layout us -model pc87

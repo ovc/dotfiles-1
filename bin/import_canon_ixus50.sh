@@ -7,7 +7,7 @@ cd $import_dir
 
 if [ -n "$1" ]; then
 	file_name="$1"
-	mkdir "$file_name"
+	mkdir -p "$file_name"
 	cd "$file_name"
 else
 	file_name="imported"

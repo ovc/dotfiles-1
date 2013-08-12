@@ -241,6 +241,21 @@
 		Control + Alt + Shift + F9
 # }
 
+# Display {
+	# Rotate Dell UltraSharp U2412M e-IPS 24" monitor right
+	"xrandr --output HDMI2 --rotate right"
+		Mod4 + Mod1 + Right
+
+	# Rotate Dell UltraSharp U2412M e-IPS 24" monitor left
+	"xrandr --output HDMI2 --rotate left"
+		Mod4 + Mod1 + Left
+
+	# Rotate Dell UltraSharp U2412M e-IPS 24" to normal
+	"xrandr --output HDMI2 --rotate normal"
+		Mod4 + Mod1 + Down
+
+# }
+
 # Misc {
 	# Toggle English and Swedish keboard layout.
     	"~/dev/vimomap/vimomap.sh --layout && xmodmap ~/.Xmodmap"
