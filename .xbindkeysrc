@@ -35,10 +35,13 @@
 	"slimlock"
 		XF86ScreenSaver
 
-	# Toggle xautolocking.
-	"xautolock_toggle.sh"
+	# Temporarily disable xautolock.
+	"xautolockctl caffeine"
 		Mod4 + Mod1 + a
 
+	# Toggle xautolocking.
+	"xautolockctl"
+		Mod4 + Mod1 + Shift + a
 
 	# Blank the screen.
 	"sleep 1; xset dpms force off"
