@@ -65,7 +65,7 @@
 		XF86Display
 	# Take a screenshot.
 	#"scrot --quality 80 ~/media/images/screenshots/screenshot_%Y-%m-%d-%H%M%S.png"
-	"$HOME/bin/scrot_printscreen.sh"
+	"$HOME/bin/printscreen_scrot.sh"
 		Print
 
 	# Start shutter.
