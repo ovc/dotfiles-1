@@ -304,7 +304,7 @@
 	nnoremap <Leader>ct :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>	" Generate tags file (for OmniCppComplete).
 	nnoremap g^t :tabfirst<CR>							" Go to first tab.
 	nnoremap g$t :tablast<CR>							" Go to last tab.
-	noremap Yf :let @" = expand("%")<CR>						" Yank current (fully expanded) file name.
+	noremap Yf :let @" = expand("%")<CR>						" Yank current file name.
 	noremap YF :let @" = expand("%:p")<CR>						" Yank current (fully expanded) file name.
 
 	" Redraw window so search terms are centered.
