@@ -3,9 +3,9 @@
 # $ xautlockctl enable			# Enable xautlock.
 # $ xautlockctl disable			# Enable xautlock.
 # $ xautlockctl caffeine		# Disable for a default time out.
-# $ xautlockctl caffeine [0-9]	# Disable the given amount of minutes from the current time.
+# $ xautlockctl caffeine [0-9]+	# Disable the given amount of minutes from the current time.
 #
-# Control a running xautolock instance by enabling or disabling it. There is also a "caffeine" mode that can disable xautolock for a given time e.g. if you want to watch a movie for 2 hours without screen interruptions (inspired by the mac app with the same name). 
+# Control a running xautolock instance by enabling or disabling it, suited for xbindkeys bindings. There is also a "caffeine" mode that can disable xautolock for a given time e.g. if you want to watch a movie for 2 hours without screen interruptions (inspired by the mac app with the same name).
 # NOTE There is now way of querying the state so assume that it is enabled the first time this script is called and only this script enable/disables it.
 
 state_file="/tmp/xautolock_${USER}_status.txt"
