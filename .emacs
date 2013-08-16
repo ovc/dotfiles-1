@@ -1,4 +1,5 @@
 ;; Erik Westrup's GNU Emacs configuration.
+;; TODO TAB/C-I is b0rked again...
 
 ;;; Environment
 (add-to-list 'load-path "~/.emacs.d")		 		;; Add folder to load path.
@@ -6,7 +7,8 @@
 
 ;;; Keyboard shortcuts
 (global-set-key [f7] 'global-hl-line-)			;; Toggle line highlight.
-(global-set-key "\C-h" 'backward-delete-char)		;; ^H as expected.
+(global-set-key [(control h)] 'backward-delete-char)		;; ^H as expected.
+(define-key isearch-mode-map [(control h)] 'isearch-delete-char) ;; ^H deletion in i-search mode.
 (global-set-key (kbd "RET") 'newline-and-indent)	;; Indent to next line on return. Same as C-j.
 
 

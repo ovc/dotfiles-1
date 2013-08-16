@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Scan image from Brother DCP-7070DW scanner.
-# Found the device name with $(scanimage -L).
+# dependencies: sane, brscan4 (from AUR)
+# install: sudo brsaneconfig4 -a name=dcp7070dw model=DCP-7070DW ip=10.0.0.5
+# Device name found with $(scanimage -L).
 
 dev_name="brother4:net1;dev0"
 out_path="$HOME/media/images/scanned"

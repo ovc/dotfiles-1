@@ -3,6 +3,6 @@
 
 /usr/bin/urxvtc "$@"
 if [ "$?" -eq 2 ]; then
-	/usr/bin/urxvtd -q -o -f
+	urxvtd --quiet --opendisplay --fork
 	/usr/bin/urxvtc "$@"
 fi

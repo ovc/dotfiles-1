@@ -188,6 +188,11 @@ sourceifexists "/etc/profile"
 		PATH="$PATH:$HOME/src/svtget/"
 	fi
 
+	# youtube2mp3.sh
+	if [ -d "/opt/youtube2mp3/" ]; then
+		PATH="$PATH:/opt/youtube2mp3/"
+	fi
+
 	# Add ANSI color output to ant.
 	type ant >/dev/null 2>&1
 	if [ "$?" -eq 0 ]; then
