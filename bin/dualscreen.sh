@@ -11,4 +11,4 @@ xrandr --output LVDS1 --mode 1600x900 --output HDMI2 --mode 1920x1200 --right-of
 
 
 # Set wallpaper again to re-fit.
-feh --bg-fill $HOME/.wallpaper
+feh --bg-fill --no-xinerama $HOME/.wallpaper

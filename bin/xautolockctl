@@ -22,7 +22,7 @@ save_state() {
 
 enable_screen_blanking() {
 	xset +dpms
-	sleep 1; xset s 900
+	sleep 1; xset s 1500
 }
 
 disable_screen_blanking() {

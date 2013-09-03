@@ -77,8 +77,9 @@
 	export QT_IM_MODULE=xim
 
 	# Set wallpaper.
-	#feh --bg-scale $HOME/.wallpaper
-	feh --bg-fill $HOME/.wallpaper
+	#feh --bg-fill $HOME/.wallpaper
+	# For dual screen
+	feh --bg-fill --no-xinerama $HOME/.wallpaper
 
 	# Set terminal cursor speed. First argument (in ms) is the delay before auto repeat starts.
 	# The second paramter is the repeat rate in number repeats per second.
@@ -138,9 +139,9 @@
 	#xautolock -time 20 -detectsleep -locker slimlock -corners +000 -cornerdelay 2 -cornerredelay 30 -notify 10 -notifier "notify-send -u normal -a xautolock 'Locking screen in 10 seconds.'" &
 	xautolock -time 20 -detectsleep -locker slimlock -notify 10 -notifier "notify-send -u normal -a xautolock 'Locking screen in 10 seconds.'" &
 
-	# Turn off screen after inactivity (in seconds). For mysterious reasons the sleep is needed.
+	# Screen blanking, turn off screen after inactivity (in seconds). For mysterious reasons the sleep is needed.
 	xset +dpms
-	sleep 1; xset s 900
+	sleep 1; xset s 1500
 
 	# Start X keyboard shortcut daemon.
 	xbindkeys

@@ -276,9 +276,9 @@
 	command! Lcdpwd lcd %:p:h
 
 	" Write to temporary yank ring -- a low tech copy-paste.
-	command Wr w! /tmp/vim_erikw_yankring.txt
+	command! Wr w! /tmp/vim_erikw_yankring.txt
 	" Read from temporary yank ring.
-	command Rr r /tmp/vim_erikw_yankring.txt
+	command! Rr r /tmp/vim_erikw_yankring.txt
 
 	command! -nargs=* Wrap set wrap linebreak nolist	" Set softwrap correctly.
 	autocmd BufWinLeave * silent! mkview			" Save fold views.
@@ -389,7 +389,12 @@
 			endif
 		endfunction
 		" }
-		nmap <silent> <Leader>l :call ToggleLine()<CR>				" Toggle static/relative line numbering.
+		" Toggle static/relative line numbering.
+		if v:version >= 74
+			nmap <Leader>l :set relativenumber!<CR>
+		else
+			nmap <Leader>l :call ToggleLine()<CR>
+		endif
 
 		" Toggle Cursor {
 			function! HighlightNearCursor()

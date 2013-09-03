@@ -47,7 +47,7 @@
     word_wrap = no
 
     # ignore newlines '\n' in notifications
-    ignore_newline = no
+    ignore_newline = yes
 
 
     # the geometry of the window
