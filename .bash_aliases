@@ -52,7 +52,7 @@
 
 # Color support {
 	ls_options="--time-style=long-iso -F"
-	if [ "$TERM" != "dumb" ] && [ -x /usr/bin/dircolors ]; then
+	if [ "$TERM" != "dumb" ] && type dircolors &>/dev/null; then
 		eval "`dircolors -b`"
 		# Colors when output is terminal.
 		alias ls="ls ${ls_options} --color=auto"
@@ -69,12 +69,14 @@
 		alias fgrepc='fgrep --color=always'
 		alias egrepc='egrep --color=always'
 
+		# Colored cows, yeah!
+		alias cower='cower --color=auto'
+
 		# Use colored diff if it can be found.
 		hash colordiff 2>/dev/null
 		if [ "$?" -eq 0 ]; then
 			alias cdiff='colordiff'
-			alias diffc='colordiff'
-			alias diff='colordiff'
+			#alias diff='colordiff'
 		fi
 
 		# Use colored du if exists.
@@ -133,7 +135,6 @@
 	alias xmatlab='\matlab'							# Default X version.
 	alias gimp='gimp --no-splash'					# Splash screens are just annoying.
 	alias dmenu="dmenu -i"							# Ignore case.
-	alias cower='cower --color=auto'				# Colored cow.
 # }
 
 # Short hands {
@@ -147,7 +148,7 @@
 	alias vboxmanage='VBoxManage'							# Who likes caps?- I don't.
 	alias ll='ls -l'										# I don't use it but aliens on my systems presumes its existence.
 	unalias l &>/dev/null									# I use bashmarks.
-	alias lsc='ls --color=always --time-style=long-iso'		# Force color.
+	alias lsc="ls ${ls_options} --color=always"				# Force color.
 	alias agdbtui='arm-none-eabi-gdbtui'					# So tired of typing that...
 	alias shredzr='shred --zero --remove'					# Zero out and delete file.
 	alias sysc='systemctl'									# The length of a name should correspond to its importance, see vi.
@@ -157,6 +158,7 @@
 	# Run JUnit on a test class.
 	alias junitx="java -cp /usr/share/java/junit.jar:bin org.junit.runner.JUnitCore"
 	alias pkillf="pkill -f -9"								# Force kill full name matched process.
+	alias iperl="perl -de 0"								# Interactive perl.
 # }
 
 # Mounts {
@@ -166,7 +168,7 @@
 
 # Misc {
 	alias psg='ps aux | grep -i '					# List matching processes.
-	alias dusch='du -sch'							# The best file size calculator.
+	alias dusch='du -sch'							# The best file size calculator is a shower.
 	alias rehash='hash -r'							# Reload PATH caches or something similar. It works!
 	alias beep='echo -en "\007"'					# Whoop whoop'
 	alias bygg='make -f Byggfil'					# New standard?

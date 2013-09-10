@@ -53,7 +53,7 @@ PS1="${PS1}:\$(ps1_pwd_trimmed)"
 ps1_nbr_bg_jobs() {
 	njobs=`jobs | wc -l`
 	if [ "$njobs" -gt 0 ]; then
-		echo " (${njobs})"
+		echo " (%${njobs})"
 	fi
 }
 PS1="${PS1}\$(ps1_nbr_bg_jobs)"

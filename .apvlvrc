@@ -1,7 +1,7 @@
 " Erikw Westrup's apvlv configuration.
 
 " Settings
-set fullscreen = no 	" Start with fullscreen.
+set fullscreen = no 	" Start with fullscreen?
 set defaultdir = ~/	" Default dir in open file dialog.
 set zoom = fitwidth	" Change the default zoom.
 set content = yes	" Open content view first.

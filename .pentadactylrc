@@ -131,10 +131,8 @@
 	silent qmark f http://www.facebook.com/
 	silent qmark g http://github.com/
 	silent qmark l http://www.last.fm/user/ErikWestrup
-	silent qmark p http://playrapport.se/
 	silent qmark r https://cloud.feedly.com/
 	silent qmark s https://internetbank.swedbank.se/bviPrivat/privat?ns=1
-	silent qmark t http://kolla.tv/
 " }}
 
 " Plugins {{
