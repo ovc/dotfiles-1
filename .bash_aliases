@@ -166,6 +166,11 @@
 	alias umount-newport='fusermount -u /media/newport/'
 # }
 
+# Permutation aliases {
+	sourceifexists "$HOME/.bash_aliases_make"
+	sourceifexists "$HOME/.bash_aliases_git"
+# }
+
 # Misc {
 	alias psg='ps aux | grep -i '					# List matching processes.
 	alias dusch='du -sch'							# The best file size calculator is a shower.

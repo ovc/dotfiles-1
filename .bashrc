@@ -210,6 +210,12 @@ sourceifexists "/etc/profile"
 	    complete -cf daemonize
 	fi
 
+	if [ -f "$HOME/.rvm/scripts/rvm" ]; then
+	    source $HOME/.rvm/scripts/rvm
+	    PATH="$PATH:$HOME/.rvm/bin"
+	fi
+
+
 	# less {
 		# Syntax highlighting for less with src-highlight.
 		type src-hilite-lesspipe.sh  &> /dev/null

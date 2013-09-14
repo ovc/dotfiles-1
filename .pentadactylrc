@@ -112,10 +112,6 @@
 	map E <C-S-e>
 	" Open downloads.
 	nmap -builtin <A-d> :downloads<CR>
-	" Go to first tab.
-	nmap -builtin g^t :tabfirst<CR>
-	" Go to last tab.
-	nmap -builtin g$t :tablast<CR>
 
 	" Mappings like Vimperator {{
 		imap <C-v> <Pass>
