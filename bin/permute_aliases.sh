@@ -11,11 +11,11 @@ swap() {
 	local a_pos="$2"
 	local b_pos="$3"
 
-	a="${subject:${a_pos}:1}"
-	b="${subject:${b_pos}:1}"
+	local a="${subject:${a_pos}:1}"
+	local b="${subject:${b_pos}:1}"
 	a_pos=$((a_pos + 1))
 	b_pos=$((b_pos + 1))
-	permuted="$(echo "$subject" | sed -e "s/./${b}/${a_pos}" | sed -e "s/./${a}/${b_pos}")"
+	local permuted="$(echo "$subject" | sed -e "s/./${b}/${a_pos}" | sed -e "s/./${a}/${b_pos}")"
 	echo "$permuted"
 }
 

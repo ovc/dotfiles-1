@@ -210,9 +210,16 @@ sourceifexists "/etc/profile"
 	    complete -cf daemonize
 	fi
 
+	# Ruby version manager.
 	if [ -f "$HOME/.rvm/scripts/rvm" ]; then
 	    source $HOME/.rvm/scripts/rvm
 	    PATH="$PATH:$HOME/.rvm/bin"
+	fi
+
+	# Tab complete for viw.
+	type viw >/dev/null 2>&1
+	if [ "$?" -eq 0 ]; then
+	    complete -cf viw
 	fi
 
 
