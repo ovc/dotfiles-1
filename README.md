@@ -22,3 +22,4 @@ $ grep -nr GIT-CENSORED .
 # Highlights
 
  * Check out my vim configurations -- they are super cool!
+ * [bin/](bin/) -- many handy and time saving scripts.
