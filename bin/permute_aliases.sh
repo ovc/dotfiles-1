@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Prints all unique permutation of a given program as bash alias commands to stdout. Ideal for alias generation for "make".
+# Prints all unique permutation of a given program as bash alias commands to stdout. Ideal for generation of "make" aliases.
 # Usage: ./permute_aliases.sh <program> >.bash_aliases_<program>
 # source the generated file in you bash configuration file(s).
 
@@ -22,6 +22,7 @@ swap() {
 save_alias() {
 	local program="$1"
 	local alias="$2"
+
 	if [[ ! ${permutations["${alias}"]} ]]; then
 		local alias_cmd=$(printf "alias %s='%s'" "$alias" "$program")
 		permutations+=(["${alias}"]="${alias_cmd}")
@@ -37,11 +38,10 @@ permutate() {
 	local i="$pos"
 	for ((; $i < ${#subject}; i++)); do
 		local permuted=$(swap "$subject" "$pos" "$i")
-		if [ "$subject" != "$program" ]; then
+		if [ "$permuted" != "$program" ]; then
 			save_alias "$program" "$permuted"
 		fi
-		nextpos=$((pos+1))
-		permutate "$program" "$permuted" $nextpos
+		permutate "$program" "$permuted" $((pos+1))
 	done
 }
 

@@ -159,6 +159,7 @@
 	alias junitx="java -cp /usr/share/java/junit.jar:bin org.junit.runner.JUnitCore"
 	alias pkillf="pkill -f -9"								# Force kill full name matched process.
 	alias iperl="perl -de 0"								# Interactive perl.
+	alias catu="cat -vet"									# A cat that likes unprintable characters.
 # }
 
 # Mounts {

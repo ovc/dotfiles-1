@@ -101,7 +101,8 @@
 	export GNOME_KEYRING_PID
 
 	# Network manager
-	nm-applet &
+	# NOTE switched to netctl.
+	#nm-applet &
 
 	# System tray. Use package trayer-dwm for better dwm integration.
 	# NOTE not needed now since I use the systemtray patch for dwm.
@@ -132,9 +133,6 @@
 	#	pulseaudio --start
 	#fi
 
-	# System tray volume control.
-	pnmixer &
-
 	# Start screensaver
 	#xscreensaver -no-splash &
 	#xautolock -time 20 -detectsleep -locker slimlock -corners +000 -cornerdelay 2 -cornerredelay 30 -notify 10 -notifier "notify-send -u normal -a xautolock 'Locking screen in 10 seconds.'" &
@@ -152,8 +150,39 @@
 		$HOME/dev/dwmstatus/dwmstatus &
 	fi
 
+	# Fetch my mails.
+	#offlineimap &
+
+	# Start my Maildir notifier. 
+	$HOME/bin/maildir_watch.sh &
+
+	# Start irexec used for executing arbitary commands from ~/.lircrc.
+	#/usr/bin/env irexec --daemon
+
+	# Start mailleds that will blink LEDs when there are unread emails.
+	#$HOME/bin/mailleds_start.sh &
+
+	# Lock screen when my phone is too far away.
+	# TODO is it proximity who causes kernel oops?
+	#start_proximity.sh &
+
+	# Start my general tmux session.
+	irctor start &
+
+	# MPD notifier.
+	mpd-notification &
+
+	# Scrobble songs in MPD.
+	mpdscribble &
+
 	# Start skype.
 	skype &
+
+	# System tray volume control.
+	pnmixer &
+
+	# Network monitor for netctl.
+	netmon &
 
 	# Start skyped hopefully after Skype is loaded.
 	# TODO is this sleep still needed?
@@ -165,36 +194,11 @@
 	# Battery monitor.
 	batterymon &
 
-	# Fetch my mails.
-	offlineimap &
-
-	# Start Maildir watcher.
-	$HOME/bin/maildir_watch.sh &
-
 	# Clipboard manager.
 	parcellite &
 
-	# Start mailleds that will blink LEDs when there are unread emails.
-	#$HOME/bin/mailleds_start.sh &
-
-	# Start irexec used for executing arbitary commands from ~/.lircrc.
-	#/usr/bin/env irexec --daemon
-
-	# Scrobble songs in MPD.
-	mpdscribble &
-
 	# Bluetooth applet.
 	#blueman-applet &
-
-	# MPD notifier.
-	mpd-notification &
-
-	# Lock screen when my phone is too far away.
-	# TODO is it proximity who causes kernel oops?
-	#start_proximity.sh &
-
-	# Start my general tmux session.
-	irctor start &
 
 	# SpiderOak Hive sync.
 	#SpiderOak &
