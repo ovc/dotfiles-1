@@ -49,7 +49,7 @@
 
 	# Set up display with default modes. NOTE set wallpaper after this.
         #xrandr --auto --output LVDS1 --mode 1600x900 --output HDMI2 --mode 1920x1200 --right-of LVDS1
-        $HOME/bin/dualscreen.sh dell24 enable
+	$HOME/bin/dualscreen.sh dell24 enable
 
 	# Set the right keyboard map.
 	#setxkbmap -layout us -model pc105
@@ -132,6 +132,9 @@
 	#if ! pulseaudio --check; then
 	#	pulseaudio --start
 	#fi
+
+	# Volume notification daemon.
+	volnoti --timeout 1.2
 
 	# Start screensaver
 	#xscreensaver -no-splash &

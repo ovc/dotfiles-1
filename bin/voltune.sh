@@ -1,69 +1,60 @@
 #!/usr/bin/env bash
+# Control the volume with a nice notification.
 
-usage="usage: $0 -c {up|down|mute} [-i increment] [-m mixer]"
-command=
-increment=2%
-mixer=Master
-label=Tuner
+scriptname=${0##*/}
+usage="usage: ${scriptname} -c {up|down|mute} [-i increment] [-m mixer]"
+increment="5%"
+mixer="Master"
 
-while getopts i:m:h o
-do case "$o" in
-    i) increment=$OPTARG;;
-    m) mixer=$OPTARG;;
-    h) echo "$usage"; exit 0;;
-    ?) echo "$usage"; exit 0;;
-esac
+while getopts ":c:i:m:h" opt; do
+	case "$opt" in
+    	c) cmd="$OPTARG";;
+    	i) increment="$OPTARG";;
+    	m) mixer="$OPTARG";;
+    	:) echo "Option -$OPTARG requires an argument." >&2; exit 1;;
+    	h) echo "$usage"; exit 0;;
+    	?) echo "$usage"; exit 0;;
+	esac
 done
-
 shift $(($OPTIND - 1))
-command=$1
 
-if [ "$command" = "" ]; then
-    echo "usage: $0 {up|down|mute} [increment]"
-    exit 0;
+if [ -z "$cmd" ]; then
+	echo "$usage"
+	exit 2
 fi
+
 is_muted() {
-	amixer get Master | grep "\[on\]" >/dev/null
+	if (amixer get Master | grep "\[off\]" >/dev/null); then
+		echo "true"
+	else
+		echo "false"
+	fi
 }
+muted="$(is_muted)"
 
 display_volume=0
-
-if [ "$command" = "up" ]; then
+if [ "$cmd" = "up" ]; then
     display_volume=$(amixer set $mixer $increment+ unmute | grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
-fi
-
-if [ "$command" = "down" ]; then
+elif [ "$cmd" = "down" ]; then
     display_volume=$(amixer set $mixer $increment- | grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
-fi
-
-icon_name=""
-
-if [ "$command" = "mute" ]; then
-    if is_muted; then
-        display_volume=0
-        icon_name="notification-audio-volume-muted"
+elif [ "$cmd" = "mute" ]; then
+    if [ "$muted" = "false" ]; then
+    	display_volume=$(amixer get $mixer 2>dev/null| grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
         amixer set $mixer mute
+		muted="true"
     else
         display_volume=$(amixer set $mixer unmute | grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
+		muted="false"
     fi
+else
+	echo "Unknow command \"$cmd\"." 1>&2
+	exit 3
 fi
 
-if [ "$icon_name" = "" ]; then
-    if [ "$display_volume" = "0" ]; then
-        icon_name="notification-audio-volume-off"
-    else
-        if [ "$display_volume" -lt "33" ]; then
-            icon_name="notification-audio-volume-low"
-        else
-            if [ "$display_volume" -lt "67" ]; then
-                icon_name="notification-audio-volume-medium"
-            else
-                icon_name="notification-audio-volume-high"
-            fi
-        fi
-    fi
+#killall osd_cat
+#osd_cat --pos bottom --align center --color white --outlinecolour black --outline 3 --delay 1 --font -*-terminus-*-*-*-*-10-*-*-*-*-*-*-* --barmode percentage --percentage $display_volume
+if [ "$muted" = "true" ]; then
+	volnoti-show -m "$display_volume"
+else
+	volnoti-show "$display_volume"
 fi
-#notify-send " " -i $icon_name -h int:value:$display_volume -h string:synchronous:volume
-#notify-send "volume: $display_volume"
-#osd_cat -p bottom -A center -c white -u black -O 6 -d 1 -f -*-terminus-*-*-*-*-20-*-*-*-*-*-*-* -b percentage -P $display_volume -T $label
-osd_cat --pos bottom --align center --color white --outlinecolour black --outline 3 --delay 1 --font -*-terminus-*-*-*-*-10-*-*-*-*-*-*-* --barmode percentage --percentage $display_volume

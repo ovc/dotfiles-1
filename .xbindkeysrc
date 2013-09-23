@@ -94,30 +94,32 @@
 
 	# voltune.sh {
 		# Lower volume.
-		#"amixer -q set Master 5%- unmute"
 		#"vol_down"
-		"voltune.sh down"
+		"voltune.sh -c down -i 5%"
 			XF86AudioLowerVolume
 
-		"voltune.sh down"
+		"voltune.sh -c down -i 5%"
 		Control + F10
 
+		"voltune.sh -c down -i 1%"
+		Control + Shift + F10
+
 		# Raise volume.
-		#"amixer -q set Master 5%+ unmute"
 		#"vol_up"
-		"voltune.sh up"
+		"voltune.sh -c up -i 5%"
 			XF86AudioRaiseVolume
 
-		"voltune.sh up"
+		"voltune.sh -c up -i 5%"
 			Control + F11
 
+		"voltune.sh -c up -i 1%"
+			Control + Shift + F11
+
 		# Mute sound.
-		#"amixer -q set Master toggle"
-		#"mute_toggle"
-		"voltune.sh mute"
+		"voltune.sh -c mute"
 			XF86AudioMute
 
-		"voltune.sh mute"
+		"voltune.sh -c mute"
 			Control + F12
 
 		# TODO when the MIC_MUTE button with keycode 248 works and X can handle the new XF86MIC_MUTE (or what the will call it).
