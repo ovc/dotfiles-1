@@ -15,20 +15,22 @@ else
 	exit 1
 fi
 
-xrandr --output LVDS1 --mode 1600x900
+args_lvds1="--output LVDS1 --mode 1600x900"
 case "$monitor" in
 	"dell24") # Dell 24" monitor
 		if [ "$action" == "enable" ]; then
-			monargs="--output HDMI2 --primary --mode 1920x1200 --right-of LVDS1"
+			ext_monargs="--output HDMI2 --primary --mode 1920x1200 --right-of LVDS1"
 		else
-			monargs="--output HDMI2 --off"
+			args_lvds1="${args_lvds1} --primary"
+			ext_monargs="--output HDMI2 --off"
 		fi
 		;;
 	"lgtv") # Lund LG TV
 		if [ "$action" == "enable" ]; then
-		monargs="--output HDMI1 --mode 1360x768 --left-of LVDS1"
+			ext_monargs="--output HDMI1 --mode 1360x768 --left-of LVDS1"
 		else
-			monargs="--output HDMI1 --off"
+			args_lvds1="${args_lvds1} --primary"
+			ext_monargs="--output HDMI1 --off"
 		fi
 		;;
 	*)
@@ -36,7 +38,8 @@ case "$monitor" in
 		exit 2
 		;;
 esac
-xrandr $monargs
+xrandr $args_lvds1
+xrandr $ext_monargs
 
 # Set wallpaper again to re-fit.
 feh --bg-fill --no-xinerama $HOME/.wallpaper

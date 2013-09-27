@@ -153,7 +153,7 @@
 		$HOME/dev/dwmstatus/dwmstatus &
 	fi
 
-	# Fetch my mails.
+	# Fetch my mails with IMAP IDLE.
 	#offlineimap &
 
 	# Start my Maildir notifier. 

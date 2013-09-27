@@ -55,11 +55,15 @@ parse_send() {
 	# Strip leading and trailing spaces.
 	body=$(trim "$body")
 	# Limit length.
-	body=${body:0:100}
+	body=${body:0:110}
 
 	# Format the output.
 	local out_summary=$(printf "[%s] From: %s | Subject: %s |\\n" "$inbox" "$from" "$subject")
-	local out_body=$(printf "Body: %s [...]\\n" "$body")
+	local out_body=""
+	if [ -n "$body" ]; then
+		#out_body=$(printf "Body: %s [...]\\n" "$body")
+		out_body=$(printf "%s [...]\\n" "$body")
+	fi
 
 	# Send the message with the name this scrip was invoked with.
 	notify-send --app-name "$scriptname" "$out_summary" "$out_body"

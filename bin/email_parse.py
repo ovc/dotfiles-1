@@ -9,7 +9,7 @@ import html2text
 
 def _decode_bytes(baffelblag):
         if type(baffelblag) is bytes:
-            codecs = ['utf8', 'iso-8859-1']
+            codecs = ['utf8', 'iso-8859-1', 'cp1252']
             for codec in codecs:
                 try:
                     return baffelblag.decode(codec)
@@ -32,8 +32,10 @@ def parse_args():
 def main():
     email_file, fromf, subject, body = parse_args()
 
+    # TODO broken on latin-1 input.
     message = email.message_from_file(email_file)
-    #print(message)
+    #message_in = email_file.read()
+    #message = email.message_from_string(message_in)
     if fromf:
         from_str = _decode_bytes(email.header.decode_header(message['from'])[0][0])
         print("{:s}".format(from_str))
