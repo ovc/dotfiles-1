@@ -190,16 +190,16 @@
 	# }}
 
 	# Navigation {{
-		macro index,pager	\Cf	"<next-page>"					"scroll to the next page"
-		macro index,pager	\Cb	"<previous-page>"				"scroll to the previous page"
-		macro index,pager	\Cd	"<half-down>"					"scroll down 1/2 page"
-		macro index,pager	\Cu	"<half-up>"					"scroll up 1/2 page"
-		macro index,pager	\Ce	"<next-line>"					"scroll down one line"
-		macro index,pager	\Cy	"<previous-line>"				"scroll up one line"
-		macro index		G	"<last-entry>"					"jump to the last entry"
-		macro index		gg	"<first-entry>"					"jump to the first entry"
-		macro pager		G	"<bottom>"					"jump to the bottom of the message"
-		macro pager		gg	"<top>"						"jump to the top of the message"
+		macro index,pager,browser	\Cf	"<next-page>"					"scroll to the next page"
+		macro index,pager,browser	\Cb	"<previous-page>"				"scroll to the previous page"
+		macro index,pager,browser	\Cd	"<half-down>"					"scroll down 1/2 page"
+		macro index,pager,browser	\Cu	"<half-up>"					"scroll up 1/2 page"
+		macro index,pager		\Ce	"<next-line>"					"scroll down one line"
+		macro index,pager		\Cy	"<previous-line>"				"scroll up one line"
+		macro index,browser		G	"<last-entry>"					"jump to the last entry"
+		macro index,browser		gg	"<first-entry>"					"jump to the first entry"
+		macro pager			G	"<bottom>"					"jump to the bottom of the message"
+		macro pager			gg	"<top>"						"jump to the top of the message"
 	# }}
 
 	# Identities {{
