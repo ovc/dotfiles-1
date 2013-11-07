@@ -10,16 +10,22 @@ start_offlineimap() {
 	echo "Started offlineimap ($pid)."
 }
 
+stop_offlineimap() {
+	local pid="$1"
+	kill -9 "$pid"
+	echo "Killed offlineimap (${pid})"
+}
+
 increment_wait_file() {
 	wait_count=$(read_wait_file)
 	wait_count=$((${wait_count} + 1))
-	echo "Incremented wait count to ${wait_count}." 1>&2
 	echo "${wait_count}" > "$wait_file"
+	echo "Incremented wait count to ${wait_count}." 1>&2
 }
 
 reset_wait_file() {
-	echo "Reseted wait file."
 	echo 0 > "$wait_file"
+	echo "Reseted wait file."
 }
 
 read_wait_file() {
@@ -28,7 +34,6 @@ read_wait_file() {
 	else
 		count="0"
 	fi
-	echo "Wait count = ${count}" 1>&2
 	echo "$count"
 }
 
@@ -36,9 +41,9 @@ if [ -z "${pid=$(pgrep '^offlineimap$')}" ]; then
 		start_offlineimap
 else
 	wait_count=$(read_wait_file)
+	echo "Wait count = ${wait_count}"
 	if [ "$wait_count" -ge "$max_wait_count" ]; then
-		echo "Killing offlineimap (${pid})"
-		kill -9 "$pid"
+		stop_offlineimap "$pid"
 		reset_wait_file
 		start_offlineimap
 	else

@@ -38,6 +38,11 @@ cd "$out_path"
 next=$(next_scan_number "$prefix")
 scan_name="${prefix}${next}"
 scanimage --device-name="${dev_name}" --progress --format=tff > "${scan_name}.tff"
+if [ "$?"  -ne 0 ]; then
+	echo "scanimage(1) failed." 1>&2
+	exit
+fi
+
 if [ -e "${scan_name}.tff" ]; then
 	convert2type "$scan_name" "tff" "pdf"
 	copy_path_to_xclipboard "${out_path}/${scan_name}.pdf"

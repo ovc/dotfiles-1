@@ -6,6 +6,21 @@ usage="usage: ${scriptname} -c {up|down|mute} [-i increment] [-m mixer]"
 increment="5%"
 mixer="Master"
 
+is_muted() {
+	if (amixer get Master | grep "\[off\]" >/dev/null); then
+		echo "true"
+	else
+		echo "false"
+	fi
+}
+muted="$(is_muted)"
+
+
+if [ "$#" -eq 0 ]; then
+	echo "$usage"
+	exit 2
+fi
+
 while getopts ":c:i:m:h" opt; do
 	case "$opt" in
     	c) cmd="$OPTARG";;
@@ -18,28 +33,14 @@ while getopts ":c:i:m:h" opt; do
 done
 shift $(($OPTIND - 1))
 
-if [ -z "$cmd" ]; then
-	echo "$usage"
-	exit 2
-fi
-
-is_muted() {
-	if (amixer get Master | grep "\[off\]" >/dev/null); then
-		echo "true"
-	else
-		echo "false"
-	fi
-}
-muted="$(is_muted)"
-
-display_volume=0
 if [ "$cmd" = "up" ]; then
     display_volume=$(amixer set $mixer $increment+ unmute | grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
+		muted="false"
 elif [ "$cmd" = "down" ]; then
     display_volume=$(amixer set $mixer $increment- | grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
 elif [ "$cmd" = "mute" ]; then
     if [ "$muted" = "false" ]; then
-    	display_volume=$(amixer get $mixer 2>dev/null| grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
+    	display_volume=$(amixer get $mixer 2>/dev/null| grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
         amixer set $mixer mute
 		muted="true"
     else
@@ -51,8 +52,6 @@ else
 	exit 3
 fi
 
-#killall osd_cat
-#osd_cat --pos bottom --align center --color white --outlinecolour black --outline 3 --delay 1 --font -*-terminus-*-*-*-*-10-*-*-*-*-*-*-* --barmode percentage --percentage $display_volume
 if [ "$muted" = "true" ]; then
 	volnoti-show -m "$display_volume"
 else

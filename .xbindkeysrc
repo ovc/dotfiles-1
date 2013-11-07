@@ -75,6 +75,10 @@
 	"shutter"
 		Mod4 + Mod1 + p
 
+	# Fetch emails.
+	"offlineimap.sh"
+		Mod4 + Mod1 + F5
+
 # }
 
 # Volume {

@@ -8,7 +8,8 @@ email="erik.westrup@gmail.com"
 [[ -n "$2" ]] && email=$2
 
 # Swedish address
-read -d '' out  << EOF
+#read -d '' out  <<-EOF
+read -d '' out  <<EOF
 -- 
 Erik Westrup${role}
 <${email}>

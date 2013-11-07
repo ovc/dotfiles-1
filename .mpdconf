@@ -48,7 +48,7 @@
 	follow_outside_symlinks			"yes"
 	follow_inside_symlinks			"yes"
 	# Use UTF-8.
-	filesystem_charset		"UTF-8"
+	filesystem_charset			"UTF-8"
 # }}
 
 # General options {{
@@ -61,19 +61,19 @@
 
 # Audio output {{
 	# PulseAudio {{
-		# Troublesome!
+		# Troublesome, not compat with systemd. Requires autospawn=yes in /etc/pulse/client.conf but that breaks pulseaudio on boot.
 		#audio_output {
-                        #type    "pulse"
-                        #name    "MPD PulseAudio Output"
-                        ##server  "localhost"   # optional
-                        ##sink    "alsa_output" # optional
+			#type    "pulse"
+			#name    "MPD PulseAudio Output"
+			#server  "localhost"   # optional
+			#sink    "alsa_output" # optional
 		#}
         # }}
 
 	# Alsa {{
 		audio_output {
 			type		"alsa"
-			name		"Inglewood ALSA Device"
+			name		"Irvine ALSA Device"
 			#device		"hw:0,0"	# optional, will break dmix and block others.
 			format		"44100:16:2"	# optional
 			mixer_type      "hardware"	# optional
@@ -84,45 +84,45 @@
 	# }}
 
 	# HTTP streaming {{
-		audio_output {
-			type		"httpd"
-			name		"Inglewood HTTP stream"
-			encoder		"lame"		# optional, vorbis or lame
-			port		"8001"
-			#quality	"5.0"		# do not define if bitrate is defined
-			bitrate		"128"		# do not define if quality is defined
-			format		"44100:16:2"
-		}
+		#audio_output {
+			#type		"httpd"
+			#name		"Irvine HTTP stream"
+			#encoder		"lame"		# optional, vorbis or lame
+			#port		"8001"
+			##quality	"5.0"		# do not define if bitrate is defined
+			#bitrate		"128"		# do not define if quality is defined
+			#format		"44100:16:2"
+		#}
 	# }}
 
 	# Icecast {{
-		audio_output {
-				type        "shout"
+		#audio_output {
+				#type        "shout"
 
-				# Ogg
-				#encoding    "ogg"
-				#mount       "/mpd.ogg"
+				## Ogg
+				##encoding    "ogg"
+				##mount       "/mpd.ogg"
 
-				# MP3
-				encoding    "mp3"
-				encoder	    "lame"
-				mount       "/mpd.mp3"
+				## MP3
+				#encoding    "mp3"
+				#encoder	    "lame"
+				#mount       "/mpd.mp3"
 
-				name        "Inglewood Icecast stream"
-				host        "localhost"
-				port        "8000"
-				user        "source"
-				# This is the source password in icecast.xml
-				password    "GIT-CENSORED"
+				#name        "Irvine Icecast stream"
+				#host        "localhost"
+				#port        "8000"
+				#user        "source"
+				## This is the source password in icecast.xml
+				#password    "GIT-CENSORED"
 
-				# Set either quality or bitrate
-				#quality     "5.0"
-				bitrate     "64"
-				format      "44100:16:2"
+				## Set either quality or bitrate
+				##quality     "5.0"
+				#bitrate     "64"
+				#format      "44100:16:2"
 
-				# Optional Paramters
-				description "Erik Westrup's private MPD stream."
-		}
+				## Optional Paramters
+				#description "Erik Westrup's private MPD stream."
+		#}
 	# }}
 
 	# FIFO visualizer {{

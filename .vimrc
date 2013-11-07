@@ -1,5 +1,4 @@
 " Erik Westrup's Vim configuration.
-
 " Modeline {
 "	 vi: foldmarker={,} foldmethod=marker foldlevel=0: tabstop=8:
 " }
@@ -206,8 +205,7 @@
 	set ruler						" Show current cursor position in the lower right corner.
 	set laststatus=2					" Always show the status line.
 	set nolist						" Don't show unprintable characters.
-	set listchars=eol:$,tab:>-,trail:¬,extends:>,nbsp:. 	" Characters to use for list.
-	"set listchars=tab:\ \ ,trail:·			 	" Show missplaced spaces.
+	set listchars=eol:$,tab:>-,trail:¬,extends:>,precedes:<,nbsp:. 	" Characters to use for list.
 	set cursorline						" Highlight the current line.
 	"set cursorcolumn					" Highlight the current column.
 	" Colors of the \cancel{hardstyle} CursorLine.
@@ -337,9 +335,9 @@
 	" }
 
 	" Toggles {
-		noremap <silent> <Leader>w :set wrap!<CR>:set wrap?<CR>			" Toggle line wrapping.
+		noremap <silent> <Leader>w :set wrap!<CR>:set wrap?<CR>				" Toggle line wrapping.
 		noremap <silent> <Leader>` :set list!<CR>					" Toggle listing of characters.
-		noremap <silent> <ESC>p :set paste! paste?<CR>				" Toggle 'paste' for sane pasting.
+		noremap <silent> <ESC>p :set paste! paste?<CR>					" Toggle 'paste' for sane pasting.
 		noremap <silent> <leader>p :set paste<CR>:normal "*p<CR>:set nopaste<CR>	" Paste after cursor in paste-mode from register "*.
 		noremap <silent> <leader>P :set paste<CR>:normal "*P<CR>:set nopaste<CR>	" Paste after cursor in paste-mode from register "*.
 

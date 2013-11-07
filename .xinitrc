@@ -89,6 +89,8 @@
 # }
 
 # Start applications {
+	# Try to not start programs in daemon mode, so that when parent (the desktop manager) quits all programs started there are killed as well.
+
 	# Start GNOME keyring. From https://wiki.archlinux.org/index.php/Gnome-keyring
 	# Start a D-Bus session
 	#source /etc/X11/xinit/xinitrc.d/30-dbus
@@ -122,10 +124,12 @@
 	#$HOME/bin/notify-listener.py
 
 	# Disable touchpad when typing.
-	syndaemon -K -d -i 0.5 &
+	#syndaemon -K -d -i 0.5 &
+	syndaemon -K -j 0.5 &
 
 	# Start URxvt daemon.
-	urxvtd --quiet --opendisplay --fork
+	#urxvtd --quiet --opendisplay --fork
+	urxvtd --quiet --opendisplay &
 
 	# Start PulseAudio.
 	# NOTE not needed since /etc/X11/xinit/xinitrc.d/pulseaudio will do it.
@@ -134,7 +138,8 @@
 	#fi
 
 	# Volume notification daemon.
-	volnoti --timeout 1.2
+	#volnoti --timeout 1.2
+	volnoti --no-daemon --timeout 1.2 &
 
 	# Start screensaver
 	#xscreensaver -no-splash &
@@ -176,7 +181,8 @@
 	mpd-notification &
 
 	# Scrobble songs in MPD.
-	mpdscribble &
+	#mpdscribble &
+	mpdscribble --no-daemon &
 
 	# Start skype.
 	skype &
@@ -191,9 +197,6 @@
 	# TODO is this sleep still needed?
 	#(sleep 10s && skyped) &
 
-	# Start Dropbox.
-	dropboxd &
-
 	# Battery monitor.
 	batterymon &
 
@@ -202,6 +205,9 @@
 
 	# Bluetooth applet.
 	#blueman-applet &
+
+	# Start Dropbox.
+	dropboxd &
 
 	# SpiderOak Hive sync.
 	#SpiderOak &
