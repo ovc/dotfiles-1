@@ -167,7 +167,7 @@
 	macro index,pager	\eN	"<toggle-new>"					"toggle a message's'new' flag"
 	macro index,pager	r	"<group-reply>"					"reply to all by default"
 	macro index,pager	R	"<reply>"					"reply"
-	macro index,pager	M	"<recall-message>"				"recall a postponed message"
+	macro index,pager	\em	"<recall-message>"				"recall a postponed message"
 	macro index,pager	\es	"<pipe-message>cat > ~/tmp/"			"pipe message to cat"
 	macro attach		s	"<save-entry><bol>~/dl/<eol>"			"save attachment in download directory"
 	macro index,pager	\ef	"|~/bin/mutt/view-x-face.sh<enter>"		"display the X-Face included in the mail"

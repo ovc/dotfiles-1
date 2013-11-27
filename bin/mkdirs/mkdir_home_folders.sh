@@ -1,7 +1,7 @@
 #!/bin/bash
 # Restore folderstructure in ~./
 HOMEP=.
-HOME_DIRS=(bak bin desktop doc dl media pub src tmp www)
+HOME_DIRS=(bak bin dev dl doc media pub src tmp work www)
 for HOME_DIR in ${HOME_DIRS[*]}
 do
 	mkdir -p $HOMEP/$HOME_DIR

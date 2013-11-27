@@ -11,7 +11,11 @@
 	zstyle :compinstall filename '/home/erikw/.zshrc'
 
 	autoload -Uz compinit
-	compinit
+	compinit -C
+
+	# Ingore case in tab complete. http://www.rlazo.org/2010/11/18/zsh-case-insensitive-completion/
+	zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
+    	    'r:|[._-]=* r:|=*' 'l:|=* r:|=*'	
 # }
 
 # History {

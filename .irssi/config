@@ -1,5 +1,5 @@
 # Erik Westrup's irssi configuration.
-# Inglewood version
+# irvine version
 
 servers = (
   {
@@ -138,6 +138,14 @@ servers = (
     port = "40400";
     use_ssl = "yes";
     ssl_verify = "no";
+    autoconnect = "no";
+    password = "GIT-CENSORED";
+  },
+  {
+    address = "meldanya.se";
+    chatnet = "Meldanya";
+    port = "GIT-CENSORED";
+    use_ssl = "no";
     autoconnect = "yes";
     password = "GIT-CENSORED";
   }
@@ -192,8 +200,8 @@ chatnets = {
   CPTQuakeNet = { type = "IRC"; };
   CPTEFNet = { type = "IRC"; };
   ElitterBNC = { type = "IRC"; username = "erikw"; autosendcmd = "/^PL"; };
+  Meldanya = { type = "IRC"; username = "erikw"; };
 };
-
 
 channels = (
   { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
@@ -391,6 +399,7 @@ settings = {
     cmdchars = "/";
     resolve_prefer_ipv6 = "yes";
     hostname = "";
+    use_proxy = "no";
   };
   "irc/core" = {
     alternate_nick = "erikw1 erikw2";

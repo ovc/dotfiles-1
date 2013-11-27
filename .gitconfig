@@ -30,7 +30,7 @@
 	h = help
 	cp = cherry-pick
 	ft = fetch
-	pu = pull
+	pu = push
 	l = log
 	log1 = log --pretty=oneline
 	logs = log --stat
