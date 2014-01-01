@@ -34,3 +34,6 @@ prompt suse
 TERM=xterm
 
 bindkey -v	# Use vi mode.
+
+
+setopt printexitvalue # Print abnormal exit status.

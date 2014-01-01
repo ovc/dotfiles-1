@@ -76,7 +76,7 @@
 		Mod4 + Mod1 + p
 
 	# Fetch emails.
-	"offlineimap.sh"
+	"offlineimap.sh && notify-send --app-name 'xbindkeys' 'offlineimap.sh fetchig emails...'"
 		Mod4 + Mod1 + F5
 
 # }
@@ -143,19 +143,19 @@
 # }
 
 # MPD {
-
+Alt + Shift + 
 # Control {
 		# Play previous track.
 		"mpc prev"
-			Control + F6
+			Control + Alt + Shift + F6
 
 		# Toggle play/pause.
 		"mpc toggle"
-			Control + F7
+			Control + Alt + Shift + F7
 
 		# Play next track.
 		"mpc next"
-			Control + F8
+			Control + Alt + Shift + F8
 
 		# Seek backwards.
 		"mpc seek -1"
@@ -227,19 +227,19 @@
 # Spotify (native) {
 	# Play previous track.
 	"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-		Control + Alt + Shift + F6
+		Control + F6
 
 	# Toggle play/pause.
 	"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-		Control + Alt + Shift + F7
+		Control + F7
 
 	# Play next track.
 	"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
-		Control + Alt + Shift + F8
+		Control + F8
 
 	# Stop playing.
 	"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
-		Control + Alt + Shift + F9
+		Control + F9
 # }
 
 # Display {
@@ -259,7 +259,7 @@
 
 # Misc {
 	# Toggle English and Swedish keboard layout.
-    	"~/dev/vimomap/vimomap.sh --layout && xmodmap ~/.Xmodmap"
-    		Mod4 + Mod1 + k
+    	#"~/dev/vimomap/vimomap.sh --layout && xmodmap ~/.Xmodmap"
+    	#	Mod4 + Mod1 + k
 # }
 

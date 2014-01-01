@@ -17,7 +17,7 @@ fi
 
 args_lvds1="--output LVDS1 --mode 1600x900"
 case "$monitor" in
-	"dell24") # Dell 24" monitor
+	"dell24") # Dell 24" monitor.
 		if [ "$action" == "enable" ]; then
 			ext_monargs="--output HDMI2 --primary --mode 1920x1200 --right-of LVDS1"
 		else
@@ -25,9 +25,17 @@ case "$monitor" in
 			ext_monargs="--output HDMI2 --off"
 		fi
 		;;
-	"lgtv") # Lund LG TV
+	"lgtv") # Lund LG TV.
 		if [ "$action" == "enable" ]; then
 			ext_monargs="--output HDMI1 --mode 1360x768 --left-of LVDS1"
+		else
+			args_lvds1="${args_lvds1} --primary"
+			ext_monargs="--output HDMI1 --off"
+		fi
+		;;
+	"ljunghusen-sharp") # Parents' large TV.
+		if [ "$action" == "enable" ]; then
+			ext_monargs="--output HDMI1 --mode 1920x1080i --left-of LVDS1"
 		else
 			args_lvds1="${args_lvds1} --primary"
 			ext_monargs="--output HDMI1 --off"
