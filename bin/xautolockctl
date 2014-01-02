@@ -12,7 +12,7 @@ state_file="/tmp/xautolock_${USER}_status.txt"
 atjobno_file="/tmp/xautolock_${USER}_atjobno.txt"
 script_name="${0##*/}"
 script_fpath="$(dirname $(readlink -f $0))/${script_name}"
-default_disalbe_time="120"
+default_disalbe_time="$(echo "2^7" | bc)"
 arg_command="$1"
 
 save_state() {

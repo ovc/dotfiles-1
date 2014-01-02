@@ -20,6 +20,7 @@
 !.kde4/share/kde4/services/spotify.protocol
 !.mplayer/config
 !.mplayer/input.conf
+!.mutt/aliases
 !.mutt/colors/
 !.newsbeuter/colors/
 !.newsbeuter/config

@@ -231,9 +231,10 @@
 # }}
 
 # Aliases {{
-	alias erikw $my_addr_default (Erik Westrup)
-	alias katarina GIT-CENSORED (Katarina Westrup)
-	alias pontus GIT-CENSORED (Pontus Westrup)
+	set alias_file = ~/.mutt/aliases	# External alias file.
+	set sort_alias = alias			# Sort by alias name.
+	set reverse_alias = yes			# Translate emailaddr -> alias names.
+	source $alias_file			# Source, for autocompletion.
 # }}
 
 # Plugins/patches {{
