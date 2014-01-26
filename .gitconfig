@@ -46,3 +46,7 @@
 	helper = cache
 [push]
 	default = matching
+
+; Companies using proxy needs a proto rewrite (set env https?_proxy too).
+;[url "https://"]
+	;insteadOf = git://

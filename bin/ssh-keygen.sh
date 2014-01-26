@@ -41,7 +41,7 @@ if [ -n "$comments" ]; then
 fi
 
 key_stem="${alias}_id_${algo}"
-cmd_keygen="ssh-keygen -t ${algo} -f \$HOME/.ssh/identityfiles/${key_stem} -C \"${USER}@${HOSTNAME} for ${alias}${comments}\""
+cmd_keygen="ssh-keygen -t ${algo} -f \$HOME/.ssh/identityfiles/${key_stem} -C \"${USER}@${HOSTNAME} for ${user}@${alias}${comments}\""
 echo "$cmd_keygen"
 echo -n "OK [Y/n]: "
 read ok
@@ -51,12 +51,12 @@ fi
 
 
 if ! [ -d $HOME/.ssh ]; then
-	mkidr $HOME/.ssh
+	mkdir $HOME/.ssh
 	chmod 700 $HOME/.ssh
 fi
 
 if ! [ -d $HOME/.ssh/identityfiles ]; then
-	mkidr $HOME/.ssh/identityfiles
+	mkdir $HOME/.ssh/identityfiles
 	chmod 700 $HOME/.ssh/identityfiles
 fi
 
