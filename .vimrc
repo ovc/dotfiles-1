@@ -20,11 +20,13 @@
 	"}
 
 	" Github {
+		"Bundle 'Blackrush/vim-gocode'
 		"Bundle 'Lokaltog/vim-powerline'
 		"Bundle 'maxbrunsfeld/vim-yankstack'
 		"Bundle 'mbbill/undotree'
 		"Bundle 'scrooloose/syntastic'
 		"Bundle 'tpope/vim-unimpaired'
+		Bundle 'LaTeX-Box-Team/LaTeX-Box'
 		Bundle 'MarcWeber/vim-addon-mw-utils'
 		Bundle 'Rip-Rip/clang_complete'
 		Bundle 'Rykka/lastbuf.vim'
@@ -36,7 +38,6 @@
 		Bundle 'flazz/vim-colorschemes'
 		Bundle 'garbas/vim-snipmate'
 		Bundle 'godlygeek/tabular'
-		Bundle 'jimmyharris/LaTeX-Box'
 		Bundle 'kana/vim-textobj-function'
 		Bundle 'kana/vim-textobj-user'
 		Bundle 'majutsushi/tagbar'
@@ -181,6 +182,7 @@
 	endif
 	"set t_Co=16						" Set number of colors.
 	set t_Co=256						" Set number of colors.
+	"hi Normal ctermbg=NONE                                 " Transparent background.
 	set title						" Show title in console title bar.
 	set number						" Show line numbers.
 	set tabpagemax=64					" Upper limit on number of tabs.
@@ -289,7 +291,7 @@
 	nmap <silent> <C-_> :nohlsearch<CR>						" Clear search matches highlighting. (Ctrl+/ => ^_)
 	nmap <silent> <Leader>v :source $MYVIMRC<CR>					" Source vimrc.
 	nmap <silent> <Leader>V :tabe $MYVIMRC<CR>					" Edit vimrc.
-	nmap Y y$									" Consistency with C and D. Does not work with YankRing.
+	"nmap Y y$									" Consistency with C and D. Does not work with YankRing.
 	"nmap <silent> <Leader>d "=strftime("%Y-%m-%d")<CR>P 				" Insert the current date.
 	noremap <silent> <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>		" Open tags definition in a new tab.
         "noremap <silent> <M-\> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>      		" Open tags definition in a vertical split.

@@ -25,6 +25,11 @@
 	set arrowstyle=highlight
 # }
 
+# UI {
+	#set winsplit=even
+	set winsplit=top_big
+# }
+
 # Mappings {
 	# GDB-like mappings
 	map r :run<CR>

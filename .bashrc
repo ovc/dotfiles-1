@@ -45,6 +45,8 @@ sourceifexists "/etc/profile"
 	export VISUAL='vim'
 	export CSHEDIT='vim'
 
+	# and the only pager.
+	export PAGER='less'
 
 	# Source aliases.
 	if [ -f "$HOME/.bash_aliases" ]; then
@@ -222,6 +224,13 @@ sourceifexists "/etc/profile"
 	    complete -cf viw
 	fi
 
+	# Go
+    	export GOPATH="$HOME/src/godeps/:$HOME/dev/go"
+    	export GOROOT="$HOME/src/go"
+    	export PATH="$PATH:$HOME/src/godeps/bin/:$HOME/dev/go/bin:$GOROOT/bin:$GOROOT/pkg/tool/linux_amd64"
+
+    	# cdw
+    	sourceifexists "$HOME/bin/cdw"
 
 	# less {
 		# Syntax highlighting for less with src-highlight.

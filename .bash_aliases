@@ -128,7 +128,10 @@
 	alias emacs='emacs --no-window-system'			# Emacs belongs to the terminal.
 	alias mvim='mvim -v'							# MacVim.
 	alias gdb='gdb -q'								# Suppress legal info.
+	#alias gdb='gdb -q -x $GOPATH/.gdbinit'			# Suppress legal info + Go support.
 	alias cgdb='cgdb -q'							# Suppress legal info.
+	#alias cgdb='cgdb -q -x $GOPATH/.gdbinit'		# Suppress legal info + Go support.
+
 	#alias df='df -h'								# Always show in human readable.
 	alias dfc='dfc -d' 								# Show used column.
 	alias matlab='matlab -nodesktop -nosplash'		# Run in terminal with no splash screen.
@@ -160,6 +163,7 @@
 	alias pkillf="pkill -f -9"								# Force kill full name matched process.
 	alias iperl="perl -de 0"								# Interactive perl.
 	alias catu="cat -vet"									# A cat that likes unprintable characters.
+	#alias ack='ack-grep'									# For the debian package.
 # }
 
 # Mounts {

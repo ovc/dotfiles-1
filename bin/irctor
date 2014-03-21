@@ -74,6 +74,9 @@ do_clean_files() {
 	if [ -f $HOME/octave-core ]; then
 		rm -f $HOME/octave-core
 	fi
+	if [ -f $HOME/octave-workspace ]; then
+		rm -f $HOME/octave-workspace
+	fi
 }
 
 case $1 in
