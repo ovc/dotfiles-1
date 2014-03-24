@@ -91,6 +91,9 @@
 # Start applications {
 	# Try to not start programs in daemon mode, so that when parent (the desktop manager) quits all programs started there are killed as well.
 
+	# Start XDG autostart programs
+	# dex -a
+
 	# Start GNOME keyring. From https://wiki.archlinux.org/index.php/Gnome-keyring
 	# Start a D-Bus session
 	#source /etc/X11/xinit/xinitrc.d/30-dbus
@@ -132,10 +135,10 @@
 	urxvtd --quiet --opendisplay &
 
 	# Start PulseAudio.
-	# NOTE not needed since /etc/X11/xinit/xinitrc.d/pulseaudio will do it.
-	#if ! pulseaudio --check; then
-	#	pulseaudio --start
-	#fi
+	# Previously autostarted by /etc/X11/xinit/xinitrc.d/pulseaudio, seems to be replaced by XDG autostart.
+	if ! pulseaudio --check; then
+		pulseaudio --start
+	fi
 
 	# Volume notification daemon.
 	#volnoti --timeout 1.2
@@ -161,7 +164,7 @@
 	# Fetch my mails with IMAP IDLE.
 	#offlineimap &
 
-	# Start my Maildir notifier. 
+	# Start my Maildir notifier.
 	$HOME/bin/maildir_watch.sh &
 
 	# Start irexec used for executing arbitary commands from ~/.lircrc.

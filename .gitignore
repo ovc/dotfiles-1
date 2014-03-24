@@ -57,6 +57,7 @@
 .vim/bundle/
 .vim/eclim/
 .vim/fuf-data/*
+.vim/spell/*.spl
 .vim/undo/
 .vim/view/*
 .vim/viminfo
