@@ -80,7 +80,7 @@
 	# Set wallpaper.
 	#feh --bg-fill $HOME/.wallpaper
 	# For dual screen
-	feh --bg-fill --no-xinerama $HOME/.wallpaper
+	feh --bg-scale --no-xinerama $HOME/.wallpaper
 
 	# Set terminal cursor speed. First argument (in ms) is the delay before auto repeat starts.
 	# The second paramter is the repeat rate in number repeats per second.
@@ -206,7 +206,7 @@
 	# Clipboard manager.
 	parcellite &
 
-	# Bluetooth applet.
+	# Bluetooth applet. TODO broken in AUR, find replacement.
 	#blueman-applet &
 
 	# Start Dropbox.

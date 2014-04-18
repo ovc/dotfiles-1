@@ -21,14 +21,13 @@ if [ "$#" -eq 0 ]; then
 	exit 2
 fi
 
-while getopts ":c:i:m:h" opt; do
+while getopts ":c:i:m:h?" opt; do
 	case "$opt" in
     	c) cmd="$OPTARG";;
     	i) increment="$OPTARG";;
     	m) mixer="$OPTARG";;
     	:) echo "Option -$OPTARG requires an argument." >&2; exit 1;;
-    	h) echo "$usage"; exit 0;;
-    	?) echo "$usage"; exit 0;;
+    	h|?|*) echo "$usage"; exit 0;;
 	esac
 done
 shift $(($OPTIND - 1))

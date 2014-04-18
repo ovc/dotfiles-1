@@ -96,6 +96,9 @@
 		if [ "$?" -eq 0 ]; then
 	    	alias make='colormake'
 		fi
+
+		# Compile with dem colors. TODO detect when $(gcc -v) >= 4.9?
+		#alias gcc="gcc -fdiagnostics-color=auto"
 	else
 		alias ls="ls ${ls_options}"
 	fi
