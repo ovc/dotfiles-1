@@ -188,7 +188,7 @@
 	mpdscribble --no-daemon &
 
 	# Start skype.
-	skype &
+	#skype &
 
 	# System tray volume control.
 	pnmixer &

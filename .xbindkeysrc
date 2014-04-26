@@ -260,6 +260,9 @@ Alt + Shift +
 # Misc {
 	# Toggle English and Swedish keboard layout.
     	#"~/dev/vimomap/vimomap.sh --layout && xmodmap ~/.Xmodmap"
-    	#	Mod4 + Mod1 + k
-# }
+    	#	Mod4 + Mod1 + Shift + k
 
+	# Fix keyboard when docked.
+	"fix_xkbmap.sh"
+		Mod4 + Mod1 + k
+# }

@@ -141,6 +141,7 @@
 	alias xmatlab='\matlab'							# Default X version.
 	alias gimp='gimp --no-splash'					# Splash screens are just annoying.
 	alias dmenu="dmenu -i"							# Ignore case.
+	alias pdflatex='pdflatex -interaction=nonstopmode -halt-on-error' # Quit on error.
 # }
 
 # Short hands {
