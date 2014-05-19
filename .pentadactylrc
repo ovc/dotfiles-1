@@ -63,7 +63,7 @@
 
 " UI {{
 	" Color theme to use. The default is 'default'.
-	colorscheme desert
+	colorscheme default
 	" Set a custom window title.
 	set titlestring="Pentadactyl"
 	" Page info items.

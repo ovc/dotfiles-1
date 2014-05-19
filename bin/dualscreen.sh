@@ -50,4 +50,4 @@ xrandr $args_lvds1
 xrandr $ext_monargs
 
 # Set wallpaper again to re-fit.
-feh --bg-fill --no-xinerama $HOME/.wallpaper
+wallpaper_set.sh

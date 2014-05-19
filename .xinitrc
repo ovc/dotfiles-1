@@ -78,10 +78,7 @@
 	export QT_IM_MODULE=xim
 
 	# Set wallpaper.
-	#feh --bg-fill $HOME/.wallpaper
-	# For dual screen
-	feh --bg-scale --no-xinerama $HOME/.wallpaper
-
+	wallpaper_set.sh
 	# Set terminal cursor speed. First argument (in ms) is the delay before auto repeat starts.
 	# The second paramter is the repeat rate in number repeats per second.
 	# Get current values with $(xset q | grep rate)

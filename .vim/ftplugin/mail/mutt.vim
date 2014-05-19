@@ -13,7 +13,7 @@ endfunction
 
 " Fix quoted text so that there is one space after the last quote character (/^>\+ .$/).
 function! MailEnspaceReply()
-	:%s/^\(>\+\)\([^> ].*\)$/\1 \2/e
+	:silent %s/^\(>\+\)\([^> ].*\)$/\1 \2/e
 endfunction
 
 " Strip the last quoted .sig and blank lines above.
