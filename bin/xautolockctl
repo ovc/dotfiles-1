@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# $ xautlockctl 				# Toggle the state.
-# $ xautlockctl enable			# Enable xautlock.
-# $ xautlockctl disable			# Enable xautlock.
-# $ xautlockctl caffeine		# Disable for a default time out.
-# $ xautlockctl caffeine [0-9]+	# Disable the given amount of minutes from the current time.
+# $ xautolockctl 				# Toggle the state.
+# $ xautolockctl enable			# Enable xautlock.
+# $ xautolockctl disable			# Enable xautlock.
+# $ xautolockctl caffeine		# Disable for a default time out.
+# $ xautolockctl caffeine [0-9]+	# Disable the given amount of minutes from the current time.
 #
 # Control a running xautolock instance by enabling or disabling it, suited for xbindkeys bindings. There is also a "caffeine" mode that can disable xautolock for a given time e.g. if you want to watch a movie for 2 hours without screen interruptions (inspired by the mac app with the same name).
 # NOTE There is now way of querying the state so assume that it is enabled the first time this script is called and only this script enable/disables it.
@@ -13,7 +13,6 @@ atjobno_file="/tmp/xautolock_${USER}_atjobno.txt"
 script_name="${0##*/}"
 script_fpath="$(dirname $(readlink -f $0))/${script_name}"
 default_disalbe_time="$(echo "2^7" | bc)"
-arg_command="$1"
 
 save_state() {
 	local state="$1"
@@ -109,6 +108,7 @@ notify() {
 }
 
 
+arg_command="$1"
 state=$(read_state)
 
 if [ "${arg_command}" == "caffeine" ]; then
@@ -116,7 +116,7 @@ if [ "${arg_command}" == "caffeine" ]; then
 	[ "$?" -ge 1 ] && exit 2
 	job_no=$(start_at_job "$minutes")
 	do_disable
-	notify "Disabling screensaver for "$minutes" minutes. atjob=${job_no}."
+	notify "Disabling screensaver for ${minutes} minutes. atjob=${job_no}."
 	save_atjobno "$job_no"
 	state="disabled"
 elif [ "${arg_command}" == "enable" ]; then

@@ -12,6 +12,7 @@
 		set my_addr_lth2	=	"erik.westrup.335@student.lu.se"# Mailalias for LTH-mail.
 		set my_addr_dsek	=	"erikw@dsek.lth.se"		# Mailalias for me at Dsek.
 		set my_addr_uci		=	"ewestrup@uci.edu"		# Mailaddress at UCI.
+		set my_addr_umu		=	"erwe0033@gapps.umu.se"		# Mailaddress at UMU.
 	# }}
 
 	set my_local_mbox = "/var/spool/mail/erikw"		# The system local mailbox.
@@ -43,6 +44,7 @@
 	alternates $my_addr_lth2
 	alternates $my_addr_dsek
 	alternates $my_addr_uci
+	alternates $my_addr_umu
 
 	# Use mutt's built in IMAP, for gmail.
 	# set imap_user = "erik.westrup@gmail.com"	# IMAP user.

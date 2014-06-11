@@ -64,6 +64,7 @@
 
 	" Github, vim-scripts.org {
 		"Bundle 'OmniCppComplete' " Incompaitble with clang_complete.
+		"Bundle 'LanguageTool'
 		"Bundle 'taglist.vim'
 		Bundle 'AutoTag'
 		Bundle 'Color-Sampler-Pack'
@@ -485,6 +486,10 @@ if s:use_plugins
 		noremap <silent> ,t :FufTag<CR>				" Launch Tag-mode
 		noremap <silent> ,tw :FufTagWithCursorWord<CR>		" Launch Tag-mode with current word.
 		noremap <silent> ,c :FufCoverageFile<CR>		" Launch with Filecoverage-mode.
+	" }
+
+	" LanguageTool {
+		let g:languagetool_jar='/usr/share/java/languagetool/languagetool-commandline.jar'
 	" }
 
 	" NERDCommenter {

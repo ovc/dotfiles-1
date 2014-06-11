@@ -133,15 +133,6 @@ servers = (
     password = "GIT-CENSORED";
   },
   {
-    address = "chronic.elitter.net";
-    chatnet = "ElitterBNC";
-    port = "40400";
-    use_ssl = "yes";
-    ssl_verify = "no";
-    autoconnect = "no";
-    password = "GIT-CENSORED";
-  },
-  {
     address = "meldanya.se";
     chatnet = "Meldanya";
     port = "GIT-CENSORED";
@@ -199,7 +190,6 @@ chatnets = {
   CPTFreenode = { type = "IRC"; };
   CPTQuakeNet = { type = "IRC"; };
   CPTEFNet = { type = "IRC"; };
-  ElitterBNC = { type = "IRC"; username = "erikw"; autosendcmd = "/^PL"; };
   Meldanya = { type = "IRC"; username = "erikw"; };
 };
 

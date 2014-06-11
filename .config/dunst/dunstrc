@@ -268,6 +268,10 @@
 	timeout = 4
 	background = "#b58900"
 	format = "%s %b"
+[spotify-linux]
+# TODO stop ignoring spotify-linux's notifications when it shows the artist too. https://community.spotify.com/t5/Help-Desktop-Linux-Mac-and/Show-artist-in-Linux-notifications/td-p/797273
+    appname = "Spotify"
+    format = ""
 [spotify-ob-wrapper]
 	appname = spotify-ob-wrapper
 	timeout = 4
