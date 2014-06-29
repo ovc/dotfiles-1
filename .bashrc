@@ -20,14 +20,14 @@ sourceifexists() {
 sourceifexists "/etc/profile"
 
 # Paths {
-	# Fins system binaries.
+	# Include system binaries.
 	PATH="$PATH:/sbin:/usr/sbin"
 	# Include binaries in home directory.
 	PATH="$HOME/bin/:$PATH"
 
 	# Set common bin paths.
 	#PATH=${PATH}:$(find ~/bin -maxdepth 2 -type d | tr '\n' ':' | sed 's/:$//')
-	common_bin_dirs=(android-sdk-linux/tools android-sdk-linux/platform-tools arm-2010q1/bin mutt mkdirs)
+	common_bin_dirs=(mutt mkdirs)
 	for common_dir in "${common_bin_dirs[@]}"; do
 		if [ -d "$HOME/bin/$common_dir" ]; then
 			PATH="$PATH:$HOME/bin/$common_dir"
@@ -258,4 +258,9 @@ sourceifexists "/etc/profile"
 			fi
 		fi
 	# }
+	
+	# Android SDK
+	if [ -d "$HOME/src/android-sdk-linux/" ]; then
+    	    export PATH="$HOME/src/android-sdk-linux/tools/:$HOME/src/android-sdk-linux/platform-tools/:$PATH"
+	fi
 # }
