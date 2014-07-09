@@ -2,4 +2,4 @@
 "imap sysout<ENTER>  System.out.println() <ESC> $khi
 "imap syserr<ENTER>  System.err.println() <ESC> $khi
 
-nmap <leader>I :JavaImport<CR>
+nmap <buffer> <leader>I :JavaImport<CR>

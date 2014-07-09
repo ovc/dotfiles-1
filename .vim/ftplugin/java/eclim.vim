@@ -1,2 +1,2 @@
 " Eclim mappings.
-nmap <Leader>ji :JavaImport<CR>			" Import missing packages.
+nmap <buffer> <Leader>ji :JavaImport<CR>	" Import missing packages.

@@ -28,12 +28,12 @@ function! MailStripSig()
 endfunction
 
 " Wrap long lines.
-set textwidth=80
+setlocal textwidth=80
 " Color the 81th column.
 let s:twcc = &textwidth +  1
 execute "set colorcolumn=" . s:twcc
 " Auto format text.
-set formatoptions+=a
+setlocal formatoptions+=a
 " Use par for gq (gw-> vim internal).
 if executable("par")
 	execute "set formatprg=par\\ -w" . &textwidth . "qs0"
