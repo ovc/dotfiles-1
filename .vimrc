@@ -45,7 +45,6 @@
 		Bundle 'mattn/gist-vim'
 		Bundle 'mattn/webapi-vim'
 		Bundle 'michaeljsmith/vim-indent-object'
-		Bundle 'oinksoft/tcd.vim'
 		Bundle 'rbonvall/snipmate-snippets-bib'
 		Bundle 'salsifis/vim-transpose'
 		Bundle 'scrooloose/nerdcommenter'
@@ -53,13 +52,13 @@
 		Bundle 'scrooloose/syntastic'
 		Bundle 'sjl/gundo.vim'
 		Bundle 'suan/vim-instant-markdown'
+		Bundle 'tmhedberg/matchit'
 		Bundle 'tomtom/tlib_vim'
 		Bundle 'tpope/vim-fugitive'
 		Bundle 'tpope/vim-markdown.git'
 		Bundle 'tpope/vim-repeat'
 		Bundle 'tpope/vim-speeddating'
 		Bundle 'tpope/vim-surround'
-		Bundle 'tsaleh/vim-matchit.git'
 	"}
 
 	" Github, vim-scripts.org {
