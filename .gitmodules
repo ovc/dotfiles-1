@@ -12,4 +12,4 @@
 	url = git@github.com:erikw/mutt-colors-solarized.git
 [submodule ".irssi/scripts/irssi-bitlbee-facebook-rename"]
 	path = .irssi/scripts/irssi-bitlbee-facebook-rename
-	url = git@github.com/:erikw/irssi-bitlbee-facebook-rename.git
+	url = git@github.com:erikw/irssi-bitlbee-facebook-rename.git
