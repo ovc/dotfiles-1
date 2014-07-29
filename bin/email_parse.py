@@ -7,9 +7,10 @@ import sys
 
 import html2text
 
+codecs = ['utf8', 'iso-8859-1', 'cp1252']
+
 def _decode_bytes(baffelblag):
         if type(baffelblag) is bytes:
-            codecs = ['utf8', 'iso-8859-1', 'cp1252']
             for codec in codecs:
                 try:
                     return baffelblag.decode(codec)
@@ -18,9 +19,18 @@ def _decode_bytes(baffelblag):
         else:
             return baffelblag
 
+def _read_file(filename):
+    for codec in codecs:
+        try:
+            emailf = open(filename, 'r', encoding=codec)
+            return emailf.read()
+        except:
+            pass
+    raise Exception("could not read {:s}, unkonwn encoding".format(filename))
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Get info from an input email.")
-    parser.add_argument('email_file', type=argparse.FileType('r'), help='The email file to read from.')
+    parser.add_argument('email_file', help='The email file to read from.')
     cmd_grop = parser.add_mutually_exclusive_group(required=True)
     cmd_grop.add_argument('--fromf', action='store_true', help='The "From:" field.')
     cmd_grop.add_argument('--subject', action='store_true', help='The "Subject:" field.')
@@ -32,10 +42,13 @@ def parse_args():
 def main():
     email_file, fromf, subject, body = parse_args()
 
-    # TODO broken on latin-1 input.
-    message = email.message_from_file(email_file)
-    #message_in = email_file.read()
-    #message = email.message_from_string(message_in)
+    try:
+        email_content = _read_file(email_file)
+    except Exception as e:
+        print("{:s}".format(str(e)), file=sys.stderr)
+        return 1
+
+    message = email.message_from_string(email_content)
     if fromf:
         from_str = _decode_bytes(email.header.decode_header(message['from'])[0][0])
         print("{:s}".format(from_str))

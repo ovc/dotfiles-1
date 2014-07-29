@@ -125,7 +125,7 @@
 
 	# Disable touchpad when typing.
 	#syndaemon -K -d -i 0.5 &
-	syndaemon -K -j 0.5 &
+	syndaemon -K -i 0.5 &
 
 	# Start URxvt daemon.
 	#urxvtd --quiet --opendisplay --fork
