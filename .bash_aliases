@@ -142,6 +142,7 @@
 	alias gimp='gimp --no-splash'					# Splash screens are just annoying.
 	alias dmenu="dmenu -i"							# Ignore case.
 	alias pdflatex='pdflatex -interaction=nonstopmode -halt-on-error' # Quit on error.
+	alias cal='cal --monday'						# Monday IS the first day of the week.
 # }
 
 # Short hands {
@@ -168,6 +169,7 @@
 	alias iperl="perl -de 0"								# Interactive perl.
 	alias catu="cat -vet"									# A cat that likes unprintable characters.
 	#alias ack='ack-grep'									# For the debian package.
+	alias tiga='tig --all'									# Show all branches in tig.
 # }
 
 # Mounts {

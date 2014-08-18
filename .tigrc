@@ -1,0 +1,9 @@
+# Erik Westrup's tig configuration file.
+# Modeline {
+#	 vi: foldmarker={,} foldmethod=marker foldlevel=0: tabstop=8:
+# }
+
+# Bindings {
+	bind generic <Ctrl-f>      scroll-page-down
+	bind generic <Ctrl-b>      scroll-page-up
+# }
