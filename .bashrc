@@ -76,7 +76,8 @@ sourceifexists "/etc/profile"
 	export DESKTYPE='dwm'
 
 	if [ "$DESKTYPE" == "dwm" ]; then
-	    # Java does not know about dwm so GUI apps will not be displayed correctly (if at all). Reference: https://wiki.archlinux.org/index.php/Dwm#Fixing_misbehaving_Java_applications
+	    # Java does not know about dwm so GUI apps will not be displayed correctly (if at all).
+	    # Reference: https://wiki.archlinux.org/index.php/Dwm#Fixing_misbehaving_Java_applications
 	    export _JAVA_AWT_WM_NONREPARENTING=1
 	fi
 # }
