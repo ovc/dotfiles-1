@@ -140,6 +140,12 @@ sourceifexists "/etc/profile"
 # }
 
 # Programs {
+
+	# Source bash functions.
+	if [ -f "$HOME/.bash_functions" ]; then
+		. $HOME/.bash_functions
+	fi
+
 	# Tell gPodder to reside in multimedia directory. KDE4 uses ~/.kde4/env/
 	export GPODDER_HOME="$HOME/media/music/gPodder"
 
@@ -259,7 +265,7 @@ sourceifexists "/etc/profile"
 			fi
 		fi
 	# }
-	
+
 	# Android SDK
 	if [ -d "$HOME/src/android-sdk-linux/" ]; then
     	    export PATH="$HOME/src/android-sdk-linux/tools/:$HOME/src/android-sdk-linux/platform-tools/:$PATH"

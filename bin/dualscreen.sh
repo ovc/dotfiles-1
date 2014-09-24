@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Control dual screens. Alternatively use arandr GUI tool.
 # Get information with $(xrandr -q).
-# TODO detect prefered resolution from $(xrandr -q) and try that (if that is not the default behaviour already). 
+# TODO detect prefered resolution from $(xrandr -q) and try that (if that is not the default behaviour already).
 
 if [ "$#" -eq 2 ]; then
 	monitor="$1"
@@ -15,13 +15,13 @@ else
 	exit 1
 fi
 
-args_lvds1="--output LVDS1 --mode 1600x900"
+args_lvds1="--output LVDS1 --primary --mode 1600x900"
 case "$monitor" in
 	"dell24") # Dell 24" monitor.
 		if [ "$action" == "enable" ]; then
-			ext_monargs="--output HDMI2 --primary --mode 1920x1200 --right-of LVDS1"
+			ext_monargs="--output HDMI2 --mode 1920x1200 --right-of LVDS1"
 		else
-			args_lvds1="${args_lvds1} --primary"
+			#args_lvds1="${args_lvds1} --primary"
 			ext_monargs="--output HDMI2 --off"
 		fi
 		;;
@@ -29,7 +29,7 @@ case "$monitor" in
 		if [ "$action" == "enable" ]; then
 			ext_monargs="--output HDMI1 --mode 1360x768 --left-of LVDS1"
 		else
-			args_lvds1="${args_lvds1} --primary"
+			#args_lvds1="${args_lvds1} --primary"
 			ext_monargs="--output HDMI1 --off"
 		fi
 		;;
@@ -37,7 +37,7 @@ case "$monitor" in
 		if [ "$action" == "enable" ]; then
 			ext_monargs="--output HDMI1 --mode 1920x1080i --left-of LVDS1"
 		else
-			args_lvds1="${args_lvds1} --primary"
+			#args_lvds1="${args_lvds1} --primary"
 			ext_monargs="--output HDMI1 --off"
 		fi
 		;;
@@ -46,8 +46,7 @@ case "$monitor" in
 		exit 2
 		;;
 esac
-xrandr $args_lvds1
-xrandr $ext_monargs
+xrandr $args_lvds1 $ext_monargs
 
 # Set wallpaper again to re-fit.
 wallpaper_set.sh

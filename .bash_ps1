@@ -23,7 +23,8 @@ PS1="${PS1}\A "
 # Set CWD in tmux, if it's running, so that it later can be used in bindings.
 #PS1=$PS1'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) $PWD)'
 # Prompt command is issued before any other primary prompt commands.
-PROMPT_COMMAND='$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+#PROMPT_COMMAND='$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+# NOTE tmux >= v1.9a does not need PWD from PS1.
 
 #PS1='${debian_chroot:+($debian_chroot)}'
 

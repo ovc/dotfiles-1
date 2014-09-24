@@ -451,6 +451,7 @@ if s:use_plugins
 		let g:clang_user_options = '2>/dev/null || exit 0'	" Ignore clang errors.
 		let g:clang_complete_macros = 1				" Complete preprocessor macros and constants.
 		let g:clang_complete_patterns = 1			" Complete  code patters e.g. loop constructs.
+		"let g:clang_jumpto_declaration_key = 			" Disable ctags jump override.
 	" }
 
 	" Eclim {
