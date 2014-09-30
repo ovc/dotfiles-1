@@ -45,7 +45,8 @@ nametrans = lambda folder: \
 	re.sub('.*lists$', 'lists',
 	re.sub('postponed', 'postponed',
 	re.sub('.*work$', 'work',
-	folder)))))))))
+	re.sub('.*music$', 'music',
+	folder))))))))))
 
 [Repository Gmail-Remote]
 # Use Gmail specific IMAP with hard-coded remotehost, remoteport, tunnel and ssl.
@@ -83,4 +84,5 @@ nametrans = lambda folder: \
 	re.sub('.*lists$', 'lists',
 	re.sub('.*postponed$', 'postponed',
 	re.sub('.*work$', 'work',
-	folder)))))))))
+	re.sub('.*music$', 'music',
+	folder))))))))))

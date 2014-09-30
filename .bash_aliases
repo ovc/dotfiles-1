@@ -170,6 +170,7 @@
 	alias catu="cat -vet"									# A cat that likes unprintable characters.
 	#alias ack='ack-grep'									# For the debian package.
 	alias tiga='tig --all'									# Show all branches in tig.
+	alias mkcscope_c='find . -name "*.[ch]" > cscope.files'	# Gen cscope file for C programs.
 # }
 
 # Mounts {
