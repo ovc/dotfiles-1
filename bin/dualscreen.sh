@@ -49,4 +49,4 @@ esac
 xrandr $args_lvds1 $ext_monargs
 
 # Set wallpaper again to re-fit.
-wallpaper_set.sh
+$HOME/bin/wallpaper_set.sh
