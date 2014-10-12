@@ -15,7 +15,7 @@ mpd_connection_timeout = "60"
 #
 mpd_crossfade_time = "5"
 #
-mpd_communication_mode = "notifications" (polling/notifications)
+#mpd_communication_mode = "notifications" (polling/notifications)
 #
 ##### music visualizer #####
 ##
@@ -342,11 +342,11 @@ lastfm_preferred_language = "en"
 ## Note: You can define startup screen for ncmpcpp
 ## by choosing screen number from the list above.
 ##
-startup_screen = "2"
+startup_screen = "playlist"
 #
 jump_to_now_playing_song_at_start = "yes"
 #
-ask_before_clearing_main_playlist = "yes"
+ask_before_clearing_playlists = "yes"
 #
 #clock_display_seconds = "no"
 #
@@ -403,7 +403,7 @@ search_engine_default_search_mode = "2"
 ## ncmpcpp's browser screen.
 ##
 #
-allow_physical_files_deletion = "yes"
+#allow_physical_files_deletion = "yes"
 #
 #allow_physical_directories_deletion = "no"
 #
