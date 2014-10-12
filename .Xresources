@@ -93,7 +93,7 @@ URxvt.keysym.M-Delete: perl:matcher:list
 ! }
 
 !! Misc {
-! For set-clipboard in tmux.
+! Needed for set-clipboard in tmux.
 disallowedWindowOps: 20,21,SetXprop
 
 ! Source some solarized colors. The path starts from where this script is loaded from (which hopefully is $HOME).
