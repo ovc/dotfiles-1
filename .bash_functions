@@ -1,4 +1,5 @@
 # Utility bash functions.
+# vi: ft=sh
 
 # Time conversions.
 epoch2iso8601() {
