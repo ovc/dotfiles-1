@@ -45,7 +45,7 @@
 [credential]
 	helper = cache
 [push]
-	default = matching
+	default = upstream
 
 ; Companies using proxy needs a proto rewrite (set env https?_proxy too).
 ;[url "https://"]
