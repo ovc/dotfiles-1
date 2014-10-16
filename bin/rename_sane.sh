@@ -8,17 +8,10 @@ else
 fi
 
 IFS=$'\n'
-for file in $(find $path  -type d | tac)
-do
-	cd "$file"
+for dir in $(find $path -type d | tac); do
+	echo "$dir"
+	cd "$dir"
 	rename.pl 's/(.*)/lc($1)/e' *
-	cd - >/dev/null
-done
-
-IFS=$'\n'
-for file in $(find $path  -type d | tac)
-do
-	cd "$file"
 	rename.pl 's/ /_/g' *
 	cd - >/dev/null
 done
