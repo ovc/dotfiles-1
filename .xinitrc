@@ -138,7 +138,8 @@
 	fi
 
 	# Start Music Player Daemon.
-	mpd &
+	#mpd &
+	mopidy &
 
 	# Volume notification daemon.
 	#volnoti --timeout 1.2
