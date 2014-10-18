@@ -224,8 +224,8 @@
 		WINDOWMANAGER="$@"
 	else
 		#WINDOWMANAGER='startkde'
-		#WINDOWMANAGER='dwm'
-		WINDOWMANAGER="$HOME/bin/startdwm.sh"
+		WINDOWMANAGER='dwm'
+		#WINDOWMANAGER="$HOME/bin/startdwm.sh"
 	fi
 
 	exec $WINDOWMANAGER

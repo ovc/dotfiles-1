@@ -156,9 +156,9 @@ sourceifexists "/etc/profile"
 	sourceifexists "$HOME/.local/bin/bashmarks.sh"
 
 	# SSH agent. Source bash file if not connected from a remote SSH.
-	if [ -z "$SSH_CLIENT" ] && [ -f "$HOME/.ssh-agent" ]; then
-		. $HOME/.ssh-agent
-	fi
+	#if [ -z "$SSH_CLIENT" ] && [ -f "$HOME/.ssh-agent" ]; then
+		#. $HOME/.ssh-agent
+	#fi
 
 	# Set up ros environment.
 	sourceifexists "$HOME/bin/ros/setup.bash"
@@ -271,3 +271,7 @@ sourceifexists "/etc/profile"
     	    export PATH="$HOME/src/android-sdk-linux/tools/:$HOME/src/android-sdk-linux/platform-tools/:$PATH"
 	fi
 # }
+
+
+# Start X if we're at vt1.
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

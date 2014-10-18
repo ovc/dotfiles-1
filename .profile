@@ -22,12 +22,12 @@ if [ -f "$HOME/.keymap" ]; then
 fi
 
 # Start SSH agent.
-SSHAGENT=/usr/bin/ssh-agent
-SSHAGENTARGS="-s"
-if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
-	eval `$SSHAGENT $SSHAGENTARGS` &>/dev/null
+#SSHAGENT=/usr/bin/ssh-agent
+#SSHAGENTARGS="-s"
+#if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
+	#eval `$SSHAGENT $SSHAGENTARGS` &>/dev/null
 	#trap "kill $SSH_AGENT_PID" 0
-fi
+#fi
 
 # Source bashrc. Most of the settings there are relevant also for login shells.
 if [ -f $HOME/.bashrc ]; then
