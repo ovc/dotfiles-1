@@ -49,7 +49,7 @@ fi
 # an Openbox session by applying some gconf settings. Safe to delete.
 #cb-bad-nautilus &
 
-# Autostart the Dropbox deamon
+# Autostart the Dropbox daemon
 (sleep 30s && ~/.dropbox-dist/dropboxd) &
 
 # Start blueproximity

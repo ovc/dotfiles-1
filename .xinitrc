@@ -137,6 +137,9 @@
 		pulseaudio --start
 	fi
 
+	# Start Music Player Daemon.
+	mpd &
+
 	# Volume notification daemon.
 	#volnoti --timeout 1.2
 	volnoti --no-daemon --timeout 1.2 &
