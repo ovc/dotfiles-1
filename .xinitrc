@@ -211,7 +211,8 @@
 	#blueman-applet &
 
 	# Start Dropbox.
-	dropboxd &
+	# NOTE started by netctl post hook.
+	#dropboxd &
 
 	# SpiderOak Hive sync.
 	#SpiderOak &

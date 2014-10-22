@@ -80,6 +80,13 @@ sourceifexists "/etc/profile"
 	    # Reference: https://wiki.archlinux.org/index.php/Dwm#Fixing_misbehaving_Java_applications
 	    export _JAVA_AWT_WM_NONREPARENTING=1
 	fi
+
+	type clang >/dev/null 2>&1
+	if [ "$?" -eq 0 ]; then
+    	    export CC=clang
+    	    export CXX=clang++
+    	fi
+
 # }
 
 # History {
@@ -271,7 +278,6 @@ sourceifexists "/etc/profile"
     	    export PATH="$HOME/src/android-sdk-linux/tools/:$HOME/src/android-sdk-linux/platform-tools/:$PATH"
 	fi
 # }
-
 
 # Start X if we're at vt1.
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

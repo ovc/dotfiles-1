@@ -1,9 +1,11 @@
 /home/erikw/.cache/
 /home/erikw/.config/mopidy/spotify/
-/home/erikw/.local/share/parcellite/history
-/home/erikw/.log/*
-/home/erikw/.mozilla/firefox/*.default/Cache/
-/home/erikw/.pulse/
 /home/erikw/.dotfiles/.vim/undo/
 /home/erikw/.dotfiles/.vim/view/
+/home/erikw/.local/share/parcellite/history
+/home/erikw/.log/*
+/home/erikw/.macromedia/
+/home/erikw/.mozilla/firefox/*.default/Cache/
+/home/erikw/.pulse/
+/home/erikw/.thumbnails/
 /home/erikw/.wine/drive_c/users/erikw/Local\ Settings/Application\ Data/Spotify/Storage/

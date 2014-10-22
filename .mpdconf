@@ -61,26 +61,27 @@
 
 # Audio output {{
 	# PulseAudio {{
-		# Troublesome, not compat with systemd. Requires autospawn=yes in /etc/pulse/client.conf but that breaks pulseaudio on boot.
-		#audio_output {
-			#type    "pulse"
-			#name    "MPD PulseAudio Output"
+		audio_output {
+			type    "pulse"
+			name    "MPD PulseAudio Output"
 			#server  "localhost"   # optional
 			#sink    "alsa_output" # optional
-		#}
+			device  "pulse"
+			mixer_control  "Master"
+		}
         # }}
 
 	# Alsa {{
-		audio_output {
-			type		"alsa"
-			name		"Irvine ALSA Device"
-			#device		"hw:0,0"	# optional, will break dmix and block others.
-			format		"44100:16:2"	# optional
-			mixer_type      "hardware"	# optional
-			mixer_device	"default"	# optional
-			mixer_control	"PCM"		# optional
-			mixer_index	"0"		# optional
-		}
+		#audio_output {
+			#type		"alsa"
+			#name		"Irvine ALSA Device"
+			##device		"hw:0,0"	# optional, will break dmix and block others.
+			#format		"44100:16:2"	# optional
+			#mixer_type      "hardware"	# optional
+			#mixer_device	"default"	# optional
+			#mixer_control	"PCM"		# optional
+			#mixer_index	"0"		# optional
+		#}
 	# }}
 
 	# HTTP streaming {{
