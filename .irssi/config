@@ -194,6 +194,7 @@ chatnets = {
 };
 
 channels = (
+  { name = "##kodapor"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "##linux"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#tmux"; chatnet = "freenode"; autojoin = "yes"; },
