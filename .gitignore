@@ -27,6 +27,7 @@
 !.skyped/skyped.conf
 !.vim/bundle/vundle/
 *.sw?
+*.pyc
 .bazaar/lock/
 .cgdb/
 .config
