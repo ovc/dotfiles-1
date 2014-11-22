@@ -127,7 +127,7 @@
 	silent qmark f http://www.facebook.com/
 	silent qmark g https://github.com/
 	silent qmark G https://gmail.com/
-	silent qmark l http://www.last.fm/user/ErikWestrup
+	silent qmark l chrome://lastpass/content/home2.xul
 	silent qmark L https://lifesum.com/
 	silent qmark r https://cloud.feedly.com/
 	silent qmark s https://internetbank.swedbank.se/bviPrivat/privat?ns=1

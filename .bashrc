@@ -280,4 +280,6 @@ sourceifexists "/etc/profile"
 # }
 
 # Start X if we're at vt1.
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+# TODO start using systemd service isntead?
+type startx >/dev/null 2>&1
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 && "$?" -eq 0 ]] && exec startx
