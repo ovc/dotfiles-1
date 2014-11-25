@@ -22,9 +22,9 @@
 # }
 
 # UI {
-	#set winsplit=even
-	# Show more of the source window than gdb input window.
-	set winsplit=top_big
+	# How to split window for command and source view.
+	#set winsplit=top_big
+	set winsplit=even
 	# Highligt the current line.
 	set arrowstyle=highlight
 # }
