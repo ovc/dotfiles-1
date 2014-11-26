@@ -39,6 +39,7 @@
 		Plugin 'flazz/vim-colorschemes'
 		Plugin 'garbas/vim-snipmate'
 		Plugin 'godlygeek/tabular'
+		Plugin 'kana/vim-operator-user'
 		Plugin 'kana/vim-textobj-function'
 		Plugin 'kana/vim-textobj-user'
 		Plugin 'majutsushi/tagbar'
@@ -46,6 +47,7 @@
 		Plugin 'mattn/webapi-vim'
 		Plugin 'michaeljsmith/vim-indent-object'
 		Plugin 'rbonvall/snipmate-snippets-bib'
+		Plugin 'rhysd/vim-clang-format'
 		Plugin 'salsifis/vim-transpose'
 		Plugin 'scrooloose/nerdcommenter'
 		Plugin 'scrooloose/nerdtree'
@@ -454,6 +456,26 @@ if s:use_plugins
 		let g:clang_complete_patterns = 1			" Complete  code patters e.g. loop constructs.
 		"let g:clang_jumpto_declaration_key = 			" Disable ctags jump override.
 	" }
+
+	" Clang Format {
+		let g:clang_format#auto_format = 0			" Auto format on save.
+		let g:clang_format#auto_formatexpr = 1			" Let vim's formatexpr be set to clang-format (format with gq).
+		autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
+
+		" Git pull request for this: https://github.com/rhysd/vim-clang-format/pull/17
+		function! ClangFormatAutoToggleFunc()
+			if !exists("g:clang_format#auto_format") || g:clang_format#auto_format == 0
+				let g:clang_format#auto_format = 1
+				echo "Auto clang-format: enabled"
+			else
+				let g:clang_format#auto_format = 0
+				echo "Auto clang-format: disabled"
+			endif
+		endfunction
+		" Toggle auto clang-format.
+		command! ClangFormatAutoToggle call ClangFormatAutoToggleFunc()
+		nmap <Leader>C :ClangFormatAutoToggle<CR>
+	"}
 
 	" Eclim {
 		let g:EclimXmlValidate=0			" Don't validate XML-files on write.
