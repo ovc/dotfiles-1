@@ -211,10 +211,6 @@ Alt + Shift +
 
 		"mpdrate 5"
 			Shift + F5
-
-		# Love current track in Last.fm.
-		"$HOME/bin/lastfm-mpd-cli/lastfm-mpd-cli.py  love"
-			Shift + F6
 # }
 
 # Show now playing in KDE.

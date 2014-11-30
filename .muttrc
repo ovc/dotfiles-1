@@ -20,7 +20,7 @@
 # }}
 
 # Connection {{
-	set sendmail = "/usr/bin/env msmtp -a gmail"	# Use msmtp with the gmail-account.
+	#set sendmail = "/usr/bin/env msmtp -a gmail"	# Use msmtp with the gmail-account. NOTE using postfix now.
 	set mbox_type = Maildir				# Mailbox type.
 	set folder = ~/.mail				# Mail root folder.
 	set spoolfile = "+inbox"			# Inbox.
