@@ -172,7 +172,7 @@
 	#/usr/bin/env irexec --daemon
 
 	# Start mailleds that will blink LEDs when there are unread emails.
-	#$HOME/bin/mailleds_start.sh &
+	$HOME/bin/mailleds_start.sh &
 
 	# Lock screen when my phone is too far away.
 	# TODO is it proximity who causes kernel oops?
