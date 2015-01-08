@@ -2,11 +2,11 @@
 !.config/googlecl
 !.config/openbox/
 !.config/parcellite/parcelliterc
+!.config/powerline/
 !.config/terminator/
 !.config/udiskie/
 !.config/user-dirs.dirs
 !.config/user-dirs.locale
-!.config/powerline/
 !.etwolf/etmain/profiles/ErikwSwe/etconfig.cfg
 !.etwolf/etmain/profiles/ErikwSwe/profile.dat
 !.kde4/Autostart/
@@ -26,8 +26,8 @@
 !.newsbeuter/config
 !.skyped/skyped.conf
 !.vim/bundle/vundle/
-*.sw?
 *.pyc
+*.sw?
 .bazaar/lock/
 .cgdb/
 .config
@@ -55,6 +55,7 @@
 .skyped/
 .vifm/Trash/
 .vim/.netrwhist
+.vim/after/ftplugin/markdown/instant-markdown.vim
 .vim/bundle/
 .vim/eclim/
 .vim/fuf-data/*
