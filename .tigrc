@@ -3,7 +3,13 @@
 #	 vi: foldmarker={,} foldmethod=marker foldlevel=0: tabstop=8:
 # }
 
+# Settings {
+	set ignore-case = true		# Case insensitive search
+	set editor-line-number = true	# pass "+$LINO" to vim.
+	set mouse = true		# Enable mouse navigation and actions.
+# }
+
 # Bindings {
-	bind generic <Ctrl-f>      scroll-page-down
-	bind generic <Ctrl-b>      scroll-page-up
+	bind generic <Ctrl-f>      scroll-page-down	# Normal scroll binding.
+	bind generic <Ctrl-b>      scroll-page-up	# Normal scroll binding.
 # }

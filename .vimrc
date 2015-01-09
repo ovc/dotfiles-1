@@ -65,11 +65,13 @@
 	"}
 
 	" Github, vim-scripts.org {
-		"Plugin 'OmniCppComplete' " Incompaitble with clang_complete.
 		"Plugin 'LanguageTool'
+		"Plugin 'OmniCppComplete' " Incompaitble with clang_complete.
 		"Plugin 'taglist.vim'
 		Plugin 'AutoTag'
 		Plugin 'Color-Sampler-Pack'
+		Plugin 'ConflictMotions'
+		Plugin 'CountJump'
 		Plugin 'FuzzyFinder'
 		Plugin 'L9'
 		Plugin 'Rename'
@@ -78,6 +80,7 @@
 		Plugin 'autoload_cscope.vim'
 		Plugin 'buffergrep'
 		Plugin 'capslock.vim'
+		Plugin 'ingo-library'
 		Plugin 'last_edit_marker.vim'
 		Plugin 'lbdbq'
 		Plugin 'rename.vim'

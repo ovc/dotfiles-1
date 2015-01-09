@@ -42,6 +42,8 @@
 	stat = status
 	svn-status = diff --name-status remotes/git-svn
 	sub = submodule
+	vimerge = mergetool -t vimdiff
+	gvimerge = mergetool -t gvimdiff
 [credential]
 	helper = cache
 [push]
