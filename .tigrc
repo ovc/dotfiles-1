@@ -10,6 +10,14 @@
 # }
 
 # Bindings {
-	bind generic <Ctrl-f>      scroll-page-down	# Normal scroll binding.
-	bind generic <Ctrl-b>      scroll-page-up	# Normal scroll binding.
+	bind generic <Ctrl-f>   scroll-page-down	# Normal scroll binding.
+	bind generic <Ctrl-b>   scroll-page-up		# Normal scroll binding.
+
+	bind generic L view-grep			# Rebind g to L.
+	bind generic g move-first-line			# Move cursor to top.
+
+	bind generic G move-last-line			# Move cursor to bottom.
+
+	bind main B :toggle commit-title-graph		# Rebind G to B.
+	bind main G move-last-line			# Move cursor to bottom.
 # }
