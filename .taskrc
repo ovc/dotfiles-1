@@ -76,7 +76,7 @@ alias.rm=delete                        # Alias for the delete command
 #report.next.filter=status:pending limit:page
 report.next.filter=status:pending limit:10
 #report.next.columns=id,project,priority,due,start.active,entry.age,urgency,description
-report.next.columns=id,project,priority,due,start.active,entry.age,urgency,description.desc
+#report.next.columns=id,project,priority,due,start.active,entry.age,urgency,description.desc
 
 # Custom report
 report.sequential.description=Erikws custom report.

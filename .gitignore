@@ -2,6 +2,7 @@
 !.config/googlecl
 !.config/openbox/
 !.config/parcellite/parcelliterc
+!.config/systemd/
 !.config/powerline/
 !.config/terminator/
 !.config/udiskie/
