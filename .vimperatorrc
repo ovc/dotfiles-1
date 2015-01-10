@@ -125,14 +125,9 @@
 	loadplugins
 
 	" Enable flashblocking.
-	set flashblock
+	"set flashblock
 	" Use a whitelist.
-	set fbwhitelist="youtube.com,vimeo.com,maps.google.com,dsek.lth.se,dsek.se,facebook.com,tyda.se,howjsay.com,svtplay.se,playrapport.se,tv4play.se,kanal5play.se,fz.se,lifehacker.com,grooveshark.com,lth.se,lu.se,sydsvenskan.se,github.com,8bc.org,ekort.swedbank.se,imdb.com,videobb.com,bredbandskollen.se"
-	" FeedSomeKeys3 {{
-		"fmaps -u='mail\.google\.com/mail' c / j k n p e x s r a # [ ] ? gi gs gd ga gc
-		"fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k e x s r a # [ ] ? gi gs gd ga gc
-		"fmaps -u='www\.google\.com/reader.*' -events=vkeypress j k n p m s v A r S N P X O ga gs gu u / ? J K
-	" }}
+	"set fbwhitelist="youtube.com,vimeo.com,maps.google.com,dsek.lth.se,dsek.se,facebook.com,tyda.se,howjsay.com,svtplay.se,playrapport.se,tv4play.se,kanal5play.se,fz.se,lifehacker.com,grooveshark.com,lth.se,lu.se,sydsvenskan.se,github.com,8bc.org,ekort.swedbank.se,imdb.com,videobb.com,bredbandskollen.se"
 " }}
 
 " Source local {{
