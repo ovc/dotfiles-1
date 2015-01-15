@@ -4,3 +4,4 @@
 # Window composition.
 #xcompmgr -cC -t -5 -l 5 -r 4.2 -o.55 &
 #xcompmgr -c -C  &
+compton -bc

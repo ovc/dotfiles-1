@@ -17,10 +17,10 @@ servers = (
     autoconnect = "no";
   },
   {
-    address = "irc.efnet.net";
+    address = "efnet.xs4all.nl";
     chatnet = "EFNet";
     port = "6667";
-    autoconnect = "no";
+    autoconnect = "yes";
   },
   {
     address = "127.0.0.5";
@@ -131,14 +131,6 @@ servers = (
     port = "6672";
     autoconnect = "no";
     password = "GIT-CENSORED";
-  },
-  {
-    address = "meldanya.se";
-    chatnet = "Meldanya";
-    port = "GIT-CENSORED";
-    use_ssl = "no";
-    autoconnect = "yes";
-    password = "GIT-CENSORED";
   }
 );
 
@@ -190,7 +182,6 @@ chatnets = {
   CPTFreenode = { type = "IRC"; };
   CPTQuakeNet = { type = "IRC"; };
   CPTEFNet = { type = "IRC"; };
-  Meldanya = { type = "IRC"; username = "erikw"; };
 };
 
 channels = (
@@ -202,8 +193,7 @@ channels = (
   { name = "#taskwarrior"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#blausoffan"; chatnet = "efnet"; autojoin = "yes"; },
   { name = "#dwww"; chatnet = "efnet"; autojoin = "yes"; },
-  { name = "#robot"; chatnet = "efnet"; autojoin = "yes"; },
-  { name = "#tsg"; chatnet = "efnet"; autojoin = "no"; }
+  { name = "#robot"; chatnet = "efnet"; autojoin = "yes"; }
 );
 
 aliases = {
