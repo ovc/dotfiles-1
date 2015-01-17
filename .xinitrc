@@ -46,20 +46,26 @@
 # }
 
 # Environment {
-
 	# Set up display with default modes. NOTE set wallpaper after this.
         #xrandr --auto --output LVDS1 --mode 1600x900 --output HDMI2 --mode 1920x1200 --right-of LVDS1
-	$HOME/bin/dualscreen.sh dell24 enable
+        # Done by lenovo-dock.sh.
+	#$HOME/bin/dualscreen.sh dell24 enable
 
 	# Set the right keyboard map.
 	#setxkbmap -layout us -model pc105
 	#setxkbmap -layout us -model pc87
 	setxkbmap -layout us
 
+	# Start PulseAudio.
+	# Previously autostarted by /etc/X11/xinit/xinitrc.d/pulseaudio, seems to be replaced by XDG autostart.
+	if ! pulseaudio --check; then
+		pulseaudio --start
+	fi
+
 
 	# Modify key bindings.
 	if [ -f "$HOME/.Xmodmap" ]; then
-		xmodmap $HOME/.Xmodmap
+	    xmodmap $HOME/.Xmodmap
 	fi
 
 	# Add to font path so they can be used by X11.
@@ -68,9 +74,9 @@
 
 	# Updated X resouce database.
 	if [ -f "$HOME/.Xresources" ]; then
-		# Apparently merge will not always work for xterm settings.
-		#xrdb -merge $HOME/.Xresources
-		xrdb -load $HOME/.Xresources
+	    # Apparently merge will not always work for xterm settings.
+	    #xrdb -merge $HOME/.Xresources
+	    xrdb -load $HOME/.Xresources
 	fi
 
 	# Tell GTK and QT applications to use X input method so my .Xmodmaps becomes visible.
@@ -78,11 +84,27 @@
 	export QT_IM_MODULE=xim
 
 	# Set wallpaper.
-	wallpaper_set.sh
+	# Done by lenovo-dock.sh->dualscreen.sh.
+	#wallpaper_set.sh
+
 	# Set terminal cursor speed. First argument (in ms) is the delay before auto repeat starts.
 	# The second paramter is the repeat rate in number repeats per second.
 	# Get current values with $(xset q | grep rate)
 	xset r rate 450 40
+
+	# Start screensaver
+	#xscreensaver -no-splash &
+	#xautolock -time 20 -detectsleep -locker slimlock -corners +000 -cornerdelay 2 -cornerredelay 30 -notify 10 -notifier "notify-send -u normal -a xautolock 'Locking screen in 10 seconds.'" &
+	xautolock -time 20 -detectsleep -locker slock -notify 10 -notifier "notify-send -u normal -a xautolock 'Locking screen in 10 seconds.'" &
+
+	# Screen blanking, turn off screen after inactivity (in seconds). For mysterious reasons the sleep is needed.
+	# Done by lenovo-dock.sh->xautolockctl.
+	#xset +dpms
+	#sleep 1; xset s 1500
+
+	# Docked vs Undocked mode.
+	# Start after pulseaudio, xautolock.
+	lenovo-is-docked && lenovo-dock.sh dock || lenovo-dock.sh undock
 # }
 
 # Start applications {
@@ -102,26 +124,12 @@
 	export GNOME_KEYRING_CONTROL
 	export GNOME_KEYRING_PID
 
-	# Network manager
-	# NOTE switched to netctl.
-	#nm-applet &
-
-	# System tray. Use package trayer-dwm for better dwm integration.
-	# NOTE not needed now since I use the systemtray patch for dwm.
-	#trayer --edge top --align  right --widthtype request --expand true --transparent true --alpha 255  --heighttype pixel --height 15
-
 	# Start notification system.
 	#/usr/lib/notification-daemon-1.0/notification-daemon &
 	dunst &
 
 	# Start auto mounter. Needs a running notification systen daemon.
-	if ! pidof /usr/bin/python2 /usr/bin/udiskie >/dev/null; then
-		udiskie &
-	fi
-
-	# Start notify-listener to the irssi plugin notify can emit messages.
-	# NOTE stoped working, missing typelibe, so the legacy notify-send is used directly in the irssi plugin instead.
-	#$HOME/bin/notify-listener.py
+	udiskie &
 
 	# Disable touchpad when typing.
 	#syndaemon -K -d -i 0.5 &
@@ -131,12 +139,6 @@
 	#urxvtd --quiet --opendisplay --fork
 	urxvtd --quiet --opendisplay &
 
-	# Start PulseAudio.
-	# Previously autostarted by /etc/X11/xinit/xinitrc.d/pulseaudio, seems to be replaced by XDG autostart.
-	if ! pulseaudio --check; then
-		pulseaudio --start
-	fi
-
 	# Start Music Player Daemon.
 	#mpd &
 	mopidy &
@@ -144,15 +146,6 @@
 	# Volume notification daemon.
 	#volnoti --timeout 1.2
 	volnoti --no-daemon --timeout 1.2 &
-
-	# Start screensaver
-	#xscreensaver -no-splash &
-	#xautolock -time 20 -detectsleep -locker slimlock -corners +000 -cornerdelay 2 -cornerredelay 30 -notify 10 -notifier "notify-send -u normal -a xautolock 'Locking screen in 10 seconds.'" &
-	xautolock -time 20 -detectsleep -locker slock -notify 10 -notifier "notify-send -u normal -a xautolock 'Locking screen in 10 seconds.'" &
-
-	# Screen blanking, turn off screen after inactivity (in seconds). For mysterious reasons the sleep is needed.
-	xset +dpms
-	sleep 1; xset s 1500
 
 	# Start X keyboard shortcut daemon.
 	xbindkeys
@@ -162,21 +155,11 @@
 		$HOME/dev/dwmstatus/dwmstatus &
 	fi
 
-	# Fetch my mails with IMAP IDLE.
-	#offlineimap &
-
 	# Start my Maildir notifier.
 	$HOME/bin/maildir_watch.sh &
 
-	# Start irexec used for executing arbitary commands from ~/.lircrc.
-	#/usr/bin/env irexec --daemon
-
 	# Start mailleds that will blink LEDs when there are unread emails.
 	$HOME/bin/mailleds_start.sh &
-
-	# Lock screen when my phone is too far away.
-	# TODO is it proximity who causes kernel oops?
-	#start_proximity.sh &
 
 	# Start my general tmux session.
 	irctor start &
@@ -191,15 +174,15 @@
 	# Start skype.
 	#skype &
 
+	# Start skyped hopefully after Skype is loaded.
+	# TODO is this sleep still needed?
+	#(sleep 10s && skyped) &
+
 	# System tray volume control.
 	pnmixer &
 
 	# Network monitor for netctl.
 	netmon &
-
-	# Start skyped hopefully after Skype is loaded.
-	# TODO is this sleep still needed?
-	#(sleep 10s && skyped) &
 
 	# Battery monitor.
 	batterymon &
@@ -210,12 +193,13 @@
 	# Bluetooth applet. TODO broken in AUR, find replacement.
 	#blueman-applet &
 
+	# Lock screen when my phone is too far away.
+	# TODO is it proximity who causes kernel oops?
+	#start_proximity.sh &
+
 	# Start Dropbox.
 	# NOTE (was) started by netctl post hook.
 	dropboxd &
-
-	# SpiderOak Hive sync.
-	#SpiderOak &
 # }
 
 # Window manager {

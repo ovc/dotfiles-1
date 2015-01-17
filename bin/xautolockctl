@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# $ xautolockctl 				# Toggle the state.
-# $ xautolockctl enable			# Enable xautlock.
+# $ xautolockctl 					# Toggle the state.
+# $ xautolockctl enable				# Enable xautlock.
 # $ xautolockctl disable			# Enable xautlock.
-# $ xautolockctl caffeine		# Disable for a default time out.
+# $ xautolockctl caffeine			# Disable for a default time out.
 # $ xautolockctl caffeine [0-9]+	# Disable the given amount of minutes from the current time.
 #
 # Control a running xautolock instance by enabling or disabling it, suited for xbindkeys bindings. There is also a "caffeine" mode that can disable xautolock for a given time e.g. if you want to watch a movie for 2 hours without screen interruptions (inspired by the mac app with the same name).
