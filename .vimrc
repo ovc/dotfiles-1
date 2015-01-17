@@ -177,7 +177,15 @@
 	if has('gui_running')
 		set background=light
 	else
-		set background=dark
+		"set background=dark
+		" Lighter bg during night.
+		" Source:  http://benjamintan.io/blog/2014/04/10/switch-solarized-light-slash-dark-depending-on-the-time-of-day/
+		let hour = strftime("%H")
+		if 7 <= hour && hour < 18
+			set background=dark
+		else
+			set background=light
+		endif
 	endif
 	if s:use_plugins
 		"let g:solarized_termtrans=1			" Fix bacground problem in gnome-terminal.

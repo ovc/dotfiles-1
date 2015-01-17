@@ -164,6 +164,9 @@
 	# Start my general tmux session.
 	irctor start &
 
+	# Automatic screen color adjustment.
+	redshift-gtk &
+
 	# MPD notifier.
 	mpd-notification &
 

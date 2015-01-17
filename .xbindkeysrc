@@ -253,6 +253,11 @@ Alt + Shift +
 	"xrandr --output HDMI2 --rotate normal"
 		Mod4 + Mod1 + Down
 
+	# Toggle redshift on and off
+	"killall -USR1 redshift"
+		Mod4 + Mod1 + r
+
+
 # }
 
 # Misc {
