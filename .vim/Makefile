@@ -28,4 +28,3 @@ clean :
 # target: tar - Pack all the files to a gzip'd tarball.
 tar : clean
 	tar pvczf ../vim.tar.gz -C .. $(VIMHOME) .vimrc --exclude $(VIMHOME)/bundle/eclim/*
-	#tar pvczf ../vim.tar.gz -C .. $(VIMHOME) .vimrc .vimrc.local --exclude $(VIMHOME)/bundle/eclim/*

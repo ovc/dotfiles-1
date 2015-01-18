@@ -54,7 +54,7 @@
 	# Set the right keyboard map.
 	#setxkbmap -layout us -model pc105
 	#setxkbmap -layout us -model pc87
-	setxkbmap -layout us
+	setxkbmap -layout us -variant altgr-intl
 
 	# Start PulseAudio.
 	# Previously autostarted by /etc/X11/xinit/xinitrc.d/pulseaudio, seems to be replaced by XDG autostart.
@@ -67,10 +67,6 @@
 	if [ -f "$HOME/.Xmodmap" ]; then
 	    xmodmap $HOME/.Xmodmap
 	fi
-
-	# Add to font path so they can be used by X11.
-	xset +fp /usr/share/fonts/local
-	xset fp rehash
 
 	# Updated X resouce database.
 	if [ -f "$HOME/.Xresources" ]; then
@@ -88,9 +84,9 @@
 	#wallpaper_set.sh
 
 	# Set terminal cursor speed. First argument (in ms) is the delay before auto repeat starts.
-	# The second paramter is the repeat rate in number repeats per second.
+	# The second parameter is the repeat rate in number repeats per second.
 	# Get current values with $(xset q | grep rate)
-	xset r rate 450 40
+	xset r rate 450 60
 
 	# Start screensaver
 	#xscreensaver -no-splash &
@@ -98,8 +94,9 @@
 	xautolock -time 20 -detectsleep -locker slock -notify 10 -notifier "notify-send -u normal -a xautolock 'Locking screen in 10 seconds.'" &
 
 	# Screen blanking, turn off screen after inactivity (in seconds). For mysterious reasons the sleep is needed.
-	# Done by lenovo-dock.sh->xautolockctl.
+	# NOTE Done by lenovo-dock.sh->xautolockctl now.
 	#xset +dpms
+	# NOTE done by laptop-mode now.
 	#sleep 1; xset s 1500
 
 	# Docked vs Undocked mode.

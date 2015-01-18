@@ -20,12 +20,14 @@ save_state() {
 }
 
 enable_screen_blanking() {
+	# NOTE the timeouts are set by laptop-mode.
+	xset s on
 	xset +dpms
-	sleep 1; xset s 1500
 }
 
 disable_screen_blanking() {
 	xset -dpms
+	xset s off
 }
 
 enable_screensaver() {

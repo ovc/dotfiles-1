@@ -110,6 +110,11 @@
 	if has('win32') || has('win64')
 		set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 	endif
+
+	let s:helper_funcs="~/.vim/helper-functions.vim"
+	if filereadable(expand(s:helper_funcs))
+		execute "source" . s:helper_funcs
+	endif
 " }
 
 " General {

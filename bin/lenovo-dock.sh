@@ -15,7 +15,7 @@ notify() {
 }
 
 set_kbrd() {
-	setxkbmap -layout us
+	setxkbmap -layout us -variant altgr-intl
 	xmodmap ~/.Xmodmap
 }
 
