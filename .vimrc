@@ -159,7 +159,7 @@
 	" Function keys {
 		" Urxvt does not emit what Vim expects for the function keys.
 		" This must be after "set term".
-		if $TERMEMU  =~ ".*rxvt.*"
+		if !empty($TERMEMU) && $TERMEMU  =~ ".*rxvt.*"
 			set <F1>=[11~
 			set <F2>=[12~
 			set <F3>=[13~
