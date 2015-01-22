@@ -178,6 +178,17 @@
 " }
 
 " UI {
+	if s:use_plugins
+		"let g:solarized_termtrans=1			" Fix bacground problem in gnome-terminal.
+		"let g:solarized_termcolors=16 			" Colors to use in solarized.
+		colorscheme solarized				" Use the solarized colorscheme.
+	else
+		colorscheme default				" Use default color scheme.
+	endif
+	"set t_Co=16						" Set number of colors.
+	set t_Co=256						" Set number of colors.
+	"hi Normal ctermbg=NONE                                 " Transparent background.
+	set title						" Show title in console title bar.
 	" Adjust colors to this background.
 	if has('gui_running')
 		set background=light
@@ -192,17 +203,6 @@
 			set background=light
 		endif
 	endif
-	if s:use_plugins
-		"let g:solarized_termtrans=1			" Fix bacground problem in gnome-terminal.
-		"let g:solarized_termcolors=16 			" Colors to use in solarized.
-		colorscheme solarized				" Use the solarized colorscheme.
-	else
-		colorscheme default				" Use default color scheme.
-	endif
-	"set t_Co=16						" Set number of colors.
-	set t_Co=256						" Set number of colors.
-	"hi Normal ctermbg=NONE                                 " Transparent background.
-	set title						" Show title in console title bar.
 	set number						" Show line numbers.
 	set tabpagemax=64					" Upper limit on number of tabs.
 	set showmode						" Show current mode in the last line.
