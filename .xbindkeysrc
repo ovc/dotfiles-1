@@ -145,7 +145,6 @@
 # }
 
 # MPD {
-Alt + Shift + 
 # Control {
 		# Play previous track.
 		"mpc prev"
@@ -181,16 +180,16 @@ Alt + Shift +
 		
 		# XF86 {
 			# Play previous track.
-			"mpc prev"
-				XF86AudioPrev
+			#"mpc prev"
+				#XF86AudioPrev
 
 			# Toggle play/pause.
-			"mpc toggle"
-				XF86AudioPlay
+			#"mpc toggle"
+				#XF86AudioPlay
 
 			# Play next track.
-			"mpc next"
-				XF86AudioNext
+			#"mpc next"
+				#XF86AudioNext
 		}
 # }
 
@@ -213,27 +212,41 @@ Alt + Shift +
 			Shift + F5
 # }
 
-# Show now playing in KDE.
-#"$HOME/bin/mpd_kde_notify.sh"
-#	Shift + F12
-#
 # Show now playing in with notify-send
 "$HOME/bin/mpd_np_notify.sh"
 	Shift + F12
 # }
 
-# Spotify (native) {
+# Playerctl {
 	# Play previous track.
-	"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+	"playerctl previous"
 		Control + F6
 
 	# Toggle play/pause.
-	"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+	"playerctl play-pause"
 		Control + F7
 
 	# Play next track.
-	"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+	"playerctl next"
 		Control + F8
+
+	# Stop playing.
+	"playerctl stop"
+		Control + F9
+# }
+
+# Spotify (native) {
+	# Play previous track.
+	#"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+		#Control + F6
+
+	# Toggle play/pause.
+	#"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+		#Control + F7
+
+	# Play next track.
+	#"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+		#Control + F8
 
 	# Stop playing.
 	#"dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"

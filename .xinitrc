@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Modeline {
-#	 vi: foldmarker={,} foldmethod=marker foldlevel=0: tabstop=8:
+#	 vi: foldmarker={,} foldmethod=marker foldlevel=0:
 # }
 
 # Initialize my X session. Different files are used depending on how X is started.
@@ -19,23 +19,23 @@
 	set +u > /dev/null 2>&1
 	set +o posix  > /dev/null 2>&1
 	if type shopt > /dev/null 2>&1 ; then
-    	    shopt -s execfail
+		shopt -s execfail
 	fi
 
 	# Run user xinit scripts.
 	for script in /etc/X11/xinit/xinitrc.d/*; do
-    	    test -d $script && continue
-    	    test -x $script || continue
-    	    case "$script" in
-		.*)		continue ;;
-		*.rpm*)		continue ;;
-		*.swap)		continue ;;
-		*.bak)		continue ;;
-		*.orig)		continue ;;
-		\#*)		continue ;;
-		*~)		continue ;;
-    	    esac
-    	    $script
+		test -d $script && continue
+		test -x $script || continue
+		case "$script" in
+			.*)		continue ;;
+			*.rpm*)		continue ;;
+			*.swap)		continue ;;
+			*.bak)		continue ;;
+			*.orig)		continue ;;
+			\#*)		continue ;;
+			*~)		continue ;;
+		esac
+		$script
 	done
 	unset script
 
@@ -47,15 +47,12 @@
 
 # Environment {
 	# Set up display with default modes. NOTE set wallpaper after this.
-        #xrandr --auto --output LVDS1 --mode 1600x900 --output HDMI2 --mode 1920x1200 --right-of LVDS1
-        # Done by lenovo-dock.sh.
+	#xrandr --auto --output LVDS1 --mode 1600x900 --output HDMI2 --mode 1920x1200 --right-of LVDS1
+	# Done by lenovo-dock.sh.
 	#$HOME/bin/dualscreen.sh dell24 enable
 
-	# Set the right keyboard map.
-	#setxkbmap -layout us -model pc105
-	#setxkbmap -layout us -model pc87
-	setxkbmap -layout us -variant altgr-intl
-
+	# Set keyboard map.
+	xkbset
 	# Start PulseAudio.
 	# Previously autostarted by /etc/X11/xinit/xinitrc.d/pulseaudio, seems to be replaced by XDG autostart.
 	if ! pulseaudio --check; then
@@ -64,20 +61,20 @@
 
 
 	# Modify key bindings.
-	if [ -f "$HOME/.Xmodmap" ]; then
-	    xmodmap $HOME/.Xmodmap
-	fi
+	#if [ -f "$HOME/.Xmodmap" ]; then
+		#xmodmap $HOME/.Xmodmap
+	#fi
 
 	# Updated X resouce database.
 	if [ -f "$HOME/.Xresources" ]; then
-	    # Apparently merge will not always work for xterm settings.
-	    #xrdb -merge $HOME/.Xresources
-	    xrdb -load $HOME/.Xresources
+		# Apparently merge will not always work for xterm settings.
+		#xrdb -merge $HOME/.Xresources
+		xrdb -load $HOME/.Xresources
 	fi
 
 	# Tell GTK and QT applications to use X input method so my .Xmodmaps becomes visible.
-	export GTK_IM_MODULE=xim
-	export QT_IM_MODULE=xim
+	#export GTK_IM_MODULE=xim
+	#export QT_IM_MODULE=xim
 
 	# Set wallpaper.
 	# Done by lenovo-dock.sh->dualscreen.sh.

@@ -2,7 +2,6 @@
 # Ececuted on dock/undock ACPI events.
 # TODO fix so caller has correct PATH for erikw set.
 # TODO remove pulseaudio stuff when pa works again, https://bugzilla.redhat.com/show_bug.cgi?id=1034882
-# TODO apply xmodmap to connected keyboards.
 
 
 export DISPLAY=":0"
@@ -14,16 +13,11 @@ notify() {
 	notify-send -a "$progname" "$message"
 }
 
-set_kbrd() {
-	setxkbmap -layout us -variant altgr-intl
-	xmodmap ~/.Xmodmap
-}
-
 dock() {
 	pacmd set-sink-port 0 analog-output
 	$HOME/bin/dualscreen.sh dell24 enable
 	$HOME/bin/xautolockctl disable
-	set_kbrd
+	$HOME/bin/xkbset
 	notify "Laptop docked."
 }
 
@@ -31,7 +25,6 @@ undock() {
 	pacmd set-sink-port 0 analog-output-speaker
 	$HOME/bin/dualscreen.sh dell24 disable
 	$HOME/bin/xautolockctl enable
-	set_kbrd
 	notify "Laptop undocked."
 }
 

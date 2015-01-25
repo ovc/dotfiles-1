@@ -1,0 +1,26 @@
+// XKB settings.
+// See /usr/share/X11/xkb/ for default files and examples.
+// Inspiraton: http://hack.org/mc/writings/xkb.html
+// Reference: http://www.charvolant.org/~doug/xkb/html/node5.html
+
+xkb_keymap "erikwkbrd" {
+	xkb_keycodes  { include "evdev+aliases(qwerty)" };
+	xkb_types     { include "complete" };
+	xkb_compat    { include "complete" };
+
+	// Old solution mergeing us+sv. Abandoned because having both us and sv and just toggle between them is just as good with group(switch).
+	//xkb_symbols   { include "pc+swenglish+hacks+inet(evdev)+terminate(ctrl_alt_bksp)+capslock(escape)+compose(rwin)" };
+
+	// pc: Typical PC keys inc. CTRL, Shift...
+	// US and SV layouts.
+	// hacks: My remaps inc. Caps Lock to Pause.
+	// inet(evdev): Standard aux keys.
+	// group(switch): Toggle layouts (us,sv) when ralt is pressed.
+	// group(menu_toggle): Toggle language on menu key.
+	// capslock(escape): Make Caps Lock and additonal Escape.
+	// compose(rwin): Make rwin the compose key.
+	// terminate(ctrl_alt_bksp): Restart X server.
+	xkb_symbols   { include "pc+us(basic)+se(basic):2+hacks+inet(evdev)+group(switch)+group(menu_toggle)+capslock(escape)+compose(rwin)+terminate(ctrl_alt_bksp)" };
+
+	xkb_geometry  { include "pc(pc104)" };
+};
