@@ -221,18 +221,26 @@
 	# Play previous track.
 	"playerctl previous"
 		Control + F6
+	"playerctl previous"
+		XF86AudioPrev
 
 	# Toggle play/pause.
 	"playerctl play-pause"
 		Control + F7
+	"playerctl play-pause"
+		XF86AudioPlay
 
 	# Play next track.
 	"playerctl next"
 		Control + F8
+	"playerctl next"
+		XF86AudioNext
 
 	# Stop playing.
 	"playerctl stop"
 		Control + F9
+	"playerctl next"
+		XF86AudioNext
 # }
 
 # Spotify (native) {
@@ -279,6 +287,6 @@
     	#	Mod4 + Mod1 + Shift + k
 
 	# Fix keyboard when docked.
-	"fix_xkbmap.sh"
+	"xkbset"
 		Mod4 + Mod1 + k
 # }
