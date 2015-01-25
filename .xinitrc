@@ -35,7 +35,6 @@
 	fi
 # }
 
-
 # Host specific {
 	host=$(hostname --short)
 	xinithost=$HOME/.xinitrc.$host
@@ -43,7 +42,6 @@
 		. $xinithost
 	fi
 # }
-
 
 # Window manager {
 	# $session is possibly set by host specific xinitrc files.
