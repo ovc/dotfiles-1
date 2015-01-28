@@ -253,6 +253,7 @@
 	urgency = normal
 	background = "#859900"
 	format = "%s %b"
+	timeout = 4
 [maildir_watch]
 	appname = maildir_watch.sh
 	timeout = 6

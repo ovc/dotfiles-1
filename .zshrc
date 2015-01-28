@@ -1,5 +1,5 @@
 # Erik Westrup's zshrc.
-# TODO bring all options from bashrc. Maybe refactor out the common parts like setting of $PATH.
+# TODO document configuration
 
 # Modeline {
 #	 vi: foldmarker={,} foldmethod=marker foldlevel=0: tabstop=8:
@@ -24,12 +24,16 @@
 	SAVEHIST=100000
 	setopt appendhistory
 # }
-autoload -U colors && colors
 
-autoload -Uz promptinit
-promptinit
 
-prompt suse
+# UI {
+	autoload -U colors && colors
+
+	autoload -Uz promptinit
+	promptinit
+
+	prompt suse
+# }
 
 TERM=xterm
 
