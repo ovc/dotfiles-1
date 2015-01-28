@@ -214,10 +214,6 @@
 	set wildignorecase					" Case insensitive filename completion.
 	set scrolljump=5 					" Lines to scroll when cursor leaves screen.
 	set scrolloff=3 					" Minimum lines to keep above and below cursor.
-	set hlsearch						" Highlight search.
-	set incsearch						" Incremental search.
-	set ignorecase						" Case insensitive search.
-	set smartcase						" Smart case search.
 	set splitbelow						" Open horizontal split below.
 	set splitright						" Open vertical split to the right.
 	set foldenable						" Use folding.
@@ -257,6 +253,13 @@
 		"set statusline+=\ %P   					" Percent through file.
 		"set statusline+=\ 0x%B						" Character valur under cursor.
 	" }
+" }
+
+" Searching {
+	set hlsearch						" Highlight search.
+	set incsearch						" Incremental search.
+	set ignorecase						" Case insensitive search.
+	set smartcase						" Smart case search.
 " }
 
 " Formatting {

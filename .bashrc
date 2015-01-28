@@ -90,12 +90,13 @@ sourceifexists "/etc/profile"
 # }
 
 # History {
+	# Number lines to store in active bash session.
+	export HISTSIZE=100000
+	# Number lines to store in history file after session end.
+	export HISTFILESIZE=100000
 	# Don't put duplicate commands in the history.
 	export HISTCONTROL="erasedups:ignoreboth"
-	# History limits.
-	export HISTFILESIZE=600000
-	export HISTSIZE=100000
-	# Commands to ignore.
+	# Commands to ignore in history.
 	# TODO poweroff logged somehow, why?
 	export HISTIGNORE="&:[ ]*:exit:halt:poweroff:shutdown:reboot:xlogout:pm-hibernate:pm-suspend"
 	# Append instead of overwrite history on exit.

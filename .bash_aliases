@@ -172,6 +172,10 @@
 	alias tiga='tig --all'									# Show all branches in tig.
 	alias mkcscope_c='find . -name "*.[ch]" > cscope.files'	# Gen cscope file for C programs.
 
+	# Stop limiting battery charge level.
+	alias lenovo-charge='sudo tpacpi-bat -s stopThreshold 0 99'
+	alias lenovo-limitcharge='sudo tpacpi-bat -s stopThreshold 0 80'
+
 	if type ack-grep >/dev/null 2>&1; then
 		alias ack='ack-grep'	# Debain renames ack.
 	fi
