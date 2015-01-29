@@ -1,6 +1,6 @@
 " Erik Westrup's Vim configuration.
 " Modeline {
-"	 vi: foldmarker={,} foldmethod=marker foldlevel=0: tabstop=8:
+"	vi: foldmarker={,} foldmethod=marker foldlevel=0: tabstop=8:
 " }
 
 " TODO replace all UNIX-specific paths with $VIMhome or something clever

@@ -1,38 +1,29 @@
 # Erik Westrup's zshrc.
+
 # TODO go throught files from $(pacman -Qo grml-zsh-config), then remove package.
 # TODO document configuration
-# TODO !! does not expand
 # TODO PS! and PSX(path)
 # TODO port/refactor .bashrc, .bash_aliases
 # TODO convert .inputrc to zsh's zle
-# TODO bashmarks
+# TODO bashmarks, zshmarks? https://github.com/jocelynmallon/zshmarks
 # TODO check unset optons $(unsetopt)
 # TODO can't bachskapce/ctrl+h in command lined editing of command from history
 # TODO migrade .bash_profile to .zshprofile?
 # TODO look at antigen, prezto or oh-my-zsh
 # TODO consider joining command togheter, minimize shell startup time
-# TODO build custom prompt, port .bash_ps1
+# TODO build custom prompt, port .bash_ps1. Suse prompt has ugly space between path and >
+
 
 # Modeline {
-#	 vi: foldmarker={,} foldmethod=marker foldlevel=8: tabstop=8:
+#	vi: foldmarker={,} foldmethod=marker foldlevel=8: tabstop=8 shiftwidth=8:
 # }
 
-# Paths {
-	# Include system binaries.
-	PATH="$PATH:/sbin:/usr/sbin"
-	# Include binaries in home directory.
-	PATH="$HOME/bin/:$PATH"
-
-	# Set common bin paths.
-	#PATH=${PATH}:$(find ~/bin -maxdepth 2 -type d | tr '\n' ':' | sed 's/:$//')
-	common_bin_dirs=(mutt mkdirs)
-	for common_dir in "${common_bin_dirs[@]}"; do
-		if [ -d "$HOME/bin/$common_dir" ]; then
-			PATH="$PATH:$HOME/bin/$common_dir"
-		fi
-	done
-	export PATH
-# }
+# Common shell settings.
+if [[ -f $HOME/.shell_commons && -r $HOME/.shell_commons ]]; then
+	my_shell=zsh
+	completion_func=compctl
+	. $HOME/.shell_commons
+fi
 
 # Completion {
 	zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
@@ -84,6 +75,9 @@
 	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # }
 
+# Programs {
+# }
+
 TERM=xterm
 
 bindkey -v	# Use vi command editing mode.
@@ -92,9 +86,15 @@ bindkey -v	# Use vi command editing mode.
 setopt printexitvalue # Print abnormal exit status.
 
 
+unsetopt correct correct_all 	# Don't encourage sloppy typing.
 
-# pkgfile "command not found" hook
-source /usr/share/doc/pkgfile/command-not-found.zsh
+
+# Honor LS_COLORs in completion.
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+
+# pkgfile "command not found" hook.
+sourceifexists /usr/share/doc/pkgfile/command-not-found.zsh
 
 
 # Enable help command for zsh functions.
@@ -105,3 +105,11 @@ alias help=run-help
 
 
 setopt nohashdirs	# No need for rehash to find new binaries.
+
+# Unset stupid vim function from /etc/zsh/zshrc.
+unfunction vim
+
+
+# Bindings {
+	bindkey '^[[Z' reverse-menu-complete		# Reverse select on shift tab in completion menu.
+# }
