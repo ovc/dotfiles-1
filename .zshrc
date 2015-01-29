@@ -6,12 +6,14 @@
 # TODO port/refactor .bashrc, .bash_aliases
 # TODO convert .inputrc to zsh's zle
 # TODO bashmarks, zshmarks? https://github.com/jocelynmallon/zshmarks
+# 	or jump https://github.com/flavio/jump
 # TODO check unset optons $(unsetopt)
 # TODO can't bachskapce/ctrl+h in command lined editing of command from history
 # TODO migrade .bash_profile to .zshprofile?
 # TODO look at antigen, prezto or oh-my-zsh
 # TODO consider joining command togheter, minimize shell startup time
 # TODO build custom prompt, port .bash_ps1. Suse prompt has ugly space between path and >
+# TODO vim in light solarized does not work, wrong $TERM?
 
 
 # Modeline {
@@ -33,7 +35,8 @@ fi
 	zstyle ':completion:*' menu select
 	# Complete options for aliases too.
 	setopt completealiases
-
+	# List filed when cd-completing.
+	compdef _path_files cd
 	autoload -Uz compinit
 	compinit -C
 
