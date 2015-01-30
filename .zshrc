@@ -13,6 +13,7 @@
 # TODO build custom prompt, port .bash_ps1. Suse prompt has ugly space between path and >
 # TODO consider joining command togheter, minimize shell startup time
 # TODO modeline not working in .zshrc
+# TODO / in normal mode does not search history http://superuser.com/questions/476532/how-can-i-make-zshs-vi-mode-behave-more-like-bashs-vi-mode
 
 
 # Modeline {

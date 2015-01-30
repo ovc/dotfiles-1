@@ -96,9 +96,14 @@ URxvt.keysym.M-Delete: perl:matcher:list
 ! Needed for set-clipboard in tmux.
 disallowedWindowOps: 20,21,SetXprop
 
+#ifdef COLOR
 ! Source some solarized colors. The path starts from where this script is loaded from (which hopefully is $HOME).
 !#include "/home/erikw/.Xresources.solarized"
 !#include "/home/erikw/.Xresources.solarized_light"
-#include "/home/erikw/.Xresources.solarized_urxvt"
+!#include "/home/erikw/.Xresources.solarized_urxvt"
 
+! Set by solarizetoggle.sh.
+#include "/home/erikw/.solarizetoggle/Xresouces_theme"
+
+#endif
 ! }

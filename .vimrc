@@ -192,12 +192,14 @@
 	" Adjust colors to this background.
 	if has('gui_running')
 		set background=light
+	elseif filereadable(expand("~/.solarizetoggle/status"))
+		let &background = readfile(expand("~/.solarizetoggle/status"), '', 1)[0]
 	else
 		"set background=dark
 		" Lighter bg during night.
 		" Source:  http://benjamintan.io/blog/2014/04/10/switch-solarized-light-slash-dark-depending-on-the-time-of-day/
-		let hour = strftime("%H")
-		if 7 <= hour && hour < 18
+		let s:hour = strftime("%H")
+		if 7 <= s:hour && s:hour < 18
 			set background=dark
 		else
 			set background=light
