@@ -1,23 +1,22 @@
 # Erik Westrup's zshrc.
 
+# TODO fomrat .zshrc and .bashrc, groupings. 4 space width indentation.
+# TODO migrade .bash_profile to .zshprofile?
 # TODO go throught files from $(pacman -Qo grml-zsh-config), then remove package.
 # TODO document configuration
 # TODO PS! and PSX(path)
 # TODO port/refactor .bashrc, .bash_aliases
 # TODO convert .inputrc to zsh's zle
-# TODO bashmarks, zshmarks? https://github.com/jocelynmallon/zshmarks
-# 	or jump https://github.com/flavio/jump
 # TODO check unset optons $(unsetopt)
 # TODO can't bachskapce/ctrl+h in command lined editing of command from history
-# TODO migrade .bash_profile to .zshprofile?
 # TODO look at antigen, prezto or oh-my-zsh
-# TODO consider joining command togheter, minimize shell startup time
 # TODO build custom prompt, port .bash_ps1. Suse prompt has ugly space between path and >
-# TODO vim in light solarized does not work, wrong $TERM?
+# TODO consider joining command togheter, minimize shell startup time
+# TODO modeline not working in .zshrc
 
 
 # Modeline {
-#	vi: foldmarker={,} foldmethod=marker foldlevel=8: tabstop=8 shiftwidth=8:
+#	vi: foldmarker={,} foldmethod=marker foldlevel=4: tabstop=4 shiftwidth=4:
 # }
 
 # Common shell settings.
@@ -35,8 +34,8 @@ fi
 	zstyle ':completion:*' menu select
 	# Complete options for aliases too.
 	setopt completealiases
-	# List filed when cd-completing.
-	compdef _path_files cd
+	# List files when cd-completing.
+	#compdef _path_files cd
 	autoload -Uz compinit
 	compinit -C
 
@@ -79,9 +78,17 @@ fi
 # }
 
 # Programs {
+	# Shell bookmarks with jump. https://github.com/flavio/jump
+	type jump-bin >/dev/null 2>&1
+	if [ $? -eq 0 ]; then
+		source $(jump-bin --zsh-integration)
+    	    	# Bashmark style aliases
+    	    	alias g="jump"
+    	    	alias s="jump --add"
+    	    	alias d="jump --del"
+    	    	alias l="jump --list"
+	fi
 # }
-
-TERM=xterm
 
 bindkey -v	# Use vi command editing mode.
 
@@ -116,3 +123,8 @@ unfunction vim
 # Bindings {
 	bindkey '^[[Z' reverse-menu-complete		# Reverse select on shift tab in completion menu.
 # }
+
+# Start X if we're at vt1.
+# TODO start using systemd service when there is an official way of starting xorg in a user session.
+type startx >/dev/null 2>&1
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 && "$?" -eq 0 ]] && exec startx

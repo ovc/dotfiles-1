@@ -2,13 +2,11 @@
 # NOTE Login shells read ~/.profile, normal and interactive shells read ~/.bashrc.
 
 # Modeline {
-#	vi: foldmarker={,} foldmethod=marker foldlevel=0: tabstop=8:
+#	vi: foldmarker={,} foldmethod=marker foldlevel=4: tabstop=4 shiftwidth=4:
 # }
 
-
-
 if [ -f $HOME/.shell_commons ] && [ -r $HOME/.shell_commons ]; then
-    my_shell=bash
+	my_shell=bash
     completion_func=complete
     . $HOME/.shell_commons
 fi
@@ -19,12 +17,14 @@ sourceifexists "/etc/profile"
 # Set Vi command line editing mode. Not needed because it's set in ~/.inputrc.
 #set -o vi
 
-# Complete @hostnames in a file with /ets/hosts format.
-HOSTFILE=/etc/hosts
+# Completion {
+    # Complete @hostnames in a file with /ets/hosts format.
+    HOSTFILE=/etc/hosts
 
-# Enable bash tab completion. Not needed with package 'bash-completion' installed.
-#complete -cf sudo
-#complete -cf man
+    # Enable bash tab completion. Not needed with package 'bash-completion' installed.
+    #complete -cf sudo
+    #complete -cf man
+# }
 
 # pkgfile "command not found" hook.
 sourceifexists /usr/share/doc/pkgfile/command-not-found.bash
@@ -50,10 +50,8 @@ sourceifexists /usr/share/doc/pkgfile/command-not-found.bash
 	sourceifexists "$HOME/.bash_ps1"
 	#source /usr/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
-
 	# Check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
 	shopt -s checkwinsize
-
 
 	# Colored man pages.
 	# Reference: https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages
@@ -72,7 +70,22 @@ sourceifexists /usr/share/doc/pkgfile/command-not-found.bash
 
 # Programs {
 	# Sorce bashmarks.
-	sourceifexists $HOME/.local/bin/bashmarks.sh
+	#sourceifexists $HOME/.local/bin/bashmarks.sh
+
+	# Load rvm and gems to PATH.
+    if [ -s "$HOME/.rvm/scripts/rvm" ]; then
+    	. "$HOME/.rvm/scripts/rvm"
+    fi
+
+	type jump-bin >/dev/null 2>&1
+	if [ $? -eq 0 ]; then
+		source $(jump-bin --bash-integration)/shell_driver
+    	# Bashmark style aliases
+    	alias g="jump"
+    	alias s="jump --add"
+    	alias d="jump --del"
+    	alias l="jump --list"
+	fi
 # }
 
 

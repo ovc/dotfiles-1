@@ -73,10 +73,10 @@
 		alias cower='cower --color=auto'
 
 		# Use colored diff if it can be found.
-		hash colordiff 2>/dev/null
+		type colordiff >/dev/null 2>&1
 		if [ "$?" -eq 0 ]; then
-			alias cdiff='colordiff'
-			#alias diff='colordiff'
+			#alias cdiff='colordiff'
+			alias diff='colordiff'
 		fi
 
 		# Use colored du if exists.

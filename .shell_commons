@@ -1,7 +1,7 @@
 # Common shelll settings (used by at least my .bashrc and .zshrc)
 
 # Modeline {
-#	vi: ft=sh foldmarker={,} foldmethod=marker foldlevel=8 tabstop=8:
+#	vi: foldmarker={,} foldmethod=marker foldlevel=4: tabstop=4 shiftwidth=4:
 # }
 
 # Load utility functions.
@@ -79,17 +79,11 @@ source $HOME/.shell_functions
 	    eval `dircolors $HOME/.dircolorsrc`
     fi
 
-    #export TERM=rxvt-unicode-256color
-    # TODO how do this?
+    # Use colorful terminal.
     case "$TERM" in
-	    xterm*|rxvt*)
-		    export TERM=xterm-256color
-		    ;;
-	    screen)
-		    export TERM=screen-256color
-		    ;;
-	    *)
-		    ;;
+	xterm*)		export TERM=xterm-256color ;;
+	screen*)	export TERM=screen-256color ;;
+	rxvt*)		export TERM=rxvt-unicode-256color ;;
     esac
 # }
 
@@ -189,4 +183,5 @@ source $HOME/.shell_functions
 	if [ -d "$HOME/src/android-sdk-linux/" ]; then
     	    export PATH="$HOME/src/android-sdk-linux/tools/:$HOME/src/android-sdk-linux/platform-tools/:$PATH"
 	fi
+
 # }
