@@ -56,7 +56,7 @@ source $HOME/.shell_functions
     	# Current DE in use.
 	export DESKTYPE=dwm
 
-	if [ "$DESKTYPE" == "dwm" ]; then
+	if [ "$DESKTYPE" = "dwm" ]; then
 	    # Java does not know about dwm so GUI apps will not be displayed correctly (if at all).
 	    # Reference: https://wiki.archlinux.org/index.php/Dwm#Fixing_misbehaving_Java_applications
 	    export _JAVA_AWT_WM_NONREPARENTING=1
@@ -109,14 +109,8 @@ source $HOME/.shell_functions
 
 	# Tmuxinator initialization.
 	if [ -d $HOME/src/tmuxinator/bin/ ]; then
-		export PATH="$PATH:$HOME/src/tmuxinator/bin/"
+		PATH="$PATH:$HOME/src/tmuxinator/bin/"
 		source $HOME/src/tmuxinator/completion/tmuxinator.$my_shell
-	fi
-
-	# Gitignore fetcher Gibo bin and completion.
-	if [ -d "$HOME/src/gitignore-boilerplates/" ]; then
-		PATH="$PATH:$HOME/src/gitignore-boilerplates/"
-		source $HOME/src/gitignore-boilerplates/gibo-completion.$my_shell
 	fi
 
 	# Dot files manager.
@@ -160,7 +154,7 @@ source $HOME/.shell_functions
 	# Go
     	export GOPATH="$HOME/src/godeps/:$HOME/dev/go"
     	export GOROOT="$HOME/src/go"
-    	export PATH="$PATH:$HOME/src/godeps/bin/:$HOME/dev/go/bin:$GOROOT/bin:$GOROOT/pkg/tool/linux_amd64"
+    	PATH="$PATH:$HOME/src/godeps/bin/:$HOME/dev/go/bin:$GOROOT/bin:$GOROOT/pkg/tool/linux_amd64"
 
 	# less {
 		# Syntax highlighting for less with src-highlight.
@@ -180,7 +174,7 @@ source $HOME/.shell_functions
 
 	# Android SDK
 	if [ -d "$HOME/src/android-sdk-linux/" ]; then
-    	    export PATH="$HOME/src/android-sdk-linux/tools/:$HOME/src/android-sdk-linux/platform-tools/:$PATH"
+    	    PATH="$HOME/src/android-sdk-linux/tools/:$HOME/src/android-sdk-linux/platform-tools/:$PATH"
 	fi
 
 # }

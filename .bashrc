@@ -30,9 +30,6 @@ fi
     #complete -cf man
 # }
 
-# pkgfile "command not found" hook.
-sourceifexists /usr/share/doc/pkgfile/command-not-found.bash
-
 # History {
 	# Number lines to store in active bash session.
 	export HISTSIZE=100000
@@ -76,6 +73,10 @@ sourceifexists /usr/share/doc/pkgfile/command-not-found.bash
 	# Sorce bashmarks.
 	#sourceifexists $HOME/.local/bin/bashmarks.sh
 
+	# pkgfile "command not found" hook.
+	sourceifexists /usr/share/doc/pkgfile/command-not-found.bash
+
+
 	type jump-bin >/dev/null 2>&1
 	if [ $? -eq 0 ]; then
 		source $(jump-bin --bash-integration)/shell_driver
@@ -84,6 +85,12 @@ sourceifexists /usr/share/doc/pkgfile/command-not-found.bash
     	alias s="jump --add"
     	alias d="jump --del"
     	alias l="jump --list"
+	fi
+
+	# Gitignore boiler plate.
+	if [ -d $HOME/src/gibo ]; then
+		PATH="$PATH:$HOME/src/gibo"
+		source $HOME/src/gibo/gibo-completion.bash
 	fi
 # }
 

@@ -1,14 +1,12 @@
 # Erik Westrup's zshrc.
 
-# TODO / in normal mode does not search history http://superuser.com/questions/476532/how-can-i-make-zshs-vi-mode-behave-more-like-bashs-vi-mode
-# TODO can't bachskapce/ctrl+h in command lined editing of command from history
-# TODO convert .inputrc to zsh's zle
-# TODO go throught files from $(pacman -Qo grml-zsh-config), then remove package.
-# TODO document configuration
+# TODO Go throught zsh configuration manuals
 # TODO build custom prompt, port .bash_ps1. Suse prompt has ugly space between path and >
 # TODO check unset optons $(unsetopt)
-# TODO fomrat .zshrc and .bashrc, groupings. 4 space width indentation.
+# TODO exit status, git branch in PS1
 # TODO consider joining command togheter, minimize shell startup time
+# TODO document configuration
+# TODO fomrat .zshrc and .bashrc, groupings. 4 space width indentation.
 # TODO modeline not working in .zshrc
 # TODO look at antigen, prezto or oh-my-zsh
 
@@ -24,8 +22,13 @@ if [[ -f $HOME/.shell_commons && -r $HOME/.shell_commons ]]; then
 	source $HOME/.shell_commons
 fi
 
-typeset -U path	# Don't att entry to path if it's already present.
-#path=(~/tmp $path)
+# Environment {
+	typeset -U path		# Don't att entry to path if it's already present.
+	#path=(~/tmp $path)
+
+	# Function paths.
+	fpath=(~/.zsh_funcs $fpath)
+# }
 
 # Completion {
 	zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
@@ -37,21 +40,26 @@ typeset -U path	# Don't att entry to path if it's already present.
 	setopt completealiases
 	# List files when cd-completing.
 	#compdef _path_files cd
+
+	# Honor LS_COLORs in completion.
+	zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
 	autoload -Uz compinit
 	compinit -C
 
 	# Ingore case in tab complete. http://www.rlazo.org/2010/11/18/zsh-case-insensitive-completion/
 	zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
-    	    'r:|[._-]=* r:|=*' 'l:|=* r:|=*'	
+    	    'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 # }
 
 # History {
 	HISTFILE=~/.histfile		# Where to save history.
-	HISTSIZE=100000			
+	HISTSIZE=100000
 	SAVEHIST=10000
-	
+
 	setopt appendhistory		# Append to history write on exit, don't overwrite.
 	setopt HIST_IGNORE_DUPS		# Dont save duplicate lines in history.
+	setopt histignorealldups
 
 	# TODO
 	#nobanghist
@@ -66,7 +74,6 @@ typeset -U path	# Don't att entry to path if it's already present.
 	#incappendhistory
 # }
 
-
 # UI {
 	autoload -U colors && colors
 
@@ -78,7 +85,43 @@ typeset -U path	# Don't att entry to path if it's already present.
 	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # }
 
+# ZLE {
+	# Let  / search in vi mode.
+	# Reference: http://superuser.com/questions/476532/how-can-i-make-zshs-vi-mode-behave-more-like-bashs-vi-mode
+	autoload vi-search-fix
+	zle -N vi-search-fix
+	bindkey -M viins '\e/' vi-search-fix
+# }
+
+# Options {
+	# TODO split out to different categories?
+	setopt printexitvalue 		# Print abnormal exit status.
+	setopt nohashdirs		# No need for rehash to find new binaries.
+	unsetopt correct correct_all 	# Don't encourage sloppy typing.
+
+	setopt longlistjobs		# Display PID when suspending processes.
+	setopt auto_pushd		# Put old path in dirs stack.
+	setopt pushd_ignore_dups	# No duplicates in dirs stack.
+	setopt nobeep			# No beeps thanks@
+# }
+
+
+# Bindings {
+	bindkey -v				# vi command editing mode.
+	bindkey '^[[Z' reverse-menu-complete	# Reverse select on shift tab in completion menu.
+	bindkey "\ep"  insert-last-word		# Insert !$ with Alt-p.
+
+	# Enable char deleteion on command from history.
+	bindkey "^?" backward-delete-char
+	bindkey "^H" backward-delete-char
+	bindkey "^W" backward-kill-word
+	bindkey "^U" backward-kill-line
+# }
+
 # Programs {
+	# pkgfile "command not found" hook.
+	sourceifexists /usr/share/doc/pkgfile/command-not-found.zsh
+
 	# Shell bookmarks with jump. https://github.com/flavio/jump
 	type jump-bin >/dev/null 2>&1
 	if [ $? -eq 0 ]; then
@@ -88,24 +131,16 @@ typeset -U path	# Don't att entry to path if it's already present.
     	    	alias s="jump --add"
     	    	alias d="jump --del"
     	    	alias l="jump --list"
+		compctl -K _jump -S '' g	# Add completion to 'g' alias.
+	fi
+
+	# Gitignore boiler plate.
+	if [ -d $HOME/src/gibo ]; then
+		PATH="$PATH:$HOME/src/gibo"
+		source $HOME/src/gibo/gibo-completion.zsh
 	fi
 # }
 
-bindkey -v	# Use vi command editing mode.
-
-
-setopt printexitvalue # Print abnormal exit status.
-
-
-unsetopt correct correct_all 	# Don't encourage sloppy typing.
-
-
-# Honor LS_COLORs in completion.
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-
-
-# pkgfile "command not found" hook.
-sourceifexists /usr/share/doc/pkgfile/command-not-found.zsh
 
 
 # Enable help command for zsh functions.
@@ -115,15 +150,6 @@ autoload run-help-git run-help-svn run-help-svk
 alias help=run-help
 
 
-setopt nohashdirs	# No need for rehash to find new binaries.
-
-# Unset stupid vim function from /etc/zsh/zshrc.
-unfunction vim
-
-
-# Bindings {
-	bindkey '^[[Z' reverse-menu-complete		# Reverse select on shift tab in completion menu.
-# }
 
 # Start X if we're at vt1.
 # TODO start using systemd service when there is an official way of starting xorg in a user session.
