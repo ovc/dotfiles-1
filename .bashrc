@@ -2,17 +2,21 @@
 # NOTE Login shells read ~/.profile, normal and interactive shells read ~/.bashrc.
 
 # Modeline {
-#	vi: foldmarker={,} foldmethod=marker foldlevel=4: tabstop=4 shiftwidth=4:
+#	vi: foldmarker={,} filetype=sh foldmethod=marker foldlevel=4: tabstop=4 shiftwidth=4:
 # }
+
+# Source global profile.
+# NOTE resets PATH
+if  [ -f /etc/profile ]  && [ -r /etc/profile ]; then
+	source /etc/profile
+fi
+
 
 if [ -f $HOME/.shell_commons ] && [ -r $HOME/.shell_commons ]; then
 	my_shell=bash
     completion_func=complete
-    . $HOME/.shell_commons
+    source $HOME/.shell_commons
 fi
-
-# Source global profile.
-sourceifexists "/etc/profile"
 
 # Set Vi command line editing mode. Not needed because it's set in ~/.inputrc.
 #set -o vi
@@ -71,11 +75,6 @@ sourceifexists /usr/share/doc/pkgfile/command-not-found.bash
 # Programs {
 	# Sorce bashmarks.
 	#sourceifexists $HOME/.local/bin/bashmarks.sh
-
-	# Load rvm and gems to PATH.
-    if [ -s "$HOME/.rvm/scripts/rvm" ]; then
-    	. "$HOME/.rvm/scripts/rvm"
-    fi
 
 	type jump-bin >/dev/null 2>&1
 	if [ $? -eq 0 ]; then

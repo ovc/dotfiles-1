@@ -158,5 +158,5 @@
 
 	# Start Dropbox.
 	# NOTE (was) started by netctl post hook.
-	dropboxd &
+	#dropboxd &
 # }
