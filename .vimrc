@@ -262,6 +262,7 @@
 	set incsearch						" Incremental search.
 	set ignorecase						" Case insensitive search.
 	set smartcase						" Smart case search.
+	set nowrapscan						" Don't wrap search around file.
 " }
 
 " Formatting {
