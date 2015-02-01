@@ -103,6 +103,7 @@ fi
 	setopt auto_pushd		# Put old path in dirs stack.
 	setopt pushd_ignore_dups	# No duplicates in dirs stack.
 	setopt nobeep			# No beeps thanks@
+	setopt ksharrays		# Array are 0-indexed.
 # }
 
 
