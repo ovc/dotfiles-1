@@ -113,6 +113,7 @@ fi
 	bindkey -v				# vi command editing mode.
 	bindkey '^[[Z' reverse-menu-complete	# Reverse select on shift tab in completion menu.
 	bindkey "\ep"  insert-last-word		# Insert !$ with Alt-p.
+	bindkey ' ' magic-space			# Expand !-commands on space.
 
 	# Enable char deleteion on command from history.
 	bindkey "^?" backward-delete-char

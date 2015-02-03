@@ -105,7 +105,7 @@ source $HOME/.shell_functions
 	#fi
 
 	# Set up ros environment.
-	sourceifexists $HOME/bin/ros/setup.bash
+	sourceifexists $HOME/bin/ros/setup.$my_shell
 
 	# Tmuxinator initialization.
 	if [ -d $HOME/src/tmuxinator/bin/ ]; then
