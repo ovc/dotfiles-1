@@ -73,10 +73,6 @@ fi
 	# Sorce bashmarks.
 	#sourceifexists $HOME/.local/bin/bashmarks.sh
 
-	# pkgfile "command not found" hook.
-	sourceifexists /usr/share/doc/pkgfile/command-not-found.bash
-
-
 	type jump-bin >/dev/null 2>&1
 	if [ $? -eq 0 ]; then
 		source $(jump-bin --bash-integration)/shell_driver

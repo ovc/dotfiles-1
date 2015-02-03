@@ -123,9 +123,6 @@ fi
 # }
 
 # Programs {
-	# pkgfile "command not found" hook.
-	sourceifexists /usr/share/doc/pkgfile/command-not-found.zsh
-
 	# Shell bookmarks with jump. https://github.com/flavio/jump
 	type jump-bin >/dev/null 2>&1
 	if [ $? -eq 0 ]; then

@@ -93,6 +93,10 @@ source $HOME/.shell_functions
 	    source $HOME/.rvm/scripts/rvm
 	fi
 
+	# pkgfile "command not found" hook.
+	sourceifexists /usr/share/doc/pkgfile/command-not-found.$my_shell
+
+
 	# Tell gPodder to reside in multimedia directory. KDE4 uses ~/.kde4/env/
 	export GPODDER_HOME=$HOME/media/music/gPodder
 
