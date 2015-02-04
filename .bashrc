@@ -14,7 +14,7 @@ fi
 
 if [ -f $HOME/.shell_commons ] && [ -r $HOME/.shell_commons ]; then
 	my_shell=bash
-    completion_func=complete
+    export completion_func=complete
     source $HOME/.shell_commons
 fi
 

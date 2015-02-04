@@ -166,6 +166,7 @@ source $HOME/.shell_functions
 		if [ "$?" -eq 0 ]; then
 			export LESSOPEN="| src-hilite-lesspipe.sh %s"
 		fi
+		LESS=		# Debians /etc/zsh/zshenv sets LESS to values that quits less when hitting the bottom.
 		#LESS="$LESS --no-lessopen"		# Disable usage of LESSOPEN.
 		LESS="$LESS --RAW-CONTROL-CHARS"	# Display colors.
 		LESS="$LESS --ignore-case"		# Case insensitive search. However using capital letter(s) will enable case sensitive search.

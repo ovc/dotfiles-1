@@ -17,8 +17,8 @@
 
 # Common shell settings.
 if [[ -f $HOME/.shell_commons && -r $HOME/.shell_commons ]]; then
-	my_shell=zsh
-	completion_func=compctl
+	export my_shell=zsh
+	export completion_func=compctl
 	source $HOME/.shell_commons
 fi
 
