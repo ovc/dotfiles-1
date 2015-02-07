@@ -2,6 +2,7 @@
 
 # TODO Go throught zsh configuration manuals
 # TODO build custom prompt, port .bash_ps1. Suse prompt has ugly space between path and >
+# 	- Git branch and vi-mode like in http://dougblack.io/words/zsh-vi-mode.html
 # TODO check unset optons $(unsetopt)
 # TODO exit status, git branch in PS1
 # TODO consider joining command togheter, minimize shell startup time
@@ -97,7 +98,7 @@ fi
 
 # Options {
 	# TODO split out to different categories?
-	setopt printexitvalue 		# Print abnormal exit status.
+	#setopt printexitvalue 		# Print abnormal exit status.
 	setopt nohashdirs		# No need for rehash to find new binaries.
 	unsetopt correct correct_all 	# Don't encourage sloppy typing.
 
@@ -111,6 +112,7 @@ fi
 
 # Bindings {
 	bindkey -v				# vi command editing mode.
+	export KEYTIMEOUT=1			# Set ESC to normal mode timout to 10 ms.
 	bindkey '^[[Z' reverse-menu-complete	# Reverse select on shift tab in completion menu.
 	bindkey "\ep"  insert-last-word		# Insert !$ with Alt-p.
 	bindkey ' ' magic-space			# Expand !-commands on space.
@@ -143,6 +145,11 @@ fi
 # }
 
 
+# Visual mode in vi-mode, like in bash.
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 
 # Enable help command for zsh functions.
 autoload -U run-help
@@ -150,6 +157,17 @@ autoload run-help-git run-help-svn run-help-svk
 #unalias run-help
 alias help=run-help
 
+
+# Powerline {
+	type powerline-daemon >/dev/null 2>&1
+	if [ "$?" -eq 0 ]; then
+		powerline-daemon -q
+		powerline_root=/usr/lib/python2.7/site-packages/
+		if [ -d $powerline_root ]; then
+			source $powerline_root/powerline/bindings/zsh/powerline.zsh
+		fi
+	fi
+# }
 
 
 # Start X if we're at vt1.

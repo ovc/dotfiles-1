@@ -560,25 +560,9 @@ if s:use_plugins
 	" }
 
 	" Powerline {
-		" Old vim-powerline.
-		"let g:Powerline_symbols='fancy'				" Use icons and arrows from the patched fonts.
-		"let g:Powerline_theme="default"				" Theme to use (vim-powerline/autoload/Powerline/Themes).
-		"let g:Powerline_colorscheme="skwp"				" Colorscheme to use. skwp is Solarized.
-		"call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')	" Indicate traling spaces in current buffer.
-
-		" New powerline.
-		"set rtp+=/usr/lib/python3.3/site-packages/powerline/bindings/vim
-
-		" Fast mode switch for faster powerline updates. Reference: " https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
-		"  NOTE this breaks my ~/.vim/ftplugin/autobrace.vim.
-		"if ! has('gui_running')
-                            "set ttimeoutlen=10
-                            "augroup FastEscape
-                                "autocmd!
-                                "au InsertEnter * set timeoutlen=0
-                                "au InsertLeave * set timeoutlen=1000
-                            "augroup END
-		"endif
+		python from powerline.vim import setup as powerline_setup
+		python powerline_setup()
+		python del powerline_setup
 	" }
 
 	" Solarized {

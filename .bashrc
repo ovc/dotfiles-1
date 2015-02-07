@@ -90,6 +90,19 @@ fi
 	fi
 # }
 
+# Powerline {
+	type powerline-daemon >/dev/null 2>&1
+	if [ "$?" -eq 0 ]; then
+		powerline-daemon -q
+		POWERLINE_BASH_CONTINUATION=1
+		POWERLINE_BASH_SELECT=1
+		powerline_root=/usr/lib/python2.7/site-packages/
+		if [ -d $powerline_root ]; then
+			source $powerline_root/powerline/bindings/bash/powerline.sh
+		fi
+	fi
+# }
+
 
 # Start X if we're at vt1.
 # TODO start using systemd service when there is an official way of starting xorg in a user session.
