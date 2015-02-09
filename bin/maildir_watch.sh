@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 # Watch Maildir inboxes for new mails and send a summary notification with notify-send. Tested and "works perfectly" with dunst.
-# Dependencies: inotifywait from inotify-tools package.
+# Author: Erik Westrup <erik.westrup@gmail.com>
+# Dependencies: inotifywait: from inotify-tools package
+# 				email_parse.py: Does a better job of parsing emails than shell hackery.
 
+# Settings.
 maildir_path="$HOME/.mail"		# Path to Maildir root.
 mailboxes=(inbox lists)			# Mailboxes to watch.
+
 watchdirs=$(for box in ${mailboxes[*]}; do echo ${maildir_path}/$box/new; done)
 scriptname=${0##*/}
-#multicut_file="/tmp/${scriptname}_${USER}_multipart_cut.txt"
-#trimmed_file="/tmp/${scriptname}_${USER}_trimmed.txt"
 
 trim() {
     local var="$1"
@@ -61,7 +63,6 @@ parse_send() {
 	local out_summary=$(printf "[%s] From: %s | Subject: %s |\\n" "$inbox" "$from" "$subject")
 	local out_body=""
 	if [ -n "$body" ]; then
-		#out_body=$(printf "Body: %s [...]\\n" "$body")
 		out_body=$(printf "%s [...]\\n" "$body")
 	fi
 

@@ -3,8 +3,8 @@
 # TODO Go throught zsh configuration manuals
 # TODO build custom prompt, port .bash_ps1. Suse prompt has ugly space between path and >
 # 	- Git branch and vi-mode like in http://dougblack.io/words/zsh-vi-mode.html
+#	- exit status, git branch in PS1
 # TODO check unset optons $(unsetopt)
-# TODO exit status, git branch in PS1
 # TODO consider joining command togheter, minimize shell startup time
 # TODO document configuration
 # TODO fomrat .zshrc and .bashrc, groupings. 4 space width indentation.
@@ -107,6 +107,7 @@ fi
 	setopt pushd_ignore_dups	# No duplicates in dirs stack.
 	setopt nobeep			# No beeps thanks@
 	#setopt ksharrays		# Array are 0-indexed. NOTE breaks zsh functions plugins etc..
+	setopt SH_NULLCMD		# Truncate like in bash e.g. $(>file).
 # }
 
 
