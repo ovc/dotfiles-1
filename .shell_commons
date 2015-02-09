@@ -176,6 +176,13 @@ source $HOME/.shell_functions
 		export LESS
 	# }
 
+	# Powerline plugin.
+	export POWERLINE_ROOT=/usr/share
+	type powerline-daemon >/dev/null 2>&1
+	if [ "$?" -eq 0 ]; then
+		powerline-daemon -q
+	fi
+
 
 	# Android SDK
 	if [ -d "$HOME/src/android-sdk-linux/" ]; then

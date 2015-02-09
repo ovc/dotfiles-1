@@ -560,9 +560,13 @@ if s:use_plugins
 	" }
 
 	" Powerline {
-		python from powerline.vim import setup as powerline_setup
-		python powerline_setup()
-		python del powerline_setup
+		" Check if vim plugin exists, e.g. debian's powerline does not 
+		" currently have it.
+		if isdirectory($POWERLINE_ROOT . "/powerline/bindings/vim")
+			python from powerline.vim import setup as powerline_setup
+			python powerline_setup()
+			python del powerline_setup
+		endif
 	" }
 
 	" Solarized {

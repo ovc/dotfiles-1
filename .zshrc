@@ -160,13 +160,8 @@ alias help=run-help
 
 
 # Powerline {
-	type powerline-daemon >/dev/null 2>&1
-	if [ "$?" -eq 0 ]; then
-		powerline-daemon -q
-		powerline_root=/usr/lib/python2.7/site-packages/
-		if [ -d $powerline_root ]; then
-			source $powerline_root/powerline/bindings/zsh/powerline.zsh
-		fi
+	if [ -d $POWERLINE_ROOT ]; then
+		source $POWERLINE_ROOT/powerline/bindings/zsh/powerline.zsh
 	fi
 # }
 
