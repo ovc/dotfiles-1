@@ -2,7 +2,7 @@
 # Watch Maildir inboxes for new mails and send a summary notification with notify-send. Tested and "works perfectly" with dunst.
 # Author: Erik Westrup <erik.westrup@gmail.com>
 # Dependencies: inotifywait: from inotify-tools package
-# 				email_parse.py: Does a better job of parsing emails than shell hackery.
+# 			email_parse.py: Does a better job of parsing emails than shell hackery.
 
 # Settings.
 maildir_path="$HOME/.mail"		# Path to Maildir root.

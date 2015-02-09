@@ -21,7 +21,6 @@
 
 	" Github {
 		"Plugin 'Blackrush/vim-gocode'
-		"Plugin 'Lokaltog/vim-powerline'
 		"Plugin 'maxbrunsfeld/vim-yankstack'
 		"Plugin 'mbbill/undotree'
 		"Plugin 'mhinz/vim-startify'
@@ -560,9 +559,9 @@ if s:use_plugins
 	" }
 
 	" Powerline {
-		" Check if vim plugin exists, e.g. debian's powerline does not 
+		" Check if vim plugin exists, e.g. debian's powerline does not
 		" currently have it.
-		if isdirectory($POWERLINE_ROOT . "/powerline/bindings/vim")
+		if isdirectory($POWERLINE_ROOT . "/bindings/vim")
 			python from powerline.vim import setup as powerline_setup
 			python powerline_setup()
 			python del powerline_setup

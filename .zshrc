@@ -161,7 +161,7 @@ alias help=run-help
 
 # Powerline {
 	if [ -d $POWERLINE_ROOT ]; then
-		source $POWERLINE_ROOT/powerline/bindings/zsh/powerline.zsh
+		source $POWERLINE_ROOT/bindings/zsh/powerline.zsh
 	fi
 # }
 
