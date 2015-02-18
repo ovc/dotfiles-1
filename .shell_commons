@@ -158,7 +158,7 @@ source $HOME/.shell_functions
 	# Go
     	export GOPATH="$HOME/src/godeps/:$HOME/dev/go"
     	export GOROOT="$HOME/src/go"
-    	PATH="$PATH:$HOME/src/godeps/bin/:$HOME/dev/go/bin:$GOROOT/bin:$GOROOT/pkg/tool/linux_amd64"
+    	PATH="$HOME/src/godeps/bin/:$HOME/dev/go/bin:$GOROOT/bin:$GOROOT/pkg/tool/linux_amd64:$PATH"
 
 	# less {
 		# Syntax highlighting for less with src-highlight.
