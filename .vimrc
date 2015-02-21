@@ -20,10 +20,10 @@
 	"}
 
 	" Github {
-		"Plugin 'Blackrush/vim-gocode'
 		"Plugin 'maxbrunsfeld/vim-yankstack'
 		"Plugin 'mbbill/undotree'
 		"Plugin 'mhinz/vim-startify'
+		"Plugin 'rhysd/vim-clang-format'
 		"Plugin 'scrooloose/syntastic'
 		"Plugin 'tpope/vim-unimpaired'
 		Plugin 'LaTeX-Box-Team/LaTeX-Box'
@@ -35,6 +35,7 @@
 		Plugin 'bkad/CamelCaseMotion'
 		Plugin 'erikw/snipmate-snippets'
 		Plugin 'erikw/vim-unimpaired'
+		Plugin 'fatih/vim-go'
 		Plugin 'flazz/vim-colorschemes'
 		Plugin 'garbas/vim-snipmate'
 		Plugin 'godlygeek/tabular'
