@@ -91,6 +91,7 @@ fi
 # ZLE {
 	# Let  / search in vi mode.
 	# Reference: http://superuser.com/questions/476532/how-can-i-make-zshs-vi-mode-behave-more-like-bashs-vi-mode
+	# TODO how to browse between matched history commands?
 	autoload vi-search-fix
 	zle -N vi-search-fix
 	bindkey -M viins '\e/' vi-search-fix

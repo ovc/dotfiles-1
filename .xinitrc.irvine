@@ -107,9 +107,7 @@
 	xbindkeys
 
 	# DWM statusbar.
-	if ! (pidof dwnstatus >/dev/null) && [ -x $HOME/dev/dwmstatus/dwmstatus ]; then
-		$HOME/dev/dwmstatus/dwmstatus &
-	fi
+	$HOME/dev/dwmstatus/dwmstatus &
 
 	# Start my Maildir notifier.
 	$HOME/bin/maildir_watch.sh &
@@ -159,4 +157,5 @@
 	# Start Dropbox.
 	# NOTE (was) started by netctl post hook.
 	#dropboxd &
+	dropbox start &
 # }

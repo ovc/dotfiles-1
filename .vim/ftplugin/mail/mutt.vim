@@ -43,6 +43,6 @@ call MailFormat()
 call MailEnspaceReply()
 call MailStripSig()
 " Jump to the first blank line.
-silent +/^$
+silent! +/^$
 " Clear highlight from jump above.
 :nohlsearch
