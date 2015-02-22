@@ -1,19 +1,7 @@
 # Erik Westrup's zshrc.
 
-# TODO Go throught zsh configuration manuals
-# TODO build custom prompt, port .bash_ps1. Suse prompt has ugly space between path and >
-# 	- Git branch and vi-mode like in http://dougblack.io/words/zsh-vi-mode.html
-#	- exit status, git branch in PS1
-# TODO check unset optons $(unsetopt)
-# TODO consider joining command togheter, minimize shell startup time
-# TODO document configuration
-# TODO fomrat .zshrc and .bashrc, groupings. 4 space width indentation.
-# TODO modeline not working in .zshrc
-# TODO look at antigen, prezto or oh-my-zsh
-
-
 # Modeline {
-#	vi: foldmarker={,} filetype=zsh foldmethod=marker foldlevel=4: tabstop=4 shiftwidth=4:
+#	vi: foldmarker={,} filetype=zsh foldmethod=marker foldlevel=0: tabstop=4 shiftwidth=4:
 # }
 
 # Common shell settings.
@@ -24,7 +12,7 @@ if [[ -f $HOME/.shell_commons && -r $HOME/.shell_commons ]]; then
 fi
 
 # Environment {
-	typeset -U path		# Don't att entry to path if it's already present.
+	typeset -U path		# Don't add entry to path if it's already present.
 	#path=(~/tmp $path)
 
 	# Function paths.
@@ -34,83 +22,86 @@ fi
 # Completion {
 	zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 	zstyle ':completion:*' max-errors 3 numeric
-	zstyle :compinstall filename '/home/erikw/.zshrc'
-	# Visuaize and selectin with arrow keys in completion.
+	# Visualize and selecting with arrow keys in completion.
 	zstyle ':completion:*' menu select
+	# Remove slash from completed directory.
+	zstyle ':completion:*' squeeze-slashes true
+	# Cache completions.
+	zstyle ':completion:*' use-cache onzstyle ':completion:*' use-cache on
+	# Honor LS_COLORs in completion.
+	zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+	# Ignore case in tab complete. http://www.rlazo.org/2010/11/18/zsh-case-insensitive-completion/
+	zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
+    	    'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+    	# Completing process IDs with menu selection:
+	zstyle ':completion:*:*:kill:*' menu yes select
+	zstyle ':completion:*:kill:*'   force-list always
+
 	# Complete options for aliases too.
 	setopt completealiases
 	# List files when cd-completing.
 	#compdef _path_files cd
 
-	# Honor LS_COLORs in completion.
-	zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-
 	autoload -Uz compinit
 	compinit -C
-
-	# Ingore case in tab complete. http://www.rlazo.org/2010/11/18/zsh-case-insensitive-completion/
-	zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
-    	    'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 # }
 
 # History {
-	HISTFILE=~/.histfile		# Where to save history.
-	HISTSIZE=100000
-	SAVEHIST=10000
+	export HISTFILE=~/.zsh_histfile		# Where to save history.
+	export HISTSIZE=100000
+	export SAVEHIST=10000
+	export HISTIGNORE="poweroff:reboot:[bf]g:nano"
 
 	setopt appendhistory		# Append to history write on exit, don't overwrite.
-	setopt HIST_IGNORE_DUPS		# Dont save duplicate lines in history.
-	setopt histignorealldups
-
-	# TODO
-	#nobanghist
-	#extendedhistory
-	#histfcntllock
-	#histignorealldups
-	#histignorespace
-	#histnostore
-	#histreduceblanks
-	#histsavenodups
-	#histverify
-	#incappendhistory
+	setopt histignoredups		# Don't save immediate duplicates lines in history.
+	setopt histignorespace		# Ignore commands starting with space.
+	setopt extendedhistory		# Save command time start and exec time in seconds.
+	setopt histreduceblanks		# Strip redundant spaces.
 # }
 
 # UI {
 	autoload -U colors && colors
 
-	autoload -Uz promptinit
-	promptinit
-	prompt suse	# Prompt theme.
+	#autoload -Uz promptinit
+	#promptinit
+	#prompt suse	# Prompt theme.
 
-	# Fish like syntax highlightning on command line.
+	# Fish like syntax highlighting on command line.
 	if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 		source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 	fi
 # }
 
-# ZLE {
-	# Let  / search in vi mode.
-	# Reference: http://superuser.com/questions/476532/how-can-i-make-zshs-vi-mode-behave-more-like-bashs-vi-mode
-	# TODO how to browse between matched history commands?
-	autoload vi-search-fix
-	zle -N vi-search-fix
-	bindkey -M viins '\e/' vi-search-fix
-# }
-
 # Options {
-	# TODO split out to different categories?
-	#setopt printexitvalue 		# Print abnormal exit status.
-	setopt nohashdirs		# No need for rehash to find new binaries.
-	unsetopt correct correct_all 	# Don't encourage sloppy typing.
+	# Manual & categories: http://zsh.sourceforge.net/Doc/Release/Options.html
 
-	setopt longlistjobs		# Display PID when suspending processes.
-	setopt auto_pushd		# Put old path in dirs stack.
-	setopt pushd_ignore_dups	# No duplicates in dirs stack.
-	setopt nobeep			# No beeps thanks@
-	#setopt ksharrays		# Array are 0-indexed. NOTE breaks zsh functions plugins etc..
-	setopt SH_NULLCMD		# Truncate like in bash e.g. $(>file).
+	# Changing Directories {
+		setopt autopushd		# Add prev PWD to directory stack.
+		setopt pushdignoredups	# No duplicates in dirs stack.
+		setopt pushdignoredups		# Don't record immediate duplicates.
+		setopt pushdtohome		# pushd with no args pushes $HOME.
+		#setopt chaselinks		# Go to full destination of symlinks.
+	# }
+
+	# Input/Output {
+		unsetopt correct correctall 	# Don't encourage sloppy typing.
+		#setopt nohashdirs		# No need for rehash to find new binaries.
+		#setopt printexitvalue 		# Print abnormal exit status.
+	# }
+
+	# Job Control  {
+		setopt longlistjobs		# Display PID when suspending processes.
+	# }
+
+	# Shell Emulation # {
+		#setopt ksharrays		# Array are 0-indexed. NOTE breaks zsh functions plugins etc..
+		setopt shnullcmd		# Truncate like in bash e.g. $(>file).
+	# }
+
+	# ZLE {
+		setopt nobeep			# No beeps thanks!
+	#}
 # }
-
 
 # Bindings {
 	bindkey -v				# vi command editing mode.
@@ -124,6 +115,27 @@ fi
 	bindkey "^H" backward-delete-char
 	bindkey "^W" backward-kill-word
 	bindkey "^U" backward-kill-line
+# }
+
+# ZLE {
+	# Let  / search in vi mode. Defined in ~/.zsh_funcs/vi-search-fix
+	# Reference: http://superuser.com/questions/476532/how-can-i-make-zshs-vi-mode-behave-more-like-bashs-vi-mode
+	autoload vi-search-fix
+	zle -N vi-search-fix
+	bindkey -M viins '\e/' vi-search-fix
+
+	# Visual mode in vi-mode, like in bash.
+	autoload -U edit-command-line
+	zle -N edit-command-line
+	bindkey -M vicmd v edit-command-line
+# }
+
+# zsh extras {
+	# Enable help command for zsh functions.
+	autoload -U run-help
+	autoload run-help-git run-help-svn run-help-svk
+	#unalias run-help
+	alias help=run-help
 # }
 
 # Programs {
@@ -146,26 +158,11 @@ fi
 	fi
 # }
 
-
-# Visual mode in vi-mode, like in bash.
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
-
-
-# Enable help command for zsh functions.
-autoload -U run-help
-autoload run-help-git run-help-svn run-help-svk
-#unalias run-help
-alias help=run-help
-
-
 # Powerline {
 	if [ -d $POWERLINE_ROOT ]; then
 		source $POWERLINE_ROOT/bindings/zsh/powerline.zsh
 	fi
 # }
-
 
 # Start X if we're at vt1.
 # TODO start using systemd service when there is an official way of starting xorg in a user session.

@@ -1,7 +1,7 @@
 # Common shelll settings (used by at least my .bashrc and .zshrc)
 
 # Modeline {
-#	vi: foldmarker={,} filetype=sh foldmethod=marker foldlevel=4: tabstop=4 shiftwidth=4:
+#	vi: foldmarker={,} filetype=sh foldmethod=marker foldlevel=0: tabstop=4 shiftwidth=4:
 # }
 
 # Load utility functions.
