@@ -135,11 +135,12 @@
 
 " Plugins {{
 	" Load plugins.
-	loadplugins
+	" NOTE flashblock currently does not work (at least on soundcloud).
+	"loadplugins
 	" Enable flashblocking.
-	set flashblock
+	"set flashblock
 	" Use a whitelist.
-	set fbwhitelist=youtube.com,vimeo.com,maps.google.com,dsek.lth.se,dsek.se,facebook.com,tyda.se,howjsay.com,svtplay.se,playrapport.se,tv4play.se,kanal5play.se,fz.se,lifehacker.com,grooveshark.com,lth.se,lu.se,sydsvenskan.se,github.com,8bc.org,ekort.swedbank.se,imdb.com,bredbandskollen.se,loopia.se,last.fm,bankofamerica.com,play.google.com,soundcloud.com,mixing.dj,wikipedia.org,beatport.com,google.com/maps,zippyshare.com,dropbox.com,mixcloud.com,codeschool.com,play.spotify.com,dancingastronaut.com,sf.se,styrkeprogrammet.se
+	"set fbwhitelist=youtube.com,vimeo.com,maps.google.com,dsek.lth.se,dsek.se,facebook.com,tyda.se,howjsay.com,svtplay.se,playrapport.se,tv4play.se,kanal5play.se,fz.se,lifehacker.com,grooveshark.com,lth.se,lu.se,sydsvenskan.se,github.com,8bc.org,ekort.swedbank.se,imdb.com,bredbandskollen.se,loopia.se,last.fm,bankofamerica.com,play.google.com,soundcloud.com,mixing.dj,wikipedia.org,beatport.com,google.com/maps,zippyshare.com,dropbox.com,mixcloud.com,codeschool.com,play.spotify.com,dancingastronaut.com,sf.se,styrkeprogrammet.se
 
 	" FeedSomeKeys3 {{
 		"fmaps -u='mail\.google\.com/mail' c / j k n p e x s r a # [ ] ? gi gs gd ga gc
@@ -151,13 +152,3 @@
 " Source local {{
 	source! ~/.pentadactylrc.local
 " }}
-
-
-
-" Temporary fix to Tree Style Tab not taking full vertical space.
-" See https://code.google.com/p/dactyl/issues/detail?can=2&start=0&num=100&q=project%3ADactyl%2Cpentadactyl%20type%3ADefect%2CEnhancement&colspec=ID%20Type%20Status%20Priority%20Stars%20Owner%20Summary&groupby=&sort=&id=1196
-style -name tabbrowser-height-fix chrome://* <<EOM
-[dactyl-australis=true] .tabbrowser-tabs {
-    max-height:       unset !important;
-}
-EOM
