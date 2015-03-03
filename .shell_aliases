@@ -24,11 +24,15 @@
 		alias emptytrash='rm -rf ~/.local/share/Trash/info/* ~/.local/share/Trash/files/*'
 		;;
 	gnome)
-		alias open='gnome-open'					# Open files like in Nautilus.
+		alias open='gnome-open'								# Open files like in Nautilus.
 		alias xlogout='gnome-session-save --force-logout'	# Log out.
 		;;
+	mate)
+		alias open='mate-open'								# Open files like in Nautilus.
+		alias xlogout='mate-session-save --force-logout'	# Log out.
+		;;
 	openbox)
-		alias open='thunar'			# Open files.
+		alias open='thunar'					# Open files.
 		alias xlogout='openbox-logout'		# Log out.
 		;;
 	dwm)
