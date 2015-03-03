@@ -37,6 +37,9 @@ source $HOME/.shell_functions
 	# and the only pager.
 	export PAGER=less
 
+    # Current DE in use.
+	export DESKTYPE=dwm
+
 	# Source aliases.
 	sourceifexists $HOME/.shell_aliases
 
@@ -52,9 +55,6 @@ source $HOME/.shell_functions
 	else
 	    export BROWSER=w3m
 	fi
-
-    	# Current DE in use.
-	export DESKTYPE=dwm
 
 	if [ "$DESKTYPE" = "dwm" ]; then
 	    # Java does not know about dwm so GUI apps will not be displayed correctly (if at all).
