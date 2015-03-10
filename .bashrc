@@ -97,8 +97,4 @@ fi
 	fi
 # }
 
-# TODO only do if hostname == irvine
-# Start X if we're at vt1.
-# TODO start using systemd service when there is an official way of starting xorg in a user session.
-type startx >/dev/null 2>&1
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 && "$?" -eq 0 ]] && exec startx
+sourceifexists $HOME/.shell_startx
