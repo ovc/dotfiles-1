@@ -53,6 +53,8 @@
 	log = true
 [diff "odf"]
 	textconv = odt2txt
+[gerrit]
+	createChangeId = true
 ; Companies using proxy needs a proto rewrite (set env https?_proxy too).
 ;[url "https://"]
 	;insteadOf = git://
