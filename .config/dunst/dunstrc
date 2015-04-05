@@ -278,3 +278,8 @@
 	timeout = 4
 	background = "#b58900"
 	format = "%s %b"
+[spotify-announce]
+	appname = spotify_announce.py
+	timeout = 4
+	background = "#b58900"
+	format = "%s %b"
