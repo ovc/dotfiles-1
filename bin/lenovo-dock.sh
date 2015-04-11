@@ -5,7 +5,7 @@
 
 
 export DISPLAY=":0"
-export PULSE_RUNTIME_PATH=/run/user/100/pulse/		# Needed so pacmd can find the PID of pulseaudio.:W
+export PULSE_RUNTIME_PATH=/run/user/100/pulse/		# Needed so pacmd can find the PID of pulseaudio.
 
 notify() {
 	message="$1"
@@ -41,5 +41,3 @@ else
 	echo "Argument \"$1\" not recognized."
 	exit 2
 fi
-
-set +x
