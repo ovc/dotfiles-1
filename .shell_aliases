@@ -68,6 +68,7 @@
 		# Highligt matches when output is on the terminal.
 		#export GREP_OPTIONS='--color=always'
 
+		alias grep='grep --color=auto'
 		# Force color e.g. to use when piping to less.
 		alias grepc='grep --color=always'
 		alias fgrepc='fgrep --color=always'
