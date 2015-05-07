@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 # Toggle solarized between light and dark in vim and urxvt.
 
-storage=$HOME/.solarizetoggle
+storage=$HOME/.solarizedtoggle
 ! [ -d $storage ] && mkdir $storage
 
 statusfile=$storage/status

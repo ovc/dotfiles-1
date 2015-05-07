@@ -193,8 +193,8 @@
 	" Adjust colors to this background.
 	if has('gui_running')
 		set background=light
-	elseif filereadable(expand("~/.solarizetoggle/status"))
-		let &background = readfile(expand("~/.solarizetoggle/status"), '', 1)[0]
+	elseif filereadable(expand("~/.solarizedtoggle/status"))
+		let &background = readfile(expand("~/.solarizedtoggle/status"), '', 1)[0]
 	else
 		"set background=dark
 		" Lighter bg during night.

@@ -103,7 +103,7 @@ disallowedWindowOps: 20,21,SetXprop
 !#include "/home/erikw/.Xresources.solarized_urxvt"
 
 ! Set by solarizetoggle.sh.
-#include "/home/erikw/.solarizetoggle/Xresouces_theme"
+#include "/home/erikw/.solarizedtoggle/Xresouces_theme"
 
 #endif
 ! }
