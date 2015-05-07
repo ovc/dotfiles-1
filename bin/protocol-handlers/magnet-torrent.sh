@@ -43,7 +43,7 @@ if [ "$?" = 0 ]; then
 
 	# None goes to base directory.
 	if [ "$category" = "none" ]; then
-		category=""
+		category=
 	fi
 
 	if [ ! -z "${magnet_hash+dummy}" ]; then	# If $magnet_hash is not not set.

@@ -1,0 +1,4 @@
+#!/usr/bin/env
+# Wrapper around the classic 'vi with ack'.
+
+vim -p $(ack -l $*)
