@@ -1,5 +1,6 @@
 " Coding style for C++.
-setlocal tabstop=8		" Let a tab be 8 spaces wide.
+" NOTE for cpp, filetype c is first loaded.
+setlocal tabstop=8		" Tab width.
 setlocal shiftwidth=8		" Tab width for auto indent and >> shifting.
 setlocal textwidth=80		" Wrap after 80 chars.
-setlocal colorcolumn=80		" Show thw 80the column.
+setlocal colorcolumn=81		" Show thw 80the column.
