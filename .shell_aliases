@@ -178,7 +178,7 @@
 	alias mkcscope_c='find . -name "*.[ch]" > cscope.files'	# Gen cscope file for C programs.
 
 	alias axis-proxy='ssh axis -L 8080:wwwproxy.se.axis.com:3128 -N'		# Start SSH tunnel web proxy to Axis.
-	alias chromium-axis='chromium --proxy-server="http://localhost:8080"'	# Starts Chromium that uses Axis proxy tunnel.
+	alias chromium-axisproxy='chromium --proxy-server="http://localhost:8080"'	# Starts Chromium that uses Axis proxy tunnel.
 
 	# Stop limiting battery charge level.
 	alias lenovo-charge='sudo tpacpi-bat -s stopThreshold 0 99'
