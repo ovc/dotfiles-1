@@ -2,7 +2,7 @@
 # Control the volume with a nice notification.
 
 scriptname=${0##*/}
-usage="usage: ${scriptname} -c {up|down|mute} [-i increment] [-m mixer]"
+usage="Usage: ${scriptname} -c {up|down|mute} [-i increment] [-m mixer]"
 increment="5%"
 mixer="Master"
 
