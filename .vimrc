@@ -20,6 +20,7 @@
 	"}
 
 	" Github {
+		"Plugin 'Rip-Rip/clang_complete'
 		"Plugin 'maxbrunsfeld/vim-yankstack'
 		"Plugin 'mbbill/undotree'
 		"Plugin 'mhinz/vim-startify'
@@ -28,7 +29,6 @@
 		"Plugin 'tpope/vim-unimpaired'
 		Plugin 'LaTeX-Box-Team/LaTeX-Box'
 		Plugin 'MarcWeber/vim-addon-mw-utils'
-		Plugin 'Rip-Rip/clang_complete'
 		Plugin 'Rykka/lastbuf.vim'
 		Plugin 'Townk/vim-autoclose'
 		Plugin 'altercation/vim-colors-solarized'
