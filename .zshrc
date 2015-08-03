@@ -36,6 +36,8 @@ fi
     	# Completing process IDs with menu selection:
 	zstyle ':completion:*:*:kill:*' menu yes select
 	zstyle ':completion:*:kill:*'   force-list always
+	# Style if no matching completion is found.
+	zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
 
 	# Complete options for aliases too.
 	setopt completealiases
