@@ -132,6 +132,15 @@
 	alias -- -='popd'
 # }
 
+# Libreoffice {
+	alias lbase='libreoffice --base'			# Writer.
+	alias lcalc='libreoffice --calc'			# Calc.
+	alias ldraw='libreoffice --draw'			# Draw.
+	alias limpress='libreoffice --impress'		# Impress.
+	alias lmath='libreoffice --math'			# Math.
+	alias lwriter='libreoffice --writer'		# Writer.
+# }
+
 # Program enhancements {
 	alias emacs='emacs --no-window-system'			# Emacs belongs to the terminal.
 	alias mvim='mvim -v'							# MacVim.
