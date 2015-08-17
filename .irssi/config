@@ -467,6 +467,10 @@ ignores = (
     level = "NOTICES SNOTES";
     channels = ( "##linux", "#vim", "#tmux", "#archlinux" );
     network = "freenode";
+  },
+  {
+    mask = "*!archlinux-unregistered@chat.freenode.net";
+    level = "ALL";
   }
 );
 hilights = (
