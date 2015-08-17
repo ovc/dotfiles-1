@@ -13,6 +13,6 @@ if [ -f $HOME/.shell_profile ]; then
 fi
 
 # Source bashrc. Most of the settings there are relevant also for login shells.
-if [ -f $HOME/.bashrc ]; then
+if [ -n "$BASH" ] && [ -f $HOME/.bashrc ]; then
     source $HOME/.bashrc
 fi
