@@ -28,6 +28,7 @@
 	diffc = diff --cached
 	dic = diff --cached
 	desc= describe
+	desc0= describe --abbrev=0
 	h = help
 	cp = cherry-pick
 	ft = fetch
