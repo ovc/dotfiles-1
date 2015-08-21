@@ -24,28 +24,29 @@
 	ci = commit
 	cl = clone
 	co = checkout
-	di = diff
-	diffc = diff --cached
-	dic = diff --cached
-	desc= describe
-	desc0= describe --abbrev=0
-	h = help
 	cp = cherry-pick
+	desc0= describe --abbrev=0
+	desc= describe
+	di = diff
+	dic = diff --cached
+	diffc = diff --cached
 	ft = fetch
-	pu = push
+	gvimerge = mergetool -t gvimdiff
+	h = help
 	l = log
 	log1 = log --pretty=oneline
 	logs = log --stat
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	ls = ls-files
+	mb = merge-base
+	pu = push
 	rb = rebase
 	st = status
 	stat = status
-	svn-status = diff --name-status remotes/git-svn
 	sub = submodule
+	svn-status = diff --name-status remotes/git-svn
 	vimerge = mergetool -t vimdiff
-	gvimerge = mergetool -t gvimdiff
 [credential]
 	helper = cache
 [push]
