@@ -106,11 +106,13 @@ fi
 # }
 
 # Bindings {
-	bindkey -v				# vi command editing mode.
-	export KEYTIMEOUT=1			# Set ESC to normal mode timout to 10 ms.
+	bindkey -v								# vi command editing mode.
+	export KEYTIMEOUT=1						# Set ESC to normal mode timout to 10 ms.
 	bindkey '^[[Z' reverse-menu-complete	# Reverse select on shift tab in completion menu.
-	bindkey "\ep"  insert-last-word		# Insert !$ with Alt-p.
-	bindkey ' ' magic-space			# Expand !-commands on space.
+	bindkey "\ep"  insert-last-word			# Insert !$ with Alt-p.
+	bindkey ' ' magic-space					# Expand !-commands on space.
+	bindkey "^R" history-beginning-search-backward # Complete from history with prefix
+	bindkey "^S" history-beginning-search-forward # Complete from history with prefix
 
 	# Enable char deleteion on command from history.
 	bindkey "^?" backward-delete-char
