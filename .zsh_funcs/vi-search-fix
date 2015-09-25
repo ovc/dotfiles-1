@@ -4,5 +4,6 @@
 
 vi-search-fix() {
 	zle vi-cmd-mode
-	zle .vi-history-search-backward
+	#zle .vi-history-search-backward
+	zle .history-incremental-search-backward
 }
