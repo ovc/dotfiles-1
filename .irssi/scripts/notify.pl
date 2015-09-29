@@ -45,7 +45,10 @@ sub notify {
 	#" string:'" . $message . "'";
 
     # Above command stoped working since ~/bin/notify-listener.py is b0rken. Use legacy notify-send instead,
-    my $cmd = "EXEC - notify-send --app-name 'irssi_notify.pl' 'irssi: $summary' '$message'";
+    #my $cmd = "EXEC - notify-send --app-name 'irssi_notify.pl' 'irssi: $summary' '$message'";
+    # Transient makes the notification to not stack up in gmome3
+    my $cmd = "EXEC - notify-send --hint=int:transient:1 --app-name 'irssi_notify.pl' 'irssi: $summary' '$message'";
+
 
     $server->command($cmd);
 
