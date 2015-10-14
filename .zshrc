@@ -52,7 +52,8 @@ fi
 	export HISTFILE=~/.zsh_histfile		# Where to save history.
 	export HISTSIZE=100000
 	export SAVEHIST=10000
-	export HISTIGNORE="poweroff:reboot:[bf]g:nano"
+	# Patterns to exclue. Separate with |. *-matching.
+	export HISTORY_IGNORE="poweroff|reboot|halt|shutdown|xlogout"
 
 	setopt appendhistory		# Append to history write on exit, don't overwrite.
 	setopt histignoredups		# Don't save immediate duplicates lines in history.

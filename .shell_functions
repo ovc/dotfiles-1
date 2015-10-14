@@ -5,7 +5,7 @@
 sourceifexists() {
 	[ -f "$1" ] && [ -r "$1" ] && . "$1"
 }
-export -f sourceifexists >/dev/null
+export sourceifexists >/dev/null
 
 cdw() {
 	local prog="$1"
@@ -18,7 +18,7 @@ cdw() {
 		cd "$dir"
 	fi
 }
-export -f cdw >/dev/null
+export cdw >/dev/null
 $completion_func -cf cdw
 
 # Time conversions.
@@ -26,10 +26,10 @@ epoch2iso8601() {
     local epoch="$1"
     date -d @$epoch +%Y-%m-%dT%H:%M:%S%z
 }
-export -f epoch2iso8601 >/dev/null
+export epoch2iso8601 >/dev/null
 
 iso86012epoch() {
     local iso="$1"
     date -d "$iso" +%s
 }
-export -f iso86012epoch >/dev/null
+export iso86012epoch >/dev/null
