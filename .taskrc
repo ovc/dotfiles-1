@@ -39,3 +39,15 @@ report.sequential.description=Erikw's custom sequentical report.
 report.sequential.columns=id,project,tags,priority,due,description
 report.sequential.filter=status:pending
 report.sequential.sort=id+
+
+# Tasks due today
+report.today.description=Due today
+report.today.columns=id,project,tags,priority,due,description
+report.today.filter=status:pending due:today
+report.today.sort=id+
+
+# Tasks due tomorrow
+report.tomorrow.description=Due tomorrow
+report.tomorrow.columns=id,project,tags,priority,due,description
+report.tomorrow.filter=status:pending due:tomorrow
+report.tomorrow.sort=id+
