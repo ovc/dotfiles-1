@@ -108,8 +108,6 @@
 	map -builtin <C-/> :nohlfind<CR>
 	" I need no help.
 	map <F1> <NOP>
-	" Open Tab Groups.
-	map E <C-S-e>
 	" Open downloads.
 	nmap -builtin <A-d> :downloads<CR>
 

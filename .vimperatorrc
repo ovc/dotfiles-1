@@ -113,8 +113,6 @@
 	cnoremap <C-N> <Down>
 	" Unhighlight search results.
 	map <C-/> :nohlsearch<CR>
-	" Open Tab Groups.
-	map E <C-S-e>
 " }}
 
 " Quickmarks {{
