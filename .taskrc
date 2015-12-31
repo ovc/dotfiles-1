@@ -1,7 +1,7 @@
 # Erik Westrup's taskwarrior configuration.
 
 # Files
-data.location=/home/erikw/.task		# Where all data is to be saved.
+data.location=~/.task			# Where all data is to be saved.
 editor=vim				# Preferred text editor
 search.case.sensitive=no		# Setting to no allows case insensitive searches
 default.command=list			# When no arguments are specified
@@ -51,3 +51,11 @@ report.tomorrow.description=Due tomorrow
 report.tomorrow.columns=id,project,tags,priority,due,description
 report.tomorrow.filter=status:pending due:tomorrow
 report.tomorrow.sort=id+
+
+#Inthe.AM sync
+taskd.certificate=~/.task/certs/intheam/private.certificate.pem
+taskd.key=~/.task/certs/intheam/private.key.pem
+taskd.ca=~/.task/certs/intheam/ca.cert.pem
+taskd.server=taskwarrior.inthe.am:53589
+taskd.credentials=GIT-CENSORED
+taskd.trust=ignore hostname

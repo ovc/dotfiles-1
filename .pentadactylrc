@@ -129,6 +129,7 @@
 	silent qmark L https://lifesum.com/
 	silent qmark r https://cloud.feedly.com/
 	silent qmark s https://internetbank.swedbank.se/bviPrivat/privat?ns=1
+	silent qmark p https://getpocket.com/
 " }}
 
 " Plugins {{

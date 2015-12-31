@@ -95,7 +95,8 @@
 	noremap J gt
 	noremap <Right> gt
 	" Quick word lookup from selection.
-	nmap <silent> ` Y:!xclip -o | sed 's/[^a-zA-Z]\+/ /g' | xclip -i <CR> :tabopen t <S-insert><CR>
+	"nmap <silent> ` Y:!xclip -o | sed 's/[^a-zA-Z]\+/ /g' | xclip -i <CR> :tabopen t <S-insert><CR>
+	nmap <silent> ` Y:!xclip -o | sed 's/[^a-zA-Z]\+/ /g' | xclip -i <CR> :tabopen t <C-v><CR>
 	" Escape from Firefox search in insert mode.
 	" Disable annoying Google search.
 	nmap <C-k> <Nop>
@@ -125,6 +126,7 @@
 	silent qmark L https://lifesum.com/
 	silent qmark r https://cloud.feedly.com/
 	silent qmark s https://internetbank.swedbank.se/bviPrivat/privat?ns=1
+	silent qmark p https://getpocket.com/
 " }}
 
 " Plugins {{
