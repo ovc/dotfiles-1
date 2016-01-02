@@ -31,6 +31,7 @@
 		Plugin 'MarcWeber/vim-addon-mw-utils'
 		Plugin 'Rykka/lastbuf.vim'
 		Plugin 'Townk/vim-autoclose'
+		Plugin 'airblade/vim-gitgutter'
 		Plugin 'altercation/vim-colors-solarized'
 		Plugin 'bkad/CamelCaseMotion'
 		Plugin 'erikw/snipmate-snippets'
