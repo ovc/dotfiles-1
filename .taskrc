@@ -53,9 +53,9 @@ report.tomorrow.filter=status:pending due:tomorrow
 report.tomorrow.sort=id+
 
 #Inthe.AM sync
-taskd.certificate=~/.task/certs/intheam/private.certificate.pem
-taskd.key=~/.task/certs/intheam/private.key.pem
-taskd.ca=~/.task/certs/intheam/ca.cert.pem
-taskd.server=taskwarrior.inthe.am:53589
-taskd.credentials=GIT-CENSORED
-taskd.trust=ignore hostname
+#taskd.certificate=~/.task/certs/intheam/private.certificate.pem
+#taskd.key=~/.task/certs/intheam/private.key.pem
+#taskd.ca=~/.task/certs/intheam/ca.cert.pem
+#taskd.server=taskwarrior.inthe.am:53589
+#taskd.credentials=GIT-CENSORED
+#taskd.trust=ignore hostname
