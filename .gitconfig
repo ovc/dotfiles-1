@@ -22,6 +22,7 @@
 [alias]
 	br = branch
 	ci = commit
+	cia = commit --amend
 	cl = clone
 	co = checkout
 	cp = cherry-pick
