@@ -122,6 +122,11 @@ source $HOME/.shell_functions
 		PATH="$PATH:$HOME/.dotfiles/bin"
 	fi
 
+	# cloc.pl
+	if [ -d "$HOME/src/cloc" ]; then
+		PATH="$PATH:$HOME/src/cloc"
+	fi
+
 	# lastfm-mpd-cli
 	if [ -d "$HOME/src/lastfm-mpd-cli/" ]; then
 		PATH="$PATH:$HOME/src/lastfm-mpd-cli/"
