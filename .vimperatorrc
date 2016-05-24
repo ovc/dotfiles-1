@@ -96,7 +96,8 @@
 	noremap <Right> gt
 	" Quick word lookup from selection.
 	"nmap <silent> ` Y:!xclip -o | sed 's/[^a-zA-Z]\+/ /g' | xclip -i <CR> :tabopen t <S-insert><CR>
-	nmap <silent> ` Y:!xclip -o | sed 's/[^a-zA-Z]\+/ /g' | xclip -i <CR> :tabopen t <C-v><CR>
+	"nmap <silent> ` Y:!xclip -o | sed 's/[^a-zA-Z]\+/ /g' | xclip -i <CR> :tabopen t <C-v><CR>
+	nmap <silent> ` Y:tabopen t "<C-v>"<CR>
 	" Escape from Firefox search in insert mode.
 	" Disable annoying Google search.
 	nmap <C-k> <Nop>

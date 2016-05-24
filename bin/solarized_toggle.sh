@@ -13,6 +13,7 @@ xres_light=$HOME/.Xresources.solarized_light
 set_xrdb() {
 	xrdb -load $xres
 }
+
 set_dark() {
 	echo dark | tee $statusfile
 	if  [ -n $DISPLAY ];  then
