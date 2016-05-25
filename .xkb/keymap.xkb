@@ -16,12 +16,11 @@ xkb_keymap "erikwkbrd" {
 	// hacks: My remaps inc. Caps Lock to Pause.
 	// inet(evdev): Standard aux keys.
 	// group(switch): Toggle layouts (us,sv) when ralt is pressed.
-	// group(menu_toggle): Toggle language on menu key when pressed.
-	// group(toggle): Toggle language on click. toggle=ralt. All options defined in /usr/share/X11/xkb/rules/base.lst, search for "grp:.*_toggle".
+	// group(menu_toggle): Toggle language on menu key (en->sv->de->en...).
 	// capslock(escape): Make Caps Lock and additonal Escape.
 	// compose(rwin): Make rwin the compose key.
 	// terminate(ctrl_alt_bksp): Restart X server.
-	xkb_symbols   { include "pc+us(basic)+se(basic):2+de(basic):3+hacks+inet(evdev)+group(switch)+group(menu_toggle)+group(toggle)+capslock(escape)+compose(rwin)+terminate(ctrl_alt_bksp)" };
+	xkb_symbols   { include "pc+us(basic)+se(basic):2+de(basic):3+hacks+inet(evdev)+group(switch)+group(menu_toggle)+capslock(escape)+compose(rwin)+terminate(ctrl_alt_bksp)" };
 
 	xkb_geometry  { include "pc(pc104)" };
 };
