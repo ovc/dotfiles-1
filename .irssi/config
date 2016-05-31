@@ -193,7 +193,6 @@ channels = (
   { name = "#taskwarrior"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#blausoffan"; chatnet = "efnet"; autojoin = "yes"; },
   { name = "#dwww"; chatnet = "efnet"; autojoin = "yes"; },
-  { name = "#robot"; chatnet = "efnet"; autojoin = "yes"; }
 );
 
 aliases = {
