@@ -186,11 +186,10 @@ chatnets = {
 
 channels = (
   { name = "##kodapor"; chatnet = "freenode"; autojoin = "yes"; },
-  #{ name = "#archlinux"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#archlinux"; chatnet = "freenode"; autojoin = "no"; },
   { name = "##linux"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#tmux"; chatnet = "freenode"; autojoin = "yes"; },
   { name = "#vim"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#taskwarrior"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#taskwarrior"; chatnet = "freenode"; autojoin = "no"; },
   { name = "#blausoffan"; chatnet = "efnet"; autojoin = "yes"; },
   { name = "#dwww"; chatnet = "efnet"; autojoin = "yes"; },
 );
@@ -400,7 +399,7 @@ settings = {
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
     bell_beeps = "yes";
     hilight_act_color = "%G";
-    activity_hide_targets = "= ##linux #vim #tmux #archlinux &bitlbee -psyBNC";
+    activity_hide_targets = "= ##linux #vim #archlinux &bitlbee -psyBNC";
     #theme = "colors/default";
     #hilight_color = "%B";
     theme = "colors/solarized-universal";
@@ -464,7 +463,7 @@ ignores = (
   },
   {
     level = "NOTICES SNOTES";
-    channels = ( "##linux", "#vim", "#tmux", "#archlinux" );
+    channels = ( "##linux", "#vim", "#archlinux" );
     network = "freenode";
   },
   {
