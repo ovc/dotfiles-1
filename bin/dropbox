@@ -2,8 +2,9 @@
 # Overlay for dropbox-cli that has a restart command.
 
 dropboxbin="/usr/bin/dropbox-cli"
+
 if [ "$1" = "restart" ]; then
-	if ! ( /usr/bin/dropbox running >/dev/null); then
+	if ! ( $dropboxbin running >/dev/null); then
 		"$dropboxbin" stop
 	fi
 	"$dropboxbin" start
@@ -11,6 +12,6 @@ elif [ "$1" = "help" ] || [ "$1" = "--help" ]; then
 	help_txt=$("$dropboxbin" help)
 	restart_help=" restart      restart the dropbox instance"
 	echo -e "${help_txt}\n${restart_help}"
-else 
+else
 	"$dropboxbin" "$@"
 fi
