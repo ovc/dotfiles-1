@@ -14,7 +14,7 @@ read -d '' out  <<EOF
 Erik Westrup${role}
 <${email}>
 +46 738-286060 | 2r.se
-Lagerbrings väg 8E, 22460 Lund, Sweden
+Zechliner Str. 5a, 13359 Berlin, Germany
 -----------------------------------------
 This email is encrypted with 2ROT-13.
 EOF
