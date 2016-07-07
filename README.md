@@ -10,7 +10,7 @@ Most of my personal dotfiles can be found in this branch. I use dfm (dot file ma
 # Installation
 
 ```bash
-$ git clone git://github.com/erikw/dotfiles.git ~/.dotfiles
+$ git clone git@github.com:erikw/dotfiles.git ~/.dotfiles
 $ cd !$
 $ git submodule init
 $ git submodule update
