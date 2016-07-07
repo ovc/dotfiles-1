@@ -14,7 +14,7 @@ $ git clone git://github.com/erikw/dotfiles.git ~/.dotfiles
 $ cd !$
 $ git submodule init
 $ git submodule update
-$ dfm install
+$ bin/dfm install
 ```
 
 Switch to a local branch for secret changes:
