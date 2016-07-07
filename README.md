@@ -17,11 +17,18 @@ $ git submodule update
 $ dfm install
 ```
 
+Switch to a local branch for secret changes:
+
+```bash
+$ git checkout -b local
+```
+
 Passwords and other secretes are censored. To find these and substitue them for the real thing, do
 
 ```bash
 $ grep -nr GIT-CENSORED .
 ```
+
 
 ## Vim
 
