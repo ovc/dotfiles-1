@@ -120,7 +120,7 @@
 " }}
 
 " Quickmarks {{
-	silent qmark c https://www.google.com/contacts
+	silent qmark c https://contacts.google.com/
 	silent qmark d http://www.dsek.lth.se/
 	silent qmark f http://www.facebook.com/
 	silent qmark g https://github.com/
