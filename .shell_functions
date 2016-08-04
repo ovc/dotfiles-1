@@ -19,7 +19,7 @@ cdw() {
 	fi
 }
 export cdw >/dev/null
-$completion_func -cf cdw
+[ -n "$completion_func" ] && $completion_func -cf cdw
 
 # Time conversions.
 epoch2iso8601() {
@@ -33,3 +33,17 @@ iso86012epoch() {
     date -d "$iso" +%s
 }
 export iso86012epoch >/dev/null
+
+# Shell detect functions {
+	export SHELL_PLATFORM='unknown'
+	ostype() { echo $OSTYPE | tr '[A-Z]' '[a-z]'; }
+	case "$(ostype)" in
+		*'linux'*	) SHELL_PLATFORM='linux'	;;
+		*'darwin'*	) SHELL_PLATFORM='osx'		;;
+		*'bsd'*		) SHELL_PLATFORM='bsd'		;;
+	esac
+
+	shell_is_linux() { [ "$SHELL_PLATFORM" = 'linux' ]; }
+	shell_is_osx()   { [ "$SHELL_PLATFORM" = 'osx' ]; }
+	shell_is_bsd()   { [ "$SHELL_PLATFORM" = 'bsd' ] || [ "$SHELL_PLATFORM" = 'osx' ]; }
+# }

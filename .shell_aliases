@@ -40,6 +40,7 @@
 		alias afk='slimlock'
 		;;
 	osx)
+		unalias open
 		# Enable or disable the Dashboard.
 		alias mac_dashboard_enable='defaults write com.apple.dashboard mcx-disabled -boolean NO'
 		alias mac_dashboard_disable='defaults write com.apple.dashboard mcx-disabled -boolean YES'
@@ -55,15 +56,18 @@
 # }
 
 # Color support {
-	ls_options="--time-style=long-iso -F"
+	ls_options=
+	shell_is_linux && ls_options="--time-style=long-iso -F"
 	if [ "$TERM" != "dumb" ] && type dircolors &>/dev/null; then
-		eval "`dircolors -b`"
-		# Colors when output is terminal.
-		alias ls="ls ${ls_options} --color=auto"
-		# Force colors to all stdouts.
-		alias ls="ls ${ls_options} --color=always"
-		#alias dir='ls --color=auto --format=vertical'
-		#alias vdir='ls --color=auto --format=long'
+		if shell_is_linux; then
+			eval "`dircolors -b`"
+			# Colors when output is terminal.
+			alias ls="ls ${ls_options} --color=auto"
+			# Force colors to all stdouts.
+			alias ls="ls ${ls_options} --color=always"
+			#alias dir='ls --color=auto --format=vertical'
+			#alias vdir='ls --color=auto --format=long'
+		fi
 
 		# Highligt matches when output is on the terminal.
 		#export GREP_OPTIONS='--color=always'
@@ -225,4 +229,5 @@
 	# ZO RELAXEN
 	alias blinkenlichten='while true; do xset led 3; sleep 0.2s; xset -led 3; sleep 0.3s; done'
 	alias cursh="ps -p \$\$ | tail -1 | awk '{print \$NF}'"		# Current shell.
+	alias git-root='cd $(git rev-parse --show-cdup)'		# Go to the root of a git.
 # }

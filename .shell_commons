@@ -11,7 +11,7 @@ source $HOME/.shell_functions
 	# Include system binaries.
 	PATH="$PATH:/sbin:/usr/sbin"
 	# Include binaries in home directory.
-	PATH="$HOME/bin/:$PATH"
+	PATH="$HOME/bin:$PATH"
 
 	# Set common bin paths.
 	#PATH=${PATH}:$(find ~/bin -maxdepth 2 -type d | tr '\n' ':' | sed 's/:$//')
@@ -38,13 +38,17 @@ source $HOME/.shell_functions
 	export PAGER=less
 
     # Current DE in use.
-	export DESKTYPE=dwm
+	if shell_is_osx; then
+		export DESKTYPE=osx
+	else
+		export DESKTYPE=dwm
+	fi
 
 	# Source aliases.
 	sourceifexists $HOME/.shell_aliases
 
 	# Let others know what underlying terminal emulator is used. This is needed since $TERM does not always represent the real terminal e.g. in tmux when you want colors.
-	export TERMEMU=urxvt
+	shell_is_linux && export TERMEMU=urxvt
 
 	# Enable forward history search with ^s
 	#stty stop ""
@@ -72,11 +76,15 @@ source $HOME/.shell_functions
 
 # UI {
     # Solarized ls colors.
-    dircolorstheme=$HOME/src/dircolors-solarized/dircolors.256dark
-    if [ -f $dircolorstheme ]; then
-	    eval `dircolors $dircolorstheme`
-    elif [ -f "$HOME/.dircolorsrc" ]; then
-	    eval `dircolors $HOME/.dircolorsrc`
+    if shell_is_linux; then
+    	dircolorstheme=$HOME/src/dircolors-solarized/dircolors.256dark
+    	if [ -f $dircolorstheme ]; then
+	    	eval `dircolors $dircolorstheme`
+    	elif [ -f "$HOME/.dircolorsrc" ]; then
+	    	eval `dircolors $HOME/.dircolorsrc`
+    	fi
+    elif shell_is_osx; then
+    	export CLICOLOR=1
     fi
 
     # Use colorful terminal.
@@ -161,9 +169,12 @@ source $HOME/.shell_functions
 	fi
 
 	# Go
-    	export GOPATH="$HOME/src/godeps/:$HOME/dev/go"
-    	export GOROOT="$HOME/src/go"
-    	PATH="$HOME/src/godeps/bin/:$HOME/dev/go/bin:$GOROOT/bin:$GOROOT/pkg/tool/linux_amd64:$PATH"
+    export GOPATH="$HOME/src/godeps/:$HOME/dev/go"
+    export GOROOT="$HOME/src/go"
+	type go >/dev/null 2>&1
+	if [ $? -eq 0 ]; then
+    	PATH="$HOME/src/godeps/bin:$HOME/dev/go/bin:$GOROOT/bin:$GOROOT/pkg/tool/linux_amd64:$PATH"
+    fi
 
 	# less {
 		# Syntax highlighting for less with src-highlight.
@@ -182,12 +193,17 @@ source $HOME/.shell_functions
 	# }
 
 	# Powerline plugin.
-	export POWERLINE_ROOT=/usr/lib/python2.7/site-packages/powerline
 	type powerline-daemon >/dev/null 2>&1
 	if [ $? -eq 0 ]; then
+		if shell_is_osx; then
+			export POWERLINE_ROOT=$HOME/Library/Python/2.7/lib/python/site-packages/powerline
+			export LC_ALL=en_US.UTF-8
+			export LANG=en_US.UTF-8
+		else
+			export POWERLINE_ROOT=/usr/lib/python2.7/site-packages/powerline
+		fi
 		powerline-daemon -q
 	fi
-
 
 	# Android SDK
 	if [ -d "$HOME/src/android-sdk-linux/" ]; then
@@ -203,4 +219,16 @@ source $HOME/.shell_functions
 		eval $(perl -I $perl_local/lib/perl5/ -Mlocal::lib=$perl_local)
 	fi
 
+	# OSX python
+	if [ -d $HOME/Library/Python/2.7/bin ]; then
+		export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+	fi
+
+	# Virtualenvwrapper
+	# TODO if_osx()? which path does linux have?
+	if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
+		source /usr/local/bin/virtualenvwrapper.sh
+		export WORKON_HOME=$HOME/.virtualenvs
+		export PROJECT_HOME=$HOME/dev
+	fi
 # }

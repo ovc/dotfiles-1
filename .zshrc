@@ -39,6 +39,10 @@ fi
 	# Style if no matching completion is found.
 	zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
 
+	# Use colors in tabcompletion
+	# TODO does this work good in Linux too? or wrap in shell_is_osx?
+	zstyle ':completion:*:default' list-colors ''
+
 	# Complete options for aliases too.
 	setopt completealiases
 	# List files when cd-completing.
@@ -70,8 +74,14 @@ fi
 	#prompt suse	# Prompt theme.
 
 	# Fish like syntax highlighting on command line.
-	if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-		source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	zsh_syntax_path=
+	if shell_is_linux; then
+		zsh_syntax_path=/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	elif shell_is_osx; then
+		zsh_syntax_path=/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	fi
+	if [ -n "$zsh_syntax_path" ] && [ -f $zsh_syntax_path ]; then
+		source $zsh_syntax_path
 	fi
 # }
 

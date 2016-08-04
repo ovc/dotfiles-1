@@ -1,6 +1,6 @@
 # Dotfiles
 
-Most of my personal dotfiles can be found in this branch. I use dfm (dot file manager) to install and managed the dotfiles. See [ justone/dotfiles ](https://github.com/justone/dotfiles) for details on how to use it.
+Most of my personal dotfiles can be found in this branch. I use dfm (dot file manager) to install and managed the dotfiles. See [justone/dotfiles](https://github.com/justone/dotfiles) for details on how to use it.
 
 # Highlights
 
@@ -29,6 +29,9 @@ Passwords and other secretes are censored. To find these and substitue them for 
 $ grep -nr GIT-CENSORED .
 ```
 
+## General
+
+* [altercation/solarized](https://github.com/altercation/solarized)
 
 ## Vim
 
@@ -40,15 +43,17 @@ $ vim -c BundleInstall
 
 Install: 
 
- * https://github.com/powerline/powerline
+ * [powerline](https://github.com/powerline/powerline)
  * urlview(1)
- * https://github.com/tmux-plugins/tpm Then reload tmux.conf and press `prefix-I`.
+ * [tpm](https://github.com/tmux-plugins/tpm) Then reload tmux.conf and press `prefix-I`.
+ * [seebi/tmux-colors-solarized](https://github.com/seebi/tmux-colors-solarized)
+ * `brew install reattach-to-user-namespace` if on OSX
 
 ## ZSH/Bash
 
 Install for both:
- * https://github.com/seebi/dircolors-solarized
+ * [seebi/dircolors-solarized](https://github.com/seebi/dircolors-solarized)
  * https://www.gnu.org/software/src-highlite/source-highlight.html
+ * [flavio/jump](https://github.com/flavio/jump)
 
 Install for ZSH:
- * https://github.com/flavio/jump
