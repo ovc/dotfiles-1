@@ -96,9 +96,6 @@ source $HOME/.shell_functions
 # }
 
 # Programs {
-	# Set git overlay
-	sourceifexists $HOME/bin/git
-
 	# Ruby version manager. Adds installed gems to PATH.
 	if [ -f "$HOME/.rvm/scripts/rvm" ]; then
 	    source $HOME/.rvm/scripts/rvm

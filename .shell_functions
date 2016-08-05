@@ -47,3 +47,13 @@ export iso86012epoch >/dev/null
 	shell_is_osx()   { [ "$SHELL_PLATFORM" = 'osx' ]; }
 	shell_is_bsd()   { [ "$SHELL_PLATFORM" = 'bsd' ] || [ "$SHELL_PLATFORM" = 'osx' ]; }
 # }
+
+# Git overlay which adds a command to cd to git root.
+git() {
+	local gitbin=/usr/bin/git
+	if [ "$1"  = root ]; then
+		cd $($gitbin rev-parse --show-cdup)
+	else
+		$gitbin $*
+	fi
+}
