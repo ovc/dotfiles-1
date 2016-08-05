@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+gitbin=/usr/bin/git
+
+git() {
+	if [ "$1"  = root ]; then
+		cd $($gitbin rev-parse --show-cdup)
+	else
+		$gitbin $*
+	fi
+}
