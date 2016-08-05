@@ -5,6 +5,8 @@ source $HOME/.shell_functions
 
 if shell_is_linux; then
 	host=$(hostname --short)
+elif shell_is_osx; then
+	host=$(hostname -s)
 else
 	host=$(hostname)
 fi
