@@ -225,9 +225,9 @@ source $HOME/.shell_functions
 	fi
 
 	# Virtualenvwrapper
-	# TODO if_osx()? which path does linux have?
-	if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
-		source /usr/local/bin/virtualenvwrapper.sh
+	shell_is_osx && virtenv_path=/usr/local/bin/virtualenvwrapper.sh || virtenv_path=/usr/bin/virtualenvwrapper_lazy.sh
+	if [ -e $virtenv_path ]; then
+		source $virtenv_path
 		export WORKON_HOME=$HOME/.virtualenvs
 		export PROJECT_HOME=$HOME/dev
 	fi

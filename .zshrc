@@ -40,8 +40,7 @@ fi
 	zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
 
 	# Use colors in tabcompletion
-	# TODO does this work good in Linux too? or wrap in shell_is_osx?
-	zstyle ':completion:*:default' list-colors ''
+	shell_is_osx && zstyle ':completion:*:default' list-colors ''
 
 	# Complete options for aliases too.
 	setopt completealiases

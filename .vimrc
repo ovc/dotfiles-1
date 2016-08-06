@@ -56,6 +56,7 @@
 		Plugin 'sjl/gundo.vim'
 		Plugin 'suan/vim-instant-markdown'
 		Plugin 'tmhedberg/matchit'
+		Plugin 'tmux-plugins/vim-tmux'
 		Plugin 'tomtom/tlib_vim'
 		Plugin 'tpope/vim-fugitive'
 		Plugin 'tpope/vim-markdown.git'
