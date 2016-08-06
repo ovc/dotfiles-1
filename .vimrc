@@ -7,13 +7,16 @@
 
 " Vundle {
 	let s:using_vundle = 1		" Vundle will break default behaviour of spellfile. Let others know when using Vundle.
-	set nocompatible		" Be IMproved.
-	filetype off			" Required!
-	set rtp+=~/.vim/bundle/vundle/
-	call vundle#rc()
 
-	" Let Vundle manage Vundle, required!
-	Plugin 'gmarik/vundle'
+	set nocompatible              " be iMproved, required
+	filetype off                  " required
+
+	" set the runtime path to include Vundle and initialize
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
+
+	" let Vundle manage Vundle, required
+	Plugin 'VundleVim/Vundle.vim'
 
 	" Git {
 		"Plugin 'git://git.wincent.com/command-t.git'
@@ -58,6 +61,7 @@
 		Plugin 'tmhedberg/matchit'
 		Plugin 'tmux-plugins/vim-tmux'
 		Plugin 'tomtom/tlib_vim'
+		Plugin 'tpope/vim-capslock'
 		Plugin 'tpope/vim-fugitive'
 		Plugin 'tpope/vim-markdown.git'
 		Plugin 'tpope/vim-repeat'
@@ -81,14 +85,14 @@
 		Plugin 'argtextobj.vim'
 		Plugin 'autoload_cscope.vim'
 		Plugin 'buffergrep'
-		Plugin 'capslock.vim'
 		Plugin 'ingo-library'
 		Plugin 'last_edit_marker.vim'
 		Plugin 'lbdbq'
 		Plugin 'rename.vim'
 	"}
 
-	filetype plugin indent on     " Required!
+	call vundle#end()            " required
+	filetype plugin indent on    " required
 " }
 
 " Environment {
