@@ -72,6 +72,7 @@
 
 	" Github, vim-scripts.org {
 		"Plugin 'LanguageTool'
+		"Plugin 'TaskList.vim'
 		"Plugin 'OmniCppComplete' " Incompaitble with clang_complete.
 		"Plugin 'taglist.vim'
 		Plugin 'AutoTag'
@@ -81,7 +82,6 @@
 		Plugin 'FuzzyFinder'
 		Plugin 'L9'
 		Plugin 'Rename'
-		Plugin 'TaskList.vim'
 		Plugin 'argtextobj.vim'
 		Plugin 'autoload_cscope.vim'
 		Plugin 'buffergrep'
