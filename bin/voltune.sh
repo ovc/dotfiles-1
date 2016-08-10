@@ -34,7 +34,7 @@ shift $(($OPTIND - 1))
 
 if [ "$cmd" = "up" ]; then
     display_volume=$(amixer set $mixer $increment+ unmute | grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
-		muted="false"
+	muted="false"
 elif [ "$cmd" = "down" ]; then
     display_volume=$(amixer set $mixer $increment- | grep -m 1 "%]" | cut -d "[" -f2|cut -d "%" -f1)
 elif [ "$cmd" = "mute" ]; then
