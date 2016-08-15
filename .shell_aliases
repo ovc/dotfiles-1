@@ -51,6 +51,7 @@
 		alias mac_hibernate='sudo pmset -a hibernatemode'
 		# TODO ?
 		alias mac_listhibernate='sudo pmset -g | grep hibernatemode'
+		alias afk='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
 		;;
 	esac
 # }

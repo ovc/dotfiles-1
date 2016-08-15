@@ -81,6 +81,7 @@ libreoffice
 mactex
 macvim
 name-mangler
+postman
 skype
 spotify
 spotify-notifications
@@ -97,6 +98,7 @@ adium
 caffeine
 chicken
 eclipse-ide
+electric-sheep
 google-drive
 karabiner
 keepassx
