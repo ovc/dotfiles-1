@@ -52,7 +52,8 @@ export iso86012epoch >/dev/null
 git() {
 	local gitbin=/usr/bin/git
 	if [ "$1"  = root ]; then
-		cd $($gitbin rev-parse --show-cdup)
+		local root="$($gitbin rev-parse --show-cdup)"
+		[ -n "$root" ] && cd "$root"
 	else
 		$gitbin $*
 	fi
