@@ -27,7 +27,9 @@
 	co = checkout
 	cp = cherry-pick
 	desc0= describe --abbrev=0
+	desct0= describe --tags --abbrev=0
 	desc= describe
+	desct= describe --tags
 	di = diff
 	dic = diff --cached
 	diffc = diff --cached

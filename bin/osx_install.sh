@@ -65,6 +65,7 @@ brew_apps_additional=$(make_1line "$brew_apps_additional")
 read -r -d '' cask_apps_default <<'EOAPPS'
 	appcleaner
 	clamxav
+	clipmenu
 	colloquy
 	cyberduck
 	dropbox
