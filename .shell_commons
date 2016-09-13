@@ -231,4 +231,15 @@ source $HOME/.shell_functions
 		export WORKON_HOME=$HOME/.virtualenvs
 		export PROJECT_HOME=$HOME/dev
 	fi
+
+	# GVM: Go Version Manager
+	sourceifexists $HOME/.gvm/scripts/gvm
+
+	# tig
+	# On OSX, ^Y in tig suspends the application.
+	# Source: https://github.com/jonas/tig/issues/214
+	type tig >/dev/null 2>&1
+	if [ $? -eq 0 ] && shell_is_osx; then
+		stty dsusp undef
+	fi
 # }
