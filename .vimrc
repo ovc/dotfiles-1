@@ -37,6 +37,7 @@
 		Plugin 'airblade/vim-gitgutter'
 		Plugin 'altercation/vim-colors-solarized'
 		Plugin 'bkad/CamelCaseMotion'
+		Plugin 'editorconfig/editorconfig-vim'
 		Plugin 'erikw/snipmate-snippets'
 		Plugin 'erikw/vim-unimpaired'
 		Plugin 'fatih/vim-go'

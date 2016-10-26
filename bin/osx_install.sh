@@ -64,6 +64,7 @@ brew_apps_additional=$(make_1line "$brew_apps_additional")
 
 read -r -d '' cask_apps_default <<'EOAPPS'
 	appcleaner
+	caffeine
 	clamxav
 	clipmenu
 	colloquy
@@ -83,6 +84,7 @@ read -r -d '' cask_apps_default <<'EOAPPS'
 	macvim
 	name-mangler
 	postman
+	qr-journal
 	skype
 	spotify
 	spotify-notifications
