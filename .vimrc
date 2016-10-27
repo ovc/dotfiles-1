@@ -28,7 +28,6 @@
 		"Plugin 'mbbill/undotree'
 		"Plugin 'mhinz/vim-startify'
 		"Plugin 'rhysd/vim-clang-format'
-		"Plugin 'scrooloose/syntastic'
 		"Plugin 'tpope/vim-unimpaired'
 		Plugin 'LaTeX-Box-Team/LaTeX-Box'
 		Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -360,6 +359,9 @@
 		noremap <silent> <C-x>x <C-x>						" Decrement for consistency with GNU Screen.
 	endif
 
+	" Generate ctags with python site packages
+	map <F10> :!ctags -R -f ./tags `python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"`<CR>
+
 	" Movements {
 		nnoremap <silent> <C-j> gj						" Down one visual line (wrapped).
 		nnoremap <silent> <C-k> gk						" Up one visual line (wrapped).
@@ -584,11 +586,14 @@ if s:use_plugins
 
 	" Syntastic {
 		"let g:syntastic_check_on_open=0		" Don't automatically do syntax check on open buffers.
+		"let g:syntastic_check_on_wq=0		" Don't save on write.
 		noremap <silent> <F11> :SyntasticToggleMode<CR>					" Toggle syntastic checking.
-		" Do syntax check on files with exceptions.
+		" Do syntax check on files with exceptions (passive ones).
 		let g:syntastic_mode_map = { 'mode': 'active',
 		                        \ 'active_filetypes': [],
-		                        \ 'passive_filetypes': ['java'] }
+		                        \ 'passive_filetypes': ['java', 'python'] }
+		" Python, use prospector.
+		let g:syntastic_python_checkers = ['prospector']
 	" }
 
 	" Tagbar {
