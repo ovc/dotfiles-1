@@ -535,12 +535,22 @@ if s:use_plugins
 
 	" FuzzyFinder {
 		let g:fuf_dataDir = '~/.vim/fuf-data'			" Where to put stored data.
-		noremap <silent> ,f :FufFile<CR>			" Launch File-mode.
-		noremap <silent> ,b :FufBuffer<CR>			" Launch Buffer-mode.
-		noremap <silent> ,d :FufDir<CR>				" Launch Dir-mode.
-		noremap <silent> ,t :FufTag<CR>				" Launch Tag-mode
-		noremap <silent> ,tw :FufTagWithCursorWord<CR>		" Launch Tag-mode with current word.
-		noremap <silent> ,c :FufCoverageFile<CR>		" Launch with Filecoverage-mode.
+		"let g:fuf_keyOpenSplit = '<C-s>'			" How to open file in split.
+		"let g:fuf_keyOpenVsplit = '<C-v>'			" Open file in vertical split.
+		"let g:fuf_keyOpenTabpage = '<C-t>'			" Open in new tab.
+		" Comments can't be after the mapping, that starts the fuzzyview in normal mode.
+		" Launch File-mode.
+		noremap <silent> ,f :FufFile<CR>
+		" Launch Buffer-mode.
+		noremap <silent> ,b :FufBuffer<CR>
+		" Launch Dir-mode.
+		noremap <silent> ,d :FufDir<CR>
+		" Launch Tag-mode
+		noremap <silent> ,t :FufTag<CR>
+		" Launch Tag-mode with current word.
+		noremap <silent> ,tw :FufTagWithCursorWord<CR>
+		" Launch with Filecoverage-mode.
+		noremap <silent> ,c :FufCoverageFile<CR>
 	" }
 
 	" LanguageTool {
