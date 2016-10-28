@@ -1,12 +1,19 @@
 # Vim
 Session.vim
-*.swp
+*.sw[op]
 
 # OS X
 .DS_Store
 
-# Editor files
+# Ctags
 tags
 TAGS
+
+# Cscope
 cscope.files
 cscope.out
+cscope.po.out
+cscope.in.out
+
+# Rope python refactoring lib.
+.ropeproject/

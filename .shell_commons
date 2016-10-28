@@ -220,12 +220,17 @@ source $HOME/.shell_functions
 	fi
 
 	# OSX python
-	if [ -d $HOME/Library/Python/2.7/bin ]; then
-		export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+	local py2path=$HOME/Library/Python/2.7
+	local py3path=$HOME/Library/Python/3.5
+	if [ -d $py2path ]; then
+		export PATH="$py2path/bin:$PATH"
+		export PYTHONPATH="$py2path/lib/python/site-packages:$PYTHONPATH"
 	fi
-	if [ -d $HOME/Library/Python/3.5/bin ]; then
-		export PATH="$HOME/Library/Python/3.5/bin:$PATH"
+	if [ -d $py3path ]; then
+		export PATH="$py3path/bin:$PATH"
+		export PYTHONPATH="$py3path/lib/python/site-packages:$PYTHONPATH"
 	fi
+
 
 	# Virtualenvwrapper
 	shell_is_osx && virtenv_path=/usr/local/bin/virtualenvwrapper.sh || virtenv_path=/usr/bin/virtualenvwrapper_lazy.sh

@@ -46,6 +46,25 @@ $ ruby extconf.rb
 $ make
 ````
 
+## jedi-vim
+```bash
+$ cd ~/.vim/bundle/jedi-vim/jedi
+$ git submodule update --init
+````
+
+## rope
+```bash
+$ pip3 install --user ropevim
+$ cat >> ~/.zshrc
+export PYTHONPATH="$PYTHONPATH:$HOME/Library/Python/3.5/lib/python/site-packages"
+^D
+````
+
+## isort
+```bash
+$ pip3 install --user isort
+````
+
 ## Tmux
 
 Install: 

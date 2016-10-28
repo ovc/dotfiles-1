@@ -36,10 +36,12 @@
 		Plugin 'airblade/vim-gitgutter'
 		Plugin 'altercation/vim-colors-solarized'
 		Plugin 'bkad/CamelCaseMotion'
+		Plugin 'davidhalter/jedi-vim'
 		Plugin 'editorconfig/editorconfig-vim'
 		Plugin 'erikw/snipmate-snippets'
 		Plugin 'erikw/vim-unimpaired'
 		Plugin 'fatih/vim-go'
+		Plugin 'fisadev/vim-isort'
 		Plugin 'flazz/vim-colorschemes'
 		Plugin 'garbas/vim-snipmate'
 		Plugin 'godlygeek/tabular'
@@ -50,6 +52,7 @@
 		Plugin 'mattn/gist-vim'
 		Plugin 'mattn/webapi-vim'
 		Plugin 'michaeljsmith/vim-indent-object'
+		Plugin 'python-rope/ropevim'
 		Plugin 'rbonvall/snipmate-snippets-bib'
 		Plugin 'rhysd/vim-clang-format'
 		Plugin 'salsifis/vim-transpose'
@@ -513,22 +516,6 @@ if s:use_plugins
 		let g:EclimXmlValidate=0			" Don't validate XML-files on write.
 	" }
 
-	" Gist {
-		let g:gist_detect_filetype = 1				" Detect filetype from name.
-		let g:gist_show_privates = 1				" Let Gist -l show private gists.
-		"let g:gist_clip_command = 'xclip -selection clipboard'	" Copy command.
-		"let g:gist_private = 1					" Make private the default for new Gists.
-		"let g:gist_open_browser_after_post = 1			" Open in browser after post.
-		"let g:gist_browser_command = 'w3m %URL%'		" Browser to use.
-		let g:gist_browser_command = 'firefox  %URL%'		" Browser to use.
-	" }
-
-	" Gundo {
-		nmap <silent> <F4> :GundoToggle<CR>		" Toggle Gundo.
-		let g:gundo_close_on_revert=1			" Automatically close on revert.
-		let g:gundo_preview_bottom=1			" Draw preview below current window.
-	" }
-
 	" Fugative {
 		autocmd BufReadPost fugitive://* set bufhidden=delete	" Close Fugative buffers when leaving.
 	" }
@@ -551,6 +538,31 @@ if s:use_plugins
 		noremap <silent> ,tw :FufTagWithCursorWord<CR>
 		" Launch with Filecoverage-mode.
 		noremap <silent> ,c :FufCoverageFile<CR>
+	" }
+
+	" Gist {
+		let g:gist_detect_filetype = 1				" Detect filetype from name.
+		let g:gist_show_privates = 1				" Let Gist -l show private gists.
+		"let g:gist_clip_command = 'xclip -selection clipboard'	" Copy command.
+		"let g:gist_private = 1					" Make private the default for new Gists.
+		"let g:gist_open_browser_after_post = 1			" Open in browser after post.
+		"let g:gist_browser_command = 'w3m %URL%'		" Browser to use.
+		let g:gist_browser_command = 'firefox  %URL%'		" Browser to use.
+	" }
+
+	" Gundo {
+		nmap <silent> <F4> :GundoToggle<CR>		" Toggle Gundo.
+		let g:gundo_close_on_revert=1			" Automatically close on revert.
+		let g:gundo_preview_bottom=1			" Draw preview below current window.
+	" }
+
+	" Jedi {
+		"let g:jedi#auto_initialization = 0  " Don't autoload jedi.
+		let g:jedi#use_tabs_not_buffers = 1  " Go to a tab when opening a definition.
+		"let g:jedi#popup_on_dot = 0	" Do't autostart completion when typing a periond.
+		"let g:jedi#show_call_signatures = 1	" 0 = now signature preview, 1 = signature in split buffer, 2 = ?
+
+
 	" }
 
 	" LanguageTool {
@@ -587,6 +599,11 @@ if s:use_plugins
 			python powerline_setup()
 			python del powerline_setup
 		endif
+	" }
+
+	" Rope {
+		let g:ropevim_enable_autoimport = 1 	" Enable the RopeAutoImport command.
+		let g:ropevim_autoimport_modules = ["os.*","shutil","random","django.*","rest_framework.*",]
 	" }
 
 	" Solarized {
