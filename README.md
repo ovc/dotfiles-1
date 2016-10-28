@@ -39,6 +39,13 @@ $ grep -nr GIT-CENSORED .
 $ vim -c BundleInstall
 ```
 
+## Compile command-t
+```bash
+$ cd ~/.vim/bundle/command-t/ruby/command-t
+$ ruby extconf.rb
+$ make
+````
+
 ## Tmux
 
 Install: 

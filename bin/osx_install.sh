@@ -31,6 +31,7 @@ read -r -d '' brew_apps_default <<'EOAPPS'
 	links
 	macvim
 	macvim
+	ncdu
 	pdfgrep
 	pyenv
 	pyenv-virtualenvwrapper
@@ -117,6 +118,12 @@ read -r -d '' cask_apps_additional <<'EOAPPS'
 EOAPPS
 cask_apps_additional=$(make_1line "$cask_apps_additional")
 
+read -r -d '' pip3_pkgs <<'EOAPPS'
+	ipdb
+	pudb
+EOAPPS
+pip3_pkgs=$(make_1line "$pip3_pkgs")
+
 # Manual programs
 #easytag
 
@@ -131,6 +138,9 @@ brew install octave
 
 # Install cask
 brew tap caskroom/cask
-cask_apps=$(make_1line "$cask_apps")
 brew cask install $cask_apps_default
 brew cask install $cask_apps_additional
+
+
+# Install python packages
+pip3 install --user $pip3_pkgs
