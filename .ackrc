@@ -1,0 +1,5 @@
+# Ignore these files by default. See man(1) grep section 'Defining your own types'.
+#--ignore-file=match:-gen.js
+--ignore-file=match:cscope.out
+--ignore-file=match:cscope.files
+--ignore-file=match:tags
