@@ -149,6 +149,7 @@
 	set shortmess=filmnrxtToOI    			" Abbreviate messages.
 	set nrformats=alpha,octal,hex			" What to increment/decrement with ^A and ^X.
 	set hidden					" Work with hidden buffers more easily.
+	set autoread					" Autoreload buffer from file if not changed in vim, e.g. with the :checktime command.
 	set sessionoptions-=options			" Don't store global and local variables when saving sessions.
 	set undofile					" Save undo to file in undodir.
 	set undolevels=2048				" Levels of undo to keep in memory.history.
@@ -362,9 +363,6 @@
 		noremap <silent> <C-x>x <C-x>						" Decrement for consistency with GNU Screen.
 	endif
 
-	" Generate ctags with python site packages
-	map <F10> :!ctags -R -f ./tags `python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"`<CR>
-
 	" Movements {
 		nnoremap <silent> <C-j> gj						" Down one visual line (wrapped).
 		nnoremap <silent> <C-k> gk						" Up one visual line (wrapped).
@@ -521,10 +519,16 @@ if s:use_plugins
 	" }
 
 	" FuzzyFinder {
-		let g:fuf_dataDir = '~/.vim/fuf-data'			" Where to put stored data.
-		"let g:fuf_keyOpenSplit = '<C-s>'			" How to open file in split.
-		"let g:fuf_keyOpenVsplit = '<C-v>'			" Open file in vertical split.
-		"let g:fuf_keyOpenTabpage = '<C-t>'			" Open in new tab.
+		let g:fuf_dataDir = '~/.vim/fuf-data'		" Where to put stored data.
+		let g:fuf_keyNextMode = '<C-u>'			" How to switch seach mode. Remapped from default <C-v>
+		let g:fuf_keyPrevMode = '<C-i>'			" How to switch seach mode. Remapped from default <C-y>
+  	  	let g:fuf_keyPrevPattern = '<C-r>'		" Recall previous pattern. Remapp from default <C-s>
+
+		" Open files with same keybindings as command-t.
+		let g:fuf_keyOpenSplit = '<C-d>'		" How to open file in split. Does not work to use <C-s> even if keyPrevPattern is remapped, somehow.
+		let g:fuf_keyOpenVsplit = '<C-v>'		" Open file in vertical split.
+		let g:fuf_keyOpenTabpage = '<C-t>'		" Open in new tab.
+
 		" Comments can't be after the mapping, that starts the fuzzyview in normal mode.
 		" Launch File-mode.
 		noremap <silent> ,f :FufFile<CR>
@@ -603,7 +607,11 @@ if s:use_plugins
 
 	" Rope {
 		let g:ropevim_enable_autoimport = 1 	" Enable the RopeAutoImport command.
-		let g:ropevim_autoimport_modules = ["os.*","shutil","random","django.*","rest_framework.*",]
+		" Which modules to generate cache for with the :RopeGenerateAutoimportCache command.
+		let g:ropevim_autoimport_modules = ["__future__", "__main__", "_dummy_thread", "_thread", "abc", "aifc", "argparse", "array", "ast", "asynchat", "asyncio", "asyncore", "atexit", "audioop", "base64", "bdb", "binascii", "binhex", "bisect", "builtins", "bz2", "cProfile", "calendar", "cgi", "cgitb", "chunk", "cmath", "cmd", "code", "codecs", "codeop", "collections", "colorsys", "compileall", "concurrent", "configparser", "contextlib", "copy", "copyreg", "crypt", "csv", "ctypes", "curses", "datetime", "dbm", "decimal", "difflib", "dis", "distutils", "doctest", "dummy_threading", "email", "encodings", "ensurepip", "enum", "errno", "faulthandler", "fcntl", "filecmp", "fileinput", "fnmatch", "formatter", "fpectl", "fractions", "ftplib", "functools", "gc", "getopt", "getpass", "gettext", "glob", "grp", "gzip", "hashlib", "heapq", "hmac", "html", "http", "imaplib", "imghdr", "imp", "importlib", "inspect", "io", "ipaddress", "itertools", "json", "keyword", "lib2to3", "linecache", "locale", "logging", "lzma", "macpath", "mailbox", "mailcap", "marshal", "math", "mimetypes", "mmap", "modulefinder", "msilib", "msvcrt", "multiprocessing", "netrc", "nis", "nntplib", "numbers", "operator", "optparse", "os", "ossaudiodev", "parser", "pathlib", "pdb", "pickle", "pickletools", "pipes", "pkgutil", "platform", "plistlib", "poplib", "posix", "pprint", "profile", "pstats", "pty", "pwd", "py_compile", "pyclbr", "pydoc", "queue", "quopri", "random", "re", "readline", "reprlib", "resource", "rlcompleter", "runpy", "sched", "select", "selectors", "shelve", "shlex", "shutil", "signal", "site", "smtpd", "smtplib", "sndhdr", "socket", "socketserver", "spwd", "sqlite3", "ssl", "stat", "statistics", "string", "stringprep", "struct", "subprocess", "sunau", "symbol", "symtable", "sys", "sysconfig", "syslog", "tabnanny", "tarfile", "telnetlib", "tempfile", "termios", "test", "textwrap", "threading", "time", "timeit", "tkinter", "token", "tokenize", "trace", "traceback", "tracemalloc", "tty", "turtle", "turtledemo", "types", "typing", "unicodedata", "unittest", "urllib", "uu", "uuid", "venv", "warnings", "wave", "weakref", "webbrowser", "winreg", "winsound", "wsgiref", "xdrlib", "xml", "xmlrpc", "zipapp", "zipfile", "zipimport", "zlib"]
+
+
+
 	" }
 
 	" Solarized {
