@@ -11,16 +11,20 @@ xkb_keymap "erikwkbrd" {
 	// Old solution mergeing us+sv. Abandoned because having both us and sv and just toggle between them is just as good with group(switch).
 	//xkb_symbols   { include "pc+swenglish+hacks+inet(evdev)+terminate(ctrl_alt_bksp)+capslock(escape)+compose(rwin)" };
 
-	// pc: Typical PC keys inc. CTRL, Shift...
-	// US and SV layouts.
-	// hacks: My remaps inc. Caps Lock to Pause.
-	// inet(evdev): Standard aux keys.
-	// group(switch): Toggle layouts (us,sv) when ralt is pressed.
-	// group(menu_toggle): Toggle language on menu key (en->sv->de->en...).
-	// capslock(escape): Make Caps Lock and additonal Escape.
-	// compose(rwin): Make rwin the compose key.
-	// terminate(ctrl_alt_bksp): Restart X server.
-	xkb_symbols   { include "pc+us(basic)+se(basic):2+de(basic):3+hacks+inet(evdev)+group(switch)+group(menu_toggle)+capslock(escape)+compose(rwin)+terminate(ctrl_alt_bksp)" };
+	xkb_symbols   {
+		include "pc"				// Typical PC keys inc. CTRL, Shift...
+		include "us(basic)"			// Default language.
+		include "se(basic):2"			// Secondary language. Use temporary with `switch` or change to with `menu_toggle`.
+		include "de(basic):3"			// Ternary language. Change to with `menu_toggle`.
+		include "hacks"				// My remaps inc. Caps Lock to Pause.
+		include "inet(evdev)"			// Standard aux keys.
+		include "group(switch)"			// Switch layouts (us,sv) as long as ralt is pressed.
+		include "group(menu_toggle)"		// Toggle language on menu key (en->sv->de->en...).
+		//include "capslock(escape)"		// Make Caps Lock an additonal Escape.
+		include "ctrl(nocaps)"			// Make Caps Lock an additinal Control. Then use $(xcape -e 'Control_L=Escape') to make single press of key generate Escape, and when combined with some other key to generate CTRL+otherkey.
+		include "compose(rwin)"			// compose(rwin): Make rwin the compose key.
+		include "terminate(ctrl_alt_bksp)"	// Restart X server.
+	};
 
 	xkb_geometry  { include "pc(pc104)" };
 };
