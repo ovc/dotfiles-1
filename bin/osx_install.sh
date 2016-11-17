@@ -71,6 +71,7 @@ read -r -d '' cask_apps_default <<'EOAPPS'
 	colloquy
 	cyberduck
 	dropbox
+	electric-sheep
 	firefox
 	flip4mac
 	flux
@@ -86,6 +87,7 @@ read -r -d '' cask_apps_default <<'EOAPPS'
 	name-mangler
 	postman
 	qr-journal
+	seil
 	skype
 	spotify
 	spotify-notifications
@@ -102,13 +104,11 @@ read -r -d '' cask_apps_additional <<'EOAPPS'
 	caffeine
 	chicken
 	eclipse-ide
-	electric-sheep
 	google-drive
 	karabiner
 	keepassx
 	perian
 	pycharm
-	seil
 	skim
 	slack
 	thunderbird

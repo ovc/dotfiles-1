@@ -73,6 +73,7 @@
 		Plugin 'wincent/command-t'
 	"}
 
+	" TODO try to move these to original git repos instead.
 	" Github, vim-scripts.org {
 		"Plugin 'LanguageTool'
 		"Plugin 'OmniCppComplete' " Incompaitble with clang_complete.

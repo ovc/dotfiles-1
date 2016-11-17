@@ -224,12 +224,18 @@ source $HOME/.shell_functions
 	local py3path=$HOME/Library/Python/3.5
 	if [ -d $py2path ]; then
 		export PATH="$py2path/bin:$PATH"
-		# Disabled. Setting PYTHONPATH brokw virtualenv.
-		#export PYTHONPATH="$py2path/lib/python/site-packages:$PYTHONPATH"
+		# Python path must be set for ropevim to find rope somehow.
+		export PYTHONPATH="$py2path/lib/python/site-packages:$PYTHONPATH"
 	fi
 	if [ -d $py3path ]; then
 		export PATH="$py3path/bin:$PATH"
-		#export PYTHONPATH="$py3path/lib/python/site-packages:$PYTHONPATH"
+		export PYTHONPATH="$py3path/lib/python/site-packages:$PYTHONPATH"
+	fi
+	if [ -n "$PYTHONPATH" ]; then
+		# Pip in virtualenv does not work with PYTHONPATH set.
+		alias pip='PYTHONPATH= pip'
+		alias pip2='PYTHONPATH= pip2'
+		alias pip3='PYTHONPATH= pip3'
 	fi
 
 
