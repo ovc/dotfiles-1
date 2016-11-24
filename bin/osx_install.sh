@@ -53,6 +53,7 @@ read -r -d '' brew_apps_default <<'EOAPPS'
 	vim
 	watch
 	watch
+	wego
 	wget
 	zsh
 EOAPPS
@@ -81,13 +82,13 @@ read -r -d '' cask_apps_default <<'EOAPPS'
 	handbrake
 	iterm2
 	jing
+	karabiner-elements
 	libreoffice
 	mactex
 	macvim
 	name-mangler
 	postman
 	qr-journal
-	seil
 	skype
 	spotify
 	spotify-notifications
@@ -105,7 +106,6 @@ read -r -d '' cask_apps_additional <<'EOAPPS'
 	chicken
 	eclipse-ide
 	google-drive
-	karabiner
 	keepassx
 	perian
 	pycharm

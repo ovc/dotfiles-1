@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 vim_cnf="let g:ropevim_autoimport_modules ="
-pkgs_normal=$(find $HOME/dev -name 'requirements*.txt' -print0 | xargs -0 grep "\w*==[\d.]*" | cut -d ":" -f 2 | cut -d '=' -f1 | sort -u)
-pkgs_git=$(find $HOME/dev -name 'requirements*.txt' -print0 | xargs -0 grep --no-filename -o '#egg=.*' | sed -e 's/#egg=//' | sort -u)
+pkgs_normal=$(find $HOME/dev -name 'requirements*.txt' -print0 | xargs -0 grep "\w*==[\d.]*" | cut -d ":" -f 2 | cut -d '=' -f1 | sort -fu)
+pkgs_git=$(find $HOME/dev -name 'requirements*.txt' -print0 | xargs -0 grep --no-filename -o '#egg=.*' | sed -e 's/#egg=//' | sort -fu)
 pkgs=$(echo -e "$pkgs_normal\n$pkgs_git")
 pkgs=($pkgs)
 

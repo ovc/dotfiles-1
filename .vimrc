@@ -166,6 +166,12 @@
 			set ttymouse=xterm2		" Needed for mouse support inside GNU Screen.
 		endif
 	endif
+	if has("unix")
+		let s:uname = system("uname -s")
+		if s:uname == "Darwin"
+			set clipboard=unnamed			" Make copy to clibpard work under macOS.
+		endif
+	endif
 
 	" Function keys {
 		" Urxvt does not emit what Vim expects for the function keys.
@@ -343,6 +349,7 @@
 	nnoremap g$t :tablast<CR>							" Go to last tab.
 	noremap Yf :let @" = expand("%")<CR>						" Yank current file name.
 	noremap YF :let @" = expand("%:p")<CR>						" Yank current (fully expanded) file name.
+	nnoremap <silent> <Leader>R :checktime<CR>						" Reload buffers from file if changed.
 
 	" Redraw window so search terms are centered.
 	nnoremap n nzz
