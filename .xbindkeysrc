@@ -72,7 +72,7 @@
 	"$HOME/bin/printscreen_scrot.sh"
 		Print
 
-	# Selection screenshort
+	# Selection screenshot
 	#"shutter"
 	"zscreen"
 		Mod4 + Mod1 + p
