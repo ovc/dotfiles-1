@@ -15,11 +15,15 @@ else
 	exit 1
 fi
 
-args_lvds1="--output LVDS1 --primary --mode 1600x900"
+#args_lvds1="--output LVDS1 --primary --mode 1600x900"
+# Set --pos to align with external monitor. Found by exporting config from arandr(1).
+args_lvds1="--output LVDS1 --primary --mode 1600x900 --pos 0x300 "
 case "$monitor" in
 	"dell24") # Dell 24" monitor.
 		if [ "$action" == "enable" ]; then
-			ext_monargs="--output HDMI2 --mode 1920x1200 --right-of LVDS1"
+			#ext_monargs="--output HDMI2 --mode 1920x1200 --right-of LVDS1"
+			# Set alignment, found by exporting config from arandr(1)
+			ext_monargs="--output HDMI2 --mode 1920x1200 --pos 1600x0"
 		else
 			#args_lvds1="${args_lvds1} --primary"
 			ext_monargs="--output HDMI2 --off"

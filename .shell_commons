@@ -8,6 +8,9 @@
 source $HOME/.shell_functions
 
 # Paths {
+	# Make the path available in subshells. Export is only needed once.
+	export PATH
+
 	# Include system binaries.
 	PATH="$PATH:/sbin:/usr/sbin"
 	# Include binaries in home directory.
@@ -21,11 +24,9 @@ source $HOME/.shell_functions
 			PATH="$PATH:$HOME/bin/$common_dir"
 		fi
 	done
-	export PATH
 
 	# Convenient cdpaths.
 	#CDPATH=$HOME
-
 # }
 
 # Environment {
@@ -170,9 +171,8 @@ source $HOME/.shell_functions
 
 	# Go
     export GOPATH="$HOME/src/godeps/:$HOME/dev/go"
-    export GOROOT="$HOME/src/go"
-	type go >/dev/null 2>&1
-	if [ $? -eq 0 ]; then
+    if [ -e "$HOME/src/go" ]; then
+    	export GOROOT="$HOME/src/go"
     	PATH="$HOME/src/godeps/bin:$HOME/dev/go/bin:$GOROOT/bin:$GOROOT/pkg/tool/linux_amd64:$PATH"
     fi
 
@@ -220,15 +220,15 @@ source $HOME/.shell_functions
 	fi
 
 	# OSX python
-	local py2path=$HOME/Library/Python/2.7
-	local py3path=$HOME/Library/Python/3.5
+	py2path=$HOME/Library/Python/2.7
+	py3path=$HOME/Library/Python/3.5
 	if [ -d $py2path ]; then
-		export PATH="$py2path/bin:$PATH"
+		PATH="$py2path/bin:$PATH"
 		# Python path must be set for ropevim to find rope somehow.
 		export PYTHONPATH="$py2path/lib/python/site-packages:$PYTHONPATH"
 	fi
 	if [ -d $py3path ]; then
-		export PATH="$py3path/bin:$PATH"
+		PATH="$py3path/bin:$PATH"
 		export PYTHONPATH="$py3path/lib/python/site-packages:$PYTHONPATH"
 	fi
 	if [ -n "$PYTHONPATH" ]; then
