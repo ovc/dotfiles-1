@@ -607,6 +607,7 @@ if s:use_plugins
 		" Check if vim plugin exists, e.g. debian's powerline does not
 		" currently have it.
 		if isdirectory($POWERLINE_ROOT . "/bindings/vim")
+			set rtp+=$POWERLINE_ROOT/bindings/vim
 			python from powerline.vim import setup as powerline_setup
 			python powerline_setup()
 			python del powerline_setup
