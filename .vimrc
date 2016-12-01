@@ -141,9 +141,9 @@
 		" Set spellfile dynamically.
 		execute "set spellfile=" . "~/.vim/spell/" . matchstr(&spelllang, "[a-zA-Z][a-zA-Z]") . "." . &encoding . ".add"
 	endif
-	set dictionary+=~/.vim/spell/*.dic		" Use custom dictionaries.
+	set dictionary+=~/.vim/spell/			" Use custom dictionaries.
 	"set dictionary+=/usr/share/dict/words		" Use system dictionary.
-	set thesaurus+=~/.vim/thesaurus/*		" Use a thesaurus file.
+	set thesaurus+=~/.vim/thesaurus/mthesaur.txt    " Use a thesaurus file.
 	"set complete-=k complete+=k			" Put the dictionaries in the normal completion set.
 	set completeopt=longest,menu,preview		" Insert most common completion and show menu.
 	set omnifunc=syntaxcomplete#Complete		" Omni completion.
