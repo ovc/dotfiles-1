@@ -178,10 +178,19 @@ source $HOME/.shell_functions
 
 	# less {
 		# Syntax highlighting for less with src-highlight.
-		type src-hilite-lesspipe.sh  &> /dev/null
+		# Normal highlight.
+		#type src-hilite-lesspipe.sh  &> /dev/null
+		#if [ $? -eq 0 ]; then
+			#export LESSOPEN="| src-hilite-lesspipe.sh %s"
+		#fi
+
+		# Solarized version, as the normal version does not work (hidden text) when solarized terminal background is used.
+		# https://github.com/jrunning/source-highlight-solarized
+		type source-highlight &> /dev/null
 		if [ $? -eq 0 ]; then
-			export LESSOPEN="| src-hilite-lesspipe.sh %s"
+			export LESSOPEN="| source-highlight -f esc-solarized --style-file=esc-solarized.style -i %s -o STDOUT"
 		fi
+
 		LESS=		# Debians /etc/zsh/zshenv sets LESS to values that quits less when hitting the bottom.
 		#LESS="$LESS --no-lessopen"		# Disable usage of LESSOPEN.
 		LESS="$LESS --RAW-CONTROL-CHARS"	# Display colors.
