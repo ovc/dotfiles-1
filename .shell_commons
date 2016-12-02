@@ -188,7 +188,7 @@ source $HOME/.shell_functions
 		# https://github.com/jrunning/source-highlight-solarized
 		type source-highlight &> /dev/null
 		if [ $? -eq 0 ]; then
-			export LESSOPEN="| source-highlight -f esc-solarized --style-file=esc-solarized.style -i %s -o STDOUT"
+			export LESSOPEN="| source-highlight --failsafe -f esc-solarized --style-file=esc-solarized.style -i %s -o STDOUT"
 		fi
 
 		LESS=		# Debians /etc/zsh/zshenv sets LESS to values that quits less when hitting the bottom.
