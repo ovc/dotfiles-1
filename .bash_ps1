@@ -1,13 +1,6 @@
 # Set up the bash PS1 line.
 # vi: ft=sh
 
-# TODO use symbols for different VCS?
-# git) printf '∓';;
-# hg)  printf '☿';;
-# svn) printf '⚡';;
-# bzr) printf '⚘';;
-# *) printf '∵';;
-
 # Import colors.
 . $HOME/bin/bash_colors.sh
 

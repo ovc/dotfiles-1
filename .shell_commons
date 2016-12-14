@@ -205,7 +205,7 @@ source $HOME/.shell_functions
 	type powerline-daemon >/dev/null 2>&1
 	if [ $? -eq 0 ]; then
 		if shell_is_osx; then
-			export POWERLINE_ROOT=$HOME/Library/Python/2.7/lib/python/site-packages/powerline
+			export POWERLINE_ROOT=$HOME/Library/Python/3.5/lib/python/site-packages/powerline
 			export LC_ALL=en_US.UTF-8
 			export LANG=en_US.UTF-8
 		else

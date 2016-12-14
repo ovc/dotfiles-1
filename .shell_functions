@@ -58,3 +58,20 @@ git() {
 		$gitbin $*
 	fi
 }
+
+# Wrapper around the classic 'vi with ack' with search highlighting.
+# Usage example: viack -i "search_term
+# Last argument is the search string. Preceding arguments are for ack.
+viack() {
+	local search
+	# Get the last argument. Source: http://stackoverflow.com/questions/1853946/getting-the-last-argument-passed-to-a-shell-script
+	for search; do true; done
+	vim -p $(ack -l $@) +/$search
+}
+
+# Wrapper around the classic 'vi with grep'.
+vigrep() {
+	local search
+	for search; do true; done
+	vim -p $(grep -Rl $@) +/$search
+}

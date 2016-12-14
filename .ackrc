@@ -3,3 +3,4 @@
 --ignore-file=match:cscope.out
 --ignore-file=match:cscope.files
 --ignore-file=match:tags
+--ignore-dir=.cache/

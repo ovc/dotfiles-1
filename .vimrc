@@ -36,6 +36,8 @@
 		Plugin 'airblade/vim-gitgutter'
 		Plugin 'altercation/vim-colors-solarized'
 		Plugin 'bkad/CamelCaseMotion'
+		Plugin 'craigemery/vim-autotag'
+		Plugin 'danro/rename.vim'
 		Plugin 'davidhalter/jedi-vim'
 		Plugin 'editorconfig/editorconfig-vim'
 		Plugin 'erikw/snipmate-snippets'
@@ -80,19 +82,15 @@
 		"Plugin 'TaskList.vim'
 		"Plugin 'last_edit_marker.vim'
 		"Plugin 'taglist.vim'
-		Plugin 'AutoTag'
-		Plugin 'Color-Sampler-Pack'
 		Plugin 'ConflictMotions'
 		Plugin 'CountJump'
 		Plugin 'FuzzyFinder'
 		Plugin 'L9'
-		Plugin 'Rename'
 		Plugin 'argtextobj.vim'
 		Plugin 'autoload_cscope.vim'
 		Plugin 'buffergrep'
 		Plugin 'ingo-library'
 		Plugin 'lbdbq'
-		Plugin 'rename.vim'
 	"}
 
 	call vundle#end()            " required
@@ -616,8 +614,8 @@ if s:use_plugins
 
 	" Rope {
 		" Remappings done in ~/.vim/ftplugin/python/maps.vim
-		let g:ropevim_enable_autoimport = 1 	" Enable the RopeAutoImport command.
-		let g:ropevim_guess_project = 1		" Try to guess project to open.
+		let g:ropevim_guess_project = 1			" Try to guess project to open.
+		let g:ropevim_enable_autoimport = 1 		" Enable the RopeAutoImport command.
 		let g:ropevim_autoimport_underlineds = 1	" Also cache names beginning with underline with Autoimport.
 		" Which modules to generate cache for with the :RopeGenerateAutoimportCache command.
 		let g:ropevim_autoimport_modules = ["__future__", "__main__", "_dummy_thread", "_thread", "abc", "aifc", "argparse", "array", "ast", "asynchat", "asyncio", "asyncore", "atexit", "audioop", "base64", "bdb", "binascii", "binhex", "bisect", "builtins", "bz2", "cProfile", "calendar", "cgi", "cgitb", "chunk", "cmath", "cmd", "code", "codecs", "codeop", "collections", "colorsys", "compileall", "concurrent", "configparser", "contextlib", "copy", "copyreg", "crypt", "csv", "ctypes", "curses", "datetime", "dbm", "decimal", "difflib", "dis", "distutils", "doctest", "dummy_threading", "email", "encodings", "ensurepip", "enum", "errno", "faulthandler", "fcntl", "filecmp", "fileinput", "fnmatch", "formatter", "fpectl", "fractions", "ftplib", "functools", "gc", "getopt", "getpass", "gettext", "glob", "grp", "gzip", "hashlib", "heapq", "hmac", "html", "http", "imaplib", "imghdr", "imp", "importlib", "inspect", "io", "ipaddress", "itertools", "json", "keyword", "lib2to3", "linecache", "locale", "logging", "lzma", "macpath", "mailbox", "mailcap", "marshal", "math", "mimetypes", "mmap", "modulefinder", "msilib", "msvcrt", "multiprocessing", "netrc", "nis", "nntplib", "numbers", "operator", "optparse", "os", "ossaudiodev", "parser", "pathlib", "pdb", "pickle", "pickletools", "pipes", "pkgutil", "platform", "plistlib", "poplib", "posix", "pprint", "profile", "pstats", "pty", "pwd", "py_compile", "pyclbr", "pydoc", "queue", "quopri", "random", "re", "readline", "reprlib", "resource", "rlcompleter", "runpy", "sched", "select", "selectors", "shelve", "shlex", "shutil", "signal", "site", "smtpd", "smtplib", "sndhdr", "socket", "socketserver", "spwd", "sqlite3", "ssl", "stat", "statistics", "string", "stringprep", "struct", "subprocess", "sunau", "symbol", "symtable", "sys", "sysconfig", "syslog", "tabnanny", "tarfile", "telnetlib", "tempfile", "termios", "test", "textwrap", "threading", "time", "timeit", "tkinter", "token", "tokenize", "trace", "traceback", "tracemalloc", "tty", "turtle", "turtledemo", "types", "typing", "unicodedata", "unittest", "urllib", "uu", "uuid", "venv", "warnings", "wave", "weakref", "webbrowser", "winreg", "winsound", "wsgiref", "xdrlib", "xml", "xmlrpc", "zipapp", "zipfile", "zipimport", "zlib"]
