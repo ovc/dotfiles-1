@@ -75,7 +75,6 @@
 		Plugin 'wincent/command-t'
 	"}
 
-	" TODO try to move these to original git repos instead.
 	" Github, vim-scripts.org {
 		"Plugin 'LanguageTool'
 		"Plugin 'OmniCppComplete' " Incompaitble with clang_complete.
@@ -83,13 +82,13 @@
 		"Plugin 'last_edit_marker.vim'
 		"Plugin 'taglist.vim'
 		Plugin 'ConflictMotions'
-		Plugin 'CountJump'
+		Plugin 'CountJump'             	" Required for ConflictMotions.
 		Plugin 'FuzzyFinder'
-		Plugin 'L9'
+		Plugin 'L9'			" Required for FuzzyFinder.
 		Plugin 'argtextobj.vim'
 		Plugin 'autoload_cscope.vim'
 		Plugin 'buffergrep'
-		Plugin 'ingo-library'
+		Plugin 'ingo-library'		" Required for ConflictMotions.
 		Plugin 'lbdbq'
 	"}
 
