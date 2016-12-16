@@ -3,4 +3,5 @@
 --ignore-file=match:cscope.out
 --ignore-file=match:cscope.files
 --ignore-file=match:tags
+--ignore-file=match:Session.vim
 --ignore-dir=.cache/
