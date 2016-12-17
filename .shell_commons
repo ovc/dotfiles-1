@@ -209,7 +209,7 @@ source $HOME/.shell_functions
 			export LC_ALL=en_US.UTF-8
 			export LANG=en_US.UTF-8
 		else
-			export POWERLINE_ROOT=/usr/lib/python2.7/site-packages/powerline
+			export POWERLINE_ROOT=/usr/lib/python3.5/site-packages/powerline
 		fi
 		powerline-daemon -q
 	fi
