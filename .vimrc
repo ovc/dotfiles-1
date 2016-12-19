@@ -601,14 +601,19 @@ if s:use_plugins
 	" }
 
 	" Powerline {
-		" Check if vim plugin exists, e.g. debian's powerline does not
-		" currently have it.
-		if isdirectory($POWERLINE_ROOT . "/bindings/vim")
+		" Check if vim plugin exists, e.g. debian's powerline does not currently have it.
+		if isdirectory($POWERLINE_ROOT . "/bindings/vim") && (has('python') || has('python3'))
 			set rtp+=$POWERLINE_ROOT/bindings/vim
 			"let g:powerline_pycmd="py3"
-			python3 from powerline.vim import setup as powerline_setup
-			python3 powerline_setup()
-			python3 del powerline_setup
+			if has('python')
+				python from powerline.vim import setup as powerline_setup
+				python powerline_setup()
+				python del powerline_setup
+			elseif has('python3')
+				python3 from powerline.vim import setup as powerline_setup
+				python3 powerline_setup()
+				python3 del powerline_setup
+			endif
 		endif
 	" }
 
