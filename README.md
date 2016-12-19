@@ -39,20 +39,20 @@ $ grep -nr GIT-CENSORED .
 $ vim -c BundleInstall
 ```
 
-## Compile command-t
+### Compile command-t
 ```bash
 $ cd ~/.vim/bundle/command-t/ruby/command-t
 $ ruby extconf.rb
 $ make
 ````
 
-## jedi-vim
+### jedi-vim
 ```bash
 $ cd ~/.vim/bundle/jedi-vim/jedi
 $ git submodule update --init
 ````
 
-## rope
+### rope
 ```bash
 $ pip3 install --user ropevim
 $ cat >> ~/.zshrc
@@ -60,7 +60,7 @@ export PYTHONPATH="$PYTHONPATH:$HOME/Library/Python/3.5/lib/python/site-packages
 ^D
 ````
 
-## isort
+### isort
 ```bash
 $ pip3 install --user isort
 ````
@@ -84,3 +84,10 @@ Install for both:
  * [flavio/jump](https://github.com/flavio/jump)
 
 Install for ZSH:
+
+
+## Xcode
+* [Xvim](http://xvim.org/) Vim keybindings.
+* [stackia/solarized-xcode](https://github.com/stackia/solarized-xcode) for dark & light themes.
+* [ArtSabintsev/Solarized-Dark-for-Xcode](https://github.com/ArtSabintsev/Solarized-Dark-for-Xcode) for a (better?) dark theme.
+
