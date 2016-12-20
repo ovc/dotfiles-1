@@ -50,6 +50,7 @@
 		Plugin 'kana/vim-operator-user'
 		Plugin 'kana/vim-textobj-function'
 		Plugin 'kana/vim-textobj-user'
+		Plugin 'keith/swift.vim'
 		Plugin 'majutsushi/tagbar'
 		Plugin 'mattn/gist-vim'
 		Plugin 'mattn/webapi-vim'

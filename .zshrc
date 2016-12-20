@@ -173,7 +173,7 @@ fi
 # }
 
 # Powerline {
-	if [ -d $POWERLINE_ROOT ]; then
+	if [ -n "$POWERLINE_ROOT" ] && [ -d $POWERLINE_ROOT ]; then
 		source $POWERLINE_ROOT/bindings/zsh/powerline.zsh
 	fi
 # }
