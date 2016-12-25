@@ -4,6 +4,8 @@
 
 import sys, os
 
+import gi
+gi.require_version('Playerctl', '1.0')
 from gi.repository import Playerctl, GLib
 from subprocess import Popen
 
