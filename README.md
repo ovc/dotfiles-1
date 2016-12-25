@@ -79,11 +79,10 @@ Install:
 
 Install for both:
  * [seebi/dircolors-solarized](https://github.com/seebi/dircolors-solarized)
- * [https://www.gnu.org/software/src-highlite/source-highlight.html](GNU source-highlight)
- * [altercation/solarized](https://github.com/jrunning/source-highlight-solarized)
+ * [GNU source-highlight](https://www.gnu.org/software/src-highlite/source-highlight.html)
+ * [jrunning/source-highlight-solarized](https://github.com/jrunning/source-highlight-solarized)
  * [flavio/jump](https://github.com/flavio/jump)
 
-Install for ZSH:
 
 
 ## Xcode

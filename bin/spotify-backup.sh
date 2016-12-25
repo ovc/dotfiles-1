@@ -17,6 +17,7 @@ echo "Backing up to .txt"
 txtdone=0
 n_tries=5
 while [ $txtdone -ne 1 ] && [ $n_tries -ge 0 ]; do
+	echo "${n_tries} tries left."
 	$backupper --format txt $outtxt
 	[ $? -eq 0 ] && txtdone=1
 	n_tries=$((n_tries-1))
@@ -28,6 +29,7 @@ echo "Backing up to .json"
 jsondone=0
 n_tries=5
 while [ $jsondone -ne 1 ] && [ $n_tries -ge 0 ]; do
+	echo "${n_tries} tries left."
 	$backupper --format json $outjson.ugly
 	[ $? -eq 0 ] && jsondone=1
 	n_tries=$((n_tries-1))
