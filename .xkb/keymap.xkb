@@ -8,7 +8,7 @@ xkb_keymap "erikwkbrd" {
 	xkb_types     { include "complete" };
 	xkb_compat    { include "complete" };
 
-	// Old solution mergeing us+sv. Abandoned because having both us and sv and just toggle between them is just as good with group(switch).
+	// Old solution merging us+sv. Abandoned because having both us and sv and just toggle between them is just as good with group(switch).
 	//xkb_symbols   { include "pc+swenglish+hacks+inet(evdev)+terminate(ctrl_alt_bksp)+capslock(escape)+compose(rwin)" };
 
 	//xkb_symbols   {
@@ -26,7 +26,7 @@ xkb_keymap "erikwkbrd" {
 	//	include "terminate(ctrl_alt_bksp)"	// Restart X server.
 	//};
 
-	// Need to use the condensed version because xkblayout coredumps otherwise.
+	// Need to use the condensed version because xkblayout-state coredumps otherwise.
 	xkb_symbols{include"pc+us(basic)+se(basic):2+de(basic):3+hacks+inet(evdev)+group(switch)+group(menu_toggle)+ctrl(nocaps)+compose(rwin)+terminate(ctrl_alt_bksp)"};
 
 	xkb_geometry  { include "pc(pc104)" };
