@@ -22,6 +22,7 @@ read -r -d '' brew_apps_default <<'EOAPPS'
 	emacs
 	git
 	git
+	gnupg
 	graphviz
 	htop-osx
 	htop-osx
@@ -136,8 +137,9 @@ EOAPPS
 pip3_pkgs=$(make_1line "$pip3_pkgs")
 
 
-# Manual install programs.
-#easytag
+# Programs to install manually:
+# * easytag
+# * RVM: https://rvm.io/rvm/install
 
 
 # Install homebrew.

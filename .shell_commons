@@ -206,6 +206,17 @@ source $HOME/.shell_functions
     	    PATH="$HOME/src/android-sdk-linux/tools/:$HOME/src/android-sdk-linux/platform-tools/:$PATH"
 	fi
 
+	type rvm >/dev/null 2>&1
+	if [ $? -eq 0 ]; then
+		# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+		export PATH="$PATH:$HOME/.rvm/bin"
+
+		# Load RVM into a shell session *as a function*.
+		if [ -s "$HOME/.rvm/scripts/rvm" ]; then
+			source "$HOME/.rvm/scripts/rvm"
+		fi
+	fi
+
 	# Perl local lib. Install
 	# Reference: http://search.cpan.org/~haarg/local-lib-2.000015/lib/local/lib.pm
 	# Reference: http://www.perladvent.org/2009/3/
