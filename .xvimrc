@@ -13,10 +13,13 @@
 	" But case-sensitive if expression contains a capital letter.
 	set smartcase
 
-	" Default to global substitutions on lines
+	" Highligth search.
+	set hlsearch
+
+	" Default to global substitutions on lines.
 	"set gdefault
 
-	" Use the system pasteboard
+	" Use the system pasteboard.
 	set pasteboard
 " }
 
@@ -26,4 +29,8 @@
 
 	" Use <space>cm to toggle comments for the selection
 	nmap <space>cm :xccmd commentAndUncommentCurrentLines<CR>
+
+	" Clear search matches highlighting. (Ctrl+/ => ^_)
+	" TODO does this work?
+	"nmap <C-_> :nohlsearch<CR>
 " }

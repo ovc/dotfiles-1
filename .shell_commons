@@ -39,8 +39,8 @@ source $HOME/.shell_functions
 	export PAGER=less
 
     # Current DE in use.
-	if shell_is_osx; then
-		export DESKTYPE=osx
+	if shell_is_macos; then
+		export DESKTYPE=macos
 	else
 		export DESKTYPE=dwm
 	fi
@@ -84,7 +84,7 @@ source $HOME/.shell_functions
     	elif [ -f "$HOME/.dircolorsrc" ]; then
 	    	eval `dircolors $HOME/.dircolorsrc`
     	fi
-    elif shell_is_osx; then
+    elif shell_is_macos; then
     	export CLICOLOR=1
     fi
 
@@ -201,19 +201,6 @@ source $HOME/.shell_functions
 		export LESS
 	# }
 
-	# Powerline plugin.
-	if shell_is_osx; then
-		export POWERLINE_ROOT=$HOME/Library/Python/3.5/lib/python/site-packages/powerline
-		export LC_ALL=en_US.UTF-8
-		export LANG=en_US.UTF-8
-	else
-		export POWERLINE_ROOT=/usr/lib/python3.5/site-packages/powerline
-	fi
-	type powerline-daemon >/dev/null 2>&1
-	if [ $? -eq 0 ]; then
-		powerline-daemon -q
-	fi
-
 	# Android SDK
 	if [ -d "$HOME/src/android-sdk-linux/" ]; then
     	    PATH="$HOME/src/android-sdk-linux/tools/:$HOME/src/android-sdk-linux/platform-tools/:$PATH"
@@ -228,17 +215,17 @@ source $HOME/.shell_functions
 		eval $(perl -I $perl_local/lib/perl5/ -Mlocal::lib=$perl_local)
 	fi
 
-	# OSX python
-	py2path=$HOME/Library/Python/2.7
-	py3path=$HOME/Library/Python/3.5
-	if [ -d $py2path ]; then
-		PATH="$py2path/bin:$PATH"
+	# macOS python
+	macos_py2path=$HOME/Library/Python/2.7
+	macos_py3path=$HOME/Library/Python/3.6
+	if [ -d $macos_py2path ]; then
+		PATH="$macos_py2path/bin:$PATH"
 		# Python path must be set for ropevim to find rope somehow.
-		export PYTHONPATH="$py2path/lib/python/site-packages:$PYTHONPATH"
+		export PYTHONPATH="$macos_py2path/lib/python/site-packages:$PYTHONPATH"
 	fi
-	if [ -d $py3path ]; then
-		PATH="$py3path/bin:$PATH"
-		export PYTHONPATH="$py3path/lib/python/site-packages:$PYTHONPATH"
+	if [ -d $macos_py3path ]; then
+		PATH="$macos_py3path/bin:$PATH"
+		export PYTHONPATH="$macos_py3path/lib/python/site-packages:$PYTHONPATH"
 	fi
 	if [ -n "$PYTHONPATH" ]; then
 		# Pip in virtualenv does not work with PYTHONPATH set.
@@ -248,8 +235,22 @@ source $HOME/.shell_functions
 	fi
 
 
+	# Powerline plugin.
+	if shell_is_macos; then
+		export POWERLINE_ROOT=$macos_py3path/lib/python/site-packages/powerline
+		export LC_ALL=en_US.UTF-8
+		export LANG=en_US.UTF-8
+	else
+		export POWERLINE_ROOT=/usr/lib/python3.5/site-packages/powerline
+	fi
+	type powerline-daemon >/dev/null 2>&1
+	if [ $? -eq 0 ]; then
+		powerline-daemon -q
+	fi
+
+
 	# Virtualenvwrapper
-	shell_is_osx && virtenv_path=/usr/local/bin/virtualenvwrapper.sh || virtenv_path=/usr/bin/virtualenvwrapper_lazy.sh
+	shell_is_macos && virtenv_path=/usr/local/bin/virtualenvwrapper.sh || virtenv_path=/usr/bin/virtualenvwrapper_lazy.sh
 	if [ -e $virtenv_path ]; then
 		source $virtenv_path
 		export WORKON_HOME=$HOME/.virtualenvs
@@ -263,7 +264,7 @@ source $HOME/.shell_functions
 	# On OSX, ^Y in tig suspends the application.
 	# Source: https://github.com/jonas/tig/issues/214
 	type tig >/dev/null 2>&1
-	if [ $? -eq 0 ] && shell_is_osx; then
+	if [ $? -eq 0 ] && shell_is_macos; then
 		stty dsusp undef
 	fi
 # }

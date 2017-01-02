@@ -40,7 +40,7 @@ fi
 	zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
 
 	# Use colors in tabcompletion
-	shell_is_osx && zstyle ':completion:*:default' list-colors ''
+	shell_is_macos && zstyle ':completion:*:default' list-colors ''
 
 	# Complete options for aliases too.
 	setopt completealiases
@@ -76,7 +76,7 @@ fi
 	zsh_syntax_path=
 	if shell_is_linux; then
 		zsh_syntax_path=/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-	elif shell_is_osx; then
+	elif shell_is_macos; then
 		zsh_syntax_path=/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 	fi
 	if [ -n "$zsh_syntax_path" ] && [ -f $zsh_syntax_path ]; then

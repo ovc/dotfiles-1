@@ -39,7 +39,7 @@
 		alias xlogout='pkill -f startdwm.sh'
 		alias afk='slimlock'
 		;;
-	osx)
+	macos)
 		unalias open
 		# Enable or disable the Dashboard.
 		alias mac_dashboard_enable='defaults write com.apple.dashboard mcx-disabled -boolean NO'

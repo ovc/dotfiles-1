@@ -39,13 +39,13 @@ export iso86012epoch >/dev/null
 	ostype() { echo $OSTYPE | tr '[A-Z]' '[a-z]'; }
 	case "$(ostype)" in
 		*'linux'*	) SHELL_PLATFORM='linux'	;;
-		*'darwin'*	) SHELL_PLATFORM='osx'		;;
+		*'darwin'*	) SHELL_PLATFORM='macos'		;;
 		*'bsd'*		) SHELL_PLATFORM='bsd'		;;
 	esac
 
 	shell_is_linux() { [ "$SHELL_PLATFORM" = 'linux' ]; }
-	shell_is_osx()   { [ "$SHELL_PLATFORM" = 'osx' ]; }
-	shell_is_bsd()   { [ "$SHELL_PLATFORM" = 'bsd' ] || [ "$SHELL_PLATFORM" = 'osx' ]; }
+	shell_is_macos()   { [ "$SHELL_PLATFORM" = 'macos' ]; }
+	shell_is_bsd()   { [ "$SHELL_PLATFORM" = 'bsd' ] || [ "$SHELL_PLATFORM" = 'macos' ]; }
 # }
 
 # Git overlay which adds a command to cd to git root.
