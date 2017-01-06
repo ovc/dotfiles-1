@@ -16,11 +16,20 @@
 	" Highligth search.
 	set hlsearch
 
+	" Don't wrap searches around the file.
+	set nowrapscan
+
+	" Show line numbers.
+	set number
+
 	" Default to global substitutions on lines.
 	"set gdefault
 
-	" Use the system pasteboard.
-	set pasteboard
+	" Share system clipboard with unnamed register
+	set clipboard=unnamed
+
+	" Show vertical and horizontal scrollbars.
+	set guioptions=rb
 " }
 
 " Mappings {

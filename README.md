@@ -82,11 +82,14 @@ Install for both:
  * [GNU source-highlight](https://www.gnu.org/software/src-highlite/source-highlight.html)
  * [jrunning/source-highlight-solarized](https://github.com/jrunning/source-highlight-solarized)
  * [flavio/jump](https://github.com/flavio/jump)
+	```bash
+	$ gem install jump
+	````
 
 
 
 ## Xcode
-* [Xvim](http://xvim.org/) Vim keybindings.
+* [Xvim](http://xvim.org/) Vim keybindings. See Xcode 8 [instructions](https://github.com/XVimProject/XVim/blob/master/INSTALL_Xcode8.md)
 * [stackia/solarized-xcode](https://github.com/stackia/solarized-xcode) for dark & light themes.
 * [ArtSabintsev/Solarized-Dark-for-Xcode](https://github.com/ArtSabintsev/Solarized-Dark-for-Xcode) for a (better?) dark theme.
 

@@ -140,6 +140,7 @@ pip3_pkgs=$(make_1line "$pip3_pkgs")
 # Programs to install manually:
 # * easytag
 # * RVM: https://rvm.io/rvm/install
+# * XVim: https://github.com/XVimProject/XVim, https://github.com/XVimProject/XVim/blob/master/INSTALL_Xcode8.md
 
 
 # Install homebrew.
