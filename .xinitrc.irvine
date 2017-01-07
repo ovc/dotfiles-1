@@ -16,7 +16,7 @@
 	xkbset
 
 	# Combined Escape and Control hack for CapsLock key.
-	xcape -e 'Control_L=Escape'
+	#xcape -e 'Control_L=Escape'
 
 	# Start PulseAudio.
 	# Previously autostarted by /etc/X11/xinit/xinitrc.d/pulseaudio, seems to be replaced by XDG autostart.

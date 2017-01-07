@@ -20,14 +20,14 @@ xkb_keymap "erikwkbrd" {
 	//	include "inet(evdev)"			// Standard aux keys.
 	//	include "group(switch)"			// Switch layouts (us,sv) as long as ralt is pressed.
 	//	include "group(menu_toggle)"		// Toggle language on menu key (en->sv->de->en...).
-	//	//include "capslock(escape)"		// Make Caps Lock an additonal Escape.
-	//	include "ctrl(nocaps)"			// Make Caps Lock an additinal Control. Then use $(xcape -e 'Control_L=Escape') to make single press of key generate Escape, and when combined with some other key to generate CTRL+otherkey.
+	//	include "capslock(escape)"		// Make Caps Lock an additonal Escape.
+	//	//include "ctrl(nocaps)"			// Make Caps Lock an additinal Control. Then use $(xcape -e 'Control_L=Escape') to make single press of key generate Escape, and when combined with some other key to generate CTRL+otherkey.
 	//	include "compose(rwin)"			// compose(rwin): Make rwin the compose key.
 	//	include "terminate(ctrl_alt_bksp)"	// Restart X server.
 	//};
 
 	// Need to use the condensed version because xkblayout-state coredumps otherwise.
-	xkb_symbols{include"pc+us(basic)+se(basic):2+de(basic):3+hacks+inet(evdev)+group(switch)+group(menu_toggle)+ctrl(nocaps)+compose(rwin)+terminate(ctrl_alt_bksp)"};
+	xkb_symbols{include"pc+us(basic)+se(basic):2+de(basic):3+hacks+inet(evdev)+group(switch)+group(menu_toggle)+capslock(escape)+compose(rwin)+terminate(ctrl_alt_bksp)"};
 
 	xkb_geometry  { include "pc(pc104)" };
 };
