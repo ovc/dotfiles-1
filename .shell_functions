@@ -75,3 +75,34 @@ vigrep() {
 	for search; do true; done
 	vim -p $(grep -Rl $@) +/$search
 }
+
+
+# Start development with virtualenv. Assumes that PWD is in the project root dir.
+py_dev() {
+	proj=${PWD#$HOME/dev/}
+	workon $proj
+}
+
+# Set up python development environment. Assumes that PWD is in the project root dir.
+py_fix_dev() {
+	py_dev
+
+	echo "> Generating tags file..."
+	ctags -R -f ./tags $(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") >/dev/null 2>&1
+
+	echo "> Generating cscope db..."
+	find . -name '*.py' >cscope.files
+	cscope -b -q
+
+	pip list &>/dev/null | grep -q ropevim
+	if [ "$?" -ne 0 ]; then
+		echo "> Installing ropevim..."
+		pip install ropevim
+	fi
+	echo "> Installing python requirements..."
+	[ -e requirements.txt ] && pip install -r requirements.txt
+	[ -e requirements_testing.txt ] && pip install -r requirements_testing.txt
+
+	echo "> Generating Rope import cache..."
+	vi -c RopeGenerateAutoimportCache -c q ropefiximport.py
+}
