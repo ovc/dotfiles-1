@@ -47,6 +47,8 @@ URxvt.buffered: true
 ! Font to use.
 !URxvt.font: xft:Terminus:normal:pixelsize=12
 URxvt.font: xft:Terminus for Powerline:normal:pixelsize=13
+! TODO if I stop using powerline with patched fonts, try to use Noto (Color) Emoji for Android style emojis.
+!URxvt.font: xft:Noto Emoji:style=Regular:pixelsize=13,xft:Terminus for Powerline:normal:pixelsize=13
 ! Toggle between small and large font.
 URxvt.keysym.C-M-minus:	command:\033]710;xft:Terminus:normal:pixelsize=12\007
 URxvt.keysym.C-M-plus:	command:\033]710;xft:Terminus:normal:pixelsize=14\007
