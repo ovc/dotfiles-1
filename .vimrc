@@ -330,6 +330,7 @@
 " Mappings {
 	let mapleader = "\\"								" The key for <Leader>.
 	nmap <silent> <C-_> :nohlsearch<CR>						" Clear search matches highlighting. (Ctrl+/ => ^_)
+	"nmap <silent> <C-_> :let @/=""<CR>						" Clear search matches highlighting. (Ctrl+/ => ^_)
 	nmap <silent> <Leader>v :source $MYVIMRC<CR>					" Source vimrc.
 	nmap <silent> <Leader>V :tabe $MYVIMRC<CR>					" Edit vimrc.
 	"nmap Y y$									" Consistency with C and D. Does not work with YankRing.
