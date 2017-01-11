@@ -55,7 +55,6 @@ read -r -d '' brew_apps_default <<'EOAPPS'
 	vim
 	vim
 	watch
-	watch
 	wego
 	wget
 	zsh
@@ -112,7 +111,6 @@ read -r -d '' cask_apps_additional <<'EOAPPS'
 	google-drive
 	keepassx
 	perian
-	pycharm
 	skim
 	slack
 	thunderbird
