@@ -10,6 +10,7 @@ read -r -d '' brew_apps_default <<'EOAPPS'
 	aspell
 	cloc
 	cmatrix
+	coreutils
 	cowsay
 	cscope
 	ctags
@@ -62,6 +63,7 @@ EOAPPS
 brew_apps_default=$(make_1line "$brew_apps_default")
 
 read -r -d '' brew_apps_additional <<'EOAPPS'
+	swiftlint
 EOAPPS
 brew_apps_additional=$(make_1line "$brew_apps_additional")
 
