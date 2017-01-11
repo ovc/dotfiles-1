@@ -157,6 +157,8 @@ brew tap caskroom/cask
 brew cask install $cask_apps_default
 brew cask install $cask_apps_additional
 
+# rmtree for removing brew package's dependencies with $(brew rmtree <package>).
+brew tap beeftornado/rmtree && brew install brew-rmtree
 
 # Install python packages.
 pip2 install --user $pip2_pkgs
