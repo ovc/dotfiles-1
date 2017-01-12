@@ -13,15 +13,12 @@
 		],
 		"right": [
 			{
-				"function": "powerline.segments.common.vcs.branch"
-			},
-			{
-				"function": "powerline.segments.common.bat.battery",
-				"priority": 50
+				"function": "powerline.segments.common.vcs.branch",
+				"priority": 70
 			},
 			{
 				"function": "powerline.segments.common.sys.system_load",
-				"priority": 50
+				"priority": 80
 			},
 			{
 				"function": "powerline.segments.common.wthr.weather",
@@ -30,6 +27,10 @@
 					"unit": "C",
 					"location_query": "Berlin, Germany"
 				}
+			},
+			{
+				"function": "powerline.segments.common.bat.battery",
+				"priority": 10
 			},
 			{
 				"function": "powerline.segments.common.time.date"
