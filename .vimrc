@@ -24,6 +24,7 @@
 
 	" Github {
 		"Plugin 'Rip-Rip/clang_complete'
+		"Plugin 'chrisbra/CheckAttach'
 		"Plugin 'maxbrunsfeld/vim-yankstack'
 		"Plugin 'mbbill/undotree'
 		"Plugin 'mhinz/vim-startify'
@@ -482,6 +483,11 @@ if s:use_plugins
 		"let g:AutoClosePairs = AutoClose#ParsePairs("() [] {} <> «» ` \" '") " Pairs to close. Does not seems to work with vundle.
 		let g:AutoCloseProtectedRegions = ["Comment", "String", "Character"]	" Syntax regions to ignore.
 
+	" }
+
+	" CheckAttach {
+	"	" Add swedish words to check for.
+		"let g:attach_check_keywords =',bifogat,bifogar,bifogad'
 	" }
 
 	" Clang Complete {
