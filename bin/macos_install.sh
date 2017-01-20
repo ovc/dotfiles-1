@@ -32,8 +32,6 @@ read -r -d '' brew_apps_default <<'EOAPPS'
 	ipython
 	irssi
 	links
-	macvim
-	macvim
 	ncdu
 	pdfgrep
 	pyenv
@@ -85,7 +83,6 @@ read -r -d '' cask_apps_default <<'EOAPPS'
 	handbrake
 	iterm2
 	jing
-	karabiner-elements
 	libreoffice
 	mactex
 	macvim
@@ -103,12 +100,12 @@ EOAPPS
 cask_apps_default=$(make_1line "$cask_apps_default")
 
 read -r -d '' cask_apps_additional <<'EOAPPS'
-	1password
 	adium
 	caffeine
 	chicken
 	eclipse-ide
 	google-drive
+	karabiner-elements
 	keepassx
 	perian
 	skim
@@ -146,7 +143,7 @@ pip3_pkgs=$(make_1line "$pip3_pkgs")
 # Install homebrew.
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install $brew_apps_default
-brew install $brew_apps_additional
+#brew install $brew_apps_additional
 
 brew tap homebrew/science
 brew install octave
@@ -155,7 +152,7 @@ brew install octave
 # Install cask.
 brew tap caskroom/cask
 brew cask install $cask_apps_default
-brew cask install $cask_apps_additional
+#brew cask install $cask_apps_additional
 
 # rmtree for removing brew package's dependencies with $(brew rmtree <package>).
 brew tap beeftornado/rmtree && brew install brew-rmtree

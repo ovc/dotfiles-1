@@ -59,7 +59,7 @@
 # Color support {
 	ls_options=
 	shell_is_linux && ls_options="--time-style=long-iso -F"
-	if [ "$TERM" != "dumb" ] && type dircolors &>/dev/null; then
+	if [ "$TERM" != "dumb" ] && (type dircolors &>/dev/null || shell_is_macos); then
 		if shell_is_linux; then
 			eval "`dircolors -b`"
 			# Colors when output is terminal.
