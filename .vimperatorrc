@@ -66,7 +66,8 @@
 	" Page info items.
 	set pageinfo=gfm
 	" What GUI-elements to show.
-	set toolbars=noaddons,tabs,nomenu,nobookmarks,nonavigation
+	" Hiding the navigation bar is broken, breaks for example Pushbullet. https://github.com/vimperator/vimperator-labs/issues/465
+	set toolbars=noaddons,tabs,nomenu,nobookmarks,navigation
 	" Show tabnumbers.
 	set tabnumbers
 	" Hide scrollbars.
@@ -131,6 +132,7 @@
 	silent qmark s https://internetbank.swedbank.se/bviPrivat/privat?ns=1
 	silent qmark p https://getpocket.com/
 	silent qmark P https://banking.postbank.de/
+	silent qmark n https://n26.com/
 " }}
 
 " Plugins {{
