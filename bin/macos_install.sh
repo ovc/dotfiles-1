@@ -160,3 +160,14 @@ brew tap beeftornado/rmtree && brew install brew-rmtree
 # Install python packages.
 pip2 install --user $pip2_pkgs
 pip3 install --user $pip3_pkgs
+
+
+
+
+# Install tmux session
+# Reference: http://www.launchd.info/
+cp $HOME/bin/com.user.irctor.plist $HOME/Library/LaunchAgents/
+launchctl load -w $HOME/Library/LaunchAgents/com.user.irctor
+launchctl start com.user.irctor
+#launchctl list | grep com.user.dubmux
+#launchctl unload -W $HOME/Library/LaunchAgents/com.user.irctor
