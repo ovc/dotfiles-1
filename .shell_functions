@@ -77,10 +77,15 @@ vigrep() {
 }
 
 
-# Start development with virtualenv. Assumes that PWD is in the project root dir.
+# Start development with virtualenv. Creates if does not exist yet.
+# Assumes that PWD is in the project root dir.
 py_dev() {
 	proj=${PWD#$HOME/dev/}
-	workon $proj
+	if ! lsvirtualenv | grep -q $proj;  then
+		mkvirtualenv $proj -p python3
+	else
+		workon $proj
+	fi
 }
 
 # Set up python development environment. Assumes that PWD is in the project root dir.
