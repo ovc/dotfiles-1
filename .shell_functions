@@ -77,13 +77,20 @@ vigrep() {
 }
 
 
+py_dev_log() {
+	local message="$*"
+	echo "🔨 > $message..."
+}
+
 # Start development with virtualenv. Creates if does not exist yet.
 # Assumes that PWD is in the project root dir.
 py_dev() {
 	proj=${PWD#$HOME/dev/}
 	if ! lsvirtualenv | grep -q $proj;  then
+		py_dev_log "Creating virtualenv $proj"
 		mkvirtualenv $proj -p python3
 	else
+		py_dev_log "Switching to virtualenv $proj"
 		workon $proj
 	fi
 }
@@ -92,22 +99,24 @@ py_dev() {
 py_fix_dev() {
 	py_dev
 
-	echo "> Generating tags file..."
-	ctags -R -f ./tags $(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") >/dev/null 2>&1
-
-	echo "> Generating cscope db..."
-	find . -name '*.py' >cscope.files
-	cscope -b -q
-
-	pip list &>/dev/null | grep -q ropevim
-	if [ "$?" -ne 0 ]; then
-		echo "> Installing ropevim..."
-		pip install ropevim
-	fi
-	echo "> Installing python requirements..."
+	py_dev_log "Installing python requirements"
 	[ -e requirements.txt ] && pip install -r requirements.txt
 	[ -e requirements_testing.txt ] && pip install -r requirements_testing.txt
 
-	echo "> Generating Rope import cache..."
+	# Generate tags for all modules found in the python library path and current directory.
+	py_dev_log "Generating tags file"
+	ctags -R -f ./tags $(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") >/dev/null 2>&1
+
+	py_dev_log "Generating cscope DB"
+	find . -name '*.py' >cscope.files
+	cscope -b -q
+
+	# Rope-vim support.
+	pip list &>/dev/null | grep -q ropevim
+	if [ "$?" -ne 0 ]; then
+		py_dev_log "Installing ropevim"
+		pip install ropevim
+	fi
+	py_dev_log "Generating Rope import cache"
 	vi -c RopeGenerateAutoimportCache -c q ropefiximport.py
 }
