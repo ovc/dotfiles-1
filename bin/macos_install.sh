@@ -145,6 +145,7 @@ pip3_pkgs=$(make_1line "$pip3_pkgs")
 brew install $brew_apps_default
 #brew install $brew_apps_additional
 
+## Install octave from science tap.
 brew tap homebrew/science
 brew install octave
 
@@ -154,7 +155,7 @@ brew tap caskroom/cask
 brew cask install $cask_apps_default
 #brew cask install $cask_apps_additional
 
-# rmtree for removing brew package's dependencies with $(brew rmtree <package>).
+# Install rmtree for removing brew package's dependencies with $(brew rmtree <package>).
 brew tap beeftornado/rmtree && brew install brew-rmtree
 
 # Install python packages.
@@ -163,8 +164,7 @@ pip3 install --user $pip3_pkgs
 
 
 
-
-# Install tmux session
+# Install tmux session on login.
 # Reference: http://www.launchd.info/
 cp $HOME/bin/com.user.irctor.plist $HOME/Library/LaunchAgents/
 launchctl load -w $HOME/Library/LaunchAgents/com.user.irctor
